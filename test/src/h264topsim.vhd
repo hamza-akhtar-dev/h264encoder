@@ -98,7 +98,7 @@ architecture sim of h264top is
 	--constant IMGWIDTH : integer := 320;
 	--constant IMGHEIGHT : integer := 128;
 	constant IMGSKIP : integer := 0;		--amount to skip between lines (usually 0)
-	constant MAXFRAMES : integer := 50;	--number of frames to process
+	constant MAXFRAMES : integer := 20;	--number of frames to process
 	constant INITQP : integer := 28;	--0..51
 	constant MAXQP : integer := INITQP;
 	constant IWBITS : integer := 9;		--bits required for IMGWIDTH

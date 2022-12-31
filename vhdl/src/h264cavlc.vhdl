@@ -256,7 +256,6 @@ begin
 		b"000110" when trailingones=1 and totalcoeffs=16 and ctable=0 else
 		b"000101" when trailingones=2 and totalcoeffs=16 and ctable=0 else
 		b"001000" when trailingones=3 and totalcoeffs=16 and ctable=0 else
-		--
 		b"000011" when trailingones=0 and totalcoeffs=0 and ctable=1 else
 		b"001011" when trailingones=0 and totalcoeffs=1 and ctable=1 else
 		b"000010" when trailingones=1 and totalcoeffs=1 and ctable=1 else
@@ -319,7 +318,6 @@ begin
 		b"000110" when trailingones=1 and totalcoeffs=16 and ctable=1 else
 		b"000101" when trailingones=2 and totalcoeffs=16 and ctable=1 else
 		b"000100" when trailingones=3 and totalcoeffs=16 and ctable=1 else
-		--
 		b"001111" when trailingones=0 and totalcoeffs=0 and ctable=2 else
 		b"001111" when trailingones=0 and totalcoeffs=1 and ctable=2 else
 		b"001110" when trailingones=1 and totalcoeffs=1 and ctable=2 else
@@ -382,7 +380,6 @@ begin
 		b"000100" when trailingones=1 and totalcoeffs=16 and ctable=2 else
 		b"000011" when trailingones=2 and totalcoeffs=16 and ctable=2 else
 		b"000010" when trailingones=3 and totalcoeffs=16 and ctable=2 else
-		--
 		b"000011" when trailingones=0 and totalcoeffs=0 and ctable=3 else
 		b"000000" when trailingones=0 and totalcoeffs=1 and ctable=3 else
 		b"000001" when trailingones=1 and totalcoeffs=1 and ctable=3 else
@@ -445,7 +442,6 @@ begin
 		b"111101" when trailingones=1 and totalcoeffs=16 and ctable=3 else
 		b"111110" when trailingones=2 and totalcoeffs=16 and ctable=3 else
 		b"111111" when trailingones=3 and totalcoeffs=16 and ctable=3 else
-		--
 		b"000001" when trailingones=0 and totalcoeffs=0 and ctable=4 else
 		b"000111" when trailingones=0 and totalcoeffs=1 and ctable=4 else
 		b"000001" when trailingones=1 and totalcoeffs=1 and ctable=4 else
@@ -524,7 +520,6 @@ begin
 		b"10000" when trailingones=1 and totalcoeffs=16 and ctable=0 else
 		b"10000" when trailingones=2 and totalcoeffs=16 and ctable=0 else
 		b"10000" when trailingones=3 and totalcoeffs=16 and ctable=0 else
-		--
 		b"00010" when trailingones=0 and totalcoeffs=0 and ctable=1 else
 		b"00110" when trailingones=0 and totalcoeffs=1 and ctable=1 else
 		b"00010" when trailingones=1 and totalcoeffs=1 and ctable=1 else
@@ -587,7 +582,6 @@ begin
 		b"01110" when trailingones=1 and totalcoeffs=16 and ctable=1 else
 		b"01110" when trailingones=2 and totalcoeffs=16 and ctable=1 else
 		b"01110" when trailingones=3 and totalcoeffs=16 and ctable=1 else
-		--
 		b"00100" when trailingones=0 and totalcoeffs=0 and ctable=2 else
 		b"00110" when trailingones=0 and totalcoeffs=1 and ctable=2 else
 		b"00100" when trailingones=1 and totalcoeffs=1 and ctable=2 else
@@ -650,9 +644,7 @@ begin
 		b"01010" when trailingones=1 and totalcoeffs=16 and ctable=2 else
 		b"01010" when trailingones=2 and totalcoeffs=16 and ctable=2 else
 		b"01010" when trailingones=3 and totalcoeffs=16 and ctable=2 else
-		--
 		b"00110" when ctable=3 else
-		--
 		b"00010" when trailingones=0 and totalcoeffs=0 and ctable=4 else
 		b"00110" when trailingones=0 and totalcoeffs=1 and ctable=4 else
 		b"00001" when trailingones=1 and totalcoeffs=1 and ctable=4 else
@@ -670,152 +662,7 @@ begin
 	--
 	-- tables for TotalZeros token
 	--
-	ztoken <=
-		b"001" when totalzeros=0 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=1 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=2 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=3 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=4 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=5 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=6 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=7 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=8 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=9 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=10 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=11 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=12 and totalcoeffs=1 and ztable='0' else
-		b"011" when totalzeros=13 and totalcoeffs=1 and ztable='0' else
-		b"010" when totalzeros=14 and totalcoeffs=1 and ztable='0' else
-		b"001" when totalzeros=15 and totalcoeffs=1 and ztable='0' else
-		b"111" when totalzeros=0 and totalcoeffs=2 and ztable='0' else
-		b"110" when totalzeros=1 and totalcoeffs=2 and ztable='0' else
-		b"101" when totalzeros=2 and totalcoeffs=2 and ztable='0' else
-		b"100" when totalzeros=3 and totalcoeffs=2 and ztable='0' else
-		b"011" when totalzeros=4 and totalcoeffs=2 and ztable='0' else
-		b"101" when totalzeros=5 and totalcoeffs=2 and ztable='0' else
-		b"100" when totalzeros=6 and totalcoeffs=2 and ztable='0' else
-		b"011" when totalzeros=7 and totalcoeffs=2 and ztable='0' else
-		b"010" when totalzeros=8 and totalcoeffs=2 and ztable='0' else
-		b"011" when totalzeros=9 and totalcoeffs=2 and ztable='0' else
-		b"010" when totalzeros=10 and totalcoeffs=2 and ztable='0' else
-		b"011" when totalzeros=11 and totalcoeffs=2 and ztable='0' else
-		b"010" when totalzeros=12 and totalcoeffs=2 and ztable='0' else
-		b"001" when totalzeros=13 and totalcoeffs=2 and ztable='0' else
-		b"000" when totalzeros=14 and totalcoeffs=2 and ztable='0' else
-		b"101" when totalzeros=0 and totalcoeffs=3 and ztable='0' else
-		b"111" when totalzeros=1 and totalcoeffs=3 and ztable='0' else
-		b"110" when totalzeros=2 and totalcoeffs=3 and ztable='0' else
-		b"101" when totalzeros=3 and totalcoeffs=3 and ztable='0' else
-		b"100" when totalzeros=4 and totalcoeffs=3 and ztable='0' else
-		b"011" when totalzeros=5 and totalcoeffs=3 and ztable='0' else
-		b"100" when totalzeros=6 and totalcoeffs=3 and ztable='0' else
-		b"011" when totalzeros=7 and totalcoeffs=3 and ztable='0' else
-		b"010" when totalzeros=8 and totalcoeffs=3 and ztable='0' else
-		b"011" when totalzeros=9 and totalcoeffs=3 and ztable='0' else
-		b"010" when totalzeros=10 and totalcoeffs=3 and ztable='0' else
-		b"001" when totalzeros=11 and totalcoeffs=3 and ztable='0' else
-		b"001" when totalzeros=12 and totalcoeffs=3 and ztable='0' else
-		b"000" when totalzeros=13 and totalcoeffs=3 and ztable='0' else
-		b"011" when totalzeros=0 and totalcoeffs=4 and ztable='0' else
-		b"111" when totalzeros=1 and totalcoeffs=4 and ztable='0' else
-		b"101" when totalzeros=2 and totalcoeffs=4 and ztable='0' else
-		b"100" when totalzeros=3 and totalcoeffs=4 and ztable='0' else
-		b"110" when totalzeros=4 and totalcoeffs=4 and ztable='0' else
-		b"101" when totalzeros=5 and totalcoeffs=4 and ztable='0' else
-		b"100" when totalzeros=6 and totalcoeffs=4 and ztable='0' else
-		b"011" when totalzeros=7 and totalcoeffs=4 and ztable='0' else
-		b"011" when totalzeros=8 and totalcoeffs=4 and ztable='0' else
-		b"010" when totalzeros=9 and totalcoeffs=4 and ztable='0' else
-		b"010" when totalzeros=10 and totalcoeffs=4 and ztable='0' else
-		b"001" when totalzeros=11 and totalcoeffs=4 and ztable='0' else
-		b"000" when totalzeros=12 and totalcoeffs=4 and ztable='0' else
-		b"101" when totalzeros=0 and totalcoeffs=5 and ztable='0' else
-		b"100" when totalzeros=1 and totalcoeffs=5 and ztable='0' else
-		b"011" when totalzeros=2 and totalcoeffs=5 and ztable='0' else
-		b"111" when totalzeros=3 and totalcoeffs=5 and ztable='0' else
-		b"110" when totalzeros=4 and totalcoeffs=5 and ztable='0' else
-		b"101" when totalzeros=5 and totalcoeffs=5 and ztable='0' else
-		b"100" when totalzeros=6 and totalcoeffs=5 and ztable='0' else
-		b"011" when totalzeros=7 and totalcoeffs=5 and ztable='0' else
-		b"010" when totalzeros=8 and totalcoeffs=5 and ztable='0' else
-		b"001" when totalzeros=9 and totalcoeffs=5 and ztable='0' else
-		b"001" when totalzeros=10 and totalcoeffs=5 and ztable='0' else
-		b"000" when totalzeros=11 and totalcoeffs=5 and ztable='0' else
-		b"001" when totalzeros=0 and totalcoeffs=6 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=6 and ztable='0' else
-		b"111" when totalzeros=2 and totalcoeffs=6 and ztable='0' else
-		b"110" when totalzeros=3 and totalcoeffs=6 and ztable='0' else
-		b"101" when totalzeros=4 and totalcoeffs=6 and ztable='0' else
-		b"100" when totalzeros=5 and totalcoeffs=6 and ztable='0' else
-		b"011" when totalzeros=6 and totalcoeffs=6 and ztable='0' else
-		b"010" when totalzeros=7 and totalcoeffs=6 and ztable='0' else
-		b"001" when totalzeros=8 and totalcoeffs=6 and ztable='0' else
-		b"001" when totalzeros=9 and totalcoeffs=6 and ztable='0' else
-		b"000" when totalzeros=10 and totalcoeffs=6 and ztable='0' else
-		b"001" when totalzeros=0 and totalcoeffs=7 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=7 and ztable='0' else
-		b"101" when totalzeros=2 and totalcoeffs=7 and ztable='0' else
-		b"100" when totalzeros=3 and totalcoeffs=7 and ztable='0' else
-		b"011" when totalzeros=4 and totalcoeffs=7 and ztable='0' else
-		b"011" when totalzeros=5 and totalcoeffs=7 and ztable='0' else
-		b"010" when totalzeros=6 and totalcoeffs=7 and ztable='0' else
-		b"001" when totalzeros=7 and totalcoeffs=7 and ztable='0' else
-		b"001" when totalzeros=8 and totalcoeffs=7 and ztable='0' else
-		b"000" when totalzeros=9 and totalcoeffs=7 and ztable='0' else
-		b"001" when totalzeros=0 and totalcoeffs=8 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=8 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=8 and ztable='0' else
-		b"011" when totalzeros=3 and totalcoeffs=8 and ztable='0' else
-		b"011" when totalzeros=4 and totalcoeffs=8 and ztable='0' else
-		b"010" when totalzeros=5 and totalcoeffs=8 and ztable='0' else
-		b"010" when totalzeros=6 and totalcoeffs=8 and ztable='0' else
-		b"001" when totalzeros=7 and totalcoeffs=8 and ztable='0' else
-		b"000" when totalzeros=8 and totalcoeffs=8 and ztable='0' else
-		b"001" when totalzeros=0 and totalcoeffs=9 and ztable='0' else
-		b"000" when totalzeros=1 and totalcoeffs=9 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=9 and ztable='0' else
-		b"011" when totalzeros=3 and totalcoeffs=9 and ztable='0' else
-		b"010" when totalzeros=4 and totalcoeffs=9 and ztable='0' else
-		b"001" when totalzeros=5 and totalcoeffs=9 and ztable='0' else
-		b"001" when totalzeros=6 and totalcoeffs=9 and ztable='0' else
-		b"001" when totalzeros=7 and totalcoeffs=9 and ztable='0' else
-		b"001" when totalzeros=0 and totalcoeffs=10 and ztable='0' else
-		b"000" when totalzeros=1 and totalcoeffs=10 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=10 and ztable='0' else
-		b"011" when totalzeros=3 and totalcoeffs=10 and ztable='0' else
-		b"010" when totalzeros=4 and totalcoeffs=10 and ztable='0' else
-		b"001" when totalzeros=5 and totalcoeffs=10 and ztable='0' else
-		b"001" when totalzeros=6 and totalcoeffs=10 and ztable='0' else
-		b"000" when totalzeros=0 and totalcoeffs=11 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=11 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=11 and ztable='0' else
-		b"010" when totalzeros=3 and totalcoeffs=11 and ztable='0' else
-		b"001" when totalzeros=4 and totalcoeffs=11 and ztable='0' else
-		b"011" when totalzeros=5 and totalcoeffs=11 and ztable='0' else
-		b"000" when totalzeros=0 and totalcoeffs=12 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=12 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=12 and ztable='0' else
-		b"001" when totalzeros=3 and totalcoeffs=12 and ztable='0' else
-		b"001" when totalzeros=4 and totalcoeffs=12 and ztable='0' else
-		b"000" when totalzeros=0 and totalcoeffs=13 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=13 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=13 and ztable='0' else
-		b"001" when totalzeros=3 and totalcoeffs=13 and ztable='0' else
-		b"000" when totalzeros=0 and totalcoeffs=14 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=14 and ztable='0' else
-		b"001" when totalzeros=2 and totalcoeffs=14 and ztable='0' else
-		b"000" when totalzeros=0 and totalcoeffs=15 and ztable='0' else
-		b"001" when totalzeros=1 and totalcoeffs=15 and ztable='0' else
-		--
-		b"001" when totalzeros=0 and totalcoeffs=1 and ztable='1' else
-		b"001" when totalzeros=1 and totalcoeffs=1 and ztable='1' else
-		b"001" when totalzeros=2 and totalcoeffs=1 and ztable='1' else
-		b"000" when totalzeros=3 and totalcoeffs=1 and ztable='1' else
-		b"001" when totalzeros=0 and totalcoeffs=2 and ztable='1' else
-		b"001" when totalzeros=1 and totalcoeffs=2 and ztable='1' else
-		b"000" when totalzeros=2 and totalcoeffs=2 and ztable='1' else
-		b"001" when totalzeros=0 and totalcoeffs=3 and ztable='1' else
-		b"000"; --  totalzeros=1 and totalcoeffs=3 and ztable='1'
+	
 	--
 	ztoken_len <=
 		b"0001" when totalzeros=0 and totalcoeffs=1 and ztable='0' else
@@ -953,7 +800,6 @@ begin
 		b"0001" when totalzeros=2 and totalcoeffs=14 and ztable='0' else
 		b"0001" when totalzeros=0 and totalcoeffs=15 and ztable='0' else
 		b"0001" when totalzeros=1 and totalcoeffs=15 and ztable='0' else
-	--
 		b"0001" when totalzeros=0 and totalcoeffs=1 and ztable='1' else
 		b"0010" when totalzeros=1 and totalcoeffs=1 and ztable='1' else
 		b"0011" when totalzeros=2 and totalcoeffs=1 and ztable='1' else
