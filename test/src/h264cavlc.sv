@@ -33,7 +33,7 @@
 	logic hparity = 1'b0;			//which register bank to use
 	logic [4:0] hmaxcoeffs = 5'd0;
 	logic [4:0] htotalcoeffs = 5'd0;
-	logic [1:0] htotalzeros = 5'd0;
+	logic [4:0] htotalzeros = 5'd0;
 	logic [1:0] htrailingones = 2'd0;	//max 3 allowed
 	logic [1:0] htable;
 	logic hs = 1'b0;				//s (stream) flag
@@ -559,6 +559,151 @@
 		else if ( trailingones==2 && totalcoeffs==4 && ctable==4 ) ctoken_len = 5'b01000;
 		else ctoken_len = 5'b00111;
 
+		if ( totalzeros==0 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==2 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==3 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==4 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==5 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==6 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==7 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==8 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==9 && totalcoeffs==1 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==10 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==11 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b011;
+		else if ( totalzeros==12 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==13 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b011;
+		else if ( totalzeros==14 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==15 && totalcoeffs==1 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b111;
+		else if ( totalzeros==1 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b110;
+		else if ( totalzeros==2 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==3 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==4 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==5 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==6 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==7 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==8 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==9 && totalcoeffs==2 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==10 && totalcoeffs==2 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==11 && totalcoeffs==2 && ztable==0 ) ztoken = 3'b011;
+		else if ( totalzeros==12 && totalcoeffs==2 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==13 && totalcoeffs==2 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==14 && totalcoeffs==2 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==1 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b111;
+		else if ( totalzeros==2 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b110;
+		else if ( totalzeros==3 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==4 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==5 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==6 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==7 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==8 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==9 && totalcoeffs==3 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==10 && totalcoeffs==3 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==11 && totalcoeffs==3 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==12 && totalcoeffs==3 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==13 && totalcoeffs==3 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==1 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b111;
+		else if ( totalzeros==2 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==3 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==4 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b110;
+		else if ( totalzeros==5 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==6 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==7 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==8 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==9 && totalcoeffs==4 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==10 && totalcoeffs==4 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==11 && totalcoeffs==4 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==12 && totalcoeffs==4 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==1 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==2 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==3 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b111;
+		else if ( totalzeros==4 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b110;
+		else if ( totalzeros==5 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==6 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==7 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==8 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==9 && totalcoeffs==5 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==10 && totalcoeffs==5 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==11 && totalcoeffs==5 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b111;
+		else if ( totalzeros==3 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b110;
+		else if ( totalzeros==4 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==5 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==6 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==7 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==8 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==9 && totalcoeffs==6 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==10 && totalcoeffs==6 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b101;
+		else if ( totalzeros==3 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b100;
+		else if ( totalzeros==4 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==5 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==6 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==7 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==8 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==9 && totalcoeffs==7 && ztable==0 )  ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==4 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==5 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==6 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==7 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==8 && totalcoeffs==8 && ztable==0 )  ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b000;
+		else if ( totalzeros==2 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b011;
+		else if ( totalzeros==4 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b010;
+		else if ( totalzeros==5 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==6 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==7 && totalcoeffs==9 && ztable==0 )  ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==2 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b011;
+		else if ( totalzeros==4 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==5 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==6 && totalcoeffs==10 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==1 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b010;
+		else if ( totalzeros==4 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==5 && totalcoeffs==11 && ztable==0 ) ztoken = 3'b011;
+		else if ( totalzeros==0 && totalcoeffs==12 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==1 && totalcoeffs==12 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==12 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==12 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==4 && totalcoeffs==12 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==13 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==1 && totalcoeffs==13 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==13 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==13 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==14 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==1 && totalcoeffs==14 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==14 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==15 && ztable==0 ) ztoken = 3'b000;
+		else if ( totalzeros==1 && totalcoeffs==15 && ztable==0 ) ztoken = 3'b001;
+		else if ( totalzeros==0 && totalcoeffs==1 && ztable==1 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==1 && ztable==1 )  ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==1 && ztable==1 )  ztoken = 3'b001;
+		else if ( totalzeros==3 && totalcoeffs==1 && ztable==1 )  ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==2 && ztable==1 )  ztoken = 3'b001;
+		else if ( totalzeros==1 && totalcoeffs==2 && ztable==1 )  ztoken = 3'b001;
+		else if ( totalzeros==2 && totalcoeffs==2 && ztable==1 )  ztoken = 3'b000;
+		else if ( totalzeros==0 && totalcoeffs==3 && ztable==1 )  ztoken = 3'b001;
+		else ztoken = 3'b000;
+
 		if ( totalzeros==0 && totalcoeffs==1 && ztable==0 ) ztoken_len = 4'b0001;
 		else if ( totalzeros==1 && totalcoeffs==1 && ztable==0 ) ztoken_len = 4'b0011;
 		else if ( totalzeros==2 && totalcoeffs==1 && ztable==0 ) ztoken_len = 4'b0011;
@@ -757,7 +902,7 @@
 					if (ecgt1 == 0 && etrailingones != 3 )
 					begin
 						etrailingones <= etrailingones + 1;
-						et1signs <= et1signs[1:0] & VIN[11];	//encode sign
+						et1signs <= {et1signs[1:0], VIN[11]};	//encode sign
 					end
 				end
 				else
@@ -850,7 +995,7 @@
 			totalzeros <= htotalzeros;
 			trailingones <= htrailingones;
 			parity <= hparity;
-			if (maxcoeffs==4) 
+			if (hmaxcoeffs==4) 
 			begin
 				ctable <= CTABLE4;	//special table for ChromaDC
 				ztable <= 1;		//ditto
@@ -867,7 +1012,8 @@
 				rbstate <= 1;	//runbefore processing starts
 			end
 			rbindex <= 2;
-			runb <= runbarray[{hparity,4'b0001}];
+			tmpindex = {hparity,4'b0001};
+			runb <= runbarray[tmpindex];
 			rbzerosleft <= htotalzeros;
 			rbvl <='0;
 			rbve <= '0;
@@ -941,7 +1087,7 @@
 				//runb is currently runbarray(rbindex-1), since rbindex not yet loaded
 				if (rbzerosleft + runb <= 2) 
 				begin		//1 bit code
-					rbve <= {rbve[23:0], !runb[0]};
+					rbve <= {rbve[23:0], ~runb[0]};
 					rbvl <= rbvl + 1; 
 				end
 				else if (rbzerosleft + runb <= 6) 
@@ -977,24 +1123,24 @@
 		if (state == STATE_CTOKEN) 
 		begin
 			//output coeff_token based on (totalcoeffs,trailingones)
-			VE <= {19'd0, coeff_token};	//from tables above
+			VE <= {16'h0, 3'b000, coeff_token};	//from tables above
 			VL <= ctoken_len;
 			VALID <= 1;
 			VS <= hs;
 			//setup for COEFFS (do it here 'cos T1SIGN may be skipped)
 			//start at cindex=trailingones since we don't need to encode those
-			//coeff = coeffarray[{parity, 2'b0, trailingones}];
+			coeff = coeffarray[{parity, 2'b0, trailingones}];
 			
 			cindex <= {2'b0, trailingones} + 1;
-			signcoeff <= coeffarray[{parity, 2'b0, trailingones}][11];
-			abscoeff <= coeffarray[{parity, 2'b0, trailingones}][10:0];
+			signcoeff <= coeff[11];
+			abscoeff <= coeff[10:0];
 			if (trailingones==3) 
 			begin
-				abscoeffa <= coeffarray[{parity, 2'b0, trailingones}] - 1; 
+				abscoeffa <= coeff[10:0] - 1; 
 			end	//normal case
 			else 
 			begin
-				abscoeffa <= coeffarray[{parity, 2'b0, trailingones}] - 2; 
+				abscoeffa <= coeff[10:0] - 2; 
 			end	//special case for t1s<3
 			if (totalcoeffs>10 && trailingones!=3) 
 			begin
@@ -1008,10 +1154,10 @@
 		// T1SIGN
 		if (state == STATE_T1SIGN) 
 		begin
-			assert (trailingones != 0) ;
+			assert (trailingones != 0) else $error ;
 			VALID <= 1;
-			VE <= {22'd0, t1signs};
-			VL <= {3'd0, trailingones};
+			VE <= {20'h00000, 2'b00, t1signs};
+			VL <= {3'b000, trailingones};
 		end 
 		// COEFFS
 		// uses suffixlen, lesstwo, coeffarray, abscoeff, signcoeff, cindex
@@ -1026,20 +1172,20 @@
 				if (abscoeffa < 7) 
 				begin
 					//normal, just levelprefix which is unary encoded
-					VE <= {24'd0, 1'b1};
+					VE <= {1'b0, 24'h000001};
 					VL <= {abscoeffa[3:0], signcoeff} + 1;
 				end
 				else if (abscoeffa < 15) 
 				begin		//7..14
 					//use level 14 with 4bit suffix
 					//subtract 7 && use 3 bits of abscoeffa (same as add 1)
-					VE <= {20'd0, 1'b1, abscoeffa[2:0]+1, signcoeff};
+					VE <= {1'b0, 20'h00001, abscoeffa[2:0]+1, signcoeff};
 					VL <= 5'b10011;	//14+1+4 = 19 bits
 				end
 				else 
 				begin
 					//use level 15 with 12bit suffix
-					VE <= {12'd0, 1'b1, (abscoeffa-15) ,signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-15), signcoeff};
 					VL <= 5'b11100;	//15+1+12 = 28 bits
 				end
 				if (abscoeff > 3) 
@@ -1055,62 +1201,62 @@
 			begin //suffixlen > 0: 1..6
 				if (suffixlen==1 && abscoeffa < 15) 
 				begin
-					VE <= {23'd0, 1'b1, signcoeff};
+					VE <= {1'b0, 20'h00000, 3'b001, signcoeff};
 					VL <= abscoeffa[4:0] + 2; 
 				end
 				else if (suffixlen==2 && abscoeffa < 30) 
 				begin
-					VE <= {22'd0, 1'b1, abscoeffa[0], signcoeff};
-					VL <= abscoeffa[5:0] + 3; 
+					VE <= {1'b0, 20'h00000, 2'b01, abscoeffa[0], signcoeff};
+					VL <= abscoeffa[5:1] + 3; 
 				end
 				else if (suffixlen==3 && abscoeffa < 60) 
 				begin
-					VE <= {21'd0, 1'b1, abscoeffa[1:0], signcoeff};
+					VE <= {1'b0, 20'h00000, 1'b1, abscoeffa[1:0], signcoeff};
 					VL <= abscoeffa[6:2] + 4; 
 				end
 				else if (suffixlen==4 && abscoeffa < 120) 
 				begin
-					VE <= {20'd0, 1'b1, abscoeffa[2:0], signcoeff};
+					VE <= {1'b0, 20'h00001, abscoeffa[2:0], signcoeff};
 					VL <= abscoeffa[7:3] + 5; 
 				end
 				else if (suffixlen==5 && abscoeffa < 240) 
 				begin
-					VE <= {19'd0, 1'b1, abscoeffa[3:0], signcoeff};
+					VE <= {1'b0, 16'h0000, 3'b001, abscoeffa[3:0], signcoeff};
 					VL <= abscoeffa[8:4] + 6; 
 				end
 				else if (suffixlen==6 && abscoeffa < 480) 
 				begin
-					VE <= {18'd0, 1'b1, abscoeffa[4:0], signcoeff};
+					VE <= {1'b0, 16'h0000, 2'b01, abscoeffa[4:0], signcoeff};
 					VL <= abscoeffa[9:5] + 7; 
 				end
 				else if (suffixlen==1) 
 				begin			//use level 15 with 12bit suffix, VLC1
-					VE <= {12'd0, 1'b1, (abscoeffa-15), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-15), signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==2) 
 				begin			//use level 15 with 12bit suffix, VLC2
-					VE <= {12'd0, 1'b1, (abscoeffa-30), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-30), signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==3) 
 				begin			//use level 15 with 12bit suffix, VLC3
-					VE <= {12'd0, 1'b1, (abscoeffa-60), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-60), signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==4) 
 				begin			//use level 15 with 12bit suffix, VLC4
-					VE <= {12'd0, 1'b1, (abscoeffa-120), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-120), signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				else if (suffixlen==5)
 				begin			//use level 15 with 12bit suffix, VLC5
-					VE <= {12'd0, 1'b1, (abscoeffa-240), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-240), signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				else 
 				begin			//use level 15 with 12bit suffix, VLC6
-					VE <={ 12'd0, 1'b1, (abscoeffa-480), signcoeff};
+					VE <= {1'b0, 12'h001, (abscoeffa-480), signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				if ((suffixlen==1 && abscoeff > 3) ||
@@ -1128,22 +1274,21 @@
 			end
 			else 
 			begin
-				VALID <= 1; 
+				VALID <= 0; 
 			end
 			
-			//next coeff
-			//coeff <= coeffarray[{parity,cindex}];
-			signcoeff <= coeffarray[{parity,cindex}][11];
-			abscoeff <= coeffarray[{parity,cindex}][10:0];
-			abscoeffa <= coeffarray[{parity,cindex}][10:0] - 1;
+			coeff = coeffarray[{parity,cindex}];
+			signcoeff <= coeff[11];
+			abscoeff <= coeff[10:0];
+			abscoeffa <= coeff[10:0] - 1;
 			cindex <= cindex+1;
 		end
 		// TZEROS
 		if (state == STATE_TZEROS) 
 		begin
-			assert (totalcoeffs!=maxcoeffs && totalcoeffs!=0) else $error ("Severe Error");
+			assert (totalcoeffs!=maxcoeffs && totalcoeffs!=0) else $error;
 			VALID <= 1;
-			VE <= {22'd0, ztoken_len};
+			VE <= {20'h00000, 2'b00, ztoken};
 			VL <= {1'b0, ztoken_len};
 		end
 		//
