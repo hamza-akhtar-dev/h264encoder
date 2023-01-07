@@ -978,7 +978,22 @@
 
 	logic [11:0] coeff;
 	logic [4:0] tmpindex;
-	
+
+	logic [2:0] abscoeffa_sum1;
+	logic [10:0] abscoeffa_sum2;
+	logic [10:0] abscoeffa_sum3;
+	logic [10:0] abscoeffa_sum4;
+	logic [10:0] abscoeffa_sum5;
+	logic [10:0] abscoeffa_sum6;
+	logic [10:0] abscoeffa_sum7;
+
+	assign abscoeffa_sum1 = abscoeffa[2:0]+1;
+	assign abscoeffa_sum2 = abscoeffa-15;
+	assign abscoeffa_sum3 = abscoeffa-30;
+	assign abscoeffa_sum4 = abscoeffa-60;
+	assign abscoeffa_sum5 = abscoeffa-120;
+	assign abscoeffa_sum6 = abscoeffa-240;
+	assign abscoeffa_sum7 = abscoeffa-480;
 
 	always@(posedge CLK) 
 	begin
@@ -1179,13 +1194,13 @@
 				begin		//7..14
 					//use level 14 with 4bit suffix
 					//subtract 7 && use 3 bits of abscoeffa (same as add 1)
-					VE <= {1'b0, 20'h00001, abscoeffa[2:0]+1, signcoeff};
+					VE <= {1'b0, 20'h00001, abscoeffa_sum1, signcoeff};
 					VL <= 5'b10011;	//14+1+4 = 19 bits
 				end
 				else 
 				begin
 					//use level 15 with 12bit suffix
-					VE <= {1'b0, 12'h001, (abscoeffa-15), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum2, signcoeff};
 					VL <= 5'b11100;	//15+1+12 = 28 bits
 				end
 				if (abscoeff > 3) 
@@ -1231,32 +1246,32 @@
 				end
 				else if (suffixlen==1) 
 				begin			//use level 15 with 12bit suffix, VLC1
-					VE <= {1'b0, 12'h001, (abscoeffa-15), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum2, signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==2) 
 				begin			//use level 15 with 12bit suffix, VLC2
-					VE <= {1'b0, 12'h001, (abscoeffa-30), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum3, signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==3) 
 				begin			//use level 15 with 12bit suffix, VLC3
-					VE <= {1'b0, 12'h001, (abscoeffa-60), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum4, signcoeff};
 					VL <= 5'b11100;	
 				end //15+1+12 = 28 bits
 				else if (suffixlen==4) 
 				begin			//use level 15 with 12bit suffix, VLC4
-					VE <= {1'b0, 12'h001, (abscoeffa-120), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum5, signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				else if (suffixlen==5)
 				begin			//use level 15 with 12bit suffix, VLC5
-					VE <= {1'b0, 12'h001, (abscoeffa-240), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum6, signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				else 
 				begin			//use level 15 with 12bit suffix, VLC6
-					VE <= {1'b0, 12'h001, (abscoeffa-480), signcoeff};
+					VE <= {1'b0, 12'h001, abscoeffa_sum7, signcoeff};
 					VL <= 5'b11100; 
 				end	//15+1+12 = 28 bits
 				if ((suffixlen==1 && abscoeff > 3) ||
