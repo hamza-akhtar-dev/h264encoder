@@ -1,5 +1,5 @@
 module h264dequantise #(
-    parameter LASTADVANCE = 1'b1
+    parameter LASTADVANCE = 1
 ) (
     input logic CLK, ENABLE, DCCI,
     input logic [5:0] QP,

@@ -15,7 +15,7 @@
 // -- XST: 50 slices; 214 MHz
 
 
-module h264dctransform #(parameter TOGETHER = 1'b0)(
+module h264dctransform #(parameter TOGETHER = 0)(
 	
 		input logic CLK2, 				//--fast clock
 		input logic RESET, 				//--reset when 1

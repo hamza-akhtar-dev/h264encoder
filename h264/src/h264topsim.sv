@@ -14,9 +14,9 @@ module h264topsim();
 
     reg [IMGBITS-1:0] c;
 
-    logic clk, clk2;
+    logic clk = 0, clk2;
 
-    logic [5:0] qp;
+    logic [5:0] qp = INITQP;
 
     logic [IMGBITS-1:0] yvideo [0:IMGWIDTH-1][0:IMGHEIGHT-1];
     logic [IMGBITS-1:0] uvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
@@ -48,7 +48,7 @@ module h264topsim();
 	logic [31:0] intra8x8cc_DATAI;
 	logic [31:0] intra8x8cc_TOPI;
 	logic intra8x8cc_STROBEO;
-	logic intra8x8cc_READYO;
+	logic intra8x8cc_READYO = 1'b0;
 	logic [35:0] intra8x8cc_DATAO;
 	logic [31:0] intra8x8cc_BASEO;
 	logic intra8x8cc_DCSTROBEO;			
@@ -58,7 +58,7 @@ module h264topsim();
 	logic intra8x8cc_XXC;
 	logic intra8x8cc_XXINC;
 
-    logic [1:0] header_CMODE;
+    logic [1:0] header_CMODE = 2'b00;
     logic [19:0] header_VE;
     logic [4:0] header_VL;
     logic header_VALID;
@@ -128,7 +128,7 @@ module h264topsim();
 	logic tobytes_STROBE;
 	logic tobytes_DONE;
 
-    logic align_VALID;
+    logic align_VALID = 1'b0;
     logic [5:0] QP = INITQP;
 
     logic [7:0] ninx = 8'h00;
@@ -146,6 +146,11 @@ module h264topsim();
 
     logic [IWBITS-1:0] mbx = '0;
     logic [IWBITS-1:0] mbxcc = '0;
+
+    logic nop1; //No operation
+    logic nop2; //No operation
+    logic nop3; //No operation
+    logic nop4; //No operation
 
 
     h264intra4x4 intra4x4
@@ -206,6 +211,7 @@ module h264topsim();
     (
 		.CLK(clk),
 		.NEWSLICE(top_NEWSLICE),
+        .LASTSLICE(1'b0), //Not Used
 		.SINTRA(1'b1),	
 		.MINTRA(1'b1) ,
 		.LSTROBE(intra4x4_STROBEO),
@@ -238,10 +244,15 @@ module h264topsim();
 	assign recon_BSTROBEI = intra4x4_STROBEO | intra8x8cc_STROBEO;
 	assign recon_BASEI = intra4x4_STROBEO ? intra4x4_BASEO : intra8x8cc_BASEO;
 
-    h264dctransform dctransform
+    h264dctransform #
+    (
+        .TOGETHER(1)
+    )
+    dctransform
     (
         .CLK2(clk2), 
-        .RESET(top_NEWSLICE), 
+        .RESET(top_NEWSLICE),
+        .READYI(nop3),
         .ENABLE(intra8x8cc_DCSTROBEO),
         .XXIN(intra8x8cc_DCDATAO), 
         .VALID(dctransform_VALID), 
@@ -263,13 +274,14 @@ module h264topsim();
 		.VALID(quantise_VALID)
 	);
 
-	assign quantise_YNIN = coretransform_VALID ? $signed(coretransform_YNOUT) : dctransform_YYOUT;
+	assign quantise_YNIN = coretransform_VALID ? {{2{coretransform_YNOUT[13]}}, coretransform_YNOUT} : dctransform_YYOUT;
 	assign quantise_ENABLE = coretransform_VALID | dctransform_VALID;
 
     h264dctransform invdctransform
     (
         .CLK2(clk2), 
         .RESET(top_NEWSLICE), 
+        .READYI(nop4),
         .ENABLE(invdctransform_ENABLE),
         .XXIN(invdctransform_ZIN), 
         .VALID(invdctransform_VALID), 
@@ -279,22 +291,27 @@ module h264topsim();
 
     assign invdctransform_ENABLE = quantise_VALID & quantise_DCCO;
 	assign invdctransform_READY = dequantise_LAST & xbuffer_CCIN;
-	assign invdctransform_ZIN = $signed(quantise_ZOUT);
+	assign invdctransform_ZIN = {{4{quantise_ZOUT[11]}}, quantise_ZOUT};
 
-    h264dequantise h264dequantise
+    h264dequantise #
+    (
+        .LASTADVANCE(2)
+    )
+    h264dequantise
 	(
 		.CLK(clk2),
 		.ENABLE(dequantise_ENABLE),
 		.QP(qp),
 		.ZIN(dequantise_ZIN),
 		.DCCI(invdctransform_VALID),
+        .DCCO(nop1),
 		.LAST(dequantise_LAST),
 		.WOUT(dequantise_WOUT),
 		.VALID(dequantise_VALID)
 	);
 
 	assign dequantise_ENABLE = quantise_VALID & ~quantise_DCCO;
-	assign dequantise_ZIN = !invdctransform_VALID ? $signed(quantise_ZOUT) : invdctransform_YYOUT;
+	assign dequantise_ZIN = !invdctransform_VALID ? {{4{quantise_ZOUT[11]}}, quantise_ZOUT} : invdctransform_YYOUT;
 
     h264invtransform invtransform
 	(
@@ -346,6 +363,7 @@ module h264topsim();
     (
         .CLK(clk), 
         .CLK2(clk2), 
+        .VS(nop2),
         .ENABLE(cavlc_ENABLE), 
         .READY(cavlc_READY), 
         .VIN(cavlc_VIN),
@@ -427,16 +445,17 @@ module h264topsim();
     assign cavlc_NIN = xbuffer_NV==1 ? ninl : xbuffer_NV==2 ? nint : xbuffer_NV==3 ? ninsum[5:1] : '0;
 	assign ninsum = {1'b0, ninl} + {1'b0, nint} + 1;
 
-    initial 
+    initial
     begin
-        clk2 = 0;
-        forever #5 clk2 = ~clk2;
-    end
-
-    initial 
-    begin
-        clk = 0;
-        forever #10 clk = ~clk;
+        forever 
+        begin
+            clk2 = 0;
+            #5;
+            clk2 = 1;
+            clk = ~clk;
+            #5;
+        end
+       
     end
 
 
@@ -520,8 +539,14 @@ module h264topsim();
                     begin
                         for (j = 0; j <= 3; j++)
                         begin
-                            intra4x4_DATAI = {yvideo[x+3][y], yvideo[x+2][y], yvideo[x+1][y], yvideo[x][y]};
-                            @(posedge clk);
+                            intra4x4_DATAI = 
+                            {
+                                yvideo[x+3][y], 
+                                yvideo[x+2][y], 
+                                yvideo[x+1][y], 
+                                yvideo[x][y]
+                            };
+                            @(posedge clk2);
                             x = x + 4;
                         end
                         x = x - 16;	
@@ -550,17 +575,29 @@ module h264topsim();
                 begin
                     @(posedge clk2);
                     intra8x8cc_STROBEI = 1;
-                    for (j = 0; j < 3; j++)
+                    for (j = 0; j <= 3; j++)
                     begin
-                        for (i = 0; i < 1; i++)
+                        for (i = 0; i <= 1; i++)
                         begin
                             if (cuv == 0)
                             begin
-                                intra8x8cc_DATAI = {uvideo[cx+i*4+3][cy], uvideo[cx+i*4+2][cy], uvideo[cx+i*4+1][cy], uvideo[cx+i*4][cy]};
+                                intra8x8cc_DATAI = 
+                                {
+                                    uvideo[cx+i*4+3][cy], 
+                                    uvideo[cx+i*4+2][cy], 
+                                    uvideo[cx+i*4+1][cy], 
+                                    uvideo[cx+i*4][cy]
+                                };
                             end
                             else
                             begin
-                                intra8x8cc_DATAI = {vvideo[cx+i*4+3][cy], vvideo[cx+i*4+2][cy], vvideo[cx+i*4+1][cy], vvideo[cx+i*4][cy]};
+                                intra8x8cc_DATAI = 
+                                {
+                                    vvideo[cx+i*4+3][cy], 
+                                    vvideo[cx+i*4+2][cy], 
+                                    vvideo[cx+i*4+1][cy], 
+                                    vvideo[cx+i*4][cy]
+                                };
                             end
                             @(posedge clk2);
                         end
@@ -594,7 +631,7 @@ module h264topsim();
             begin
                 wait (xbuffer_DONE == 1);
             end
-            for (w = 0; w < 32; w++)
+            for (w = 1; w <= 32; w++)
             begin
 			    @(posedge clk);
             end
@@ -611,13 +648,46 @@ module h264topsim();
             @(posedge clk);
             @(posedge clk);
 		end
+
         $display("%d frames processed", framenum);
 
-        $writememh("yvideo.mem", yvideo);
-        $writememh("uvideo.mem", uvideo);
-        $writememh("vvideo.mem", vvideo);
+     $finish;
 
-        $finish;
     end
+
+    integer outb, count;
+
+    localparam hd = 200'haa0000000167420028da0582590000000168ce388000000001;
+    localparam hdsize = 24;
+
+    initial
+    begin
+        outb = $fopen("sample_out.264", "wb");
+
+        for (i = hdsize-1; i >= 0; i--)
+        begin
+            c = hd[ 8*i +: 8 ];
+            $fwrite(outb, c);
+        end
+        forever
+        begin
+            if (tobytes_STROBE)
+            begin
+                $fwrite(outb, tobytes_BYTE);
+                count = count + 1;
+            end
+            if (tobytes_DONE)
+            begin
+                count = 0;
+                $fwrite(outb, 8'h00);
+                $fwrite(outb, 8'h00);
+                $fwrite(outb, 8'h00);
+                $fwrite(outb, 8'h01);
+		    end
+		@(posedge clk);
+	    end
+    end
+
+   
         
 endmodule
