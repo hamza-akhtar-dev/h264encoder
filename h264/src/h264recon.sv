@@ -1,18 +1,18 @@
 module h264recon
-    (
-        input logic CLK2,				// x2 clock
-		// in interface:
-		input logic NEWSLICE,			// reset
-		input logic STROBEI,		    // data here
-		input logic [39:0] DATAI,       // 4x10bit
-		input logic BSTROBEI,           // base data here
-		input logic BCHROMAI,           // set if base is chroma
-		input logic [31:0] BASEI,       // 4x8bit
-		// out interface:
-		output logic STROBEO = 0,	        // data here (luma)
-		output logic CSTROBEO = 0,	        // data here (chroma)
-		output logic [31:0] DATAO = '0
-	);
+(
+    input logic CLK2,				// x2 clock
+    // in interface:
+    input logic NEWSLICE,			// reset
+    input logic STROBEI,		    // data here
+    input logic [39:0] DATAI,       // 4x10bit
+    input logic BSTROBEI,           // base data here
+    input logic BCHROMAI,           // set if base is chroma
+    input logic [31:0] BASEI,       // 4x8bit
+    // out interface:
+    output logic STROBEO = 0,	        // data here (luma)
+    output logic CSTROBEO = 0,	        // data here (chroma)
+    output logic [31:0] DATAO = '0
+);
 
     logic [31:0] basevec [7:0] = '{default: '0};
 

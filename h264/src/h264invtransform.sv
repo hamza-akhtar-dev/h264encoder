@@ -1,11 +1,11 @@
 module h264invtransform
-    (
-        input logic CLK,             // fast io clock
-        input logic ENABLE,          // values input only when this is 1
-        input logic [15:0] WIN,      // input (reverse zigzag order)
-        output logic VALID = '0,          // values output only when this is 1
-        output logic [39:0] XOUT = '0     // 4 x 10bit, first px is lsbs
-    );
+(
+	input logic CLK,             // fast io clock
+	input logic ENABLE,          // values input only when this is 1
+	input logic [15:0] WIN,      // input (reverse zigzag order)
+	output logic VALID = '0,          // values output only when this is 1
+	output logic [39:0] XOUT = '0     // 4 x 10bit, first px is lsbs
+);
 
     // index to the d and f are (y first) as per std d and f
 	logic [15:0] d01 = '0; 

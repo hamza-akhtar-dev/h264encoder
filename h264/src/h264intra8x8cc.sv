@@ -1,4 +1,5 @@
-module h264intra8x8cc (
+module h264intra8x8cc 
+(
     input logic CLK2,
     input logic NEWSLICE,
     input logic NEWLINE, 

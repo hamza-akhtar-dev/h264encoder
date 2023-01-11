@@ -1,4 +1,5 @@
- module h264cavlc (
+module h264cavlc 
+(
     input logic CLK, CLK2, ENABLE,
 	input logic  SIN = 1'b0,
     input logic [11:0] VIN,
@@ -10,7 +11,7 @@
     output logic [4:0] VL = 5'd0,
 	output logic [4:0] NOUT = 5'd0,
     output logic [2:0] XSTATE
- );
+);
 
 	// information collected from input when ENABLE=1
 	// all thse are in the "CLK2" timing domain
