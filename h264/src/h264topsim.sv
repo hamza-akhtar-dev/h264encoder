@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 1;
+    localparam MAXFRAMES    = 300;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
@@ -505,8 +505,8 @@ module h264topsim();
 
             framenum++;
 
-            $display("Frame: %d Succesfully", framenum);
-            $display("Using QP: %d", qp);
+            $display("Frame %2d read succesfully", framenum);
+            $display("Using QP: %2d", qp);
 
             top_NEWLINE = 1;
             top_NEWSLICE = 1;
@@ -566,7 +566,7 @@ module h264topsim();
                                 wait (xbuffer_DONE == 1);
                             end
                             top_NEWLINE = 1;
-                            $display("Newline pulsed, line %d (%d)", y, y*100/IMGHEIGHT);
+                            $display("Newline pulsed Line: %2d Progress: %2d%%", y, y*100/IMGHEIGHT);
                         end
                     end
                 end
@@ -649,9 +649,11 @@ module h264topsim();
             @(posedge clk);
 		end
 
-        $display("%d frames processed", framenum);
+    $display("%2d frames processed", framenum);
 
-     $finish;
+    $fclose(inb);
+    $fclose(outb);
+    $finish;
 
     end
 
@@ -667,22 +669,22 @@ module h264topsim();
         for (i = hdsize-1; i >= 0; i--)
         begin
             c = hd[ 8*i +: 8 ];
-            $fwrite(outb, c);
+            $fwrite(outb, "%c", c);
         end
         forever
         begin
             if (tobytes_STROBE)
             begin
-                $fwrite(outb, tobytes_BYTE);
+                $fwrite(outb, "%c", tobytes_BYTE);
                 count = count + 1;
             end
             if (tobytes_DONE)
             begin
                 count = 0;
-                $fwrite(outb, 8'h00);
-                $fwrite(outb, 8'h00);
-                $fwrite(outb, 8'h00);
-                $fwrite(outb, 8'h01);
+                $fwrite(outb, "%c", 8'b00000000);
+                $fwrite(outb, "%c", 8'b00000000);
+                $fwrite(outb, "%c", 8'b00000000);
+                $fwrite(outb, "%c", 8'b00000001);
 		    end
 		@(posedge clk);
 	    end
