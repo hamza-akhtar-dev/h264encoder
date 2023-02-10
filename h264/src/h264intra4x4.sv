@@ -119,6 +119,7 @@ begin
 
    MODEO = modeoi;
    CHREADY = chreadyii & READYO;
+   
 end
 
 always_ff @( posedge CLK ) 
@@ -130,12 +131,12 @@ begin
 	end
 	else if (NEWLINE) 
 	begin
-			statei <= 6'b000000;
-			lvalid <= 1'b0;
-			state <= '0;
-			STROBEO <= '0;
-			fbpending <= '0;
-	end 
+		statei <= 6'b000000;
+		lvalid <= 1'b0;
+		state <= '0;
+		STROBEO <= '0;
+		fbpending <= '0;
+	end          
 
 	if (NEWSLICE) 
 	begin

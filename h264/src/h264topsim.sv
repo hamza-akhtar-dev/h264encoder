@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 300;
+    localparam MAXFRAMES    = 5;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
@@ -274,7 +274,7 @@ module h264topsim();
 		.VALID(quantise_VALID)
 	);
 
-	assign quantise_YNIN = coretransform_VALID ? {{2{coretransform_YNOUT[13]}}, coretransform_YNOUT} : dctransform_YYOUT;
+	assign quantise_YNIN = coretransform_VALID ? $signed(coretransform_YNOUT) : $signed(dctransform_YYOUT);
 	assign quantise_ENABLE = coretransform_VALID | dctransform_VALID;
 
     h264dctransform invdctransform
@@ -291,7 +291,7 @@ module h264topsim();
 
     assign invdctransform_ENABLE = quantise_VALID & quantise_DCCO;
 	assign invdctransform_READY = dequantise_LAST & xbuffer_CCIN;
-	assign invdctransform_ZIN = {{4{quantise_ZOUT[11]}}, quantise_ZOUT};
+	assign invdctransform_ZIN = $signed(quantise_ZOUT);
 
     h264dequantise #
     (
@@ -311,7 +311,7 @@ module h264topsim();
 	);
 
 	assign dequantise_ENABLE = quantise_VALID & ~quantise_DCCO;
-	assign dequantise_ZIN = !invdctransform_VALID ? {{4{quantise_ZOUT[11]}}, quantise_ZOUT} : invdctransform_YYOUT;
+	assign dequantise_ZIN = !invdctransform_VALID ? $signed(quantise_ZOUT) : $signed(invdctransform_YYOUT);
 
     h264invtransform invtransform
 	(
