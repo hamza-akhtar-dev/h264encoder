@@ -6,11 +6,12 @@ module sad_absolute #
 )
 (
     input logic [PIX_WIDTH-1:0] sad [0:PEX-1][0:PEY-1]
-    output logic [PIX_WIDTH-1:0] absolute_sad
+    //output logic [PIX_WIDTH-1:0] absolute_sad
+    output logic [11:0] S4x4 [0:3][0:3];
 );
 
 logic [PIX_WIDTH-1:0] out0, out1, out2, out3;
-logic [11:0] S4x4 [0:3][0:3];
+//logic [11:0] S4x4 [0:3][0:3];
 
 genvar i, j, l, w;
 
@@ -70,7 +71,6 @@ generate
         l = l + 1;
     end
 endgenerate
-
 
     
 endmodule
