@@ -1,6 +1,6 @@
 module adder_tree # 
 (
-    PIX_WIDTH = 8;
+    PIX_WIDTH = 8
 )
 (
     input logic [PIX_WIDTH-1:0] in1, in2, in3, in4,

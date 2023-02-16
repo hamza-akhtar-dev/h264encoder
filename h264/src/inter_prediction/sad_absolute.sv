@@ -1,28 +1,26 @@
 module sad_absolute #
 (
-    PIX_WIDTH = 8;
-    PEX = 16;
-    PEY = 16;
+    PIX_WIDTH = 8,
+    PEX = 16,
+    PEY = 16
 )
 (
-    input logic [PIX_WIDTH-1:0] sad [0:PEX-1][0:PEY-1]
+    input logic [PIX_WIDTH-1:0] sad [0:PEX-1][0:PEY-1],
     //output logic [PIX_WIDTH-1:0] absolute_sad
-    output logic [11:0] S4x4 [0:3][0:3];
+    output logic [PIX_WIDTH-1:0] S4x4 [0:3][0:3]
 );
 
 logic [PIX_WIDTH-1:0] out0, out1, out2, out3;
-//logic [11:0] S4x4 [0:3][0:3];
+//logic [PIX_WIDTH-1:0] S4x4 [0:3][0:3];
 
-genvar i, j, l, w;
+genvar i, j;
 
 generate
-    l = 0;
     for(i = 0; i < PEX; i = i + 4)
     begin
-        w = 0;
         for(j = 0; j < PEY; j = j + 4)
         begin
-            adder_tree add1
+            adder_tree add0
             (
                 .in1(sad[i][j]),
                 .in2(sad[i+1][j]),
@@ -31,7 +29,7 @@ generate
                 .temp(out0)
             );
 
-            adder_tree add2
+            adder_tree add1
             (
                 .in1(sad[i][j+1]),
                 .in2(sad[i+1][j+1]),
@@ -58,17 +56,15 @@ generate
                 .temp(out3)
             );
 
-            adder_tree add1
+            adder_tree add4
             (
                 .in1(out0),
                 .in2(out1),
                 .in3(out2),
                 .in4(out3),
-                .temp(S4x4[l][w])
+                .temp(S4x4[i/4][j/4])
             );
-            w = w + 1;
         end
-        l = l + 1;
     end
 endgenerate
 
