@@ -5,7 +5,7 @@ module sad_absolute #
     PEY = 16
 )
 (
-    input logic clk, reset, shift_en_4x4,
+    input logic clk, reset, shift_en_4x4, shift_en_8x8,
     input logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1],
     output logic [PIX_WIDTH-1:0] S16x16
     
@@ -21,6 +21,7 @@ logic [PIX_WIDTH-1:0] S16x8 [0:1];
 logic [PIX_WIDTH-1:0] S8x16 [0:1];
 
 logic [PIX_WIDTH-1:0] shifted_S4x4 [0:7];
+logic [PIX_WIDTH-1:0] shifted_S8x8 [0:1];
 
 genvar i, j, k, l, m, n, o, p, q;
 
@@ -220,21 +221,51 @@ generate
     end
 endgenerate
 
+shift_register shift8x8_00 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_8x8), 
+        .in_data(S8x8[0][0]), 
+        .out_data(shifted_S8x8[0])
+    );  
+
+shift_register shift8x8_01 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_8x8), 
+        .in_data(S8x8[0][1]), 
+        .out_data(shifted_S8x8[1])
+    );  
+
 generate
     for (o = 0 ; o < PEY/8; o = o + 1)
     begin
         for (p = 0; p < PEY/16; p = p + 1)
         begin
-            adder sum16x8
-            (   
-                .in1(S8x8[o][p]),
-                .in2(S8x8[o][p+1]),
-                .temp(S16x8[o])
-            );
+            if (o == 0)
+            begin
+                adder sum16x8
+                (   
+                    .in1(shifted_S8x8[p]),
+                    .in2(shifted_S8x8[p+1]),
+                    .temp(S16x8[o])
+                );
+            end
+            else
+            begin
+                adder sum16x8
+                (   
+                    .in1(S8x8[o][p]),
+                    .in2(S8x8[o][p+1]),
+                    .temp(S16x8[o])
+                );
+            end
 
             adder sum8x16
             (
-                .in1(S8x8[p][o]),
+                .in1(shifted_S8x8[o]),
                 .in2(S8x8[p+1][o]),
                 .temp(S8x16[o])
             );

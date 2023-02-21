@@ -6,18 +6,18 @@ module shift_register (
   output logic [7:0] out_data // Output data
 );
 
-  logic [7:0] reg; // Shift register
+  logic [7:0] temp; // Shift register
 
   always_ff @(posedge clk) begin
     if (reset) begin
       // Reset the shift register to all zeroes
-      reg <= 8'b0;
+      temp <= 8'b0;
     end
     else if (shift_en) begin
       // Shift the register to the left
-      reg <= {reg[6:0], in_data};
+      temp <= {temp[6:0], in_data};
     end
   end
 
-  assign out_data = reg; // Output the shifted data
+  assign out_data = temp; // Output the shifted data
 endmodule
