@@ -20,6 +20,8 @@ logic [PIX_WIDTH-1:0] S8x8 [0:1][0:1];
 logic [PIX_WIDTH-1:0] S16x8 [0:1];
 logic [PIX_WIDTH-1:0] S8x16 [0:1];
 
+logic [PIX_WIDTH-1:0] shifted_S4x4 [0:7];
+
 genvar i, j, k, l, m, n, o, p, q;
 
 // calculate all S4x4 components
@@ -75,18 +77,102 @@ generate
         end
     end
 endgenerate
-    
+
+shift_register shift4x4_00 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[0][0]), 
+        .out_data(shifted_S4x4[0])
+    );
+
+shift_register shift4x4_10 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[1][0]), 
+        .out_data(shifted_S4x4[1])
+    );
+
+shift_register shift4x4_20 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[2][0]), 
+        .out_data(shifted_S4x4[2])
+    );    
+
+shift_register shift4x4_30 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[3][0]), 
+        .out_data(shifted_S4x4[3])
+    );
+
+shift_register shift4x4_02 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[0][2]), 
+        .out_data(shifted_S4x4[4])
+    );    
+
+shift_register shift4x4_12 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[1][2]), 
+        .out_data(shifted_S4x4[5])
+    );
+
+shift_register shift4x4_22 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[2][2]), 
+        .out_data(shifted_S4x4[6])
+    );
+
+shift_register shift4x4_32 
+    (
+        .clk(clk), 
+        .reset(reset), 
+        .shift_en(shift_en_4x4), 
+        .in_data(S4x4[3][2]), 
+        .out_data(shifted_S4x4[7])
+    );    
+
 generate
     for (k = 0; k < PEY/4; k = k + 2)
     begin
         for (l = 0; l < PEX/4; l = l + 1)
         begin
-            adder sum4x8
-            (
-                .in1(S4x4[l][k]),
-                .in2(S4x4[l][k+1]),
-                .temp(S4x8[k/2][l])
-            );
+            if (k == 2)
+            begin
+                adder sum4x8
+                (
+                    .in1(shifted_S4x4[l+3]),
+                    .in2(S4x4[l][k+1]),
+                    .temp(S4x8[k/2][l])
+                );
+            end
+            else
+            begin
+                adder sum4x8
+                (
+                    .in1(shifted_S4x4[l]),
+                    .in2(S4x4[l][k+1]),
+                    .temp(S4x8[k/2][l])
+                );
+            end
 
             adder sum8x4
             (
