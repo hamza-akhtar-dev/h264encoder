@@ -159,7 +159,7 @@ generate
             begin
                 adder sum4x8
                 (
-                    .in1(shifted_S4x4[l+3]),
+                    .in1(shifted_S4x4[l+4]),
                     .in2(S4x4[l][k+1]),
                     .temp(S4x8[k/2][l])
                 );
@@ -174,12 +174,33 @@ generate
                 );
             end
 
-            adder sum8x4
-            (
-                .in1(S4x4[k][l]),
-                .in2(S4x4[k+1][l]),
-                .temp(S8x4[l][k/2])
-            );
+            if (l == 0 )
+            begin
+                adder sum8x4
+                (
+                    .in1(shifted_S4x4[k]),
+                    .in2(shifted_S4x4[k+1]),
+                    .temp(S8x4[l][k/2])
+                );
+            end
+            else if (l == 2)
+            begin
+                adder sum8x4
+                (
+                    .in1(shifted_S4x4[k+4]),
+                    .in2(shifted_S4x4[k+5]),
+                    .temp(S8x4[l][k/2])
+                );
+            end
+            else
+            begin
+                adder sum8x4
+                (
+                    .in1(S4x4[k][l]),
+                    .in2(S4x4[k+1][l]),
+                    .temp(S8x4[l][k/2])
+                );
+            end            
         end
     end
 endgenerate
