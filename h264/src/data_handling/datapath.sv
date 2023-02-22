@@ -1,7 +1,6 @@
 module datpath #( WIDTH= 352, HEIGHT = 288)(input logic clk, reset,
-			   input logic [1:0] x_count, 
-			   input logic y_count,
-			   output logic stop, x_16, y_16);
+			   input logic [1:0] x_count, y_count,
+			   output logic stop=0, x_16=0, y_16=0);
 
 	
 integer x=0, y=0;
@@ -11,17 +10,15 @@ always_ff@(posedge clk) begin
 	end
 	else begin
 		
-		// When to stop
-		if ( x == WIDTH && y == HEIGHT ) begin
-			stop = 1'b1;
-		end
-		
 		// Y-Counter
-		if (y_count == 1'b0) begin
+		if (y_count == 2'b00) begin
 			y = y - 16;
 		end
-		else begin
+		else if (y_count == 2'b11) begin
 			y = y + 1;
+		end
+		else begin
+			y = y;
 		end
 		
 		// X-Counter
@@ -33,6 +30,18 @@ always_ff@(posedge clk) begin
 		end
 		else if (x_count == 2'b11) begin
 			x = x + 16;
+		end	
+		else begin
+			x = x;
+		end
+		
+	end	
+end
+
+always_comb begin 
+		// When to stop
+		if ( x == WIDTH && y == HEIGHT ) begin
+			stop = 1'b1;
 		end
 		
 		//
@@ -42,7 +51,7 @@ always_ff@(posedge clk) begin
 		else begin
 			x_16 = 1'b0;
 		end
-		
+
 		//
 		if (y%16 == 0) begin
 			y_16 = 1'b1;
@@ -50,6 +59,5 @@ always_ff@(posedge clk) begin
 		else begin
 			y_16 = 1'b0;
 		end
-	end	
 end
 endmodule

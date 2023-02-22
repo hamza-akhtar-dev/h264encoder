@@ -1,5 +1,5 @@
 module controller(input logic clk, reset, start, stop, x_16, y_16,
-output logic [1:0] x_count, output logic y_count);
+output logic [1:0] x_count=2'b01, y_count=2'b01);
 
 	localparam S0 = 2'b00;
 	localparam S1 = 2'b01;
@@ -23,6 +23,7 @@ output logic [1:0] x_count, output logic y_count);
 		S0: begin	
 			if (start) begin
 				ns = S1; 
+				x_count = 2'b10;
 			end
 		end
 		S1: begin
@@ -39,7 +40,7 @@ output logic [1:0] x_count, output logic y_count);
 		end
 		S2: begin
 			x_count = 2'b00;
-			y_count = 1'b1;
+			y_count = 2'b11;
 			if ( y_16 ) begin
 				ns = S3;
 			end
@@ -49,7 +50,7 @@ output logic [1:0] x_count, output logic y_count);
 		end
 		S3: begin
 			x_count = 2'b11;
-			y_count = 1'b0;
+			y_count = 2'b00;
 			ns = S1;
 		end
 		endcase
