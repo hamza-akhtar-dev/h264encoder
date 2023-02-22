@@ -7,6 +7,7 @@ module sad_absolute #
 (
     input logic clk, rst,
     input logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1],
+    // output ports
     output logic [PIX_WIDTH-1:0] S4x4_00, S4x4_01, S4x4_02, S4x4_03, S4x4_10, S4x4_11, S4x4_12, S4x4_13, S4x4_20, S4x4_21,
                                  S4x4_22, S4x4_23, S4x4_30, S4x4_31, S4x4_32, S4x4_33, S4x8_00, S4x8_01, S4x8_02, S4x8_03,
                                  S4x8_10, S4x8_11, S4x8_12, S4x8_13, S8x4_00, S8x4_10, S8x4_20, S8x4_30, S8x4_01, S8x4_11,
