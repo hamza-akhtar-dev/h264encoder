@@ -1,63 +1,42 @@
-module datpath #( WIDTH= 352, HEIGHT = 288)(input logic clk, reset,
-			   input logic [1:0] x_count, y_count,
-			   output logic stop=0, x_16=0, y_16=0);
+module datapath 
+(
+	input logic rst, clk, start,
+	output logic [31:0] x, y
+);
 
-	
-integer x=0, y=0;
-always_ff@(posedge clk) begin
-	if (reset) begin
-		x=0; y=0;
-	end
-	else begin
-		
-		// Y-Counter
-		if (y_count == 2'b00) begin
-			y = y - 16;
-		end
-		else if (y_count == 2'b11) begin
-			y = y + 1;
-		end
-		else begin
-			y = y;
-		end
-		
-		// X-Counter
-		if (x_count == 2'b00) begin
-			x = x - 16;
-		end
-		else if (x_count == 2'b10) begin
-			x = x + 4;
-		end
-		else if (x_count == 2'b11) begin
-			x = x + 16;
-		end	
-		else begin
-			x = x;
-		end
-		
-	end	
-end
+	logic en_x, incr_x, dcr_x, en_y, dcr_y;
 
-always_comb begin 
-		// When to stop
-		if ( x == WIDTH && y == HEIGHT ) begin
-			stop = 1'b1;
-		end
-		
-		//
-		if (x%16 == 0) begin
-			x_16 = 1'b1;
-		end
-		else begin
-			x_16 = 1'b0;
-		end
+	controller ctrl
+	(
+		.rst(rst), 
+		.clk(clk), 
+		.start(start), 
+		.x(x), 
+		.y(y),
+		.en_x(en_x), 
+		.en_y(en_y), 
+		.dcr_x(dcr_x), 
+		.incr_x(incr_x), 
+		.dcr_y(dcr_y)
+	);
 
-		//
-		if (y%16 == 0) begin
-			y_16 = 1'b1;
-		end
-		else begin
-			y_16 = 1'b0;
-		end
-end
+	x_counter xcnt
+	(
+		.rst(rst), 
+		.clk(clk), 
+		.en_x(en_x), 
+		.incr_x(incr_x), 
+		.dcr_x(dcr_x), 
+		.x(x)
+	);
+
+	y_counter ycnt
+	(
+		.rst(rst), 
+		.clk(clk), 
+		.en_y(en_y), 
+		.dcr_y(dcr_y), 
+		.y(y)
+	);	
+
 endmodule
