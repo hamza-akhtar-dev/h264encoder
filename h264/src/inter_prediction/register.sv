@@ -3,7 +3,7 @@ module register #
     WIDTH = 8
 ) 
 (
-    input clk, rst,
+    input logic clk, rst,
     input logic [WIDTH-1:0] D,
     output logic [WIDTH-1:0] Q
 );
