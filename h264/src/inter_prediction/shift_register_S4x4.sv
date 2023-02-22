@@ -16,7 +16,7 @@ genvar i;
 assign reg_wires[0] = data_in;
 
 generate
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < NUM_OF_REG; i++)
     begin
         register #
         (
@@ -32,6 +32,6 @@ generate
     end
 endgenerate
 
-assign data_out = reg_wires[4];
+assign data_out = reg_wires[NUM_OF_REG];
 
 endmodule
