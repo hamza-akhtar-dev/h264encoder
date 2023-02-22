@@ -1,12 +1,12 @@
 module y_counter
 (
-    input logic reset, clk, en_y, dcr_y, 
+    input logic rst, clk, en_y, dcr_y, 
 	output logic [31:0] y
 );
 
     always_ff @( posedge clk ) 
     begin 
-        if (reset) 
+        if (rst) 
         begin
             y <= 0;
         end

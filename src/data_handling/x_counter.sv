@@ -1,10 +1,10 @@
 module x_counter 
 (
-    input logic clk, rst, en_x, incr_x, dcr_x,
+    input logic rst, clk, en_x, incr_x, dcr_x,
     output logic [31:0] x
 );
 
-    always_ff @( posedge clk | en_x || incr_x || dcr_x ) 
+    always_ff @( posedge clk ) 
     begin 
         if (rst)
         begin
