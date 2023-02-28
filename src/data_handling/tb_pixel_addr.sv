@@ -1,11 +1,15 @@
-`timescale 10ns/10ps
+`timescale 1ns/10ps
 
 module tb_pixel_addr();
 
     logic clk , rst, start;
 
-    tb_pixel_addr dut 
+    logic [31:0] x_out, y_out;
+
+    pixel_addr dut 
     (
+        .x_out(x_out),
+        .y_out(y_out),
         .rst(rst), 
         .clk(clk), 
         .start(start) 
@@ -28,7 +32,13 @@ module tb_pixel_addr();
         start = 1;
         #10
         start = 0;
-        #100;
+        #5000;
+        $finish;
+    end
+
+    initial begin
+        $dumpfile("tb_pixel_addr.vcd");
+        $dumpvars(0, tb_pixel_addr);
     end
 
 endmodule

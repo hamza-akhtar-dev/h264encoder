@@ -5,8 +5,7 @@ module controller #
 )
 (
 	input logic rst, clk, start, 
-	input logic [31:0] x, y,
-	output logic en_x, incr_x, dcr_x, en_y, dcr_y
+	input logic [31:0] x, y
 );
 
 	localparam S0 = 2'b00;
@@ -45,27 +44,6 @@ module controller #
 			end
 			S1: 
 			begin
-				if(x % 16 == 0)
-				begin
-					en_x = 0;
-					dcr_x = 1;
-					en_y = 1;
-				end
-				else if(x % 16 != 0)
-				begin
-					en_x = 1;
-					dcr_x = 0;
-					en_y = 0;
-				end
-				else if(y % 16 == 0)
-				begin
-					dcr_y = 1;
-
-				end
-				else 
-				begin
-					dcr_y = 1;
-				end
 			end
 		endcase
 	end

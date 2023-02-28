@@ -4,36 +4,24 @@ module pixel_addr
     output logic [31:0] x_out, y_out
 );
 
-    logic en_x, incr_x, dcr_x, en_y, dcr_y;
+    logic stop;
 
     controller ctrl
 	(
 		.rst(rst), 
-		.clk(clk), 
+		.clk(clk),
 		.start(start), 
-		.x(x), 
-		.y(y),
-		.en_x(en_x), 
-		.en_y(en_y), 
-		.dcr_x(dcr_x), 
-		.incr_x(incr_x), 
-		.dcr_y(dcr_y)
+		.x(x_out), 
+		.y(y_out)
 	);
 
     datapath dp
     (
         .rst(rst), 
         .clk(clk), 
-        .en_x(en_x), 
-		.en_y(en_y), 
-		.dcr_x(dcr_x), 
-		.incr_x(incr_x), 
-		.dcr_y(dcr_y),
-	    .x(x), 
-        .y(y)
+	    .x(x_out), 
+        .y(y_out)
+        .stop(stop)
     );
-
-    assign x_out = x;
-    assign y_out = y;
     
 endmodule
