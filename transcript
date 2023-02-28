@@ -1,9 +1,0 @@
-# vsim -c -voptargs="+acc" tb_pixel_addr -do "run -all" 
-# Start time: 02:34:50 on Feb 23,2023
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: ./src/data_handling/tb_pixel_addr.sv(7): (vopt-2137) Instantiating 'dut' has potential unbounded recursion.
-#         Region: tb_pixel_addr.dut.dut
-# Recursion Error : Found recursive path . Exiting ...
-# Error loading design
-# End time: 02:34:51 on Feb 23,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
