@@ -4,8 +4,9 @@ module controller #
 	parameter WIDTH = 288
 )
 (
-	input logic rst, clk, start, 
-	input logic [31:0] x, y
+	input logic rst, clk, 
+	input logic stop, start,
+	output logic hold
 );
 
 	localparam S0 = 2'b00;
@@ -44,6 +45,28 @@ module controller #
 			end
 			S1: 
 			begin
+				if(stop)
+				begin
+					ns = S0;
+				end
+				else
+				begin
+					ns = S1;
+				end
+			end
+		endcase
+	end
+
+	always_comb 
+	begin	
+		case(cs)
+			S0: 
+			begin	
+				hold = 1;
+			end
+			S1: 
+			begin
+				hold = 0;
 			end
 		endcase
 	end

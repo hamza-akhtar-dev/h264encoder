@@ -10,17 +10,18 @@ module pixel_addr
 	(
 		.rst(rst), 
 		.clk(clk),
+        .stop(stop),
 		.start(start), 
-		.x(x_out), 
-		.y(y_out)
+        .hold(hold)
 	);
 
     datapath dp
     (
         .rst(rst), 
-        .clk(clk), 
+        .clk(clk),
+        .hold(hold),
 	    .x(x_out), 
-        .y(y_out)
+        .y(y_out),
         .stop(stop)
     );
     
