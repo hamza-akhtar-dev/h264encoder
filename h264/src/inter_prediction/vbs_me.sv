@@ -1,8 +1,8 @@
 module vbs_me #
 (
     PIX_WIDTH = 8,
-    PEX = 4,
-    PEY = 4
+    PEX = 16,
+    PEY = 16
 ) 
 (
     input logic clk, rst,
