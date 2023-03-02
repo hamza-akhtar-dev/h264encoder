@@ -12,8 +12,7 @@ module test_sad_4x4 #
     output logic [PIX_WIDTH-1:0] S4x4
 );
 
-logic sad[0:PEX-1][0:PEY-1];
-logic [PIX_WIDTH-1:0] out0, out1, out2, out3;
+logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1];
 
 vbs_me #
     (
@@ -40,7 +39,7 @@ sad_absolute_withoutshift #
         .clk(clk),
         .rst(rst),
         .sad(sad),
-        .S16x16_0(S4x4)
+        .S4x4_00(S4x4)
     );
 
 endmodule

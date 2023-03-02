@@ -8,11 +8,11 @@ module sad_absolute_withoutshift #
     input logic clk, rst,
     input logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1],
     // output ports
-    output logic [PIX_WIDTH-1:0] S16x16_0  
+    output logic [PIX_WIDTH-1:0] S4x4_00 
     //S4x4_00, S4x4_01, S4x4_02, S4x4_03, S4x4_10, S4x4_11, S4x4_12, S4x4_13, S4x4_20, S4x4_21,
     //S4x4_22, S4x4_23, S4x4_30, S4x4_31, S4x4_32, S4x4_33, S4x8_00, S4x8_01, S4x8_02, S4x8_03,
     //S4x8_10, S4x8_11, S4x8_12, S4x8_13, S8x4_00, S8x4_10, S8x4_20, S8x4_30, S8x4_01, S8x4_11,
-    //S8x4_21, S8x4_31, S8x8_00, S8x8_10, S8x8_01, S8x8_11, S16x8_0, S16x8_1, S8x16_0, S8x16_1,
+    //S8x4_21, S8x4_31, S8x8_00, S8x8_10, S8x8_01, S8x8_11, S16x8_0, S16x8_1, S8x16_0, S8x16_1, S16x16_0
                                  
 );
 
@@ -87,20 +87,22 @@ generate
     begin
         for (l = 0; l < PEY/4; l = l + 1)
         begin
-            adder sum4x8
-            (
-                .in1(S4x4[k][l]),
-                .in2(S4x4[k+1][l]),
-                .temp(S4x8[k/2][l])
-            );
+            if ((PEX/4) != 1)
+            begin
+                adder sum4x8
+                (
+                    .in1(S4x4[k][l]),
+                    .in2(S4x4[k+1][l]),
+                    .temp(S4x8[k/2][l])
+                );
             
-            adder sum8x4
-            (
-                .in1(S4x4[l][k]),
-                .in2(S4x4[l][k+1]),
-                .temp(S8x4[l][k/2])
-            );
-                      
+                adder sum8x4
+                (
+                    .in1(S4x4[l][k]),
+                    .in2(S4x4[l][k+1]),
+                    .temp(S8x4[l][k/2])
+                );
+            end          
         end
     end
 endgenerate
@@ -110,12 +112,15 @@ generate
     begin
         for (n = 0; n < PEX/4; n = n + 2)
         begin
-            adder sum8x8
-            (
-                .in1(S8x4[n][m]),
-                .in2(S8x4[n+1][m]),
-                .temp(S8x8[n/2][m])
-            );
+            if ((PEY/8) != 1)
+            begin
+                adder sum8x8
+                (
+                    .in1(S8x4[n][m]),
+                    .in2(S8x4[n+1][m]),
+                    .temp(S8x8[n/2][m])
+                );
+            end
         end
     end
 endgenerate 
@@ -125,26 +130,22 @@ generate
     begin
         for (p = 0; p < PEY/16; p = p + 1)
         begin
-            adder sum16x8
-                (   
-                    .in1(S8x8[o][p]),
-                    .in2(S8x8[o][p+1]),
-                    .temp(S16x8[o])
-                );
-        
-            adder sum16x8
-                (   
-                    .in1(S8x8[o][p]),
-                    .in2(S8x8[o][p+1]),
-                    .temp(S16x8[o])
-                );
+            if ((PEY/16) != 1)
+            begin
+                adder sum16x8
+                    (   
+                        .in1(S8x8[o][p]),
+                        .in2(S8x8[o][p+1]),
+                        .temp(S16x8[o])
+                    );
             
-            adder sum8x16
-            (
-                .in1(S8x8[p][o]),
-                .in2(S8x8[p+1][o]),
-                .temp(S8x16[o])
-            );
+                adder sum8x16
+                (
+                    .in1(S8x8[p][o]),
+                    .in2(S8x8[p+1][o]),
+                    .temp(S8x16[o])
+                );
+            end
         end
     end
 endgenerate
@@ -152,16 +153,19 @@ endgenerate
 generate
     for (q = 0; q < PEY/16; q = q + 1)
     begin
-        adder sum16x16
-        (
-            .in1(S8x16[q]),
-            .in2(S8x16[q+1]),
-            .temp(S16x16)  
-        );
+        if ((PEY/16) != 1)
+        begin
+            adder sum16x16
+            (
+                .in1(S8x16[q]),
+                .in2(S8x16[q+1]),
+                .temp(S16x16)  
+            );
+        end
     end
 endgenerate
 
-//assign S4x4_00 = S4x4[0][0];
+assign S4x4_00 = S4x4[0][0];
 //assign S4x4_01 = S4x4[0][1];
 //assign S4x4_02 = S4x4[0][2];
 //assign S4x4_03 = S4x4[0][3];
@@ -206,6 +210,6 @@ endgenerate
 //assign S8x16_0 = S8x16[0];
 //assign S8x16_1 = S8x16[1];
 
-assign S16x16_0 = S16x16;
+//assign S16x16_0 = S16x16;
 
 endmodule
