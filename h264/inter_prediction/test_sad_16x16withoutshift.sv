@@ -16,9 +16,9 @@ module test_sad_16x16withoutshift #
                                  S16x16_0 
 );
 
-logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1];
+    logic [PIX_WIDTH-1:0] sad[0:PEX-1][0:PEY-1];
 
-vbs_me #
+    vbs_me #
     (
         .PIX_WIDTH(PIX_WIDTH),
         .PEX(PEX),
@@ -33,13 +33,14 @@ vbs_me #
         .ref_bram(ref_bram),
         .sad(sad)
     );
-sad16x16_withoutshift #
+
+    sad16x16_withoutshift #
     (
         .PIX_WIDTH(PIX_WIDTH),
         .PEX(PEX),
         .PEY(PEY)
-    )
-    sad16x16
+    ) 
+    sad16x16 
     (
         .clk(clk),
         .rst(rst),
