@@ -2,3 +2,5 @@ work/
 synth/
 tb_pixel_addr.vcd
 transcript
+sample_int.yuv
+sample_out.264
