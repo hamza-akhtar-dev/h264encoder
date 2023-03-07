@@ -1,2 +1,2 @@
- vlog ./src/data_handling/*.sv
+ vlog ./h264/data_handling/*.sv
  

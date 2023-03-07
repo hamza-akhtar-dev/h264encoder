@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 5;
+    localparam MAXFRAMES    = 20;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
@@ -151,7 +151,6 @@ module h264topsim();
     logic nop2; //No operation
     logic nop3; //No operation
     logic nop4; //No operation
-
 
     h264intra4x4 intra4x4
     (
