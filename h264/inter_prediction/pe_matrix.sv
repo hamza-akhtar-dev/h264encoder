@@ -15,8 +15,8 @@ module pe_matrix #
 
     logic [8*MACRO_DIM-1:0] wire_ad [0:MACRO_DIM-1];
 
-    logic [7:0] wire_spr;
-    logic [7:0] wire_cpr;
+    logic [7:0] wire_spr [0:MACRO_DIM-1];
+    logic [7:0] wire_cpr [0:MACRO_DIM-1];
 
     genvar i;
 
@@ -31,8 +31,8 @@ module pe_matrix #
                 .en_cpr        ( en_cpr          ),
                 .pixel_spr_in  ( pixel_spr_in[i] ),
                 .pixel_cpr_in  ( pixel_cpr_in[i] ),
-                .pixel_spr_out ( wire_spr        ),
-                .pixel_cpr_out ( wire_cpr        ),
+                .pixel_spr_out ( wire_spr[i]     ),
+                .pixel_cpr_out ( wire_cpr[i]     ),
                 .ad            ( wire_ad[i]      )
             );
         end
