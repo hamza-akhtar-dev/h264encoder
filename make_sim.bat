@@ -1,1 +1,0 @@
-vsim -c -voptargs=+acc tb_pixel_addr -do "run -all"
