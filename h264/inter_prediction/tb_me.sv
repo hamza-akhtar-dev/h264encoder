@@ -13,7 +13,7 @@ module tb_me #
     integer i, j;
 
     logic [7:0] reference_picture [0:IMG_WIDTH*IMG_HEIGHT-1];
-    logic [7:0] current_picture [0:IMG_WIDTH*IMG_HEIGHT-1];
+    logic [7:0] current_picture   [0:IMG_WIDTH*IMG_HEIGHT-1];
 
     logic rst_n;
     logic clk;
@@ -37,13 +37,13 @@ module tb_me #
 
     me ins_me
     (
-        .rst_n(rst_n),
-        .clk(clk),
-        .en_spr(en_spr),
-        .en_cpr(en_cpr),
-        .pixel_spr_in(pixel_spr_in),
-        .pixel_cpr_in(pixel_cpr_in),
-        .sad(sad)
+        .rst_n        ( rst_n        ),
+        .clk          ( clk          ),
+        .en_spr       ( en_spr       ),
+        .en_cpr       ( en_cpr       ),
+        .pixel_spr_in ( pixel_spr_in ),
+        .pixel_cpr_in ( pixel_cpr_in ),
+        .sad          ( sad          )
     );
 
     initial
@@ -64,7 +64,7 @@ module tb_me #
         begin
             for(j = 0; j < MACRO_DIM; j = j + 1)
             begin
-                pixel_cpr_in[j] = current_picture[j*IMG_HEIGHT+i];
+                pixel_cpr_in[j] = current_picture  [j*IMG_HEIGHT+i];
                 pixel_spr_in[j] = reference_picture[j*IMG_HEIGHT+i];
             end
             @(posedge clk);

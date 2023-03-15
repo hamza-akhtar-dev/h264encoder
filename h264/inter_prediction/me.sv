@@ -17,21 +17,21 @@ module me #
 
     pe_matrix ins_pe_matrix 
     (
-        .rst_n(rst_n),
-        .clk(clk),
-        .en_spr(en_spr),
-        .en_cpr(en_cpr),
-        .pixel_spr_in(pixel_spr_in),
-        .pixel_cpr_in(pixel_cpr_in),
-        .ad(wire_ad)
+        .rst_n        ( rst_n        ),
+        .clk          ( clk          ),
+        .en_spr       ( en_spr       ),
+        .en_cpr       ( en_cpr       ),
+        .pixel_spr_in ( pixel_spr_in ),
+        .pixel_cpr_in ( pixel_cpr_in ),
+        .ad           ( wire_ad      )
     );
 
     sum ins_sum
     (
-        .rst_n(rst_n),
-        .clk(clk),
-        .ad(wire_ad),
-        .sum(sad)
+        .rst_n ( rst_n   ),
+        .clk   ( clk     ),
+        .ad    ( wire_ad ),
+        .sum   ( sad     )
     );
     
 endmodule
