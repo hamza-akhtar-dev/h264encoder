@@ -48,12 +48,12 @@ module tb_me #
 
     initial
     begin
-        rst_n = 1;
-
-        @(posedge clk);
-        @(posedge clk);
-
         rst_n = 0;
+
+        @(posedge clk);
+        @(posedge clk);
+
+        rst_n = 1;
 
         @(posedge clk);
 
@@ -62,7 +62,7 @@ module tb_me #
 
         for(i = 0; i < IMG_HEIGHT; i = i + 1)
         begin
-            for(j = 0; j < IMG_WIDTH; j = j + 1)
+            for(j = 0; j < MACRO_DIM; j = j + 1)
             begin
                 pixel_cpr_in[j] = current_picture[j*IMG_HEIGHT+i];
                 pixel_spr_in[j] = reference_picture[j*IMG_HEIGHT+i];

@@ -18,6 +18,8 @@ module pe_matrix #
     logic [7:0] wire_spr [0:MACRO_DIM-1];
     logic [7:0] wire_cpr [0:MACRO_DIM-1];
 
+    logic [7:0] debug;
+
     genvar i;
 
     generate
@@ -37,6 +39,8 @@ module pe_matrix #
             );
         end
     endgenerate
+
+    assign debug = pixel_cpr_in[0];
 
     generate
         for (i = 0; i < MACRO_DIM; i = i + 1) 
