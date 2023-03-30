@@ -17,11 +17,10 @@ module tb_me #
 
     logic rst_n;
     logic clk;
-    logic en_spr;
-    logic en_cpr;
+    logic start;
     logic [7:0]  pixel_spr_in [0:MACRO_DIM-1];
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
-    logic [15:0] sad, min_sad;
+    logic [15:0] min_sad;
 
     initial
     begin
@@ -39,17 +38,17 @@ module tb_me #
     (
         .rst_n        ( rst_n        ),
         .clk          ( clk          ),
-        .en_spr       ( en_spr       ),
-        .en_cpr       ( en_cpr       ),
+        .start        ( start        ),
         .pixel_spr_in ( pixel_spr_in ),
         .pixel_cpr_in ( pixel_cpr_in ),
-        .sad          ( sad          ),
+        .valid        ( valid        ),
         .min_sad      ( min_sad      )
     );
 
     initial
     begin
         rst_n = 0;
+        start = 0;
 
         @(posedge clk);
         @(posedge clk);
@@ -58,8 +57,9 @@ module tb_me #
 
         @(posedge clk);
 
-        en_spr = 1;
-        en_cpr = 1;
+        start = 1;
+
+        @(posedge clk);
 
         for(i = 0; i < IMG_HEIGHT; i = i + 1)
         begin

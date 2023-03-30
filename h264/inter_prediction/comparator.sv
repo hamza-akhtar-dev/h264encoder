@@ -9,7 +9,7 @@ module comparator
     begin
         if (!rst_n)
         begin
-            min_sad <= 16'hff;
+            min_sad <= 16'hffff;
         end
         else
         begin
