@@ -21,7 +21,7 @@ module tb_me #
     logic en_cpr;
     logic [7:0]  pixel_spr_in [0:MACRO_DIM-1];
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
-    logic [15:0] sad;
+    logic [15:0] sad, min_sad;
 
     initial
     begin
@@ -43,7 +43,8 @@ module tb_me #
         .en_cpr       ( en_cpr       ),
         .pixel_spr_in ( pixel_spr_in ),
         .pixel_cpr_in ( pixel_cpr_in ),
-        .sad          ( sad          )
+        .sad          ( sad          ),
+        .min_sad      ( min_sad      )
     );
 
     initial

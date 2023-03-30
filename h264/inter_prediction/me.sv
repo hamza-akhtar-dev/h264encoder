@@ -10,7 +10,8 @@ module me #
     input  logic        en_cpr,
     input  logic [7:0]  pixel_spr_in [0:MACRO_DIM-1],
     input  logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1],
-    output logic [15:0] sad
+    output logic [15:0] sad,
+    output logic [15:0] min_sad
 );
 
     logic [8*(MACRO_DIM**2)-1:0] wire_ad;
@@ -34,4 +35,11 @@ module me #
         .sum   ( sad     )
     );
     
+    comparator ins_comparator
+    (
+        .clk(clk),
+        .rst_n(rst_n),
+        .sad     ( sad     ),
+        .min_sad ( min_sad )
+    );
 endmodule
