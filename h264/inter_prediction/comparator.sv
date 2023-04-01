@@ -2,6 +2,7 @@ module comparator
 (
     input  logic        clk,
     input  logic        rst_n,
+    input  logic        valid,
     input  logic [15:0] sad, 
     output logic [15:0] min_sad
 );
@@ -15,7 +16,14 @@ module comparator
         begin
             if (sad < min_sad) 
             begin
-                min_sad <= sad;
+                if(valid)
+                begin
+                    min_sad <= sad;
+                end
+                else
+                begin
+                    min_sad <= min_sad;
+                end
             end
             else
             begin

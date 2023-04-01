@@ -19,6 +19,7 @@ module me #
         .clk(clk),
         .en_spr(en_spr),
         .en_cpr(en_cpr),
+        .valid(valid),
         .pixel_spr_in(pixel_spr_in),
         .pixel_cpr_in(pixel_cpr_in),
         .min_sad(min_sad)

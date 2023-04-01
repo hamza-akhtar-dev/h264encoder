@@ -8,6 +8,7 @@ module datapath_me #
     input  logic        clk,
     input  logic        en_spr,
     input  logic        en_cpr,
+    input  logic        valid,
     input  logic [7:0]  pixel_spr_in [0:MACRO_DIM-1],
     input  logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1],
     output logic [15:0] min_sad
@@ -39,6 +40,7 @@ module datapath_me #
     (
         .clk    ( clk      ),
         .rst_n  ( rst_n    ),
+        .valid  ( valid    ),
         .sad    ( wire_sad ),
         .min_sad( min_sad  )
     );

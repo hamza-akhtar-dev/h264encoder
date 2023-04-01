@@ -14,7 +14,7 @@ module controller_me
     localparam S2 = 2'b10;
 
     logic       en_count;
-    logic [3:0] count;
+    logic [4:0] count;
 
     logic [1:0] state;
     logic [1:0] next_state;
@@ -50,7 +50,7 @@ module controller_me
             end
             S1: 
             begin
-                if(count == 4'hf)
+                if(count == MACRO_DIM + 4)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
                 begin
                     next_state = S2;
                 end
@@ -101,7 +101,7 @@ module controller_me
         begin
             count <= 0;
         end
-        else if(count_en)
+        else if(en_count)
         begin
             count <= count + 1;
         end
