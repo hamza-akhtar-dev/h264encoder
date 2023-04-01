@@ -17,6 +17,7 @@ module me #
     (
         .rst_n(rst_n),
         .clk(clk),
+        .sel(sel),
         .en_spr(en_spr),
         .en_cpr(en_cpr),
         .valid(valid),
@@ -31,7 +32,8 @@ module me #
         .clk(clk), 
         .start(start),
         .en_cpr(en_cpr), 
-        .en_spr(en_spr), 
+        .en_spr(en_spr),
+        .sel(sel),
         .valid(valid)
     );
 

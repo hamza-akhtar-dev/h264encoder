@@ -6,7 +6,7 @@ module controller_me
 ) 
 (
     input logic rst_n, clk, start,
-    output logic en_cpr, en_spr, valid
+    output logic sel, en_cpr, en_spr, valid
 );
 
     localparam S0 = 2'b00;
@@ -18,6 +18,8 @@ module controller_me
 
     logic [1:0] state;
     logic [1:0] next_state;
+
+    assign sel = 0;
 
     //State Machine
 

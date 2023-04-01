@@ -6,6 +6,7 @@ module datapath_me #
 (
     input  logic        rst_n,
     input  logic        clk,
+    input  logic        sel,
     input  logic        en_spr,
     input  logic        en_cpr,
     input  logic        valid,
@@ -21,6 +22,7 @@ module datapath_me #
     (
         .rst_n        ( rst_n        ),
         .clk          ( clk          ),
+        .sel          ( sel          ),
         .en_spr       ( en_spr       ),
         .en_cpr       ( en_cpr       ),
         .pixel_spr_in ( pixel_spr_in ),
