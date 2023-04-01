@@ -61,6 +61,8 @@ module tb_me #
 
         @(posedge clk);
 
+        start = 0;
+
         for(i = 0; i < IMG_HEIGHT; i = i + 1)
         begin
             for(j = 0; j < MACRO_DIM; j = j + 1)

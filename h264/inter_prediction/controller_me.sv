@@ -9,37 +9,102 @@ module controller_me
     output logic en_cpr, en_spr, valid
 );
 
-logic [3:0] clk_count;
+    localparam S0 = 2'b00;
+    localparam S1 = 2'b01;
+    localparam S2 = 2'b10;
 
-always_ff @(posedge clk)
-begin
-    if(rst_n)
+    logic       en_count;
+    logic [3:0] count;
+
+    logic [1:0] state;
+    logic [1:0] next_state;
+
+    //State Machine
+
+    always_ff@(posedge clk or negedge rst_n) 
     begin
-        en_cpr <= 0;
-        en_spr <= 0;
-        valid <= 0;
-        clk_count <= 0;
-    end
-    else
-    begin
-        if(start)
+        if(~rst_n)
         begin
-            en_cpr <= 1;
-            en_spr <= 1;
-            clk_count <= clk_count + 1;
+            state <= S0;
         end
         else
         begin
-            if(clk_count == 4'd16)
-            begin
-                valid <= 1;
-            end
-            else
-            begin
-                clk_count <= clk_count + 1;
-            end
+            state <= next_state;
         end
     end
-end
+
+    always_comb 
+    begin
+        next_state = S0;
+        case(state)
+            S0: 
+            begin
+                if(start)
+                begin
+                    next_state = S1;
+                end
+                else
+                begin
+                    next_state = S0;
+                end
+            end
+            S1: 
+            begin
+                if(count == 4'hf)
+                begin
+                    next_state = S2;
+                end
+                else
+                begin
+                    next_state = S1;
+                end
+            end
+            S2:
+            begin
+                next_state = S0;
+            end
+        endcase
+    end
+
+    always_comb 
+    begin
+        case(state)
+            S0:
+            begin
+                en_count = 0;
+                en_cpr   = 0;
+                en_spr   = 0;
+                valid    = 0;
+            end
+            S1:
+            begin
+                en_count = 1;
+                en_cpr   = 1;
+                en_spr   = 1;
+                valid    = 0;
+            end
+            S2: 
+            begin 
+                en_count = 0;
+                en_cpr   = 0;
+                en_spr   = 0;
+                valid    = 1;
+            end
+        endcase
+    end
+
+    // Counter
+
+    always_ff@(posedge clk or negedge rst_n)
+    begin
+        if(~rst_n | ~en_count)
+        begin
+            count <= 0;
+        end
+        else if(count_en)
+        begin
+            count <= count + 1;
+        end
+    end
 
 endmodule

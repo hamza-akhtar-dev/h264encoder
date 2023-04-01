@@ -13,8 +13,6 @@ module me #
     output logic [15:0] min_sad
 );
 
-    logic [8*(MACRO_DIM**2)-1:0] wire_ad;
-
     datapath_me ins_datapath_me
     (
         .rst_n(rst_n),
