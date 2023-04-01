@@ -24,7 +24,7 @@ module pe_matrix #
 
     generate
         for(i = 0; i < MACRO_DIM; i = i + 1) 
-        begin
+        begin: column
             pe_col ins_pe_col
             (
                 .rst_n         ( rst_n           ),
@@ -42,14 +42,14 @@ module pe_matrix #
     endgenerate
 
     generate
-        for(i = 0; i < MACRO_DIM; i = i + 1)
+        for(i = 0; i < MACRO_DIM-1; i = i + 1)
         begin
             mux2x1 mux2x1_ins
             (
                 .sel( sel             ),
-                .in1( ins_pe_col[i].wire_cpr     ),
-                .in2( ins_pe_col[i].wire_cpr   ),
-                .out( ins_pe_col[i].wire_cpr )
+                .in1( column[i].element[i].pixel_cpr_out   ),
+                .in2( column[i+1].element[i].pixel_cpr_out   ),
+                .out( column[i].element[i].pixel_cpr_in )
             );
         end 
     endgenerate

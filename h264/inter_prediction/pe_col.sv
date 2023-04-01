@@ -30,7 +30,7 @@ module pe_col #
 
     generate
         for(i = 0; i < MACRO_DIM; i = i + 1) 
-        begin
+        begin: element
             pe pe_ins
             (
                 .rst_n         ( rst_n           ),
