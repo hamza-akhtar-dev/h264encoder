@@ -15,11 +15,12 @@ module tb_me #
     logic [7:0] reference_picture [0:IMG_WIDTH*IMG_HEIGHT-1];
     logic [7:0] current_picture   [0:IMG_WIDTH*IMG_HEIGHT-1];
 
-    logic rst_n;
-    logic clk;
-    logic start;
-    logic [7:0]  pixel_spr_in [0:MACRO_DIM-1];
-    logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
+    logic        rst_n;
+    logic        clk;
+    logic        start;
+    logic [7:0]  pixel_spr_in       [0:MACRO_DIM-1];
+    logic [7:0]  pixel_cpr_in       [0:MACRO_DIM-1];
+    logic [7:0]  pixel_spr_right_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
 
     initial
@@ -36,14 +37,15 @@ module tb_me #
 
     me ins_me
     (
-        .rst_n        ( rst_n        ),
-        .clk          ( clk          ),
-        .start        ( start        ),
-        .pixel_spr_in ( pixel_spr_in ),
-        .pixel_cpr_in ( pixel_cpr_in ),
-        .valid        ( valid        ),
-        .min_sad      ( min_sad      )
-    );
+        .rst_n              ( rst_n              ),
+        .clk                ( clk                ),
+        .start              ( start              ),
+        .pixel_spr_in       ( pixel_spr_in       ),
+        .pixel_cpr_in       ( pixel_cpr_in       ),
+        .pixel_spr_right_in ( pixel_spr_right_in ),
+        .valid              ( valid              ),
+        .min_sad            ( min_sad            )
+    );            
 
     initial
     begin

@@ -5,8 +5,13 @@ module controller_me
     parameter SEARCH_DIM = 48
 ) 
 (
-    input logic rst_n, clk, start,
-    output logic sel, en_cpr, en_spr, valid
+    input  logic       rst_n, 
+    input  logic       clk, 
+    input  logic       start,
+    output logic       en_cpr, 
+    output logic       en_spr, 
+    output logic       valid,
+    output logic [1:0] sel
 );
 
     localparam S0 = 2'b00;
