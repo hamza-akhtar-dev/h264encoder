@@ -1,7 +1,5 @@
 module tb_me #
 (
-    parameter IMG_HEIGHT = 16,
-    parameter IMG_WIDTH = 16,
     parameter MACRO_DIM  = 16,
     parameter SEARCH_DIM = 48
 )
@@ -12,22 +10,27 @@ module tb_me #
 
     integer i, j;
 
-    logic [7:0] reference_picture [0:IMG_WIDTH*IMG_HEIGHT-1];
-    logic [7:0] current_picture   [0:IMG_WIDTH*IMG_HEIGHT-1];
+    logic [7:0] curr_pixels   [0:MACRO_DIM*MACRO_DIM-1];
+    logic [7:0] search_pixels [0:SEARCH_DIM*SEARCH_DIM-1];
 
     logic        rst_n;
     logic        clk;
     logic        start;
-    logic [7:0]  pixel_spr_in       [0:MACRO_DIM-1];
-    logic [7:0]  pixel_cpr_in       [0:MACRO_DIM-1];
-    logic [7:0]  pixel_spr_right_in [0:MACRO_DIM-1];
+    logic [7:0]  pixel_spr_in     [0:MACRO_DIM];
+    logic [7:0]  pixel_cpr_in     [0:MACRO_DIM-1];
     logic [15:0] min_sad;
+
+    //debug
+
+    logic [7:0] debug;
 
     initial
     begin
-        $readmemh("./memory/reference_picture.mem", reference_picture);
-        $readmemh("./memory/current_picture.mem", current_picture);
+        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/curr_pixels.mem"  , curr_pixels  );
+        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/search_pixels.mem", search_pixels);
     end
+
+    assign debug = search_pixels[0];
 
     initial 
     begin
@@ -35,14 +38,18 @@ module tb_me #
         forever #(T/2) clk = ~clk;
     end
 
-    me ins_me
+    me # 
+    (
+        .MACRO_DIM  ( MACRO_DIM  ),
+        .SEARCH_DIM ( SEARCH_DIM )
+    )
+    ins_me
     (
         .rst_n              ( rst_n              ),
         .clk                ( clk                ),
         .start              ( start              ),
         .pixel_spr_in       ( pixel_spr_in       ),
         .pixel_cpr_in       ( pixel_cpr_in       ),
-        .pixel_spr_right_in ( pixel_spr_right_in ),
         .valid              ( valid              ),
         .min_sad            ( min_sad            )
     );            
@@ -64,13 +71,21 @@ module tb_me #
         @(posedge clk);
 
         start = 0;
+        
+        // for(i = 0; i < MACRO_DIM; i = i + 1)
+        // begin
+        //     for(j = 0; j < MACRO_DIM; j = j + 1)
+        //     begin
+        //         pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
+        //     end
+        //     @(posedge clk);
+        // end
 
-        for(i = 0; i < IMG_HEIGHT; i = i + 1)
+        for(i = 0; i < SEARCH_DIM; i = i + 1)
         begin
-            for(j = 0; j < MACRO_DIM; j = j + 1)
+            for(j = 0; j < SEARCH_DIM; j = j + 1)
             begin
-                pixel_cpr_in[j] = current_picture  [j*IMG_HEIGHT+i];
-                pixel_spr_in[j] = reference_picture[j*IMG_HEIGHT+i];
+                pixel_spr_in[j % (MACRO_DIM + 1)] = search_pixels[j*SEARCH_DIM];
             end
             @(posedge clk);
         end

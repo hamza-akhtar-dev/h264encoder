@@ -1,6 +1,6 @@
 module pe #
 (
-    parameter MACRO_DIM  = 16
+    parameter MACRO_DIM = 16
 )
 (
     input  logic       rst_n,

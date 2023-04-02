@@ -17,14 +17,13 @@ module controller_me
     localparam S0 = 2'b00;
     localparam S1 = 2'b01;
     localparam S2 = 2'b10;
+    localparam S3 = 2'b11;
 
     logic       en_count;
     logic [4:0] count;
 
     logic [1:0] state;
     logic [1:0] next_state;
-
-    assign sel = 0;
 
     //State Machine
 
@@ -68,7 +67,11 @@ module controller_me
             end
             S2:
             begin
-                next_state = S0;
+                next_state = S3;
+            end
+            S3:
+            begin
+                next_state = S2;
             end
         endcase
     end
@@ -88,6 +91,7 @@ module controller_me
                 en_count = 1;
                 en_cpr   = 1;
                 en_spr   = 1;
+                sel      = 0;
                 valid    = 0;
             end
             S2: 
@@ -96,6 +100,14 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 1;
+            end
+            S3: 
+            begin 
+                en_count = 0;
+                en_cpr   = 0;
+                en_spr   = 1;
+                sel      = 2;
+                valid    = 0;
             end
         endcase
     end

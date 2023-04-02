@@ -34,7 +34,11 @@ module pe_col #
     generate
         for(i = 0; i < MACRO_DIM; i = i + 1) 
         begin: element
-            pe ins_pe
+            pe #
+            (   
+                .MACRO_DIM( MACRO_DIM )
+            )
+            ins_pe
             (
                 .rst_n         ( rst_n           ),
                 .clk           ( clk             ),

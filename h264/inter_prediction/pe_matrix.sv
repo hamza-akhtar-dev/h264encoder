@@ -25,7 +25,11 @@ module pe_matrix #
     generate
         for(i = 0; i < MACRO_DIM; i = i + 1) 
         begin: column
-            pe_col ins_pe_col
+            pe_col #
+            (   
+                .MACRO_DIM( MACRO_DIM )
+            )
+            ins_pe_col
             (
                 .rst_n              ( rst_n                         ),
                 .clk                ( clk                           ),
