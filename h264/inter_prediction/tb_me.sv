@@ -26,8 +26,8 @@ module tb_me #
 
     initial
     begin
-        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/curr_pixels.mem"  , curr_pixels  );
-        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/search_pixels.mem", search_pixels);
+        $readmemh("./memory/curr_pixels.mem"  , curr_pixels  );
+        $readmemh("./memory/search_pixels.mem", search_pixels);
     end
 
     assign debug = search_pixels[0];
@@ -72,14 +72,14 @@ module tb_me #
 
         start = 0;
         
-        // for(i = 0; i < MACRO_DIM; i = i + 1)
-        // begin
-        //     for(j = 0; j < MACRO_DIM; j = j + 1)
-        //     begin
-        //         pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
-        //     end
-        //     @(posedge clk);
-        // end
+        for(i = 0; i < MACRO_DIM; i = i + 1)
+        begin
+            for(j = 0; j < MACRO_DIM; j = j + 1)
+            begin
+                pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
+            end
+            @(posedge clk);
+        end
 
         for(i = 0; i < SEARCH_DIM; i = i + 1)
         begin
