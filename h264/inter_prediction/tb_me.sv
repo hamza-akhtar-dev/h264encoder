@@ -8,7 +8,9 @@ module tb_me #
 
     localparam T = 10;
 
-    integer i, j;
+    localparam PORT_WIDTH = MACRO_DIM + 1;
+
+    integer i, j, k;
 
     logic [7:0] curr_pixels   [0:MACRO_DIM*MACRO_DIM-1];
     logic [7:0] search_pixels [0:SEARCH_DIM*SEARCH_DIM-1];
@@ -19,10 +21,6 @@ module tb_me #
     logic [7:0]  pixel_spr_in     [0:MACRO_DIM];
     logic [7:0]  pixel_cpr_in     [0:MACRO_DIM-1];
     logic [15:0] min_sad;
-
-    //debug
-
-    logic [7:0] debug;
 
     initial
     begin
@@ -85,11 +83,18 @@ module tb_me #
         begin
             for(j = 0; j < SEARCH_DIM; j = j + 1)
             begin
-                pixel_spr_in[j % (MACRO_DIM + 1)] = search_pixels[j*SEARCH_DIM];
+                if( (j % PORT_WIDTH) == 0 )
+                begin
+                    for(k = 0; k < PORT_WIDTH; k = k + 1)
+                    begin
+                        pixel_spr_in[k] = search_pixels[(j+k)*SEARCH_DIM+i];
+                    end
+                    @(posedge clk);
+                end
             end
             @(posedge clk);
         end
-
+           
         #1000
         $finish;
     end
