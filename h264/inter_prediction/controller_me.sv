@@ -8,6 +8,7 @@ module controller_me
     input  logic       rst_n, 
     input  logic       clk, 
     input  logic       start,
+    output logic       ready,
     output logic       en_cpr, 
     output logic       en_spr, 
     output logic       valid,
@@ -118,6 +119,7 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 0;
+                ready    = 1;
             end
             S1:
             begin
@@ -128,6 +130,7 @@ module controller_me
                 en_cpr   = 1;
                 en_spr   = 1;
                 valid    = 0;
+                ready    = 0;
             end
             S2: 
             begin 
@@ -138,6 +141,7 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 1;
+                ready    = 0;
             end
             S3: 
             begin 
@@ -148,6 +152,7 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 1;
                 valid    = 0;
+                ready    = 0;
             end
             S4: 
             begin 
@@ -158,6 +163,7 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 1;
                 valid    = 0;
+                ready    = 0;
             end
             S5: 
             begin 
@@ -168,6 +174,7 @@ module controller_me
                 en_cpr   = 0;
                 en_spr   = 1;
                 valid    = 0;
+                ready    = 0;
             end
         endcase
     end

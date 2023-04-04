@@ -9,7 +9,8 @@ module me #
     input  logic        start,
     input  logic [7:0]  pixel_spr_in       [0:MACRO_DIM],
     input  logic [7:0]  pixel_cpr_in       [0:MACRO_DIM-1],
-    output logic        valid,
+    output logic        valid, 
+    output logic        ready,
     output logic [15:0] min_sad
 );
 
@@ -43,6 +44,7 @@ module me #
         .rst_n  ( rst_n  ), 
         .clk    ( clk    ), 
         .start  ( start  ),
+        .ready  ( ready  ),
         .en_cpr ( en_cpr ), 
         .en_spr ( en_spr ),
         .valid  ( valid  ),

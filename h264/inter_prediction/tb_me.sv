@@ -49,6 +49,7 @@ module tb_me #
         .pixel_spr_in       ( pixel_spr_in       ),
         .pixel_cpr_in       ( pixel_cpr_in       ),
         .valid              ( valid              ),
+        .ready              ( ready              ),
         .min_sad            ( min_sad            )
     );            
 
@@ -63,21 +64,20 @@ module tb_me #
         rst_n = 1;
 
         @(posedge clk);
+        
+        // for(i = 0; i < MACRO_DIM; i = i + 1)
+        // begin
+        //     for(j = 0; j < MACRO_DIM; j = j + 1)
+        //     begin
+        //         pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
+        //     end
+        //     @(posedge clk);
+        // end
 
+        wait(ready == 1);
         start = 1;
 
-        @(posedge clk);
-
-        start = 0;
-        
-        for(i = 0; i < MACRO_DIM; i = i + 1)
-        begin
-            for(j = 0; j < MACRO_DIM; j = j + 1)
-            begin
-                pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
-            end
-            @(posedge clk);
-        end
+        //@(posedge clk);
 
         for(i = 0; i < SEARCH_DIM; i = i + 1)
         begin
