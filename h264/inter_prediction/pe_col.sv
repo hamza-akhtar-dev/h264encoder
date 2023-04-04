@@ -17,6 +17,11 @@ module pe_col #
     output logic [MACRO_DIM*8-1:0] ad
 );
 
+    // debug
+
+    logic [7:0] debug0;
+    assign debug0 = pixel_spr_in;
+    
     logic [7:0] wire_spr     [0:MACRO_DIM+1];
     logic [7:0] wire_cpr     [0:MACRO_DIM];
     logic [7:0] wire_spr_mux [0:MACRO_DIM];

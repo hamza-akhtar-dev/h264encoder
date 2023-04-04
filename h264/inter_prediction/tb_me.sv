@@ -64,39 +64,52 @@ module tb_me #
         rst_n = 1;
 
         @(posedge clk);
-        
-        // for(i = 0; i < MACRO_DIM; i = i + 1)
-        // begin
-        //     for(j = 0; j < MACRO_DIM; j = j + 1)
-        //     begin
-        //         pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM+i];
-        //     end
-        //     @(posedge clk);
-        // end
 
         wait(ready == 1);
+
         start = 1;
 
-        //@(posedge clk);
+        @(posedge clk);
 
-        for(i = 0; i < SEARCH_DIM; i = i + 1)
-        begin
-            for(j = 0; j < SEARCH_DIM; j = j + 1)
+        fork
+
             begin
-                if( (j % PORT_WIDTH) == 0 )
+                #1000;
+                $finish;
+            end
+            
+            begin    
+                for(j = 0; j < MACRO_DIM; j = j + 1)
                 begin
-                    for(k = 0; k < PORT_WIDTH; k = k + 1)
-                    begin
-                        pixel_spr_in[k] = search_pixels[(j+k)*SEARCH_DIM+i];
-                    end
-                    @(posedge clk);
+                    pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM];
                 end
             end
-            @(posedge clk);
-        end
-           
-        #1000
-        $finish;
+
+            begin
+            
+                for(k = 0; k < PORT_WIDTH; k = k + 1)
+                begin
+                    pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
+                end
+            
+
+                // for(i = 0; i < SEARCH_DIM; i = i + 1)
+                // begin
+                //     for(j = 0; j < SEARCH_DIM; j = j + 1)
+                //     begin
+                //         if( (j % PORT_WIDTH) == 0 )
+                //         begin
+                //             for(k = 0; k < PORT_WIDTH; k = k + 1)
+                //             begin
+                //                 pixel_spr_in[k] = search_pixels[(j+k)*SEARCH_DIM+i];
+                //             end
+                //             @(posedge clk);
+                //         end
+                //     end
+                //     @(posedge clk);
+                // end
+            end
+        join
     end
 
     initial 
