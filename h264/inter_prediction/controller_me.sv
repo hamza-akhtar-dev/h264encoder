@@ -14,16 +14,18 @@ module controller_me
     output logic [1:0] sel
 );
 
-    localparam S0 = 2'b00;
-    localparam S1 = 2'b01;
-    localparam S2 = 2'b10;
-    localparam S3 = 2'b11;
+    localparam S0 = 3'b000;
+    localparam S1 = 3'b001;
+    localparam S2 = 3'b010;
+    localparam S3 = 3'b011;
+    localparam S4 = 3'b100;
+    localparam S5 = 3'b101;
 
-    logic       en_count;
-    logic [4:0] count;
+    logic       en_load_count, en_row_count, en_col_count;
+    logic [4:0] load_count, row_count, col_count;
 
-    logic [1:0] state;
-    logic [1:0] next_state;
+    logic [2:0] state;
+    logic [2:0] next_state;
 
     //State Machine
 
@@ -56,7 +58,7 @@ module controller_me
             end
             S1: 
             begin
-                if(count == MACRO_DIM + 4)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
+                if(load_count == MACRO_DIM + 4)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
                 begin
                     next_state = S2;
                 end
@@ -67,11 +69,40 @@ module controller_me
             end
             S2:
             begin
-                next_state = S3;
+                if(row_count == 5'd31)
+                begin
+                    next_state = S5;
+                end 
+                else
+                begin
+                    if(col_count % 2 == 0)
+                    begin
+                        next_state = S3;
+                    end
+                    else
+                    begin
+                        next_state = S4;
+                    end
+                end               
             end
             S3:
             begin
                 next_state = S2;
+            end
+            S4:
+            begin
+                next_state = S2;
+            end
+            S5:
+            begin
+                if(col_count < 31)
+                begin
+                    next_state = S2;
+                end
+                else
+                begin
+                    next_state = S0;
+                end
             end
         endcase
     end
@@ -81,32 +112,61 @@ module controller_me
         case(state)
             S0:
             begin
-                en_count = 0;
+                en_load_count = 0;
+                en_row_count  = 0;
+                en_col_count  = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 0;
             end
             S1:
             begin
-                en_count = 1;
+                en_load_count = 1;
+                en_row_count  = 0;
+                en_col_count  = 0;
+                sel      = 0;
                 en_cpr   = 1;
                 en_spr   = 1;
-                sel      = 0;
                 valid    = 0;
             end
             S2: 
             begin 
-                en_count = 0;
+                en_load_count = 0;
+                //en_row_count  = 0;
+                //en_col_count  = 0;
+                //sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 1;
             end
             S3: 
             begin 
-                en_count = 0;
+                en_load_count = 0;
+                en_row_count  = 1;
+                //en_col_count  = 0;
+                sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 1;
+                valid    = 0;
+            end
+            S4: 
+            begin 
+                en_load_count = 0;
+                en_row_count  = 1;
+                //en_col_count  = 0;
+                sel      = 1;
+                en_cpr   = 0;
+                en_spr   = 1;
+                valid    = 0;
+            end
+            S5: 
+            begin 
+                en_load_count = 0;
+                //en_row_count  = 1;
+                en_col_count  = 1;
                 sel      = 2;
+                en_cpr   = 0;
+                en_spr   = 1;
                 valid    = 0;
             end
         endcase
@@ -116,13 +176,37 @@ module controller_me
 
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_count)
+        if(~rst_n | ~en_load_count)
         begin
-            count <= 0;
+            load_count <= 0;
         end
-        else if(en_count)
+        else if(en_load_count)
         begin
-            count <= count + 1;
+            load_count <= load_count + 1;
+        end
+    end
+
+    always_ff@(posedge clk or negedge rst_n)
+    begin
+        if(~rst_n | ~en_row_count)
+        begin
+            row_count <= 0;
+        end
+        else if(en_row_count)
+        begin
+            row_count <= row_count + 1;
+        end
+    end
+
+    always_ff@(posedge clk or negedge rst_n)
+    begin
+        if(~rst_n | ~en_col_count)
+        begin
+            col_count <= 0;
+        end
+        else if(en_col_count)
+        begin
+            col_count <= col_count + 1;
         end
     end
 
