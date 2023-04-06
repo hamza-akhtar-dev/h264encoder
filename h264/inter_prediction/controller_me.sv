@@ -22,7 +22,7 @@ module controller_me
     localparam S4 = 3'b100;
     localparam S5 = 3'b101;
 
-    logic       en_load_count, en_row_count, en_col_count;
+    logic       en_load_count, en_row_count, en_col_count,dec_row_count,dec_col_count;
     logic [4:0] load_count, row_count, col_count;
 
     logic [2:0] state;
@@ -59,7 +59,7 @@ module controller_me
             end
             S1: 
             begin
-                if(load_count == MACRO_DIM + 4)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
+                if(load_count == MACRO_DIM + 4 - 1)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
                 begin
                     next_state = S2;
                 end
@@ -96,13 +96,13 @@ module controller_me
             end
             S5:
             begin
-                if(col_count < 31)
+                if(col_count == 31)
                 begin
-                    next_state = S2;
+                    next_state = S0;
                 end
                 else
                 begin
-                    next_state = S0;
+                    next_state = S2;
                 end
             end
         endcase
@@ -114,8 +114,10 @@ module controller_me
             S0:
             begin
                 en_load_count = 0;
-                en_row_count  = 0;
-                en_col_count  = 0;
+                en_row_count = 0;
+                en_col_count = 0;
+                dec_row_count  = 1;
+                dec_col_count  = 1;
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 0;
@@ -124,8 +126,10 @@ module controller_me
             S1:
             begin
                 en_load_count = 1;
-                en_row_count  = 0;
-                en_col_count  = 0;
+                en_row_count = 0;
+                en_col_count = 0;
+                dec_row_count  = 0;
+                dec_col_count  = 0;
                 sel      = 0;
                 en_cpr   = 1;
                 en_spr   = 1;
@@ -135,8 +139,10 @@ module controller_me
             S2: 
             begin 
                 en_load_count = 0;
-                //en_row_count  = 0;
-                //en_col_count  = 0;
+                en_row_count  = 0;
+                en_col_count  = 0;
+                dec_row_count = 0;
+                dec_col_count  = 0;
                 //sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
@@ -147,7 +153,9 @@ module controller_me
             begin 
                 en_load_count = 0;
                 en_row_count  = 1;
-                //en_col_count  = 0;
+                en_col_count  = 0;
+                dec_row_count = 0;
+                dec_col_count = 0;
                 sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 1;
@@ -158,7 +166,9 @@ module controller_me
             begin 
                 en_load_count = 0;
                 en_row_count  = 1;
-                //en_col_count  = 0;
+                en_col_count  = 0;                
+                dec_row_count = 0;
+                dec_col_count = 0;
                 sel      = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
@@ -168,8 +178,10 @@ module controller_me
             S5: 
             begin 
                 en_load_count = 0;
-                //en_row_count  = 1;
+                en_row_count  = 0;
                 en_col_count  = 1;
+                dec_row_count = 1;
+                dec_col_count = 0;
                 sel      = 2;
                 en_cpr   = 0;
                 en_spr   = 1;
@@ -195,7 +207,7 @@ module controller_me
 
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_row_count)
+        if(~rst_n | dec_row_count)
         begin
             row_count <= 0;
         end
@@ -207,7 +219,7 @@ module controller_me
 
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_col_count)
+        if(~rst_n | dec_col_count)
         begin
             col_count <= 0;
         end

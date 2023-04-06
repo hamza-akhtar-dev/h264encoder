@@ -74,7 +74,7 @@ module tb_me #
         fork
 
             begin
-                #1000;
+                #10000;
                 $finish;
             end
             
@@ -87,11 +87,41 @@ module tb_me #
 
             begin
             
-                for(k = 0; k < PORT_WIDTH; k = k + 1)
+                // for(k = 0; k < PORT_WIDTH; k = k + 1)
+                // begin
+                //     pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
+                //     if( $isunknown(pixel_spr_in[k]))
+                //     begin
+                //         pixel_spr_in[k] = 8'd0;
+                //     end
+                // end
+
+                // #(23*T);
+
+                
+                for(i = 0; i < 16; i = i + 1)
                 begin
-                    pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
+                    for(k = 0; k < PORT_WIDTH; k = k + 1)
+                    begin
+                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM+i];
+                        if( $isunknown(pixel_spr_in[k]))
+                        begin
+                            pixel_spr_in[k] = 8'd0;
+                        end
+                    end
+                    @(posedge clk);
                 end
-            
+
+                // @(posedge clk);
+
+                // for(k = 0; k < PORT_WIDTH; k = k + 1)
+                // begin
+                //     pixel_spr_in[k] = search_pixels[(34+k)*SEARCH_DIM];
+                //     if( $isunknown(pixel_spr_in[k]))
+                //     begin
+                //         pixel_spr_in[k] = 8'd0;
+                //     end
+                // end
 
                 // for(i = 0; i < SEARCH_DIM; i = i + 1)
                 // begin
@@ -102,11 +132,15 @@ module tb_me #
                 //             for(k = 0; k < PORT_WIDTH; k = k + 1)
                 //             begin
                 //                 pixel_spr_in[k] = search_pixels[(j+k)*SEARCH_DIM+i];
+                //                 if( $isunknown(pixel_spr_in[k]))
+                //                 begin
+                //                     pixel_spr_in[k] = 8'd0;
+                //                 end
                 //             end
                 //             @(posedge clk);
                 //         end
                 //     end
-                //     @(posedge clk);
+                //     //@(posedge clk);
                 // end
             end
         join

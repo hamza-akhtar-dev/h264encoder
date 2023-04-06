@@ -57,6 +57,40 @@ module datapath_me #
     assign debug15 = pixel_spr_in[15];
     assign debug16 = pixel_spr_in[16];
 
+    // logic [7:0] debug0_cpr; 
+    // logic [7:0] debug1_cpr; 
+    // logic [7:0] debug2_cpr; 
+    // logic [7:0] debug3_cpr; 
+    // logic [7:0] debug4_cpr; 
+    // logic [7:0] debug5_cpr; 
+    // logic [7:0] debug6_cpr; 
+    // logic [7:0] debug7_cpr; 
+    // logic [7:0] debug8_cpr; 
+    // logic [7:0] debug9_cpr; 
+    // logic [7:0] debug10_cpr;
+    // logic [7:0] debug11_cpr;
+    // logic [7:0] debug12_cpr;
+    // logic [7:0] debug13_cpr;
+    // logic [7:0] debug14_cpr;
+    // logic [7:0] debug15_cpr;
+
+    // assign debug0_cpr = pixel_cpr_in[0];
+    // assign debug1_cpr = pixel_cpr_in[1];
+    // assign debug2_cpr = pixel_cpr_in[2];
+    // assign debug3_cpr = pixel_cpr_in[3];
+    // assign debug4_cpr = pixel_cpr_in[4];
+    // assign debug5_cpr = pixel_cpr_in[5];
+    // assign debug6_cpr = pixel_cpr_in[6];
+    // assign debug7_cpr = pixel_cpr_in[7];
+    // assign debug8_cpr = pixel_cpr_in[8];
+    // assign debug9_cpr = pixel_cpr_in[9];
+    // assign debug10_cpr = pixel_cpr_in[10];
+    // assign debug11_cpr = pixel_cpr_in[11];
+    // assign debug12_cpr = pixel_cpr_in[12];
+    // assign debug13_cpr = pixel_cpr_in[13];
+    // assign debug14_cpr = pixel_cpr_in[14];
+    // assign debug15_cpr = pixel_cpr_in[15];
+
     pe_matrix #
     (
         .MACRO_DIM  ( MACRO_DIM  ),
