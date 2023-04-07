@@ -101,19 +101,21 @@ module tb_me #
 
                 // #(23*T);
 
-                // for(i = 0; i < 16; i = i + 1)
-                // begin
-                    wait (en_ram == 1);
+                for(i = 0; i < 16; i = i + 1)
+                begin
+                    if (i==0) begin wait (en_ram == 1); end
+                    //wait(en_ram == 1);
                     for(k = 0; k < PORT_WIDTH; k = k + 1)
                     begin
-                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
+                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM+i];
                         if( $isunknown(pixel_spr_in[k]))
                         begin
                             pixel_spr_in[k] = 8'd0;
                         end
                     end
+                    if (i==0) begin wait (en_ram == 0); end
                     @(posedge clk);
-                //end
+                end
                 // @(posedge clk);
 
                 // for(k = 0; k < PORT_WIDTH; k = k + 1)
