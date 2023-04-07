@@ -9,6 +9,7 @@ module controller_me
     input  logic       clk, 
     input  logic       start,
     output logic       ready,
+    output logic       en_ram,
     output logic       en_cpr, 
     output logic       en_spr, 
     output logic       valid,
@@ -113,11 +114,12 @@ module controller_me
         case(state)
             S0:
             begin
-                en_load_count = 0;
-                en_row_count = 0;
-                en_col_count = 0;
+                en_load_count  = 0;
+                en_row_count   = 0;
+                en_col_count   = 0;
                 dec_row_count  = 1;
                 dec_col_count  = 1;
+                en_ram   = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 valid    = 0;
@@ -130,6 +132,7 @@ module controller_me
                 en_col_count = 0;
                 dec_row_count  = 0;
                 dec_col_count  = 0;
+                en_ram   = 1;
                 sel      = 0;
                 en_cpr   = 1;
                 en_spr   = 1;
@@ -143,6 +146,7 @@ module controller_me
                 en_col_count  = 0;
                 dec_row_count = 0;
                 dec_col_count  = 0;
+                en_ram   = 0;
                 //sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
@@ -156,6 +160,7 @@ module controller_me
                 en_col_count  = 0;
                 dec_row_count = 0;
                 dec_col_count = 0;
+                en_ram   = 0;
                 sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 1;
@@ -169,6 +174,7 @@ module controller_me
                 en_col_count  = 0;                
                 dec_row_count = 0;
                 dec_col_count = 0;
+                en_ram   = 0;
                 sel      = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
@@ -182,6 +188,7 @@ module controller_me
                 en_col_count  = 1;
                 dec_row_count = 1;
                 dec_col_count = 0;
+                en_ram   = 0;
                 sel      = 2;
                 en_cpr   = 0;
                 en_spr   = 1;

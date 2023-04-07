@@ -21,6 +21,7 @@ module tb_me #
     logic [7:0]  pixel_spr_in     [0:MACRO_DIM];
     logic [7:0]  pixel_cpr_in     [0:MACRO_DIM-1];
     logic [15:0] min_sad;
+    logic        en_ram;
 
     initial
     begin
@@ -48,6 +49,7 @@ module tb_me #
         .start              ( start              ),
         .pixel_spr_in       ( pixel_spr_in       ),
         .pixel_cpr_in       ( pixel_cpr_in       ),
+        .en_ram             ( en_ram             ),
         .valid              ( valid              ),
         .ready              ( ready              ),
         .min_sad            ( min_sad            )
@@ -78,7 +80,8 @@ module tb_me #
                 $finish;
             end
             
-            begin    
+            begin   
+                wait (en_ram == 1);
                 for(j = 0; j < MACRO_DIM; j = j + 1)
                 begin
                     pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM];
@@ -98,20 +101,19 @@ module tb_me #
 
                 // #(23*T);
 
-                
-                for(i = 0; i < 16; i = i + 1)
-                begin
+                // for(i = 0; i < 16; i = i + 1)
+                // begin
+                    wait (en_ram == 1);
                     for(k = 0; k < PORT_WIDTH; k = k + 1)
                     begin
-                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM+i];
+                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
                         if( $isunknown(pixel_spr_in[k]))
                         begin
                             pixel_spr_in[k] = 8'd0;
                         end
                     end
                     @(posedge clk);
-                end
-
+                //end
                 // @(posedge clk);
 
                 // for(k = 0; k < PORT_WIDTH; k = k + 1)
