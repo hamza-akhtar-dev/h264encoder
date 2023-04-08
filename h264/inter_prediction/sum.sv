@@ -3,7 +3,7 @@ module sum
     input  logic          rst_n,
     input  logic          clk,
     input  logic [2047:0] ad,
-    output logic [15:0]   sum
+    output logic [15:0  ]   sum
 );
 
     genvar i, j, k, m;
