@@ -1,6 +1,6 @@
 module me #
 (
-    parameter MACRO_DIM  = 16,
+    parameter MACRO_DIM  = 4,
     parameter SEARCH_DIM = 48
 ) 
 (

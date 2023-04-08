@@ -11,29 +11,16 @@ module pe_col #
     input  logic [7:0]             pixel_spr_in,
     input  logic [7:0]             pixel_cpr_in,
     input  logic [7:0]             pixel_spr_right_in [0:MACRO_DIM-1],
-    output logic [7:0]             pixel_spr_out,
-    output logic [7:0]             pixel_cpr_out,
     output logic [7:0]             pixel_spr_taps     [0:MACRO_DIM-1],
     output logic [MACRO_DIM*8-1:0] ad
-);
-
-    // debug
-
-    logic [7:0] debug0;
-    assign debug0 = pixel_spr_in;
-    
+);  
     logic [7:0] wire_spr     [0:MACRO_DIM+1];
-    logic [7:0] wire_cpr     [0:MACRO_DIM];
-    logic [7:0] wire_spr_mux [0:MACRO_DIM];
+    logic [7:0] wire_spr_mux [0:MACRO_DIM  ];
+    logic [7:0] wire_cpr     [0:MACRO_DIM  ];
     logic [7:0] wire_ad      [0:MACRO_DIM-1];
 
-    assign wire_spr[0]   = pixel_spr_in;
     assign wire_cpr[0]   = pixel_cpr_in;
-    assign pixel_spr_out = wire_spr[MACRO_DIM];
-    assign pixel_cpr_out = wire_cpr[MACRO_DIM];
 
-    assign wire_spr[MACRO_DIM+1] = pixel_spr_in;
-    
     genvar i;
 
     generate
@@ -58,15 +45,18 @@ module pe_col #
         end
     endgenerate
 
+    assign wire_spr[0]           = pixel_spr_in;
+    assign wire_spr[MACRO_DIM+1] = pixel_spr_in;
+    
     generate
         for(i = 0; i < MACRO_DIM; i = i + 1)
         begin
             mux4x1 ins_mux4x1
             (
                 .sel( sel                   ),
-                .in1( wire_spr[i]           ),
-                .in2( wire_spr[i+2]         ),
-                .in3( pixel_spr_right_in[i] ),
+                .in1( wire_spr[i]           ),     // Down Shift
+                .in2( wire_spr[i+2]         ),     // Up Shift
+                .in3( pixel_spr_right_in[i] ),     // Left Shift
                 .in4( 8'd0                  ),
                 .out( wire_spr_mux[i]       )
             );
