@@ -7,29 +7,56 @@ module tb_me #
 ();
 
     localparam T = 10;
-
     localparam PORT_WIDTH = MACRO_DIM + 1;
 
-    integer i, j, k;
+    integer i, j, k, l;
 
-    logic [7:0] curr_pixels   [0:MACRO_DIM*MACRO_DIM-1];
-    logic [7:0] search_pixels [0:SEARCH_DIM*SEARCH_DIM-1];
+    logic [7:0] curr_picture   [MACRO_DIM][MACRO_DIM];
+    logic [7:0] search_picture [SEARCH_DIM][SEARCH_DIM];
+
+    initial
+    begin
+        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/curr_picture.mem", curr_picture);
+        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/search_picture.mem", search_picture);
+    end
+
+    // Initializing Block Rams
+
+    reg [7:0] c_bram [MACRO_DIM ][MACRO_DIM                        ];
+    reg [7:0] s_bram [PORT_WIDTH][SEARCH_DIM*(SEARCH_DIM/MACRO_DIM)];
+
+    initial
+    begin
+        for(i = 0; i < MACRO_DIM; i++)
+        begin
+            for(j = 0; j < MACRO_DIM; j++)
+            begin
+                c_bram[i][j] = curr_picture[j][i];
+            end
+        end
+
+        for(i = 0; i < PORT_WIDTH; i++)
+        begin
+            for(k = 0; k < SEARCH_DIM/MACRO_DIM; k++)
+            begin
+                for(j = 0; j < SEARCH_DIM; j++)
+                begin
+                    s_bram[i][k*SEARCH_DIM+j] = search_picture[j][k*PORT_WIDTH+i];
+                end
+            end
+        end
+    end
+
+    // Signals
 
     logic        rst_n;
     logic        clk;
     logic        start;
-    logic [7:0]  pixel_spr_in     [0:MACRO_DIM];
-    logic [7:0]  pixel_cpr_in     [0:MACRO_DIM-1];
+    logic [5:0]  addr;
+    logic [5:0]  amt;
+    logic [7:0]  pixel_spr_in [0:MACRO_DIM];
+    logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
-    logic        en_ram;
-
-    initial
-    begin
-        $readmemh("./memory/curr_pixels.mem"  , curr_pixels  );
-        $readmemh("./memory/search_pixels.mem", search_pixels);
-    end
-
-    assign debug = search_pixels[0];
 
     initial 
     begin
@@ -49,105 +76,43 @@ module tb_me #
         .start              ( start              ),
         .pixel_spr_in       ( pixel_spr_in       ),
         .pixel_cpr_in       ( pixel_cpr_in       ),
-        .en_ram             ( en_ram             ),
-        .valid              ( valid              ),
         .ready              ( ready              ),
+        .valid              ( valid              ),
+        .addr               ( addr               ),
+        .amt                ( amt                ),
         .min_sad            ( min_sad            )
-    );            
+    );
+
+    // Simulating RAM
+
+    always_comb
+    begin
+        for(l = 0; l < MACRO_DIM; l++)
+        begin
+            pixel_cpr_in[l] = c_bram[l][addr];
+        end
+        for(l = 0; l < PORT_WIDTH; l++)
+        begin
+            pixel_spr_in[l] = s_bram[l][addr];
+        end
+    end           
 
     initial
     begin
         rst_n = 0;
         start = 0;
-
         @(posedge clk);
-        @(posedge clk);
-
         rst_n = 1;
 
         @(posedge clk);
-
-        wait(ready == 1);
-
+       
         start = 1;
-
+    
         @(posedge clk);
 
-        fork
+        #10000;
 
-            begin
-                #10000;
-                $finish;
-            end
-            
-            begin   
-                wait (en_ram == 1);
-                for(j = 0; j < MACRO_DIM; j = j + 1)
-                begin
-                    pixel_cpr_in[j] = curr_pixels[j*MACRO_DIM];
-                end
-            end
-
-            begin
-            
-                // for(k = 0; k < PORT_WIDTH; k = k + 1)
-                // begin
-                //     pixel_spr_in[k] = search_pixels[k*SEARCH_DIM];
-                //     if( $isunknown(pixel_spr_in[k]))
-                //     begin
-                //         pixel_spr_in[k] = 8'd0;
-                //     end
-                // end
-
-                // #(23*T);
-
-                for(i = 0; i < 16; i = i + 1)
-                begin
-                    if (i==0) begin wait (en_ram == 1); end
-                    //wait(en_ram == 1);
-                    for(k = 0; k < PORT_WIDTH; k = k + 1)
-                    begin
-                        pixel_spr_in[k] = search_pixels[k*SEARCH_DIM+i];
-                        if( $isunknown(pixel_spr_in[k]))
-                        begin
-                            pixel_spr_in[k] = 8'd0;
-                        end
-                    end
-                    if (i==0) begin wait (en_ram == 0); end
-                    @(posedge clk);
-                end
-                // @(posedge clk);
-
-                // for(k = 0; k < PORT_WIDTH; k = k + 1)
-                // begin
-                //     pixel_spr_in[k] = search_pixels[(34+k)*SEARCH_DIM];
-                //     if( $isunknown(pixel_spr_in[k]))
-                //     begin
-                //         pixel_spr_in[k] = 8'd0;
-                //     end
-                // end
-
-                // for(i = 0; i < SEARCH_DIM; i = i + 1)
-                // begin
-                //     for(j = 0; j < SEARCH_DIM; j = j + 1)
-                //     begin
-                //         if( (j % PORT_WIDTH) == 0 )
-                //         begin
-                //             for(k = 0; k < PORT_WIDTH; k = k + 1)
-                //             begin
-                //                 pixel_spr_in[k] = search_pixels[(j+k)*SEARCH_DIM+i];
-                //                 if( $isunknown(pixel_spr_in[k]))
-                //                 begin
-                //                     pixel_spr_in[k] = 8'd0;
-                //                 end
-                //             end
-                //             @(posedge clk);
-                //         end
-                //     end
-                //     //@(posedge clk);
-                // end
-            end
-        join
+        $finish;
     end
 
     initial 

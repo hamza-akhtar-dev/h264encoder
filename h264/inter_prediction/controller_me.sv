@@ -9,10 +9,11 @@ module controller_me
     input  logic       clk, 
     input  logic       start,
     output logic       ready,
-    output logic       en_ram,
-    output logic       en_cpr, 
-    output logic       en_spr, 
     output logic       valid,
+    output logic       en_cpr, 
+    output logic       en_spr,
+    output logic [5:0] addr,
+    output logic [5:0] amt,
     output logic [1:0] sel
 );
 
@@ -23,8 +24,8 @@ module controller_me
     localparam S4 = 3'b100;
     localparam S5 = 3'b101;
 
-    logic       en_load_count, en_row_count, en_col_count,dec_row_count,dec_col_count;
-    logic [4:0] load_count, row_count, col_count;
+    logic       en_count;
+    logic [5:0] count;
 
     logic [2:0] state;
     logic [2:0] next_state;
@@ -60,7 +61,7 @@ module controller_me
             end
             S1: 
             begin
-                if(load_count == MACRO_DIM + 4 - 1)     // 16 cycles for shifts and 4 cycles for adder tree pipeline i.e., 20 cycles = 16 cycles + 4 cycles
+                if(count == MACRO_DIM-1)
                 begin
                     next_state = S2;
                 end
@@ -69,41 +70,34 @@ module controller_me
                     next_state = S1;
                 end
             end
-            S2:
+            S2: 
             begin
-                if(row_count == 5'd31)
-                begin
-                    next_state = S5;
-                end 
-                else
-                begin
-                    if(col_count % 2 == 0)
-                    begin
-                        next_state = S3;
-                    end
-                    else
-                    begin
-                        next_state = S4;
-                    end
-                end               
+                next_state = S3;
             end
             S3:
             begin
-                next_state = S2;
-            end
-            S4:
-            begin
-                next_state = S2;
-            end
-            S5:
-            begin
-                if(col_count == 31)
+                if(count == SEARCH_DIM-1)
                 begin
-                    next_state = S0;
+                    next_state = S4;
                 end
                 else
                 begin
-                    next_state = S2;
+                    next_state = S3;
+                end
+            end
+            S4:
+            begin
+                next_state = S5;
+            end
+            S5:
+            begin
+                if(count == SEARCH_DIM-1)
+                begin
+                    next_state = S4;
+                end
+                else
+                begin
+                    next_state = S5;
                 end
             end
         endcase
@@ -114,86 +108,60 @@ module controller_me
         case(state)
             S0:
             begin
-                en_load_count  = 0;
-                en_row_count   = 0;
-                en_col_count   = 0;
-                dec_row_count  = 1;
-                dec_col_count  = 1;
-                en_ram   = 0;
+                ready    = 1;
+                valid    = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
-                valid    = 0;
-                ready    = 1;
+                en_count = 0;
+                amt      = 0;
             end
             S1:
             begin
-                en_load_count = 1;
-                en_row_count = 0;
-                en_col_count = 0;
-                dec_row_count  = 0;
-                dec_col_count  = 0;
-                en_ram   = 1;
-                sel      = 0;
-                en_cpr   = 1;
-                en_spr   = 1;
-                valid    = 0;
                 ready    = 0;
+                valid    = 0;
+                en_cpr   = 1;
+                en_spr   = 0;
+                en_count = 1;
+                sel      = 1;
+                amt      = 0;
             end
             S2: 
             begin 
-                en_load_count = 0;
-                en_row_count  = 0;
-                en_col_count  = 0;
-                dec_row_count = 0;
-                dec_col_count  = 0;
-                en_ram   = 0;
-                //sel      = 0;
+                ready    = 0;
+                valid    = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
-                valid    = 1;
-                ready    = 0;
+                en_count = 0;
+                amt      = 0;
             end
             S3: 
             begin 
-                en_load_count = 0;
-                en_row_count  = 1;
-                en_col_count  = 0;
-                dec_row_count = 0;
-                dec_col_count = 0;
-                en_ram   = 0;
-                sel      = 0;
+                ready    = 0;
+                valid    = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
-                valid    = 0;
-                ready    = 0;
+                en_count = 1;
+                sel      = 1;
+                amt      = 0;
             end
             S4: 
-            begin 
-                en_load_count = 0;
-                en_row_count  = 1;
-                en_col_count  = 0;                
-                dec_row_count = 0;
-                dec_col_count = 0;
-                en_ram   = 0;
-                sel      = 1;
+            begin
+                ready    = 0;
+                valid    = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
-                valid    = 0;
-                ready    = 0;
-            end
-            S5: 
-            begin 
-                en_load_count = 0;
-                en_row_count  = 0;
-                en_col_count  = 1;
-                dec_row_count = 1;
-                dec_col_count = 0;
-                en_ram   = 0;
+                en_count = 0;
                 sel      = 2;
+                amt      = amt + 1;
+            end
+            S5:         // Horizontal Shifter
+            begin
+                ready    = 0;
+                valid    = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
-                valid    = 0;
-                ready    = 0;
+                en_count = 1;
+                sel      = 0;
             end
         endcase
     end
@@ -202,38 +170,17 @@ module controller_me
 
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_load_count)
+        if(~rst_n | ~en_count)
         begin
-            load_count <= 0;
+            count <= 0;
         end
-        else if(en_load_count)
+        else if(en_count)
         begin
-            load_count <= load_count + 1;
-        end
-    end
-
-    always_ff@(posedge clk or negedge rst_n)
-    begin
-        if(~rst_n | dec_row_count)
-        begin
-            row_count <= 0;
-        end
-        else if(en_row_count)
-        begin
-            row_count <= row_count + 1;
+            count <= count + 1;
         end
     end
 
-    always_ff@(posedge clk or negedge rst_n)
-    begin
-        if(~rst_n | dec_col_count)
-        begin
-            col_count <= 0;
-        end
-        else if(en_col_count)
-        begin
-            col_count <= col_count + 1;
-        end
-    end
+    assign addr = count;
+
 
 endmodule

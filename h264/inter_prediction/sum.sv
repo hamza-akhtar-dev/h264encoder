@@ -1,9 +1,12 @@
-module sum 
+module sum #
 (
-    input  logic          rst_n,
-    input  logic          clk,
-    input  logic [2047:0] ad,
-    output logic [15:0  ]   sum
+    parameter MACRO_DIM = 16
+) 
+(
+    input  logic                        rst_n,
+    input  logic                        clk,
+    input  logic [8*(MACRO_DIM**2)-1:0] ad,
+    output logic [15:0]                 sum
 );
 
     genvar i, j, k, m;
