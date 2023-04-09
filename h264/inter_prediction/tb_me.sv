@@ -93,7 +93,7 @@ module tb_me #
         end
         for(l = 0; l < PORT_WIDTH; l++)
         begin
-            pixel_spr_in[l] = s_bram[l][addr];
+            pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][addr];
         end
     end           
 
