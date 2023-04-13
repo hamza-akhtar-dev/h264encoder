@@ -112,6 +112,8 @@ module tb_me #
     
         @(posedge clk);
 
+        start = 0;
+
 
         #10000 // use this for simulation for now. Until you are sure that every signal is behaving fine.
 

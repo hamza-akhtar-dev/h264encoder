@@ -91,7 +91,7 @@ module controller2
             end
             S5: // checking state
             begin
-                if (amt == SEARCH_DIM - 1)
+                if (amt == 47)
                 begin
                     next_state = S0;
                     done = 1;
@@ -139,7 +139,6 @@ module controller2
             begin
                 ready    = 0;
                 valid    = 0;
-                amt      = 0;
                 sel      = 1;
                 en_cpr   = 1;
                 en_spr   = 0;
@@ -152,7 +151,6 @@ module controller2
             begin 
                 ready    = 0;
                 valid    = 0;
-                amt      = 0;
               //sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
@@ -165,14 +163,14 @@ module controller2
             begin
                 ready    = 0;
                 valid    = 1;
-                amt      = 0;
+                //amt      = 0;
                 sel      = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
                 en_count = 1;
                 dec_count = 0;
                 rst_count = 0;
-                en_MACROcount = 0;                
+                en_MACROcount = 0;
                 dec_MACROcount = 0;
             end
             S4: 
@@ -187,15 +185,18 @@ module controller2
                 dec_count = 0;
                 rst_count = 0;
                 if (amt%2 == 0)
-                    dec_MACROcount = 1;
-                else
+                begin
                     en_MACROcount = 1;
+                end
+                else
+                begin
+                    dec_MACROcount = 1;
+                end
             end
             S5:         // Check
             begin
                 ready    = 0;
                 valid    = 0;
-                // sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 en_count = 0;
