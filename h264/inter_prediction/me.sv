@@ -13,7 +13,8 @@ module me #
     output logic        valid, 
     output logic [5:0]  addr,
     output logic [5:0]  amt,
-    output logic [15:0] min_sad
+    output logic [15:0] min_sad,
+    output logic        done
 );
 
     logic [1:0] sel;
@@ -36,7 +37,7 @@ module me #
         .min_sad            ( min_sad            )
     );
 
-    controller_me # 
+    controller2 # 
     (
         .MACRO_DIM  ( MACRO_DIM  ),
         .SEARCH_DIM ( SEARCH_DIM )
@@ -52,7 +53,8 @@ module me #
         .en_spr ( en_spr ),
         .addr   ( addr   ),
         .amt    ( amt    ),
-        .sel    ( sel    )
+        .sel    ( sel    ),
+        .done   ( done   )
     );
 
 endmodule

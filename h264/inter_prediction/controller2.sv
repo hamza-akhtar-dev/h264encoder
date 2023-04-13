@@ -1,4 +1,4 @@
-module controller_me
+module controller2
 #
 (
     parameter MACRO_DIM  = 16,
@@ -24,28 +24,26 @@ module controller_me
     localparam S3 = 3'b011;
     localparam S4 = 3'b100;
     localparam S5 = 3'b101;
+    localparam S6 = 3'b110;
 
-    logic       en_count;
+    logic rst_count, en_count, dec_count, en_MACROcount, dec_MACROcount;
     logic [5:0] count;
 
     logic [2:0] state;
-    logic [2:0] next_state;
-
-    //State Machine
-
+    logic [2:0] next_state;   
+    
     always_ff@(posedge clk or negedge rst_n) 
     begin
         if(~rst_n)
         begin
             state <= S0;
-            //done <= 0;
         end
         else
         begin
             state <= next_state;
         end
     end
-
+    
     always_comb 
     begin
         next_state = S0;
@@ -61,7 +59,7 @@ module controller_me
                     next_state = S0;
                 end
             end
-            S1: 
+            S1: // load cpr
             begin
                 if(count == MACRO_DIM-1)
                 begin
@@ -76,7 +74,7 @@ module controller_me
             begin
                 next_state = S3;
             end
-            S3:
+            S3: // spr load using down-shifting
             begin
                 if(count == SEARCH_DIM-1)
                 begin
@@ -87,27 +85,35 @@ module controller_me
                     next_state = S3;
                 end
             end
-            S4:
+            S4: // left shifting
             begin
                 next_state = S5;
             end
-            S5:
+            S5: // checking state
             begin
-                if (amt == 45)
+                if (amt == SEARCH_DIM - 1)
                 begin
                     next_state = S0;
                     done = 1;
                 end
+                else if (count == MACRO_DIM - 1)
+                begin
+                    next_state = S3;
+                end
+                else if (count == SEARCH_DIM - MACRO_DIM - 1)
+                begin
+                    next_state = S6;
+                end
+            end
+            S6: 
+            begin
+                if (count == 0)
+                begin
+                    next_state = S4;
+                end
                 else
                 begin
-                    if(count == SEARCH_DIM-1)
-                    begin
-                        next_state = S4;
-                    end
-                    else
-                    begin
-                        next_state = S5;
-                    end
+                    next_state = S6;
                 end
             end
         endcase
@@ -120,68 +126,102 @@ module controller_me
             begin
                 ready    = 1;
                 valid    = 0;
+                amt      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 en_count = 0;
-                amt      = 0;
-                //done     = 0;
+                dec_count = 0;
+                rst_count = 1;
+                en_MACROcount = 0;
+                dec_MACROcount = 0;
             end
             S1:
             begin
                 ready    = 0;
                 valid    = 0;
+                amt      = 0;
+                sel      = 1;
                 en_cpr   = 1;
                 en_spr   = 0;
                 en_count = 1;
-                sel      = 1;
-                amt      = 0;
+                dec_count = 0;
+                rst_count = 0;
+                en_MACROcount = 0;
             end
             S2: 
             begin 
                 ready    = 0;
                 valid    = 0;
+                amt      = 0;
+              //sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 0;
                 en_count = 0;
-                amt      = 0;
+                dec_count = 0;
+                rst_count = 1;
+                en_MACROcount = 0;
             end
             S3: 
-            begin 
+            begin
                 ready    = 0;
                 valid    = 1;
+                amt      = 0;
+                sel      = 1;
                 en_cpr   = 0;
                 en_spr   = 1;
                 en_count = 1;
-                sel      = 1;
-                amt      = 0;
+                dec_count = 0;
+                rst_count = 0;
+                en_MACROcount = 0;                
+                dec_MACROcount = 0;
             end
             S4: 
             begin
                 ready    = 0;
                 valid    = 1;
+                amt      = amt + 1;
+                sel      = 2;
                 en_cpr   = 0;
                 en_spr   = 1;
                 en_count = 0;
-                sel      = 2;
-                amt      = amt + 1;
+                dec_count = 0;
+                rst_count = 0;
+                if (amt%2 == 0)
+                    dec_MACROcount = 1;
+                else
+                    en_MACROcount = 1;
             end
-            S5:         // Horizontal Shifter
+            S5:         // Check
             begin
                 ready    = 0;
-                valid    = 1;
+                valid    = 0;
+                // sel      = 0;
+                en_cpr   = 0;
+                en_spr   = 0;
+                en_count = 0;
+                dec_count = 0;
+                rst_count = 0;
+                en_MACROcount = 0;
+                dec_MACROcount = 0;
+            end
+            S6:         // upshifting
+            begin
+                ready    = 0;
+                valid    = 0;
+                sel      = 0;
                 en_cpr   = 0;
                 en_spr   = 1;
-                en_count = 1;
-                sel      = 0;
+                en_count = 0;
+                dec_count = 1;
+                rst_count = 0;
+                en_MACROcount = 0;
             end
         endcase
     end
 
-    // Counter
-
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_count)
+        if(~rst_n | rst_count)
         begin
             count <= 0;
         end
@@ -189,9 +229,23 @@ module controller_me
         begin
             count <= count + 1;
         end
+        else if(dec_count)
+        begin
+            count <= count - 1;
+        end
+        else if(en_MACROcount)
+        begin
+            count <= count + MACRO_DIM;
+        end
+        else if(dec_MACROcount)
+        begin
+            count <= count - MACRO_DIM;
+        end
+        else
+        begin
+            count <= count;
+        end
     end
 
     assign addr = count;
-
-
 endmodule

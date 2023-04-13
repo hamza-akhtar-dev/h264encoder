@@ -16,8 +16,8 @@ module tb_me #
 
     initial
     begin
-        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/curr_picture.mem", curr_picture);
-        $readmemh("C:/Users/Hamza/Desktop/Current Workings/h264encoder/memory/search_picture.mem", search_picture);
+        $readmemh("./memory/curr_picture.mem", curr_picture);
+        $readmemh("./memory/search_picture.mem", search_picture);
     end
 
     // Initializing Block Rams
@@ -57,6 +57,7 @@ module tb_me #
     logic [7:0]  pixel_spr_in [0:MACRO_DIM];
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
+    logic        done;
 
     initial 
     begin
@@ -80,7 +81,8 @@ module tb_me #
         .valid              ( valid              ),
         .addr               ( addr               ),
         .amt                ( amt                ),
-        .min_sad            ( min_sad            )
+        .min_sad            ( min_sad            ),
+        .done               ( done               )
     );
 
     // Simulating RAM
@@ -110,8 +112,8 @@ module tb_me #
     
         @(posedge clk);
 
-        #10000;
-
+        wait(done == 1);
+        @(posedge clk);
         $finish;
     end
 
