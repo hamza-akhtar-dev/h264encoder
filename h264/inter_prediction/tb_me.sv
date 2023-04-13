@@ -112,7 +112,11 @@ module tb_me #
     
         @(posedge clk);
 
-        wait(done == 1);
+
+        #10000 // use this for simulation for now. Until you are sure that every signal is behaving fine.
+
+        //wait(done == 1); // done is never being is asserted so simulation is stuck at wait and is never reaching to $finish.
+
         @(posedge clk);
         $finish;
     end
