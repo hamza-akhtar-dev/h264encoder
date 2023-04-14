@@ -9,7 +9,7 @@ module tb_me #
     localparam T = 10;
     localparam PORT_WIDTH = MACRO_DIM + 1;
 
-    integer i, j, k, l;
+    integer i, j, k, l, m;
 
     logic [7:0] curr_picture   [MACRO_DIM][MACRO_DIM];
     logic [7:0] search_picture [SEARCH_DIM][SEARCH_DIM];
@@ -57,7 +57,6 @@ module tb_me #
     logic [7:0]  pixel_spr_in [0:MACRO_DIM];
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
-    logic        done;
 
     initial 
     begin
@@ -81,8 +80,7 @@ module tb_me #
         .valid              ( valid              ),
         .addr               ( addr               ),
         .amt                ( amt                ),
-        .min_sad            ( min_sad            ),
-        .done               ( done               )
+        .min_sad            ( min_sad            )
     );
 
     // Simulating RAM
@@ -95,7 +93,7 @@ module tb_me #
         end
         for(l = 0; l < PORT_WIDTH; l++)
         begin
-            pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][addr];
+            pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][(amt*SEARCH_DIM)+addr];
         end
     end           
 

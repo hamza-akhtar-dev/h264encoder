@@ -14,8 +14,7 @@ module controller_me
     output logic       en_spr,
     output logic [5:0] addr,
     output logic [5:0] amt,
-    output logic [1:0] sel,
-    output logic       done
+    output logic [1:0] sel
 );
 
     localparam S0 = 3'b000;
@@ -24,9 +23,15 @@ module controller_me
     localparam S3 = 3'b011;
     localparam S4 = 3'b100;
     localparam S5 = 3'b101;
+    localparam S6 = 3'b110;
+    localparam S7 = 3'b111;
 
-    logic       en_count;
     logic [5:0] count;
+    logic       en_count_inc;
+    logic       en_count_dec;
+    logic       set_to_16;
+    logic       set_to_31;
+    logic       rst_count;
 
     logic [2:0] state;
     logic [2:0] next_state;
@@ -38,7 +43,6 @@ module controller_me
         if(~rst_n)
         begin
             state <= S0;
-            //done <= 0;
         end
         else
         begin
@@ -78,7 +82,7 @@ module controller_me
             end
             S3:
             begin
-                if(count == SEARCH_DIM-1)
+                if(count == MACRO_DIM-1)
                 begin
                     next_state = S4;
                 end
@@ -89,25 +93,46 @@ module controller_me
             end
             S4:
             begin
-                next_state = S5;
-            end
-            S5:
-            begin
-                if (amt == 45)
+                if(count == SEARCH_DIM-1)
                 begin
-                    next_state = S0;
-                    done = 1;
+                    next_state = S5;
                 end
                 else
                 begin
-                    if(count == SEARCH_DIM-1)
-                    begin
-                        next_state = S4;
-                    end
-                    else
-                    begin
-                        next_state = S5;
-                    end
+                    next_state = S4;
+                end
+            end
+            S5:
+            begin
+                if(amt > 32)
+                begin
+                    next_state = S0;
+                end
+                else
+                begin
+                    next_state = S6;
+                end
+            end
+            S6:
+            begin
+                if(count == 0)
+                begin
+                    next_state = S7;
+                end
+                else
+                begin
+                    next_state = S6;
+                end
+            end
+            S7:
+            begin
+                if(amt > 32)
+                begin
+                    next_state = S0;
+                end
+                else
+                begin
+                    next_state = S4;
                 end
             end
         endcase
@@ -116,82 +141,122 @@ module controller_me
     always_comb 
     begin
         case(state)
-            S0:
+            S0: // Reset State
             begin
-                ready    = 1;
-                valid    = 0;
-                en_cpr   = 0;
-                en_spr   = 0;
-                en_count = 0;
-                amt      = 0;
-                //done     = 0;
+                ready     = 1;
+                valid     = 0;
+                en_cpr    = 0;
+                en_spr    = 0;
+                rst_count = 1;
+                amt       = 0;
             end
-            S1:
+            S1: // CPR Load State
             begin
-                ready    = 0;
-                valid    = 0;
-                en_cpr   = 1;
-                en_spr   = 0;
-                en_count = 1;
-                sel      = 1;
-                amt      = 0;
+                ready        = 0;
+                valid        = 0;
+                en_cpr       = 1;
+                en_spr       = 0;
+                rst_count    = 0;
+                en_count_inc = 1;
+                en_count_dec = 0;
+                sel          = 1;
             end
-            S2: 
+            S2: // Counter Reset State
             begin 
-                ready    = 0;
-                valid    = 0;
-                en_cpr   = 0;
-                en_spr   = 0;
-                en_count = 0;
-                amt      = 0;
+                ready     = 0;
+                valid     = 0;
+                en_cpr    = 0;
+                en_spr    = 0;
+                rst_count = 1;
             end
-            S3: 
+            S3: // SPR Load State
             begin 
-                ready    = 0;
-                valid    = 1;
-                en_cpr   = 0;
-                en_spr   = 1;
-                en_count = 1;
-                sel      = 1;
-                amt      = 0;
+                ready        = 0;
+                valid        = 0;
+                en_cpr       = 0;
+                en_spr       = 1;
+                rst_count    = 0;
+                en_count_inc = 1;
+                en_count_dec = 0;
+                sel          = 1;
             end
-            S4: 
-            begin
-                ready    = 0;
-                valid    = 1;
-                en_cpr   = 0;
-                en_spr   = 1;
-                en_count = 0;
-                sel      = 2;
-                amt      = amt + 1;
+            S4: // Upshift State
+            begin 
+                ready        = 0;
+                valid        = 1;
+                en_cpr       = 0;
+                en_spr       = 1;
+                rst_count    = 0;
+                en_count_inc = 1;
+                en_count_dec = 0;
+                sel          = 1;
             end
-            S5:         // Horizontal Shifter
+            S5: // Leftshift after Up State 
             begin
-                ready    = 0;
-                valid    = 1;
-                en_cpr   = 0;
-                en_spr   = 1;
-                en_count = 1;
-                sel      = 0;
+                ready        = 0;
+                valid        = 1;
+                en_cpr       = 0;
+                en_spr       = 1;
+                rst_count    = 0;
+                en_count_inc = 0;
+                en_count_dec = 0;
+                set_to_16    = 0;
+                set_to_31    = 1;
+                sel          = 2;
+                amt          = amt + 1;
+            end
+            S6: // Downshift State
+            begin
+                ready        = 0;
+                valid        = 1;
+                en_cpr       = 0;
+                en_spr       = 1;
+                rst_count    = 0;
+                en_count_inc = 0;
+                en_count_dec = 1;
+                sel          = 0;
+            end
+            S7: // Leftshift after Down State
+            begin
+                ready        = 0;
+                valid        = 1;
+                en_cpr       = 0;
+                en_spr       = 1;
+                rst_count    = 0;
+                en_count_inc = 0;
+                en_count_dec = 0;
+                set_to_16    = 1;
+                set_to_31    = 0;
+                sel          = 2;
+                amt          = amt + 1;
             end
         endcase
     end
 
-    // Counter
-
     always_ff@(posedge clk or negedge rst_n)
     begin
-        if(~rst_n | ~en_count)
+        if(~rst_n | rst_count)
         begin
             count <= 0;
         end
-        else if(en_count)
+        else if(en_count_inc)
         begin
             count <= count + 1;
+        end
+        else if(en_count_dec)
+        begin
+            count <= count - 1;
+        end
+        else if(set_to_16)
+        begin
+            count <= 16;
+        end
+        else if(set_to_31)
+        begin
+            count <= 31;
         end
     end
 
     assign addr = count;
-
 
 endmodule
