@@ -9,7 +9,7 @@ module tb_me #
     localparam T = 10;
     localparam PORT_WIDTH = MACRO_DIM + 1;
 
-    integer i, j, k, l, m;
+    integer i, j, k, l, m, f, g;
 
     logic [7:0] curr_picture   [MACRO_DIM][MACRO_DIM];
     logic [7:0] search_picture [SEARCH_DIM][SEARCH_DIM];
@@ -58,6 +58,8 @@ module tb_me #
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
 
+    logic [5:0] trans_addr [MACRO_DIM:0];
+
     initial 
     begin
         clk = 0;
@@ -93,7 +95,30 @@ module tb_me #
         end
         for(l = 0; l < PORT_WIDTH; l++)
         begin
-            pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][(amt*SEARCH_DIM)+addr];
+            for (g = 0; g < PORT_WIDTH; g++)
+            begin
+                pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][trans_addr[g]];
+            end
+            //pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][((l+amt) > 17) ? amt*SEARCH_DIM+addr : (amt-1)*SEARCH_DIM + addr];
+            //pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][((l+amt) > 16)  ? (amt)*SEARCH_DIM+addr : SEARCH_DIM];
+            
+        end
+    end
+
+    //Address Translation
+
+    always_comb
+    begin
+        for (f = 0; f < PORT_WIDTH; f++) 
+        begin
+            if (f < amt) 
+            begin
+                trans_addr[f] = addr + SEARCH_DIM;
+            end
+            else
+            begin
+                trans_addr[f] = addr;
+            end
         end
     end           
 
@@ -115,7 +140,7 @@ module tb_me #
 
         #10000 // use this for simulation for now. Until you are sure that every signal is behaving fine.
 
-        //wait(done == 1); // done is never being is asserted so simulation is stuck at wait and is never reaching to $finish.
+        //wait(done == 1); // done is never being asserted so simulation is stuck at wait and is never reaching to $finish.
 
         @(posedge clk);
         $finish;

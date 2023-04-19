@@ -12,7 +12,7 @@ module controller_me
     output logic       valid,
     output logic       en_cpr, 
     output logic       en_spr,
-    output logic [5:0] addr,
+    output logic [5:0] addr, //output logic [5:0] addr [MACRO_DIM:0] Try
     output logic [5:0] amt,
     output logic [1:0] sel
 );
