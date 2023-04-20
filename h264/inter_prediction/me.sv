@@ -14,6 +14,8 @@ module me #
     output logic        en_ram,
     output logic [5:0]  addr,
     output logic [5:0]  amt,
+    output logic [5:0]  mv_x,
+    output logic [5:0]  mv_y,
     output logic [15:0] min_sad
 );
 
@@ -28,13 +30,17 @@ module me #
     (
         .rst_n              ( rst_n              ),
         .clk                ( clk                ),
+        .amt                ( amt                ),
+        .addr               ( addr               ),
         .en_spr             ( en_spr             ),
         .en_cpr             ( en_cpr             ),
         .valid              ( valid              ),
         .sel                ( sel                ),
         .pixel_spr_in       ( pixel_spr_in       ),
         .pixel_cpr_in       ( pixel_cpr_in       ),
-        .min_sad            ( min_sad            )
+        .min_sad            ( min_sad            ),
+        .mv_x               ( mv_x               ),
+        .mv_y               ( mv_y               )
     );
 
     controller_me # 

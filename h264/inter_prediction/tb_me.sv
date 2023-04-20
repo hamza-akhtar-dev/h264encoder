@@ -55,6 +55,8 @@ module tb_me #
     logic        en_ram;
     logic [5:0]  addr;
     logic [5:0]  amt;
+    logic [5:0]  mv_y;
+    logic [5:0]  mv_x;
     logic [7:0]  pixel_spr_in [0:MACRO_DIM];
     logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
     logic [15:0] min_sad;
@@ -84,6 +86,8 @@ module tb_me #
         .en_ram             ( en_ram             ),
         .addr               ( addr               ),
         .amt                ( amt                ),
+        .mv_x               ( mv_x               ),
+        .mv_y               ( mv_y               ),
         .min_sad            ( min_sad            )
     );
 

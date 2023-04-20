@@ -6,12 +6,16 @@ module datapath_me #
 (
     input  logic         rst_n,
     input  logic         clk,
+    input  logic [5:0]   addr,
+    input  logic [5:0]   amt,
     input  logic         en_spr,
     input  logic         en_cpr,
     input  logic         valid,
     input  logic [1:0 ]  sel,
     input  logic [7:0 ]  pixel_spr_in [0:MACRO_DIM  ],
     input  logic [7:0 ]  pixel_cpr_in [0:MACRO_DIM-1],
+    output logic [5:0]   mv_x,
+    output logic [5:0]   mv_y,
     output logic [15:0]  min_sad
 );
     logic [7:0]                  wire_reg_right          [0:MACRO_DIM+1];
@@ -88,8 +92,12 @@ module datapath_me #
         .clk     ( clk      ),
         .rst_n   ( rst_n    ),
         .valid   ( valid    ),
+        .addr    ( addr     ),
+        .amt     ( amt      ),
         .sad     ( wire_sad ),
-        .min_sad ( min_sad  )
+        .min_sad ( min_sad  ),
+        .mv_x    ( mv_x     ),
+        .mv_y    ( mv_y     )
     );
 
 endmodule
