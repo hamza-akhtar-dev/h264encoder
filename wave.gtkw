@@ -1,0 +1,183 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Apr 20 07:01:49 2023
+[*]
+[dumpfile] "C:\Users\Fariaa Faheem\Desktop\h264encoder\tb_me.vcd"
+[dumpfile_mtime] "Thu Apr 20 06:53:21 2023"
+[dumpfile_size] 94355043
+[savefile] "C:\Users\Fariaa Faheem\Desktop\h264encoder\wave.gtkw"
+[timestart] 520
+[size] 1366 705
+[pos] -1 -1
+*-6.000000 691 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_me.
+[treeopen] tb_me.ins_me.
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[10].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[11].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[12].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[13].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[14].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[15].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[1].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[2].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[3].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[4].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[5].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[6].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[7].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[8].
+[treeopen] tb_me.ins_me.ins_datapath_me.genblk1[9].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[0].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[11].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[12].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[13].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[14].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[15].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[1].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[2].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[3].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[4].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[5].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[6].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[7].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[8].
+[treeopen] tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[9].
+[sst_width] 254
+[signals_width] 226
+[sst_expanded] 1
+[sst_vpaned_height] 228
+@28
+tb_me.ins_me.ins_controller_me.clk
+@24
+tb_me.ins_me.ins_controller_me.count[5:0]
+@420
+tb_me.ins_me.ins_datapath_me.MACRO_DIM
+tb_me.ins_me.ins_datapath_me.SEARCH_DIM
+@28
+tb_me.ins_me.ins_datapath_me.clk
+@22
+tb_me.ins_me.ins_datapath_me.debug0[7:0]
+tb_me.ins_me.ins_datapath_me.debug1[7:0]
+tb_me.ins_me.ins_datapath_me.debug2[7:0]
+tb_me.ins_me.ins_datapath_me.debug3[7:0]
+tb_me.ins_me.ins_datapath_me.debug4[7:0]
+tb_me.ins_me.ins_datapath_me.debug5[7:0]
+tb_me.ins_me.ins_datapath_me.debug6[7:0]
+tb_me.ins_me.ins_datapath_me.debug7[7:0]
+tb_me.ins_me.ins_datapath_me.debug8[7:0]
+tb_me.ins_me.ins_datapath_me.debug9[7:0]
+tb_me.ins_me.ins_datapath_me.debug10[7:0]
+tb_me.ins_me.ins_datapath_me.debug11[7:0]
+tb_me.ins_me.ins_datapath_me.debug12[7:0]
+tb_me.ins_me.ins_datapath_me.debug13[7:0]
+tb_me.ins_me.ins_datapath_me.debug14[7:0]
+tb_me.ins_me.ins_datapath_me.debug15[7:0]
+tb_me.ins_me.ins_datapath_me.debug16[7:0]
+@28
+tb_me.ins_me.ins_datapath_me.en_cpr
+tb_me.ins_me.ins_datapath_me.en_spr
+@22
+tb_me.ins_me.ins_datapath_me.min_sad[15:0]
+@28
+tb_me.ins_me.ins_datapath_me.rst_n
+#{tb_me.ins_me.ins_datapath_me.sel[1:0]} tb_me.ins_me.ins_datapath_me.sel[1] tb_me.ins_me.ins_datapath_me.sel[0]
+tb_me.ins_me.ins_datapath_me.valid
+@22
+tb_me.ins_me.ins_datapath_me.wire_ad[2047:0]
+tb_me.ins_me.ins_datapath_me.wire_sad[15:0]
+@28
+tb_me.ins_me.ins_controller_me.sel[1:0]
+@22
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[0].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[1].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[2].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[3].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[4].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[5].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[6].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[7].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[8].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[9].ins_pe.pixel_spr_out[7:0]
+@c00022
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+@28
+(0)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(1)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(2)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(3)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(4)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(5)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(6)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+(7)tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[10].ins_pe.pixel_spr_out[7:0]
+@1401200
+-group_end
+@22
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[11].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[12].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[13].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[14].ins_pe.pixel_spr_out[7:0]
+tb_me.ins_me.ins_datapath_me.ins_pe_matrix.column[15].ins_pe_col.element[15].ins_pe.pixel_spr_out[7:0]
+@24
+tb_me.addr0[15:0]
+tb_me.addr1[15:0]
+tb_me.addr2[15:0]
+tb_me.addr3[15:0]
+tb_me.addr4[15:0]
+tb_me.addr5[15:0]
+tb_me.addr6[15:0]
+tb_me.addr7[15:0]
+tb_me.addr8[15:0]
+tb_me.addr9[15:0]
+tb_me.addr10[15:0]
+tb_me.addr11[15:0]
+tb_me.addr12[15:0]
+tb_me.addr13[15:0]
+tb_me.addr14[15:0]
+tb_me.addr15[15:0]
+tb_me.addr16[15:0]
+@28
+tb_me.ins_me.ins_controller_me.en_cpr
+tb_me.ins_me.ins_controller_me.en_spr
+@22
+tb_me.ins_me.ins_datapath_me.genblk1[0].ins_register.out[7:0]
+@23
+tb_me.ins_me.ins_datapath_me.genblk1[1].ins_register.out[7:0]
+@22
+tb_me.ins_me.ins_datapath_me.genblk1[2].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[3].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[4].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[5].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[6].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[7].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[8].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[9].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[10].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[11].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[12].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[13].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[14].ins_register.out[7:0]
+tb_me.ins_me.ins_datapath_me.genblk1[15].ins_register.out[7:0]
+@28
+tb_me.ins_me.ins_controller_me.clk
+@22
+tb_me.value[7:0]
+@28
+tb_me.ins_me.ins_controller_me.next_state[2:0]
+tb_me.ins_me.ins_controller_me.state[2:0]
+tb_me.ins_me.ins_controller_me.sel[1:0]
+tb_me.ins_me.ins_controller_me.start
+@24
+tb_me.ins_me.ins_controller_me.count[5:0]
+tb_me.ins_me.ins_controller_me.addr[5:0]
+@28
+tb_me.ins_me.ins_controller_me.en_count_dec
+tb_me.ins_me.ins_controller_me.en_count_inc
+tb_me.ins_me.ins_controller_me.rst_count
+@22
+tb_me.ins_me.ins_controller_me.amt[5:0]
+[pattern_trace] 1
+[pattern_trace] 0
