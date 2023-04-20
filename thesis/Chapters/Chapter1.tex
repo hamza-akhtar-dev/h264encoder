@@ -63,4 +63,21 @@ This path takes quantized transform coefficients and performs inverse quantizati
 % write something about implementation on FPGA 
 In this thesis, we developed an FPGA based H.264 intra and inter frame coder hardware targeting \textbf{High Profile} (see which one to mention, See from wikipedia )
 
+\section{H264 Major Components}
+
+\subsection{Prediction}
+In order to guarantee a high compression ratio in H.264 encoders, prediction is a technique utilized. In prediction, a 16x16 pixel block known as a macroblock from a previous video frame or the present frame is utilized to forecast macroblocks in the current frame. 
+
+There are basically 2 modes for prediction:
+
+\subsection{Intra-Prediction}
+Intra prediction is performed without referring to any data outside the current slice i.e prediction from previously coded data in the same slice. It reduces spatial redundancies by exploiting spatial correlation between adjacent blocks in a given picture. There are 3 choices of block size for luma component i.e. 16x16, 8x8 or 4x4. Whereas for chroma component, a single prediction block is generated. Once, the prediction has been made, it is subtracted from current block to make a residual. 
+%include diagram
+
+\subsection{Inter-Prediction}
+Inter prediction is the process of predicting a block of luma and chroma samples from a picture that has been previously coded and transmitted i.e reference picture. It uses temporal sampling technique. For this, a prediction region is selected, then a prediction block is generated. After that the prediction block is subtracted from original block of samples to form a residual. 
+%include diag
+
+\subsubsection{Motion Vector Prediction}
+
 

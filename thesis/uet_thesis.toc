@@ -13,17 +13,23 @@
 \contentsline {section}{\numberline {1.3}H264 Process}{2}{section.35}%
 \contentsline {subsection}{\numberline {1.3.1}Forward Path}{3}{subsection.36}%
 \contentsline {subsection}{\numberline {1.3.2}Reconstruction Path}{3}{subsection.37}%
-\contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{4}{chapter.38}%
-\contentsline {section}{\numberline {2.1}Motivations}{4}{section.39}%
-\contentsline {chapter}{\numberline {3}Thesis Structure}{5}{chapter.40}%
+\contentsline {section}{\numberline {1.4}H264 Major Components}{3}{section.38}%
+\contentsline {subsection}{\numberline {1.4.1}Prediction}{3}{subsection.39}%
+\contentsline {subsection}{\numberline {1.4.2}Intra-Prediction}{3}{subsection.40}%
+\contentsline {subsection}{\numberline {1.4.3}Inter-Prediction}{4}{subsection.41}%
+\contentsline {subsubsection}{\numberline {1.4.3.1}Motion Vector Prediction}{4}{subsubsection.42}%
+\contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{5}{chapter.43}%
+\contentsline {section}{\numberline {2.1}Motivations}{5}{section.44}%
+\contentsline {chapter}{\numberline {3}Prediction}{6}{chapter.45}%
+\contentsline {chapter}{\numberline {4}Thesis Structure}{7}{chapter.46}%
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Introduction to Latex}{7}{appendix.42}%
-\contentsline {section}{\numberline {A.1}Learning \LaTeX {}}{7}{section.43}%
-\contentsline {subsection}{\numberline {A.1.1}A (not so short) Introduction to \LaTeX {}}{7}{subsection.44}%
-\contentsline {subsection}{\numberline {A.1.2}A Short Math Guide for \LaTeX {}}{7}{subsection.45}%
-\contentsline {subsection}{\numberline {A.1.3}Common \LaTeX {} Math Symbols}{8}{subsection.46}%
-\contentsline {subsection}{\numberline {A.1.4}Figures}{8}{subsection.47}%
-\contentsline {subsection}{\numberline {A.1.5}Typesetting mathematics}{9}{subsection.49}%
-\contentsline {section}{\numberline {A.2}Sectioning and Subsectioning}{10}{section.51}%
+\contentsline {chapter}{\numberline {A}Introduction to Latex}{9}{appendix.48}%
+\contentsline {section}{\numberline {A.1}Learning \LaTeX {}}{9}{section.49}%
+\contentsline {subsection}{\numberline {A.1.1}A (not so short) Introduction to \LaTeX {}}{9}{subsection.50}%
+\contentsline {subsection}{\numberline {A.1.2}A Short Math Guide for \LaTeX {}}{9}{subsection.51}%
+\contentsline {subsection}{\numberline {A.1.3}Common \LaTeX {} Math Symbols}{10}{subsection.52}%
+\contentsline {subsection}{\numberline {A.1.4}Figures}{10}{subsection.53}%
+\contentsline {subsection}{\numberline {A.1.5}Typesetting mathematics}{11}{subsection.55}%
+\contentsline {section}{\numberline {A.2}Sectioning and Subsectioning}{12}{section.57}%
 \vspace {2em}
-\contentsline {chapter}{References}{11}{dummy.52}%
+\contentsline {chapter}{References}{13}{dummy.58}%
