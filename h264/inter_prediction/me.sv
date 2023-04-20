@@ -11,6 +11,7 @@ module me #
     input  logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1],
     output logic        ready,
     output logic        valid, 
+    output logic        en_ram,
     output logic [5:0]  addr,
     output logic [5:0]  amt,
     output logic [15:0] min_sad
@@ -50,6 +51,7 @@ module me #
         .valid  ( valid  ),
         .en_cpr ( en_cpr ), 
         .en_spr ( en_spr ),
+        .en_ram ( en_ram ),
         .addr   ( addr   ),
         .amt    ( amt    ),
         .sel    ( sel    )

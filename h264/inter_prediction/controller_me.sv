@@ -12,6 +12,7 @@ module controller_me
     output logic       valid,
     output logic       en_cpr, 
     output logic       en_spr,
+    output logic       en_ram,
     output logic [5:0] addr, //output logic [5:0] addr [MACRO_DIM:0] Try
     output logic [5:0] amt,
     output logic [1:0] sel
@@ -149,6 +150,7 @@ module controller_me
                 en_spr    = 0;
                 rst_count = 1;
                 amt       = 0;
+                en_ram    = 0;
             end
             S1: // CPR Load State
             begin
@@ -160,6 +162,7 @@ module controller_me
                 en_count_inc = 1;
                 en_count_dec = 0;
                 sel          = 1;
+                en_ram       = 1;
             end
             S2: // Counter Reset State
             begin 
@@ -168,6 +171,7 @@ module controller_me
                 en_cpr    = 0;
                 en_spr    = 0;
                 rst_count = 1;
+                en_ram    = 0;
             end
             S3: // SPR Load State
             begin 
@@ -179,6 +183,7 @@ module controller_me
                 en_count_inc = 1;
                 en_count_dec = 0;
                 sel          = 1;
+                en_ram       = 1;
             end
             S4: // Upshift State
             begin 
@@ -190,6 +195,7 @@ module controller_me
                 en_count_inc = 1;
                 en_count_dec = 0;
                 sel          = 1;
+                en_ram       = 1;
             end
             S5: // Leftshift after Up State 
             begin
@@ -204,6 +210,7 @@ module controller_me
                 set_to_31    = 1;
                 sel          = 2;
                 amt          = amt + 1;
+                en_ram       = 0;
             end
             S6: // Downshift State
             begin
@@ -215,6 +222,7 @@ module controller_me
                 en_count_inc = 0;
                 en_count_dec = 1;
                 sel          = 0;
+                en_ram       = 1;
             end
             S7: // Leftshift after Down State
             begin
@@ -229,6 +237,7 @@ module controller_me
                 set_to_31    = 0;
                 sel          = 2;
                 amt          = amt + 1;
+                en_ram       = 0;
             end
         endcase
     end
