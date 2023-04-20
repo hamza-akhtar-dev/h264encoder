@@ -1,0 +1,36 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Barrass(2002)]{barrass2002scientists}
+R.~Barrass.
+\newblock \emph{{Scientists must write: a guide to better writing for
+  scientists, engineers and students}}.
+\newblock RoutledgeFalmer, 2002.
+
+\bibitem[Chandrasekhar(Last accessed on May 19, 2010.)]{getthesis}
+R.~Chandrasekhar.
+\newblock {How to Write a Thesis: \textit{A Working Guide}}.
+\newblock \url{http://ciips.ee.uwa.edu.au/pub/HowToWriteAThesis.pdf}, Last
+  accessed on May 19, 2010.
+
+\bibitem[Easterbrook(Last accessed on May 19, 2010.)]{howtothesis}
+S.~Easterbrook.
+\newblock {How Thesis Get Written}.
+\newblock \url{http://www.cs.toronto.edu/~sme/presentations/thesiswriting.pdf},
+  Last accessed on May 19, 2010.
+
+\bibitem[Evans and Gruba(2003)]{evans2003write}
+D.~Evans and P.~Gruba.
+\newblock \emph{{How to write a better thesis}}.
+\newblock Melbourne University Publishing, 2003.
+
+\bibitem[Murray(2006)]{murray2006write}
+R.~Murray.
+\newblock \emph{{How to write a thesis}}.
+\newblock Open Univ Press, 2006.
+
+\end{thebibliography}

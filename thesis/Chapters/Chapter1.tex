@@ -1,0 +1,66 @@
+% Chapter 1
+
+\chapter{Introduction} % Write in your own chapter title
+\label{Chapter1}
+\lhead{Chapter 1. \emph{Introduction}} % Write in your own chapter title to set the page header
+
+Digital video is a series of image frames moving on a screen at a predefined rate. The transfer of a video from one medium to another depends on the length of video and the size of its encoding bits. To reduce the size of overall video, a \textbf{Video Compression} technique is applied that leads to reduction in amount of data required to represent that digital video signal, prior to transmission and storage. 
+
+The latest video coding standard \textbf{H.264/AVC}, also known as \textbf{MPEG-4 Part-10}, developed jointly by \textbf{ITU-T Video Coding Experts Group} and \textbf{ISO/IEC JTC 1 Moving Picture Experts Group} provides considerable higher efficiency (capable of saving upto 50$\%$ bit rate at te same level of video quality) than a usual video coding standard. It covers a wide range from QCIF to HDTV.  
+% refrence to ppr J_2008.04
+
+The overall procedure of H.264 includes various components. The top level block diagram of an H.264 Encoder is shown in Figure
+ 
+ % figure here ----------------------------
+
+% explain the h.464 profiles and levels 
+
+% ref taken from https://www.rgb.com/h264-profiles#:~:text=Blu%2Dray%20discs.-,H.,Baseline%2C%20Main%2C%20and%20High.
+\section{H264 Profiles}
+The H.264 family of standards includes various capabilities. These profiles are mainly used to reduce the frame count by implementing motion prediction and temporal compression. The most common ones are:
+
+\begin{itemize}
+	\item Baseline Profile
+	\item Main Profile
+	\item High Profile
+\end{itemize}
+
+\subsection{Baseline Profile}
+Baseline profiles are used for low-power and low-cost applications. These profiles can achieve a compression ratio of 1000:1 which means a streamlet of 1 Gbps can be compressed to about 1 Mbps. 4:2:0 chrominance sampling is used, meaning that color information is sampled at a half-vertical and half-horizontal resolution of the black-and-white information. Moreover, this profile uses Universal Variable Length Coding (UVLC) and Context Adaptive Variable Length Coding (CAVLAC) entropy encoding techniques. 
+
+\subsection{Main Profile}
+The improvements in Baseline Profile were made by introducing efficient frame prediction algorithms. This new profile was regarded as Main Profile. It is used for standard-definition digital TV broadcasts (MPEG-4 format). But it is not used for High Standard broadcasts.
+
+\subsection{High Profile}
+Introduces in 2004, High Profile is the most efficient and powerful profile in H.264 family. This profile is used for high-definition television applications (Blu-ray Disc storage and DVB HDTV broad cast service) 
+
+The compression ratio achieved using this profile is 2000:1. It uses an adaptive transform by which 4x4 or 8x8 pixel blocks can be selected. The video quality of image while reducing network bandwidth is preserved up to 50 percent. By applying this compression, a 1 Gbps stream can be compressed to about 512 Kbps.
+
+% include h.264 syntax briefly
+% taken from the richardson book
+\section{H264 syntax}
+H264 consists of 2 layers. The \textbf{Network Abstraction Layer (NAL)} consists of series of NAL Units. These units that signal certain common control parameters to the decoder are Sequence Parameter Sets (SPS) and Picture Parameter Sets (PPS). In \textbf{Video Coding Layer (VCL)} units, coded video data is communicated, also known as \textbf{slices}. There is an \textbf{access unit}, a code frame or field which is made up of one or more slices. Next is the \textbf{slice layer}, at which each slice consists of a Slice Header and Slice Data. Slice Data is regarded as series of code \textbf{macro blocks (MB)} and skip macro block indicators which signal that certain macro block positions contain no data. Each Macro block has following syntax elements:
+
+\begin{itemize}
+	\item \textbf{MB type:} I/intra coded, P/inter coded from one reference frame
+	\item \textbf{Prediction information:} prediction mode for I macro block, choice reference frame and motion vectors for P macro block
+	\item \textbf{Coded Block Pattern CBP:} indicates which luma and chroma blocks contain non zero residual co-efficient
+	\item \textbf{Quantization Parameter QP:} for macro blocks with CBP not 0
+	\item \textbf{Residual Data:} for blocks containing non-zero residual coefficients
+\end{itemize}
+% draw the digram of layers here
+
+% explain the components briefly
+\section{H264 Process}
+An H264 encoder has a \textbf{forward path} and a \textbf{reconstruction path}. The forward path uses \textbf{intra} and \textbf{inter predictions} to encode a video frame to create a bit stream. The reconstruction path is used to decode the encoded frame and to reconstruct the decoded frame. Reconstruction path in encoder ensures that both encoder and decoder make use of similar reference frames for inter and intra prediction. This is to avoid encoder-decoder mismatches. 
+
+\subsection{Forward Path}
+The input frame is partitioned into \textbf{Macro-Blocks (MB)}. These MB are then encoded in intra or inter mode. This depends on mode decision. The current MB is predicted from reconstructed frame. This predicted MB is generated by intra prediction based on \textbf{spatial redundancy}, and by inter prediction based on \textbf{temporal redundancy}. The mode is chosen based on better quality and bit rate performance of these 2 modes. The Predicted MB is subtracted from current MB to create a \textbf{Residual MB}. Residual data is \textbf{transformed} (4x4 integer transform), then \textbf{quantized}. The obtained coefficient are re-ordered in a \textbf{zig-zag order} which are regarded as \textbf{entropy encoded}. These coefficients along with header information form the \textbf{compressed bit stream}. This stream is forwarded to NAL for storage or transmission. 
+
+\subsection{Reconstruction Path}
+This path takes quantized transform coefficients and performs inverse quantization and inverse transform. In this way, reconstructed residual data is generated, but they are not identical to original residual data as quantization is a lossy process. In order to create the reconstructed frame, the reconstructed residual data are added to predicted pixels. 
+
+% write something about implementation on FPGA 
+In this thesis, we developed an FPGA based H.264 intra and inter frame coder hardware targeting \textbf{High Profile} (see which one to mention, See from wikipedia )
+
+
