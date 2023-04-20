@@ -4,17 +4,12 @@
 \label{Chapter1}
 \lhead{Chapter 1. \emph{Introduction}} % Write in your own chapter title to set the page header
 
-Digital video is a series of image frames moving on a screen at a predefined rate. The transfer of a video from one medium to another depends on the length of video and the size of its encoding bits. To reduce the size of overall video, a \textbf{Video Compression} technique is applied that leads to reduction in amount of data required to represent that digital video signal, prior to transmission and storage. 
+Digital video refers to a sequence of images displayed on a screen at a predetermined rate. The process of transferring video content from one medium to another depends on both the duration of the video and the size of the encoded bits. \textbf{Video compression} techniques are commonly utilized to reduce the overall size of the video, which consequently leads to a decrease in the amount of data required for transmission and storage of digital video signals.
 
-The latest video coding standard \textbf{H.264/AVC}, also known as \textbf{MPEG-4 Part-10}, developed jointly by \textbf{ITU-T Video Coding Experts Group} and \textbf{ISO/IEC JTC 1 Moving Picture Experts Group} provides considerable higher efficiency (capable of saving upto 50$\%$ bit rate at te same level of video quality) than a usual video coding standard. It covers a wide range from QCIF to HDTV.  
+The most current video coding standard is known as \textbf{H.264/AVC or MPEG-4 Part-10}. This standard was jointly developed by the \textbf{ITU-T Video Coding Experts Group} and \textbf{ISO/IEC JTC 1 Moving Picture Experts Group}. Compared to typical video coding standards, H.264/AVC provides significantly higher efficiency, capable of reducing bit rate requirements by up to 50$\%$ while maintaining the same level of video quality. It is designed to cover a wide range of video resolutions, from QCIF to HDTV. 
 % refrence to ppr J_2008.04
 
-The overall procedure of H.264 includes various components. The top level block diagram of an H.264 Encoder is shown in Figure
- 
- % figure here ----------------------------
-
 % explain the h.464 profiles and levels 
-
 % ref taken from https://www.rgb.com/h264-profiles#:~:text=Blu%2Dray%20discs.-,H.,Baseline%2C%20Main%2C%20and%20High.
 \section{H264 Profiles}
 The H.264 family of standards includes various capabilities. These profiles are mainly used to reduce the frame count by implementing motion prediction and temporal compression. The most common ones are:
@@ -26,20 +21,28 @@ The H.264 family of standards includes various capabilities. These profiles are 
 \end{itemize}
 
 \subsection{Baseline Profile}
-Baseline profiles are used for low-power and low-cost applications. These profiles can achieve a compression ratio of 1000:1 which means a streamlet of 1 Gbps can be compressed to about 1 Mbps. 4:2:0 chrominance sampling is used, meaning that color information is sampled at a half-vertical and half-horizontal resolution of the black-and-white information. Moreover, this profile uses Universal Variable Length Coding (UVLC) and Context Adaptive Variable Length Coding (CAVLAC) entropy encoding techniques. 
+In the realm of video encoding, baseline profiles are commonly employed in applications that require low-power consumption and cost-efficiency. These profiles are capable of achieving an impressive compression ratio of 1000:1, resulting in a streamlet of 1 Gbps being compressed down to approximately 1 Mbps. Baseline profiles utilize a 4:2:0 chrominance sampling method, whereby color information is sampled at half the vertical and horizontal resolution of the black-and-white information. This technique enables the reduction of data without significantly impacting the overall quality of the video.
+
+Furthermore, Universal Variable Length Coding (UVLC) and Context Adaptive Variable Length Coding (CAVLAC) are employed as the primary entropy encoding techniques within this profile. Such encoding methods contribute significantly to the efficient compression of video data, while ensuring that the encoded video stream is in compliance with relevant standards. 
 
 \subsection{Main Profile}
-The improvements in Baseline Profile were made by introducing efficient frame prediction algorithms. This new profile was regarded as Main Profile. It is used for standard-definition digital TV broadcasts (MPEG-4 format). But it is not used for High Standard broadcasts.
+Significant enhancements were made to the Baseline Profile through the introduction of advanced frame prediction algorithms, resulting in the development of the Main Profile. This updated profile is primarily utilized for standard-definition digital TV broadcasts in MPEG-4 format.
+
+However, it should be noted that the Main Profile is not employed in high-definition broadcasts. Rather, alternate profiles are used in such scenarios to ensure optimal video quality and compatibility with relevant standards.
 
 \subsection{High Profile}
-Introduces in 2004, High Profile is the most efficient and powerful profile in H.264 family. This profile is used for high-definition television applications (Blu-ray Disc storage and DVB HDTV broad cast service) 
+Introduced in the year 2004, the High Profile is considered to be the most efficient and powerful profile within the H.264 family. It is primarily utilized in high-definition television applications such as Blu-ray Disc storage and DVB HDTV broadcast services. This profile is capable of achieving an exceptional compression ratio of 2000:1, which is a significant improvement over previous encoding standards. It utilizes an adaptive transform method that allows for the selection of either 4x4 or 8x8 pixel blocks. This enables preservation of video quality while reducing network bandwidth consumption by up to 50 percent.
 
-The compression ratio achieved using this profile is 2000:1. It uses an adaptive transform by which 4x4 or 8x8 pixel blocks can be selected. The video quality of image while reducing network bandwidth is preserved up to 50 percent. By applying this compression, a 1 Gbps stream can be compressed to about 512 Kbps.
+Furthermore, the application of this compression technique facilitates the compression of a 1 Gbps stream to approximately 512 Kbps, further emphasizing the impressive capabilities of the High Profile.
+
+The overall procedure of H.264 includes various components. The top level block diagram of an H.264 Encoder is shown in Figure
+
+% figure here ----------------------------
 
 % include h.264 syntax briefly
 % taken from the richardson book
 \section{H264 syntax}
-H264 consists of 2 layers. The \textbf{Network Abstraction Layer (NAL)} consists of series of NAL Units. These units that signal certain common control parameters to the decoder are Sequence Parameter Sets (SPS) and Picture Parameter Sets (PPS). In \textbf{Video Coding Layer (VCL)} units, coded video data is communicated, also known as \textbf{slices}. There is an \textbf{access unit}, a code frame or field which is made up of one or more slices. Next is the \textbf{slice layer}, at which each slice consists of a Slice Header and Slice Data. Slice Data is regarded as series of code \textbf{macro blocks (MB)} and skip macro block indicators which signal that certain macro block positions contain no data. Each Macro block has following syntax elements:
+H.264 consists of 2 layers: the \textbf{Network Abstraction Layer (NAL)} and the \textbf{Video Coding Layer (VCL)}. The NAL consists of a series of NAL Units, with \textbf{Sequence Parameter Sets (SPS)} and \textbf{Picture Parameter Sets (PPS)} being the most common units that signal certain control parameters to the decoder. In the VCL, coded video data is communicated in the form of slices.An \textbf{access unit}, which can be a coded frame or field, is made up of one or more slices. Each slice consists of a Slice Header and Slice Data, with the latter being a series of coded \textbf{macro blocks (MB)} and skip macro block indicators signaling that certain macro block positions contain no data.
 
 \begin{itemize}
 	\item \textbf{MB type:} I/intra coded, P/inter coded from one reference frame
@@ -48,6 +51,8 @@ H264 consists of 2 layers. The \textbf{Network Abstraction Layer (NAL)} consists
 	\item \textbf{Quantization Parameter QP:} for macro blocks with CBP not 0
 	\item \textbf{Residual Data:} for blocks containing non-zero residual coefficients
 \end{itemize}
+
+The basic H264 syntax can be seen in figure
 % draw the digram of layers here
 
 % explain the components briefly
