@@ -1,10 +1,32 @@
 ## H.264 Encoder
 
-### Building the Encoder
+The project is divided into 3 parts.
+
+1. **Main Code:** H.264 Encoding module converted from becattles's implementation: [hardh264](https://github.com/bcattle/hardh264).
+2. **Inter Prediction**: Module for H.264 standard interprediction.
+3. **Data Handling**: It contains a state machine for handling the data input to the h264 encoding module.
+
+## Build and Simulate
+
+### Main H.264 Encoder
 
 Goto top directory and run the command
 
 ``` ./make_encode.bat ```
+
+### Inter Prediction Module
+
+Goto top directory and run the command
+
+``` ./make_me.bat ```
+
+### Data Handler
+
+Goto top directory and run the command
+
+``` ./make_pixel_addr.bat ```
+
+## Inter Prediction Design
 
 ### Variable Block Size Motion Estimator
 
