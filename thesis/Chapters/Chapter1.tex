@@ -37,7 +37,6 @@ Furthermore, the application of this compression technique facilitates the compr
 
 The overall procedure of H.264 includes various components. The top level block diagram of an H.264 Encoder is shown in Figure \ref{fig:toplevel}.
 
-% figure here ----------------------------
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width = 5in]{./Figures/toplevel.png}
@@ -65,16 +64,37 @@ In order to guarantee a high compression ratio in H.264 encoders, prediction is 
 There are basically 2 modes for prediction:
 
 \subsection{Intra-Prediction}
-Intra prediction is performed without referring to any data outside the current slice i.e prediction from previously coded data in the same slice. It reduces spatial redundancies by exploiting spatial correlation between adjacent blocks in a given picture. There are 3 choices of block size for luma component i.e. 16x16, 8x8 or 4x4. Whereas for chroma component, a single prediction block is generated. Once, the prediction has been made, it is subtracted from current block to make a residual. 
-%include diagram
+Intra prediction is performed without referring to any data outside the current slice i.e prediction from previously coded data in the same slice. It reduces spatial redundancies by exploiting spatial correlation between adjacent blocks in a given picture. There are 3 choices of block size for luma component i.e. 16x16, 8x8 or 4x4. Whereas for chroma component, a single prediction block is generated. Once, the prediction has been made, it is subtracted from current block to make a residual. The overview of the process is shown in figure \ref{fig:intraprediction}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 2.5in]{./Figures/comp1.png}
+	\rule{35em}{0.5pt}
+	\caption{Intra-Prediction}
+	\label{fig:intraprediction}
+\end{figure}
 
 \subsection{Inter-Prediction}
-Inter prediction is the process of predicting a block of luma and chroma samples from a picture that has been previously coded and transmitted i.e reference picture. It uses temporal sampling technique. For this, a prediction region is selected, then a prediction block is generated. After that the prediction block is subtracted from original block of samples to form a residual. 
-%include diag
+Inter prediction is the process of predicting a block of luma and chroma samples from a picture that has been previously coded and transmitted i.e reference picture. It uses temporal sampling technique. For this, a prediction region is selected, then a prediction block is generated. After that the prediction block is subtracted from original block of samples to form a residual. The overview of the process is shown in figure \ref{fig:interprediction}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 3in]{./Figures/interprediction.png}
+	\rule{35em}{0.5pt}
+	\caption{Inter-Prediction}
+	\label{fig:interprediction}
+\end{figure}
 
 \subsubsection{Motion Vector Prediction}
 In video coding, motion vectors for neighboring partitions are typically closely related, and so each motion vector can be predicted using previously coded vectors from nearby partitions. A predicted vector is created based on these previous motion vectors, and the difference between the current vector and the predicted vector is encoded and transmitted. The way in which predicted vector is predicted depends on the size of the motion compensation partition and whether there are nearby vectors available for reference.
-%include diagg
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 3in]{./Figures/motionvector.png}
+	\rule{35em}{0.5pt}
+	\caption{Motion Vector Prediction}
+	\label{fig:motionvector}
+\end{figure}
 
 \subsection{Transform}
 Once theresidual data, which essentially comprises a block of residual coefficients, is obtained, it is subjected to the core transform process. This transform is an integer-based 4x4 or 8x8 transform that provides a scaled approximation to the Discrete Cosine Transform (DCT). In certain cases, a portion of the output from this integer transform is subject to further transformation through a DC Transform, referred to as the Hadamard transform. The same residual data can be reconstructed using the DC inverse transform, which is carried out prior to rescaling. Finally, the rescaled coefficients are inverse transformed using a 4x4 or 8x8 inverse integer transform.
@@ -82,8 +102,10 @@ Once theresidual data, which essentially comprises a block of residual coefficie
 \subsection{Quantization}
 The transformed coefficients are subjected to quantization using a non-uniform quantizer. In this process, each coefficient is divided by an integer value, which reduces the precision of the coefficient values as determined by the Quantization Parameter (QP). The use of a non-uniform quantizer results in a smaller number of bits being used to represent each coefficient value, which in turn reduces the amount of data required to represent the video. The quantized transform coefficients of a block are typically scanned in a zig-zag pattern, which is a common approach for video coding standards.
 
+
 \subsection{Entropy Encoding}
-In H.264 stream or file encoding, the symbols are coded in a series. The quantized transform coefficients are efficiently transmitted using the Context-Adaptive Variable Length Coding (CAVLC) method. The statistical distribution of the quantized transform coefficients typically shows larger values for low-frequency components that decrease gradually towards the high-frequency part. As a result, the number of nonzero quantized coefficients (N) and their size and position are coded separately. This enables the receiver to reconstruct the original signal more accurately. The coefficients are scanned in a zig-zag pattern, and then quantized to reduce their precision using the quantization parameter (QP). The efficient transmission of quantized transform coefficients in H.264 helps in reducing the size of the compressed video file while maintaining the quality of the video.
+In H.264 stream or file encoding, the symbols are coded in a series. The quantized transform coefficients are efficiently transmitted using the Context-Adaptive Variable Length Coding (CAVLC) method. The statistical distribution of the quantized transform coefficients typically shows larger values for low-frequency components that decrease gradually towards the high-frequency part. As a result, the number of nonzero quantized coefficients (N) and their size and position are coded separately. This enables the receiver to reconstruct the original signal more accurately. The coefficients are scanned in a zig-zag pattern, and then quantized to reduce their precision using the quantization parameter (QP). The efficient transmission of quantized transform coefficients in H.264 helps in reducing the size of the compressed video file while maintaining the quality of the video. The final Network Abstraction Layer can be seen in figure \ref{fig:syntax}
+
 
 % include h.264 syntax briefly
 % taken from the richardson book
@@ -98,8 +120,14 @@ H.264 consists of 2 layers: the \textbf{Network Abstraction Layer (NAL)} and the
 	\item \textbf{Residual Data:} for blocks containing non-zero residual coefficients
 \end{itemize}
 
-The basic H264 syntax can be seen in figure
-% draw the digram of layers here
+The basic H264 syntax can be seen in figure \ref{fig:syntax}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 4in]{./Figures/syntax.png}
+	\rule{35em}{0.5pt}
+	\caption{Overall syntax for h264 encoder}
+	\label{fig:syntax}
+\end{figure}
 
 (write something about hardware implementation on FPGA )
 In this thesis, we developed an FPGA based H.264 intra and inter frame coder hardware targeting \textbf{High Profile} (see which one to mention, See from wikipedia )
