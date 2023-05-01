@@ -155,7 +155,7 @@ module h264topsim();
     // Mode Decision
     integer frame_distance = 3;
     logic pred_type; // 0->I, 1->P
-    pred_type = ((framenum % (frame_distance + 1)) == 0) ? 0 : 1;
+    assign pred_type = ((framenum % (frame_distance + 1)) == 0) ? 0 : 1;
 
 
     h264intra4x4 intra4x4
