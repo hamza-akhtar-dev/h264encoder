@@ -12,6 +12,7 @@ module me #
     output logic        ready,
     output logic        valid, 
     output logic        en_ram,
+    output logic        done,
     output logic [5:0]  addr,
     output logic [5:0]  amt,
     output logic [5:0]  mv_x,
@@ -58,6 +59,7 @@ module me #
         .en_cpr ( en_cpr ), 
         .en_spr ( en_spr ),
         .en_ram ( en_ram ),
+        .done   ( done   ),
         .addr   ( addr   ),
         .amt    ( amt    ),
         .sel    ( sel    )

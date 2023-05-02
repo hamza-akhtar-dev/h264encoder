@@ -13,6 +13,7 @@ module controller_me
     output logic       en_cpr, 
     output logic       en_spr,
     output logic       en_ram,
+    output logic       done,
     output logic [5:0] addr, //output logic [5:0] addr [MACRO_DIM:0] Try
     output logic [5:0] amt,
     output logic [1:0] sel
@@ -57,6 +58,7 @@ module controller_me
         case(state)
             S0: 
             begin
+                done = 0;
                 if(start)
                 begin
                     next_state = S1;
@@ -108,6 +110,7 @@ module controller_me
                 if(amt > 32)
                 begin
                     next_state = S0;
+                    done = 1;
                 end
                 else
                 begin
@@ -130,6 +133,7 @@ module controller_me
                 if(amt > 32)
                 begin
                     next_state = S0;
+                    done = 1;
                 end
                 else
                 begin

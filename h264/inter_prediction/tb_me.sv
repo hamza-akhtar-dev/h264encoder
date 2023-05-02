@@ -53,6 +53,7 @@ module tb_me #
     logic        clk;
     logic        start;
     logic        en_ram;
+    logic        done;
     logic [5:0]  addr;
     logic [5:0]  amt;
     logic [5:0]  mv_y;
@@ -84,6 +85,7 @@ module tb_me #
         .ready              ( ready              ),
         .valid              ( valid              ),
         .en_ram             ( en_ram             ),
+        .done               ( done               ),
         .addr               ( addr               ),
         .amt                ( amt                ),
         .mv_x               ( mv_x               ),
@@ -142,7 +144,8 @@ module tb_me #
         start = 0;
 
 
-        #12000 
+        //#12000 
+        wait (done == 1)
         @(posedge clk);
         $finish;
     end
