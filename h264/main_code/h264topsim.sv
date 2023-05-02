@@ -22,6 +22,9 @@ module h264topsim();
     logic [IMGBITS-1:0] uvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
     logic [IMGBITS-1:0] vvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
 
+    // Inter-Prediction
+    logic [IMGBITS-1:0] yvideo_reference [0:IMGWIDTH-1][0:IMGHEIGHT-1];
+
     // Intra4x4 Wires
     logic top_NEWSLICE = 1'b1;			      
 	logic top_NEWLINE = 1'b0;			        
@@ -212,6 +215,50 @@ module h264topsim();
 
     assign intra8x8cc_TOPI = toppixcc[{mbxcc, intra8x8cc_XXO}];
 
+    // Inter-Prediction
+    localparam MACRO_DIM  = 16;
+    localparam SEARCH_DIM = 48;
+    localparam PORT_WIDTH = MACRO_DIM + 1;
+
+    logic        rst_n;
+    //logic        clk;
+    logic        start;
+    logic        en_ram;
+    logic        done;
+    logic [5:0]  addr;
+    logic [5:0]  amt;
+    logic [5:0]  mv_y;
+    logic [5:0]  mv_x;
+    logic [7:0]  pixel_spr_in [0:MACRO_DIM];
+    logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
+    logic [15:0] min_sad;
+
+    logic [15:0] trans_addr [MACRO_DIM:0];
+
+    me # 
+    (
+        .MACRO_DIM  ( MACRO_DIM  ),
+        .SEARCH_DIM ( SEARCH_DIM )
+    )
+    ins_me
+    (
+        .rst_n              ( rst_n              ),
+        .clk                ( clk2               ),
+        .start              ( start              ),
+        .pixel_spr_in       ( pixel_spr_in       ),
+        .pixel_cpr_in       ( pixel_cpr_in       ),
+        .ready              ( ready              ),
+        .valid              ( valid              ),
+        .en_ram             ( en_ram             ),
+        .done               ( done               ),
+        .addr               ( addr               ),
+        .amt                ( amt                ),
+        .mv_x               ( mv_x               ),
+        .mv_y               ( mv_y               ),
+        .min_sad            ( min_sad            )
+    );
+
+
     h264header header
     (
 		.CLK(clk),
@@ -327,7 +374,6 @@ module h264topsim();
 		.XOUT(invtransform_XOUT)
 	);
 
-
     h264recon recon
     (
         .CLK2(clk2), 
@@ -420,6 +466,8 @@ module h264topsim();
         if (recon_FBSTROBE)
         begin
             toppix[{mbx, intra4x4_XXO}] <= recon_FEEDB;
+            // Inter-Prediction
+            yvideo_reference[][] <= recon_FEEDB; // Reference Video - Indexes need to be added
         end 
         if (intra4x4_MSTROBEO)
         begin
@@ -462,7 +510,6 @@ module h264topsim();
         end
        
     end
-
 
     initial
     begin
@@ -531,7 +578,7 @@ module h264topsim();
                     cy = cy - (cy % 8);
                     cuv = 0;
                 end
-                if ((intra4x4_READYI) && (y < IMGHEIGHT))
+                if ((intra4x4_READYI) && (y < IMGHEIGHT) && pred_type == 0)
                 begin
 
                     @(posedge clk2);
@@ -576,7 +623,7 @@ module h264topsim();
                     end
                 end
 
-                if (intra8x8cc_READYI == 1 && cy < IMGHEIGHT/2)
+                if (intra8x8cc_READYI == 1 && cy < IMGHEIGHT/2  && pred_type == 0)
                 begin
                     @(posedge clk2);
                     intra8x8cc_STROBEI = 1;
@@ -630,6 +677,76 @@ module h264topsim();
                     end
                 end
                 @(posedge clk2);
+                // Inter-Prediction
+                if (ready == 1 && pred_type == 1)
+                begin
+                    integer l, f;
+                    for(l = 0; l < MACRO_DIM; l++)
+                    begin
+                        if (en_ram)
+                        begin
+                            pixel_cpr_in[l] = yvideo[l][addr];
+                        end
+                    end
+                    for(l = 0; l < PORT_WIDTH; l++)
+                    begin
+                        if (en_ram)   
+                        begin         
+                            pixel_spr_in[l] = s_bram[(l+amt)%PORT_WIDTH][trans_addr[(l+amt)%PORT_WIDTH]]; // s_bram will not be used as it is 
+                        end
+                    end
+                    for (f = 0; f < PORT_WIDTH; f++) 
+                    begin
+                        if (f < amt) 
+                        begin
+                            trans_addr[f] = addr + SEARCH_DIM;
+                        end
+                        else
+                        begin
+                            trans_addr[f] = addr;
+                        end
+                    end
+                    @(posedge clk2);
+
+                    intra4x4_STROBEI = 1;
+                    top_NEWLINE = 0;
+                    top_NEWSLICE = 0;
+
+                    for (i = 0; i <= 1; i++)
+                    begin
+                        for (j = 0; j <= 3; j++)
+                        begin
+                            intra4x4_DATAI = 
+                            {
+                                yvideo[x+3][y], 
+                                yvideo[x+2][y], 
+                                yvideo[x+1][y], 
+                                yvideo[x][y]
+                            };
+                            @(posedge clk2);
+                            x = x + 4;
+                        end
+                        x = x - 16;	
+                        y = y + 1;
+                    end
+                    intra4x4_STROBEI = 0;
+                    if ((y % 16) == 0)
+                    begin
+                        x = x + 16;
+                        y = y - 16;			
+                        if (x == IMGWIDTH)
+                        begin
+                            x = 0;			
+                            y = y + 16;
+                            if (xbuffer_DONE == 0)
+                            begin
+                                wait (xbuffer_DONE == 1);
+                            end
+                            top_NEWLINE = 1;
+                            $display("Newline pulsed Line: %2d Progress: %2d%%", y, y*100/IMGHEIGHT);
+                        end
+                    end                    
+                end
             end
             $display("Done push of data into intra4x4 and intra8x8cc");
             if (!xbuffer_DONE)
@@ -695,6 +812,10 @@ module h264topsim();
 	    end
     end
 
-   
+    initial 
+    begin
+        $dumpfile("h264topsim.vcd");
+        $dumpvars(0, h264topsim);
+    end
         
 endmodule
