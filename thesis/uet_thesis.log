@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  27 APR 2023 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  30 APR 2023 23:16
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
@@ -566,7 +566,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
-<./Figures/uet_logo.pdf, id=147, 150.5625pt x 150.5625pt>
+<./Figures/uet_logo.pdf, id=163, 150.5625pt x 150.5625pt>
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -670,30 +670,30 @@ Chapter 1.
 
 
 ]
-<./Figures/toplevel.png, id=288, 872.25874pt x 413.545pt>
+<./Figures/toplevel.png, id=314, 872.25874pt x 413.545pt>
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
 Package pdftex.def Info: ./Figures/toplevel.png  used on input line 42.
 (pdftex.def)             Requested size: 361.34999pt x 171.31508pt.
  [2] [3 <./Figures/toplevel.png>]
-<./Figures/comp1.png, id=301, 322.20375pt x 261.97874pt>
+<./Figures/comp1.png, id=328, 322.20375pt x 261.97874pt>
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 71.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
-<./Figures/interprediction.png, id=303, 416.55624pt x 212.795pt>
+<./Figures/interprediction.png, id=330, 416.55624pt x 212.795pt>
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
 Package pdftex.def Info: ./Figures/interprediction.png  used on input line 82.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
-<./Figures/motionvector.png, id=310, 525.965pt x 316.18124pt>
+<./Figures/motionvector.png, id=337, 525.965pt x 316.18124pt>
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
 Package pdftex.def Info: ./Figures/motionvector.png  used on input line 93.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/motionvector.png>]
-<./Figures/syntax.png, id=318, 553.06625pt x 376.40625pt>
+<./Figures/syntax.png, id=345, 553.06625pt x 376.40625pt>
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
 Package pdftex.def Info: ./Figures/syntax.png  used on input line 126.
@@ -711,16 +711,41 @@ Chapter 3.
 -------------------------------------------
  3 Prediction
 -------------------------------------------
-) (Chapters/Chapter7.tex [9
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 15.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 25.
+
+<./Figures/4x4luma.png, id=361, 241.90375pt x 161.60374pt>
+File: ./Figures/4x4luma.png Graphic file (type png)
+<use ./Figures/4x4luma.png>
+Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
+(pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
+[9
 
 ]
+<./Figures/3modes.png, id=370, 623.32875pt x 165.61874pt>
+File: ./Figures/3modes.png Graphic file (type png)
+<use ./Figures/3modes.png>
+Package pdftex.def Info: ./Figures/3modes.png  used on input line 49.
+(pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
+ [10 <./Figures/4x4luma.png> <./Figures/3modes.png>]
+<./Figures/8x8modes.png, id=378, 660.4675pt x 244.915pt>
+File: ./Figures/8x8modes.png Graphic file (type png)
+<use ./Figures/8x8modes.png>
+Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 69.
+(pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
+) (Chapters/Chapter7.tex [11 <./Figures/8x8modes.png>]
 Chapter 4.
 -------------------------------------------
  4 Thesis Structure
 -------------------------------------------
-[10
+[12
 
-]) (Chapters/AppendixA.tex [11]
+]) (Chapters/AppendixA.tex [13]
 Appendix A.
 -------------------------------------------
  A Introduction to Latex
@@ -732,32 +757,32 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
- [12
+ [14
 
 ]
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 54.
 (pdftex.def)             Requested size: 108.405pt x 108.4095pt.
- [13] [14]) [15]
+ [15] [16]) [17]
 -------------------------------------------
  References
 -------------------------------------------
-(uet_thesis.bbl) [16
+(uet_thesis.bbl) [18
 
 
 ] (uet_thesis.aux)
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0256CD44273A68DECA6A5F7205B20DA7;5918.
+(rerunfilecheck)             Checksum: 08A8B9634E3C13DC66C051DA64656B4F;6692.
  ) 
 Here is how much of TeX's memory you used:
- 14325 strings out of 480236
- 209366 string characters out of 2890348
- 496582 words of memory out of 3000000
- 30545 multiletter control sequences out of 15000+200000
+ 14359 strings out of 480236
+ 210000 string characters out of 2890348
+ 497798 words of memory out of 3000000
+ 30567 multiletter control sequences out of 15000+200000
  548745 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,11n,77p,1037b,430s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,11n,77p,1037b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Filza Shahid\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
 00\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
@@ -771,9 +796,9 @@ iKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (28 pages, 324381 bytes).
+Output written on uet_thesis.pdf (30 pages, 349510 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 520 PDF objects out of 1000 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
