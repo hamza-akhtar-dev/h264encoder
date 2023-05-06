@@ -4,5 +4,6 @@ tb_pixel_addr.vcd
 tb_me.vcd
 transcript
 sample_int.yuv
+recon_out.yuv
 sample_out.264
 vsim.wlf
