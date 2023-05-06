@@ -871,11 +871,11 @@ module h264topsim();
 					if (ssqdiff != 0.0)
 					begin
 						snr  = 10.0 * $log10(sqmaxval*planesize/ssqdiff);
-						$display("SNR yr: %2.3f dB.", snr);
+						$display("SNR Y: %2.3f dB.", snr);
 					end
 					else
 					begin
-						$display("SNR yr: %2.3f dB.", 0);
+						$display("SNR Y: %2.3f dB.", 0);
 					end
 
 					// U Video SnR Computation
@@ -896,7 +896,7 @@ module h264topsim();
 					if (ssqdiff != 0.0)
 					begin
 						snr  = 10.0 * $log10(sqmaxval*planesize/ssqdiff);
-						$display("SNR yr: %2.3f dB.", snr);
+						$display("SNR U: %2.3f dB.", snr);
 					end
 					else
 					begin
@@ -921,11 +921,11 @@ module h264topsim();
 					if (ssqdiff != 0.0)
 					begin
 						snr  = 10.0 * $log10(sqmaxval*planesize/ssqdiff);
-						$display("SNR yr: %2.3f dB; ", snr);
+						$display("SNR V: %2.3f dB; ", snr);
 					end
 					else
 					begin
-						$display("SNR yr: %2.3f dB; ", 0);
+						$display("SNR V: %2.3f dB; ", 0);
 					end
 				end
 
