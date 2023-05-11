@@ -6,7 +6,28 @@
 
 There are many new technologies such as intra prediction, in loop deblocking filter, context based arithmetic coding introduced in the latest H.264/AVC standard. Among all of these amazing technologies, \textbf{Variable Block Size Motion Estimation (VBSME)} is one of the powerful techniques. In comparison with the previous Fixed Block Size Motion Estimation (FBSME), VBSME divides one MB into smaller blocks to fit the different motion directions. In this way, the coding performance is proved.
 
-We designed a parallel \textbf{265 PE VBS ME Hardware Architecture}. This hardware is implemented in System Verilog. First of all, the pixels in the current MB are stored in a Block Ram \textbf{(c$\_$BRAM)}. The pixels of the search window are also stored in a block RAM \textbf{(s$\_$BRAM)}. The architecture is shown in the figure \ref{fig:256pevbsme}
+\subsection{Full Search ME Algorithm}
+The Full Search Algorithm works in the following way:
+\begin{itemize}
+	\item At first, both the search window and current block positions are fixed at the certain point i.e top left corner of frame. The current block starts the loading of the pixels from the top left corner. Absolute difference of each pixel of current block with the corresponding pixel of the search window is calculated.
+	\begin{equation} \label{equ:1}
+		Diff(m,n,k,l\ = |S(m+k, n+l) - C(k,l)|
+	\end{equation}
+	\item After that the Sum of all Absolute Differences (SAD) for that particular position of current block is calculated.
+	\begin{equation} \label{equ:2}
+		SAD(m,n) = \sum_{k=0}^{W-1}\sum_{l=0}^{H-1}Diff(m,n,k,l) 
+	\end{equation}
+	Then the current block is shifted by 1 row or column of pixels and again SAD is calculated. In this way, several SADs are calculated in a single search window.
+	\item Each SAD when calculated is compared with the previous SAD value and the smaller SAD value is taken. In this way at end, minimum SAD value and the corresponding motion vectors values are depicted for one search window. 
+	\begin{equation} \label{equ:3}
+		SAD_{min} = min(SAD(m,n))
+	\end{equation}
+\end{itemize}
+
+In the above equation (\ref{equ:1}), (\ref{equ:2}) and (\ref{equ:3}) The domain of m and n is $m \in [0, M-1] $ and $m \in [0, N-1]$ respectively.M and N are width and height of search window respectively. H and W are height and width of current block respectively. C(k,l) represents the pixel value of the current block and S(m+k, n+l) is the pixel value from the search window of the reference frame.\cite{li2003serial} \\
+
+\subsection{256 PE VBS FS ME Hardware Architecture}
+We designed a parallel \textbf{256 PE VBS FSME Hardware Architecture}. \cite{kalaycioglu2011low} This hardware is implemented in System Verilog. First of all, the pixels in the current MB are stored in a Block Ram \textbf{(c$\_$BRAM)}. The pixels of the search window are also stored in a block RAM \textbf{(s$\_$BRAM)}. The architecture is shown in the figure \ref{fig:256pevbsme}
 
 \begin{figure}[htbp]
 	\centering
@@ -16,7 +37,9 @@ We designed a parallel \textbf{265 PE VBS ME Hardware Architecture}. This hardwa
 	\label{fig:256pevbsme}
 \end{figure}
 
-In this design, a \textbf{2-D systolic PE array} is used. (what is 2d systolic pe array explain). There are \textbf{16x16 = 256 PEs} ( 16 rows and 16 columns) and all of them are  made capable of shifting data down, up and left. For a \textbf{16x16 MB}, a Motion Vector MV is found in one cycle in a search range of \textbf{[-16, 15]} pixels.
+In this design, a \textbf{2-D systolic PE array} is used. The use of this type of array introduced parallel computing and pipelinability in the structure. There are \textbf{16x16 = 256 PEs} ( 16 rows and 16 columns) interconnected with each other. All of them are  made capable of shifting data down, up and left. It means that a 16x16 current block can move around the 48x48 search window in down, up and right direction. For a \textbf{16x16 MB}, a Motion Vector MV is found in one cycle in a search range of \textbf{[-16, 15]} pixels. Pixels are defined as 8 bit positive integers.
+
+
 
 
 

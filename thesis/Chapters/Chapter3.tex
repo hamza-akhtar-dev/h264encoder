@@ -23,7 +23,7 @@ Intra-prediction utilizes the space dependency to compress the video. The frames
 In our model, 4x4 luma prediction and 8x8 chroma prediction is being implemented.
 
 \subsubsection{4x4 Luma Prediction}
-For this type of prediction, each macro block that is of \textbf{16x16} (256 pixels each of which is 8 bit wide) is divided into \textbf{4x4} block (16 pixels). Figure \ref{fig:4x4xluma} shows the reference samples for 4x4 luma prediction. 4 pixels \textbf{A,B,C,D} (adjacent to current block) of block \textbf{a}  on top of current block, pixels \textbf{E,F,G,H} of block \textbf{b} on top right corner, \textbf{I,J,K,L} of block \textbf{c} at adjacent left of current block and 1 pixel \textbf{M} of \textbf{d} block on top left corner are used for prediction of 16 pixels in the current block.
+For this type of prediction, each macro block that is of \textbf{16x16} (256 pixels each of which is 8 bit wide) is divided into \textbf{4x4} block (16 pixels) \cite{anilkumar2021intra}. Figure \ref{fig:4x4xluma} shows the reference samples for 4x4 luma prediction. 4 pixels \textbf{A,B,C,D} (adjacent to current block) of block \textbf{a}  on top of current block, pixels \textbf{E,F,G,H} of block \textbf{b} on top right corner, \textbf{I,J,K,L} of block \textbf{c} at adjacent left of current block and 1 pixel \textbf{M} of \textbf{d} block on top left corner are used for prediction of 16 pixels in the current block.
 
 \begin{figure}[htbp]
 	\centering
@@ -42,7 +42,7 @@ There are total 9 prediction modes that are supported in this prediction. Major 
 
 \end{itemize}
 	 
-For the details of remaining modes refer to [give ref to richardson book here]. Figure \ref{fig:3modes} display the above 3 prediction modes. To create a predict sample, every color stands for a particular formula. The encoder determines each prediction direction's cost by finishing processing for all of the prediction directions, then outputs the one with the lowest cost.
+For the details of remaining modes refer to \cite{richardson2010h264}. Figure \ref{fig:3modes} display the above 3 prediction modes. To create a predict sample, every color stands for a particular formula. The encoder determines each prediction direction's cost by finishing processing for all of the prediction directions, then outputs the one with the lowest cost.
 
 \begin{figure}[htbp]
 	\centering
@@ -53,7 +53,7 @@ For the details of remaining modes refer to [give ref to richardson book here]. 
 \end{figure}
 
 \subsubsection{8x8 Chroma Prediction}
-This type of prediction applies on chrominance components. It is similar to 16x16 luma prediction which can be referred in [Richardson book] except the block size is 8x8 and there is different order of mode number which are:
+This type of prediction applies on chrominance components. It is similar to 16x16 luma prediction which can be referred in \cite{richardson2010h264} except the block size is 8x8 and there is different order of mode number which are:
 
 \begin{itemize}
 	\item Mode 0: DC
@@ -62,7 +62,7 @@ This type of prediction applies on chrominance components. It is similar to 16x1
 	\item Mode 3: Plane
 \end{itemize}
 
-The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to [Richardson book]. The Implemented mode in our model is DC. These modes are shown in the figure \ref{fig:8x8modes}.
+The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the figure \ref{fig:8x8modes}.
 
 \begin{figure}[htbp]
 	\centering
@@ -75,7 +75,7 @@ The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction res
 [Explain the hardware architecture of Intra prediction if possible]
 
 \subsection{Inter-Prediction}
-The process of predicting a block of luma and chroma samples from a reference picture that has been previously been coded and transmitted i.e. exploits temporal redundancy between successive frames. For this a prediction region is selected, a prediction block is generated and then it is subtracted from original block of samples to form a residual. This is then coded and transmitted. Reference pictures are stored in Decoded Picture Buffer. The offset between position of current block and search region in the reference picture is called motion vector. This prediction is also known as \textbf{Motion Estimation} [ref of ppr Low power techniques]. It has the capability of extracting true motion information thus enhancing the quality of displayed images in video enhancement systems. The preferred technique for motion estimation is the \textbf{Block Matching (BM)} Technique. 
+The process of predicting a block of luma and chroma samples from a reference picture that has been previously been coded and transmitted i.e. exploits temporal redundancy between successive frames. For this a prediction region is selected, a prediction block is generated and then it is subtracted from original block of samples to form a residual. This is then coded and transmitted. Reference pictures are stored in Decoded Picture Buffer. The offset between position of current block and search region in the reference picture is called motion vector. This prediction is also known as \textbf{Motion Estimation} \cite{kalaycioglu2011low}. It has the capability of extracting true motion information thus enhancing the quality of displayed images in video enhancement systems. The preferred technique for motion estimation is the \textbf{Block Matching (BM)} Technique. 
 
 \subsubsection{Block Matching Technique}
 This method divides the current frame into non-overlapping NxN macro-blocks and seeks out the block from the reference frame that most closely resembles the current block within a specified search range. The Sum of Absolute Difference (SAD), which is appropriate for hardware implementations, is the recommended block matching criterion.

@@ -1,36 +1,60 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Barrass(2002)]{barrass2002scientists}
-R.~Barrass.
-\newblock \emph{{Scientists must write: a guide to better writing for
-  scientists, engineers and students}}.
-\newblock RoutledgeFalmer, 2002.
+\bibitem[Şahin(2006)]{sahin2006efficient}
+Esra Şahin.
+\newblock An efficient h.264 intra frame coder hardware design.
+\newblock Master thesis, Sabanci University, Electrical and Electronics
+  Engineering Department (EECS), Istanbul, Turkey, 2006.
+\newblock URL
+  \url{https://suurcan.sabanciuniv.edu/fedora/objects/thesis:395/datastreams/SAHIN_ESRA_thesis_05042007_1217_02/pdf?origin=browser}.
 
-\bibitem[Chandrasekhar(Last accessed on May 19, 2010.)]{getthesis}
-R.~Chandrasekhar.
-\newblock {How to Write a Thesis: \textit{A Working Guide}}.
-\newblock \url{http://ciips.ee.uwa.edu.au/pub/HowToWriteAThesis.pdf}, Last
-  accessed on May 19, 2010.
+\bibitem[Amer et~al.(2005)Amer, Badawy, and Jullien]{amer2005high}
+Ihab Amer, Wael Badawy, and Graham Jullien.
+\newblock A high-performance hardware implementation of the h. 264 simplified
+  8× 8 transformation and quantization.
+\newblock In \emph{Advanced Information Processing Systems}, pages 84--89.
+  Springer, 2005.
 
-\bibitem[Easterbrook(Last accessed on May 19, 2010.)]{howtothesis}
-S.~Easterbrook.
-\newblock {How Thesis Get Written}.
-\newblock \url{http://www.cs.toronto.edu/~sme/presentations/thesiswriting.pdf},
-  Last accessed on May 19, 2010.
+\bibitem[C. et~al.(2021)C., B.P., K.N., and D.A.]{anilkumar2021intra}
+Anil~Kumar C., Pradeep~Kumar B.P., Venu K.N., and Lavanya~Vaishnavi D.A.
+\newblock Intra prediction algorithm for video frames of h.264.
+\newblock \emph{Nat. Volatiles \& Essent. Oils}, 8\penalty0 (5):\penalty0
+  11357--11367, 2021.
 
-\bibitem[Evans and Gruba(2003)]{evans2003write}
-D.~Evans and P.~Gruba.
-\newblock \emph{{How to write a better thesis}}.
-\newblock Melbourne University Publishing, 2003.
+\bibitem[Kalaycioglu et~al.(2011)Kalaycioglu, Ulusel, and
+  Hamzaoglu]{kalaycioglu2011low}
+Caglar Kalaycioglu, Onur~Can Ulusel, and Ilker Hamzaoglu.
+\newblock \emph{Low power techniques for motion estimation hardware}.
+\newblock 34956 Tuzla, Istanbul, Turkey, 2011.
 
-\bibitem[Murray(2006)]{murray2006write}
-R.~Murray.
-\newblock \emph{{How to write a thesis}}.
-\newblock Open Univ Press, 2006.
+\bibitem[Li and Leong(2003)]{li2003serial}
+Brian~MH Li and Philip~HW Leong.
+\newblock Serial and parallel fpga-based variable block size motion estimation
+  processors.
+\newblock \emph{IEEE Transactions on Circuits and Systems for Video
+  Technology}, 13\penalty0 (7):\penalty0 624--635, 2003.
+
+\bibitem[Lin et~al.(2008)Lin, Chen, Tsai, and Tsai]{lin2008parallel}
+Chia-Chi Lin, Wei-Cheng Chen, Ming-Hsiang Tsai, and Cheng-Wei Tsai.
+\newblock Parallel improved hdtv720p targeted propagate partial sad
+  architecture for variable block size motion estimation in h.264/avc.
+\newblock \emph{IEICE Transactions on Fundamentals of Electronics,
+  Communications and Computer Sciences}, E91-A\penalty0 (4):\penalty0 958--966,
+  2008.
+
+\bibitem[RGB(Accessed on May 12, 2023)]{rgb-h264-profiles}
+RGB.
+\newblock H.264 profiles.
+\newblock \url{https://www.rgb.com/h264-profiles}, Accessed on May 12, 2023.
+
+\bibitem[Richardson(2010)]{richardson2010h264}
+Iain~E. Richardson.
+\newblock \emph{The H.264 Advanced Video Compression Standard}.
+\newblock Wiley, UK, 2nd edition, 2010.
 
 \end{thebibliography}
