@@ -1,6 +1,6 @@
 % Chapter 1
 
-\chapter{Prediction} % Write in your own chapter title
+\chapter{Prediction, Transformation, Quantization and Encoding} % Write in your own chapter title
 \label{Chapter3}
 \lhead{Chapter3. \emph{Prediction}} % Write in your own chapter title to set the page header
 
@@ -90,7 +90,6 @@ In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 	\label{fig:mv}
 \end{figure}
 
-There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in next section.
+There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
 
-
-\subsection{Hardware Architecture for Inter-Prediction}
+ 
