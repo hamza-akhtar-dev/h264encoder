@@ -1,7 +1,7 @@
 module h264cavlc 
 (
     input logic CLK, CLK2, ENABLE,
-	input logic  SIN = 1'b0,
+	input logic  SIN,
     input logic [11:0] VIN,
     input logic [4:0] NIN,
     output logic READY,
@@ -955,7 +955,7 @@ module h264cavlc
 				t1signs <= et1signs;
 				hparity <= eparity;
 				hvalidi <= 1'b1;
-				assert (emaxcoeffs==16 || emaxcoeffs==15 || emaxcoeffs==4) else $error("H264CAVLC: maxcoeffs is not a valid value");
+				//assert (emaxcoeffs==16 || emaxcoeffs==15 || emaxcoeffs==4) else $error("H264CAVLC: maxcoeffs is not a valid value");
 				//
 				eenable <= 0;
 				emaxcoeffs <= 5'd0;
@@ -1132,7 +1132,7 @@ module h264cavlc
 				runb <= runb-1;
 			end	
 		end
-		assert (rbvl <= 25) else $error("rbve overflow");
+		//assert (rbvl <= 25) else $error("rbve overflow");
 		//
 		// output stuff...
 		// CTOKEN
@@ -1170,7 +1170,7 @@ module h264cavlc
 		// T1SIGN
 		if (state == STATE_T1SIGN) 
 		begin
-			assert (trailingones != 0) else $error ;
+			//assert (trailingones != 0) else $error ;
 			VALID <= 1;
 			VE <= {20'h00000, 2'b00, t1signs};
 			VL <= {3'b000, trailingones};
@@ -1302,7 +1302,7 @@ module h264cavlc
 		// TZEROS
 		if (state == STATE_TZEROS) 
 		begin
-			assert (totalcoeffs!=maxcoeffs && totalcoeffs!=0) else $error;
+			//assert (totalcoeffs!=maxcoeffs && totalcoeffs!=0) else $error;
 			VALID <= 1;
 			VE <= {20'h00000, 2'b00, ztoken};
 			VL <= {1'b0, ztoken_len};

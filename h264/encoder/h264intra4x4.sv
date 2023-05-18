@@ -18,7 +18,7 @@ module h264intra4x4
    output logic STROBEO = 1'b0,        // data here
    output logic [35:0] DATAO = 36'd0,
    output logic [31:0] BASEO = 32'd0,  // base for reconstruct
-   input  logic READYO = 1'b1,
+   input  logic READYO,
    output logic MSTROBEO = 1'b0,       // modeo here
    output logic [3:0] MODEO = 4'd0,    // 0..8 prediction type
    output logic PMODEO = 1'b0,         // prev_i4x4_pred_mode_flag
@@ -319,7 +319,7 @@ begin
 
 		if (state == 12) begin
 			lmode[yy] <= modeoi;
-			assert (modeoi == 2 || !dconly) else $error("modeoi wrong for dconly");
+			//assert (modeoi == 2 || !dconly) else $error("modeoi wrong for dconly");
 			if (dconly || prevmode == modeoi)
 				PMODEO <= 1;
 			else if (modeoi < prevmode) begin

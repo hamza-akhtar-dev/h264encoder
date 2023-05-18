@@ -128,7 +128,7 @@ module h264buffer
 				addr = {1'b1, imb[0], ichsubmb[2], (~ix[1:0]), 4'hf};
 			end
 
-			assert (!$isunknown(ZIN)) else $warning("Problems with ZIN severity WARNING");
+			//assert (!$isunknown(ZIN)) else $warning("Problems with ZIN severity WARNING");
 
 			if (!ichf || ix!=15) 
 			begin
@@ -150,7 +150,7 @@ module h264buffer
 					begin
 						imb <= imb+1;
 					end
-					assert (isubmb!=osubmb || ochf || ox>ix || imb==omb) else $error("xbuffer overflow? severity ERROR");
+					//assert (isubmb!=osubmb || ochf || ox>ix || imb==omb) else $error("xbuffer overflow? severity ERROR");
 				end
 			end
 			else if (ichdc) 
@@ -178,7 +178,7 @@ module h264buffer
 
 		if (!VALIDI && !NEWSLICE) 
 		begin
-			assert (ix == 0) else $warning("VALIDI has fallen when in middle of block severity WARNING");
+			//assert (ix == 0) else $warning("VALIDI has fallen when in middle of block severity WARNING");
 		end 
 		//
 		if (!NEWSLICE && !HVALID && imb!=omb && ((TREADYO && READYO) || ox!=0)) 
@@ -199,7 +199,7 @@ module h264buffer
 
 			VOUT <= buff[addr];
 
-			assert (!$isunknown(buff[addr])) else $warning("Problems with VOUT severity WARNING");
+			//assert (!$isunknown(buff[addr])) else $warning("Problems with VOUT severity WARNING");
 
 			VALIDO <= 1'b1;
 

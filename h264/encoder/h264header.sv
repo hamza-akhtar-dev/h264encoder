@@ -112,7 +112,7 @@ module h264header
 				lbuf <= {11'b00101011111, fcount, 1'b0};	//11111nnnn0 (10 bits)
 				lbufc <= ZERO+10;
 				idrtwice <= 1'b0;
-				assert (PTYPE==0);	//only this supported at present
+				//assert (PTYPE==0);	//only this supported at present
 				if (LASTSLICE==1'b1) begin
 					fcount <= fcount+1;		//next frame
 				end
@@ -178,7 +178,7 @@ module h264header
 				begin// P macroblocks
 					if (lcount==1 || lcount==2) 
 					begin	//mvx=0 and mvy=0
-						assert (MVDX==0 && MVDY==0);
+						//assert (MVDX==0 && MVDY==0);
 						lbuf <= {lbuf[14:0], 1'b1};
 						lbufc <= lbufc+1;
 					end

@@ -5,24 +5,24 @@ module h264topskeleton #
     parameter integer IWBITS    = 9
 )
 (
-	input logic CLK, 
-	input logic CLK2,   
+	input logic clk, 
+	input logic clk2,   
 
 	input logic         NEWSLICE,       
 	input logic         NEWLINE,     
 	input logic  [5:0]  qp,
-	output logic        xbuffer_DONE       = '0, 
-
-	output logic        intra4x4_READYI    = '0,   
-	input  logic        intra4x4_STROBEI   = '0,
-	input  logic [31:0] intra4x4_DATAI     = '0,
-	output logic        intra8x8cc_READYI  = '0,   
-	input  logic        intra8x8cc_STROBEI = '0,
-	input  logic [31:0] intra8x8cc_DATAI   = '0,
-
-	output logic [7:0]  tobytes_BYTE       = '0,
-	output logic        tobytes_STROBE     = '0, 
-	output logic        tobytes_DONE       = '0    
+	output logic        xbuffer_DONE       , 
+ 
+	output logic        intra4x4_READYI    ,   
+	input  logic        intra4x4_STROBEI   ,
+	input  logic [31:0] intra4x4_DATAI     ,
+	output logic        intra8x8cc_READYI  ,   
+	input  logic        intra8x8cc_STROBEI ,
+	input  logic [31:0] intra8x8cc_DATAI   ,
+ 
+	output logic [7:0]  tobytes_BYTE       ,
+	output logic        tobytes_STROBE     , 
+	output logic        tobytes_DONE          
 );
 
 	bit [31:0] intra4x4_TOPI         ;
@@ -134,7 +134,7 @@ module h264topskeleton #
 	logic [IWBITS-1:0] mbxcc                   = '0;
 
 
-	intra4x4 ins_intra4x4 
+	h264intra4x4 ins_intra4x4 
 	(
 		.CLK      ( clk2               ),
 		.NEWSLICE ( NEWSLICE           ),
@@ -162,7 +162,7 @@ module h264topskeleton #
 	assign intra4x4_TOPI   = toppix [{mbx, intra4x4_XXO}];
 	assign intra4x4_TOPMI  = topmode[{mbx, intra4x4_XXO}];
 
-	intra8x8cc ins_intra8x8cc 
+	h264intra8x8cc ins_intra8x8cc 
 	(
 	    .CLK2      ( clk2                 ),
 	    .NEWSLICE  ( NEWSLICE             ),
@@ -190,7 +190,7 @@ module h264topskeleton #
 	(
 		.CLK       ( clk              ),
 		.NEWSLICE  ( NEWSLICE         ),
-		// .LASTSLICE ( 1'b1			  ),
+		.LASTSLICE (     			  ),
 		.SINTRA    ( 1'b1             ),
 		.MINTRA    ( 1'b1             ),
 		.LSTROBE   ( intra4x4_STROBEO ),
@@ -357,7 +357,7 @@ module h264topskeleton #
 	assign tobytes_VL    = (header_VALID) ? header_VL : (cavlc_VALID) ? cavlc_VL : 5'b01000;
 	assign tobytes_VALID = header_VALID || align_VALID || cavlc_VALID;
 
-	always_ff @(posedge CLK2) 
+	always_ff @(posedge clk2) 
 	begin
 		if ( xbuffer_NLOAD ) 
 		begin
@@ -382,7 +382,7 @@ module h264topskeleton #
 	assign cavlc_NIN = (xbuffer_NV == 1) ? ninl : (xbuffer_NV == 2) ? nint : (xbuffer_NV == 3) ? ninsum[5:1] : 6'b0;
 	assign ninsum    = {1'b0, ninl} + {1'b0, nint} + 1;
 
-	always_ff @(posedge CLK2)
+	always_ff @(posedge clk2)
 	begin
 		if ( recon_FBSTROBE )
 		begin

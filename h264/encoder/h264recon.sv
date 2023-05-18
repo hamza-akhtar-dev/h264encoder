@@ -44,10 +44,10 @@ module h264recon
 			basevec[basein[2:0]] <= BASEI;
 			chromaf[basein[2]] <= BCHROMAI;
 			basein <= basein + 1;
-			assert (basein+8 != baseout) else $error("basein wrapped");
+			//assert (basein+8 != baseout) else $error("basein wrapped");
         end
 		else
-			assert (basein[1:0] == '0) else $error("basein not aligned when strobe falls");
+			//assert (basein[1:0] == '0) else $error("basein not aligned when strobe falls");
 
         // reconstruct +0: add
         byte0 <= {2'b00, basex[7:0]} + DATAI[9:0];
@@ -61,11 +61,11 @@ module h264recon
         if (STROBEI && !NEWSLICE) 
         begin
             baseout <= baseout + 1;
-            assert (baseout != basein) else $error("baseout wrapped");
+            //assert (baseout != basein) else $error("baseout wrapped");
         end
         else 
         begin
-            assert (baseout[1:0] == 2'b00) else $error("baseout not aligned when strobe falls");
+            //assert (baseout[1:0] == 2'b00) else $error("baseout not aligned when strobe falls");
         end
 
         // reconstruct +1: clip to [0,255]

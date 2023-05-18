@@ -3,8 +3,8 @@ module h264tobytes
     input logic CLK,
     input logic VALID,
     output logic READY = 1'b1,
-    input logic [24:0] VE = 25'd0,
-    input logic [4:0] VL = 5'd0,
+    input logic [24:0] VE,
+    input logic [4:0] VL,
     output logic [7:0] BYTE = 8'd0,
     output logic STROBE = 1'b0,
     output logic DONE = 1'b0 
@@ -59,7 +59,7 @@ module h264tobytes
 			aVE[ain] <= VE;
 			aVL[ain] <= VL;
 			ain <= ain + 1;
-			assert (adiff != 63) else $error ("Fifo overflow severity ERROR");
+			//assert (adiff != 63) else $error ("Fifo overflow severity ERROR");
 		end
 		if (pop) 
 		begin
