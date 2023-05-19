@@ -11,17 +11,17 @@ module h264topskeleton #
 	input logic         NEWSLICE,       
 	input logic         NEWLINE,     
 	input logic  [5:0]  qp,
-	output logic        xbuffer_DONE       , 
+	output logic        xbuffer_DONE, 
  
-	output logic        intra4x4_READYI    ,   
-	input  logic        intra4x4_STROBEI   ,
-	input  logic [31:0] intra4x4_DATAI     ,
-	output logic        intra8x8cc_READYI  ,   
-	input  logic        intra8x8cc_STROBEI ,
-	input  logic [31:0] intra8x8cc_DATAI   ,
+	output logic        intra4x4_READYI,   
+	input  logic        intra4x4_STROBEI,
+	input  logic [31:0] intra4x4_DATAI,
+	output logic        intra8x8cc_READYI,   
+	input  logic        intra8x8cc_STROBEI,
+	input  logic [31:0] intra8x8cc_DATAI,
  
-	output logic [7:0]  tobytes_BYTE       ,
-	output logic        tobytes_STROBE     , 
+	output logic [7:0]  tobytes_BYTE,
+	output logic        tobytes_STROBE, 
 	output logic        tobytes_DONE          
 );
 
@@ -63,13 +63,13 @@ module h264topskeleton #
 	bit [13:0] coretransform_YNOUT;
 
 	bit        dctransform_VALID     ;
-	bit [15:0] dctransform_YYOUT;
+	bit [15:0] dctransform_YYOUT     ;
 	bit        dctransform_READYO    ;
 
 	bit        quantise_ENABLE       ;
-	bit [15:0] quantise_YNIN;
+	bit [15:0] quantise_YNIN         ;
 	bit        quantise_VALID        ;
-	bit [11:0] quantise_ZOUT;
+	bit [11:0] quantise_ZOUT         ;
 	bit        quantise_DCCO         ;
 
 	bit        dequantise_ENABLE     ;
@@ -217,12 +217,17 @@ module h264topskeleton #
 		.VALID     ( coretransform_VALID  ),
 		.YNOUT     ( coretransform_YNOUT  )
 	);
-	assign coretransform_ENABLE = intra4x4_STROBEO || intra8x8cc_STROBEO;
-	assign coretransform_XXIN   = (intra4x4_STROBEO) ? intra4x4_DATAO : intra8x8cc_DATAO;
-	assign recon_BSTROBEI       = intra4x4_STROBEO || intra8x8cc_STROBEO;
-	assign recon_BASEI          = (intra4x4_STROBEO) ? intra4x4_BASEO : intra8x8cc_BASEO;
+	    
+    assign coretransform_ENABLE = intra4x4_STROBEO | intra8x8cc_STROBEO;
+	assign coretransform_XXIN = intra4x4_STROBEO ? intra4x4_DATAO : intra8x8cc_DATAO;
+	assign recon_BSTROBEI = intra4x4_STROBEO | intra8x8cc_STROBEO;
+	assign recon_BASEI = intra4x4_STROBEO ? intra4x4_BASEO : intra8x8cc_BASEO;
 
-	h264dctransform ins_dctransform
+	h264dctransform  #
+	(
+		.TOGETHER  ( 1 )
+	)
+	ins_dctransform
 	(
 		.CLK2      ( clk2                 ),
 		.RESET     ( newslice             ),
@@ -230,9 +235,10 @@ module h264topskeleton #
 		.XXIN      ( intra8x8cc_DCDATAO   ),
 		.VALID     ( dctransform_VALID    ),
 		.YYOUT     ( dctransform_YYOUT    ),
-		.READYO    ( dctransform_READYO   )
+		.READYO    ( dctransform_READYO   ),
+		.READYI    (                      )
 	);
-	assign dctransform_READYO = intra4x4_CHREADY && !coretransform_VALID;
+	assign dctransform_READYO = (intra4x4_CHREADY & ~coretransform_VALID);
 
 	h264quantise ins_quantise
 	(
@@ -243,10 +249,10 @@ module h264topskeleton #
 		.YNIN      ( quantise_YNIN        ),
 		.ZOUT      ( quantise_ZOUT        ),
 		.DCCO      ( quantise_DCCO        ),
-		.VALID     ( quantise_valid       )
+		.VALID     ( quantise_VALID       )
 	);
-	assign quantise_YNIN   = (coretransform_VALID) ? $signed(coretransform_YNOUT) : dctransform_YYOUT;
-	assign quantise_ENABLE = coretransform_VALID || dctransform_VALID;
+	assign quantise_YNIN = coretransform_VALID ? $signed(coretransform_YNOUT) : $signed(dctransform_YYOUT);
+	assign quantise_ENABLE = coretransform_VALID | dctransform_VALID;
 
 	h264dctransform ins_invdctransform
 	(
@@ -256,15 +262,16 @@ module h264topskeleton #
 		.XXIN      ( invdctransform_ZIN    ),
 		.VALID     ( invdctransform_VALID  ),
 		.YYOUT     ( invdctransform_YYOUT  ),
-		.READYO    ( invdctransform_READY  )
+		.READYO    ( invdctransform_READY  ),
+		.READYI    (                       )
 	);
-	assign invdctransform_ENABLE = quantise_VALID && quantise_DCCO;
-	assign invdctransform_READY = dequantise_LAST && xbuffer_CCIN;
+	assign invdctransform_ENABLE = quantise_VALID & quantise_DCCO;
+	assign invdctransform_READY = dequantise_LAST & xbuffer_CCIN;
 	assign invdctransform_ZIN = $signed(quantise_ZOUT);
 
 	h264dequantise #
 	(
-		.LASTADVANCE( 2                   )
+		.LASTADVANCE ( 2 )
 	)
 	ins_dequantise 
 	(
@@ -273,12 +280,13 @@ module h264topskeleton #
 		.QP        ( qp                   ),
 		.ZIN       ( dequantise_ZIN       ),
 		.DCCI	   ( invdctransform_VALID ),
+	    .DCCO      (                      ),
 		.LAST      ( dequantise_LAST      ),
 		.WOUT      ( dequantise_WOUT      ),
 		.VALID     ( dequantise_VALID     )
 	);
-	assign dequantise_ENABLE = quantise_VALID && !quantise_DCCO;
-	assign dequantise_ZIN    = (invdctransform_VALID) ? invdctransform_YYOUT : $signed(quantise_ZOUT);
+	assign dequantise_ENABLE = quantise_VALID & ~quantise_DCCO;
+	assign dequantise_ZIN = !invdctransform_VALID ? $signed(quantise_ZOUT) : $signed(invdctransform_YYOUT);
 
 	h264invtransform ins_invtransform
 	(
@@ -329,6 +337,7 @@ module h264topskeleton #
 	(
 		.CLK           ( clk 			 ),
 		.CLK2          ( clk2 			 ),
+		.VS            (                 ),
 		.ENABLE        ( cavlc_ENABLE    ),
 		.READY         ( cavlc_READY     ),
 		.VIN           ( cavlc_VIN       ),
@@ -353,9 +362,9 @@ module h264topskeleton #
 		.DONE          ( tobytes_DONE    )
 	);
 
-	assign tobytes_VE    = (header_VALID) ? {5'b00000, header_VE} : (cavlc_VALID) ? cavlc_VE : {1'b1, 24'h030080};
-	assign tobytes_VL    = (header_VALID) ? header_VL : (cavlc_VALID) ? cavlc_VL : 5'b01000;
-	assign tobytes_VALID = header_VALID || align_VALID || cavlc_VALID;
+   	assign tobytes_VE    = header_VALID ? {5'b00000, header_VE} : cavlc_VALID ? cavlc_VE : {1'b0, 24'h030080};
+	assign tobytes_VL    = header_VALID ? header_VL : cavlc_VALID ? cavlc_VL : 5'b01000;
+	assign tobytes_VALID = header_VALID | align_VALID | cavlc_VALID;
 
 	always_ff @(posedge clk2) 
 	begin
@@ -379,8 +388,8 @@ module h264topskeleton #
 		end
 	end
 
-	assign cavlc_NIN = (xbuffer_NV == 1) ? ninl : (xbuffer_NV == 2) ? nint : (xbuffer_NV == 3) ? ninsum[5:1] : 6'b0;
-	assign ninsum    = {1'b0, ninl} + {1'b0, nint} + 1;
+	assign cavlc_NIN = xbuffer_NV==1 ? ninl : xbuffer_NV==2 ? nint : xbuffer_NV==3 ? ninsum[5:1] : '0;
+	assign ninsum = {1'b0, ninl} + {1'b0, nint} + 1;
 
 	always_ff @(posedge clk2)
 	begin
@@ -408,11 +417,11 @@ module h264topskeleton #
 			toppixcc[{mbxcc, intra8x8cc_XXO}] <= recon_FEEDB;
 		end
 		
-		if ( NEWLINE == 1'b1 )
+		if ( NEWLINE )
 		begin
 			mbxcc <= '0;
 		end
-		else if ( intra8x8cc_XXINC == 1'b1 )
+		else if ( intra8x8cc_XXINC )
 		begin
 			mbxcc <= mbxcc + 1;
 		end

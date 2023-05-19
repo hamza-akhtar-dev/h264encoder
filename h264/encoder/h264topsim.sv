@@ -464,7 +464,6 @@ module h264topsim();
             clk = ~clk;
             #5;
         end
-       
     end
 
     initial
