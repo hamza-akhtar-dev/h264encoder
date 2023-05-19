@@ -103,7 +103,7 @@ module h264dequantise #
 			z1 <= ZIN;	//data ready for scaling
 		end
 		if (enab1)  
-			w2 <= $signed(z1) * $signed(qmf); // quantise
+			w2 <= {{7{z1[15]}}, z1} * {{16{{1'b0, qmf}[6]}}, {1'b0, qmf}}; //quantise
 
 		if (enab2) begin  
 			//here apply ">>1" to undo the x2 above, unless DCC where ">>1" needed

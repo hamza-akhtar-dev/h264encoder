@@ -158,7 +158,7 @@ module h264quantise
 		end 
 		if (enab1) 
 		begin
-			zr <= $signed(yn1) * $signed(qmf);		//sign extension before multiplying 
+			zr <= {{15{yn1[15]}}, yn1} * {{16{{1'b0, qmf}[14]}}, {1'b0, qmf}};		//sign extension before multiplying 
 		end
 		//two bits of rounding (and leading zero)
 		//rr := b"010";			//simple round-to-middle
