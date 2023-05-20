@@ -2,6 +2,8 @@ work/
 synth/
 tb_pixel_addr.vcd
 tb_me.vcd
+h264sim.vcd
+h264topsim.vcd
 transcript
 sample_int.yuv
 recon_out.yuv
