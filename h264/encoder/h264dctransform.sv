@@ -75,7 +75,7 @@ begin
 		ixx <= ixx+1;
 	end 
 
-	if (iout==1'b1 && (READYO==1'b1 || (TOGETHER==8'd1 && ixx!==0)) && RESET==1'b0) begin
+	if (iout==1'b1 && (READYO==1'b1 || (TOGETHER==8'd1 && ixx!=0)) && RESET==1'b0) begin
 		if (ixx==2'd0)begin
 			YYOUT <= xx00 + xx10;	//--out in raster scan order
 		end

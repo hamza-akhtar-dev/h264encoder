@@ -14,7 +14,7 @@ module h264topskeleton #
 	output logic        xbuffer_DONE, 
  
 	output logic        intra4x4_READYI,   
-	input  logic        intra4x4_STROBEI = 1'b0,
+	input  logic        intra4x4_STROBEI,
 	input  logic [31:0] intra4x4_DATAI,
 	output logic        intra8x8cc_READYI,   
 	input  logic        intra8x8cc_STROBEI,
