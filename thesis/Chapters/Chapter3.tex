@@ -77,6 +77,7 @@ The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction res
 \subsection{Inter-Prediction}
 The process of predicting a block of luma and chroma samples from a reference picture that has been previously been coded and transmitted i.e. exploits temporal redundancy between successive frames. For this a prediction region is selected, a prediction block is generated and then it is subtracted from original block of samples to form a residual. This is then coded and transmitted. Reference pictures are stored in Decoded Picture Buffer. The offset between position of current block and search region in the reference picture is called motion vector. This prediction is also known as \textbf{Motion Estimation} \cite{kalaycioglu2011low}. It has the capability of extracting true motion information thus enhancing the quality of displayed images in video enhancement systems. The preferred technique for motion estimation is the \textbf{Block Matching (BM)} Technique. 
 
+<<<<<<< Updated upstream
 \subsubsection{Block Matching Technique}
 This method divides the current frame into non-overlapping NxN macro-blocks and seeks out the block from the reference frame that most closely resembles the current block within a specified search range. The Sum of Absolute Difference (SAD), which is appropriate for hardware implementations, is the recommended block matching criterion.
 
@@ -93,3 +94,71 @@ In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
 
  
+=======
+\subsection{Transform Coding}
+
+\subsubsection{DC Transform}
+The DC transform is a type of discrete cosine transform (DCT) that only operates on the DC component (i.e., the average pixel value) of a 2x2 input block, and it is used to reduce the amount of spatial redundancy in the video data.\\
+This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as Given a 2x2 input block X, compute the sum of all the pixels in the block as: \begin{equation}
+	SUM(X) = X(0,0) + X(0,1) + X(1,0) + X(1,1)
+\end{equation}
+The average value of the input block is computed as:
+\begin{equation}
+ AVG(X) = SUM(X) / 4
+\end{equation}
+then the average value is subtracted from each pixel in the input block to obtain the transformed block Y, where:
+\begin{equation}
+ 	Y(i,j) = X(i,j) - AVG(X) 
+\end{equation} 	
+In our code this dc transform is implemented in a pipe-lined manner, i.e. by using 4 stages. In each stage the input block is first divided into two sub-blocks, the transform is applied to each sub-block then these transformed sub-blocks are recombined at the end to form the output block. This pipe-lining is done to ensure the reduced latency and higher throughput of transform. 
+
+\subsubsection{Core Transform}
+Core transform or Forward Discrete Cosine Transform (\textbf{FDCT}) is a linear transformation that transforms the given input data from spatial domain to frequency domain. This transform is \textbf{computationally less complex} and has \textbf{high energy compaction} as compared to \textbf{DFT}, \textbf{DST}, \textbf{WHT} and \textbf{DWT}. Therefore, it is highly preferred in video compression.
+FDCT uses A i.e. a transform matrix and its transpose to convert the input matrix or a martix of samples X into a result matrix Y i.e. an NxN block of coefficients, as shown in the equation below:
+\begin{equation}
+	Y = AXA^{T}
+\end{equation}
+Here, A in an NxN transform matrix, the equation for $A_{ij}$ is given by:
+\[
+A_{ij} = C_i \cos\left(\frac{(2j + 1)i\pi}{2N}\right)
+\]
+
+where
+\[
+C_i = \begin{cases} 
+	\frac{1}{\sqrt{N}} & \text{if } i = 0 \\
+	\frac{\sqrt{2}}{\sqrt{N}} & \text{if } i > 0 \\
+\end{cases}
+\]
+
+It can be simplified as a matrix, The matrix $A$ is given by:
+\[
+A = \begin{bmatrix}
+	a & a & a & a \\
+	b & c & -c & -b \\
+	a & -a & -a & a \\
+	c & -b & b & -c \\
+\end{bmatrix}
+\]
+
+where
+\[
+a = \frac{1}{2}, \quad
+b = \frac{1}{2}\cos\left(\frac{\pi}{8}\right), \quad
+c = \frac{1}{2}\cos\left(\frac{3\pi}{8}\right)
+\]
+
+In our code, we have used 36-bit input, XXIN, which is a 4x9-bit matrix in little-endian order for our implementation of core transform. The transform generates a 14-bit output, YNOUT, in reverse zigzag order.\\
+The output is only considered valid when the VALID signal is high. This VALID signal is controlled by the ENABLE signal. A READY signal that is used to indicate when the module is ready to accept input.\\
+The output of core tranform is a set of coefficients in frequency domain, these coefficients, concentrate most of the signal energy in a few low frequency components. This property gives us efficient compression as the low magnitude coefficients are further discarded through quantization.
+
+\subsection{Quantization}
+The process of mapping the input values from a large set(typically a continuous set) into smaller often finite sized set is called Quantization. This helps in representing the data signal with fewer bits than the original one as the range of possible values in the quantized set in smaller.\\
+We have used a \textbf{Scalar Quantizer} in our implementation, here each element on the matrix is quantized independently without considering the correlation between elements. For better understanding it can be considered as a process of rounding a fractional number to the nearest integer.\\
+This process is irreversible and lossy since it is not possible to determine the exact value of the original fractional number from the rounded integer.\\
+The formula used for quantization in our implementation is:
+\[
+X_q = \text{round}\left(\frac{X}{{2 \cdot QP}} \cdot \text{scale}\right)
+\]
+Here, \textbf{X} is the input value to be quantized. \textbf{QP} is the Quantization Parameter. The division by (2*QP) scales the input value based on the QP. \textbf{Scale} is the scaling factor and \textbf{round} function is used to round the scaled value to nearest integer, this scaled and rounded value is then multiplied by the scaled factor.
+>>>>>>> Stashed changes

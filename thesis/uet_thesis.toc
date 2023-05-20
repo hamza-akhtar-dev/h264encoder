@@ -23,6 +23,7 @@
 \contentsline {section}{\numberline {1.4}H264 syntax}{6}{section.49}%
 \contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{8}{chapter.51}%
 \contentsline {section}{\numberline {2.1}Motivations}{8}{section.52}%
+<<<<<<< Updated upstream
 \contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{9}{chapter.53}%
 \contentsline {subsection}{\numberline {3.0.1}Intra-Prediction}{9}{subsection.54}%
 \contentsline {subsubsection}{\numberline {3.0.1.1}4x4 Luma Prediction}{9}{subsubsection.55}%
@@ -35,3 +36,26 @@
 \vspace {2em}
 \vspace {2em}
 \contentsline {chapter}{References}{16}{dummy.70}%
+=======
+\contentsline {chapter}{\numberline {3}Prediction}{10}{chapter.53}%
+\contentsline {subsection}{\numberline {3.0.1}Intra-Prediction}{10}{subsection.54}%
+\contentsline {subsubsection}{\numberline {3.0.1.1}4x4 Luma Prediction}{10}{subsubsection.55}%
+\contentsline {subsubsection}{\numberline {3.0.1.2}8x8 Chroma Prediction}{12}{subsubsection.58}%
+\contentsline {subsection}{\numberline {3.0.2}Inter-Prediction}{12}{subsection.60}%
+\contentsline {subsection}{\numberline {3.0.3}Transform Coding}{12}{subsection.61}%
+\contentsline {subsubsection}{\numberline {3.0.3.1}DC Transform}{12}{subsubsection.62}%
+\contentsline {subsubsection}{\numberline {3.0.3.2}Core Transform}{13}{subsubsection.66}%
+\contentsline {subsection}{\numberline {3.0.4}Quantization}{14}{subsection.68}%
+\contentsline {chapter}{\numberline {4}Thesis Structure}{15}{chapter.69}%
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Introduction to Latex}{17}{appendix.71}%
+\contentsline {section}{\numberline {A.1}Learning \LaTeX {}}{17}{section.72}%
+\contentsline {subsection}{\numberline {A.1.1}A (not so short) Introduction to \LaTeX {}}{17}{subsection.73}%
+\contentsline {subsection}{\numberline {A.1.2}A Short Math Guide for \LaTeX {}}{17}{subsection.74}%
+\contentsline {subsection}{\numberline {A.1.3}Common \LaTeX {} Math Symbols}{18}{subsection.75}%
+\contentsline {subsection}{\numberline {A.1.4}Figures}{18}{subsection.76}%
+\contentsline {subsection}{\numberline {A.1.5}Typesetting mathematics}{19}{subsection.78}%
+\contentsline {section}{\numberline {A.2}Sectioning and Subsectioning}{20}{section.80}%
+\vspace {2em}
+\contentsline {chapter}{References}{21}{dummy.81}%
+>>>>>>> Stashed changes

@@ -332,6 +332,7 @@ module h264topsim();
 		.XOUT(invtransform_XOUT)
 	);
 
+
     h264recon recon
     (
         .CLK2(clk2), 
@@ -466,6 +467,7 @@ module h264topsim();
         end
        
     end
+
 
     initial
     begin
@@ -698,6 +700,7 @@ module h264topsim();
 	    end
     end
 
+<<<<<<< Updated upstream:h264/encoder/h264topsim.sv
 	always_ff @(posedge clk2)
 	begin
 		assert (!(header_VALID && cavlc_VALID)) else $error("Two strobes clash.");
@@ -939,4 +942,8 @@ module h264topsim();
 		end
 	end
 
+=======
+   
+        
+>>>>>>> Stashed changes:h264/main_code/h264topsim.sv
 endmodule
