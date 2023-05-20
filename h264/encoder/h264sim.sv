@@ -4,14 +4,13 @@ module h264sim ();
     localparam IMGHEIGHT    = 288;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
-    localparam MAXFRAMES    = 5;
+    localparam MAXFRAMES    = 2;
     localparam INITQP       = 28;
 
-    logic        clk;
-    logic        clk2;
+    logic clk = 0, clk2;
 
-    logic        newslice;
-    logic        newline;
+    logic        newslice = 1;
+    logic        newline  = 0;
 
     logic [5:0]  qp;
 
@@ -299,6 +298,12 @@ module h264sim ();
 		    end
 		@(posedge clk);
 	    end
+    end
+
+    initial 
+    begin
+        $dumpfile("h264sim.vcd");
+        $dumpvars(0, h264sim);
     end
 
 endmodule

@@ -14,7 +14,7 @@ module h264topskeleton #
 	output logic        xbuffer_DONE, 
  
 	output logic        intra4x4_READYI,   
-	input  logic        intra4x4_STROBEI,
+	input  logic        intra4x4_STROBEI = 1'b0,
 	input  logic [31:0] intra4x4_DATAI,
 	output logic        intra8x8cc_READYI,   
 	input  logic        intra8x8cc_STROBEI,
@@ -25,104 +25,104 @@ module h264topskeleton #
 	output logic        tobytes_DONE          
 );
 
-	bit [31:0] intra4x4_TOPI         ;
-	bit [3:0]  intra4x4_TOPMI        ;
-	bit        intra4x4_STROBEO      ;
-	bit        intra4x4_READYO       ;
-	bit [35:0] intra4x4_DATAO        ;
-	bit [31:0] intra4x4_BASEO        ;
-	bit        intra4x4_MSTROBEO     ;
-	bit [3:0]  intra4x4_MODEO        ;
-	bit        intra4x4_PMODEO       ;
-	bit [2:0]  intra4x4_RMODEO       ;
-	bit [1:0]  intra4x4_XXO          ;
-	bit        intra4x4_XXINC        ;
-	bit        intra4x4_CHREADY      ;
+	logic [31:0] intra4x4_TOPI;
+	logic [3:0]  intra4x4_TOPMI;
+	logic        intra4x4_STROBEO;
+	logic        intra4x4_READYO;
+	logic [35:0] intra4x4_DATAO;
+	logic [31:0] intra4x4_BASEO;
+	logic        intra4x4_MSTROBEO;
+	logic [3:0]  intra4x4_MODEO;
+	logic        intra4x4_PMODEO;
+	logic [2:0]  intra4x4_RMODEO;
+	logic [1:0]  intra4x4_XXO;
+	logic        intra4x4_XXINC;
+	logic        intra4x4_CHREADY;
 
-	bit [31:0] intra8x8cc_TOPI       ;
-	bit        intra8x8cc_STROBEO    ;
-	bit        intra8x8cc_READYO     ;
-	bit [35:0] intra8x8cc_DATAO      ;
-	bit [31:0] intra8x8cc_BASEO      ;
-	bit        intra8x8cc_DCSTROBEO  ;
-	bit [15:0] intra8x8cc_DCDATAO    ;
-	bit [1:0]  intra8x8cc_CMODEO     ;
-	bit [1:0]  intra8x8cc_XXO        ;
-	bit        intra8x8cc_XXC        ;
-	bit        intra8x8cc_XXINC      ;
+	logic [31:0] intra8x8cc_TOPI;
+	logic        intra8x8cc_STROBEO;
+	logic        intra8x8cc_READYO;
+	logic [35:0] intra8x8cc_DATAO;
+	logic [31:0] intra8x8cc_BASEO;
+	logic        intra8x8cc_DCSTROBEO;
+	logic [15:0] intra8x8cc_DCDATAO;
+	logic [1:0]  intra8x8cc_CMODEO;
+	logic [1:0]  intra8x8cc_XXO;
+	logic        intra8x8cc_XXC;
+	logic        intra8x8cc_XXINC;
 
-	bit [1:0]  header_CMODE          ;
-	bit [19:0] header_VE             ;
-	bit [4:0]  header_VL             ;
-	bit        header_VALID          ;
+	logic [1:0]  header_CMODE = 2'b00;
+	logic [19:0] header_VE;
+	logic [4:0]  header_VL;
+	logic        header_VALID;
 
-	bit        coretransform_READY   ;
-	bit        coretransform_ENABLE  ;
-	bit [35:0] coretransform_XXIN    ;
-	bit        coretransform_VALID   ;
-	bit [13:0] coretransform_YNOUT;
+	logic        coretransform_READY;
+	logic        coretransform_ENABLE;
+	logic [35:0] coretransform_XXIN;
+	logic        coretransform_VALID;
+	logic [13:0] coretransform_YNOUT;
 
-	bit        dctransform_VALID     ;
-	bit [15:0] dctransform_YYOUT     ;
-	bit        dctransform_READYO    ;
+	logic        dctransform_VALID;
+	logic [15:0] dctransform_YYOUT;
+	logic        dctransform_READYO;
 
-	bit        quantise_ENABLE       ;
-	bit [15:0] quantise_YNIN         ;
-	bit        quantise_VALID        ;
-	bit [11:0] quantise_ZOUT         ;
-	bit        quantise_DCCO         ;
+	logic        quantise_ENABLE;
+	logic [15:0] quantise_YNIN;
+	logic        quantise_VALID;
+	logic [11:0] quantise_ZOUT;
+	logic        quantise_DCCO;
 
-	bit        dequantise_ENABLE     ;
-	bit [15:0] dequantise_ZIN;
-	bit        dequantise_LAST       ;
-	bit        dequantise_VALID      ;
-	bit        dequantise_DCCO       ;
-	bit [15:0] dequantise_WOUT       ;
+	logic        dequantise_ENABLE;
+	logic [15:0] dequantise_ZIN;
+	logic        dequantise_LAST;
+	logic        dequantise_VALID;
+	logic        dequantise_DCCO = 1'b0;
+	logic [15:0] dequantise_WOUT;
 
-	bit        invdctransform_ENABLE ;
-	bit [15:0] invdctransform_ZIN;
-	bit        invdctransform_VALID  ;
-	bit [15:0] invdctransform_YYOUT  ;
-	bit        invdctransform_READY  ;
+	logic        invdctransform_ENABLE;
+	logic [15:0] invdctransform_ZIN;
+	logic        invdctransform_VALID;
+	logic [15:0] invdctransform_YYOUT;
+	logic        invdctransform_READY;
 
-	bit        invtransform_VALID    ;
-	bit [39:0] invtransform_XOUT     ;
+	logic        invtransform_VALID;
+	logic [39:0] invtransform_XOUT;
 
-	bit        recon_BSTROBEI        ;
-	bit [31:0] recon_BASEI           ;
-	bit        recon_FBSTROBE        ;
-	bit        recon_FBCSTROBE       ;
-	bit [31:0] recon_FEEDB           ;
+	logic        recon_BSTROBEI;
+	logic [31:0] recon_BASEI;
+	logic        recon_FBSTROBE;
+	logic        recon_FBCSTROBE;
+	logic [31:0] recon_FEEDB;
 
-	bit        xbuffer_NLOAD         ;
-	bit [2:0]  xbuffer_NX            ;        
-	bit [2:0]  xbuffer_NY            ;        
-	bit [1:0]  xbuffer_NV            ;        
-	bit        xbuffer_NXINC         ;
-	bit        xbuffer_READYI        ;
-	bit        xbuffer_CCIN          ;
+	logic        xbuffer_NLOAD;
+	logic [2:0]  xbuffer_NX;        
+	logic [2:0]  xbuffer_NY;        
+	logic [1:0]  xbuffer_NV;        
+	logic        xbuffer_NXINC;
+	logic        xbuffer_READYI;
+	logic        xbuffer_CCIN;
 
-	bit        cavlc_ENABLE          ;       
-	logic      cavlc_READY           ;  
-	bit [11:0] cavlc_VIN             ; 
-	bit [4:0]  cavlc_NIN             ;     
-	bit [24:0] cavlc_VE              ;
-	bit [4:0]  cavlc_VL              ;
-	bit        cavlc_VALID           ;      
-	bit [2:0]  cavlc_XSTATE          ;
-	logic [4:0]cavlc_NOUT            ;
+	logic      cavlc_ENABLE;       
+	logic      cavlc_READY;  
+	logic [11:0] cavlc_VIN; 
+	logic [4:0]  cavlc_NIN;     
+	logic [24:0] cavlc_VE;
+	logic [4:0]  cavlc_VL;
+	logic        cavlc_VALID;      
+	logic [2:0]  cavlc_XSTATE;
+	logic [4:0]  cavlc_NOUT; 
 
-	logic      tobytes_READY         ;                   
-	bit [24:0] tobytes_VE            ;
-	bit [4:0]  tobytes_VL            ;
-	bit        tobytes_VALID         ;
-
-	bit        align_VALID           ;
-
-	bit [7:0]  ninx                  ;
-	bit [4:0]  ninl                  ;        
-	bit [4:0]  nint                  ;      
-	bit [5:0]  ninsum                ;       
+	logic        tobytes_READY;                   
+	logic [24:0] tobytes_VE;
+	logic [4:0]  tobytes_VL;
+	logic        tobytes_VALID;
+  
+	logic        align_VALID;
+  
+	logic [7:0] ninx;
+	logic [4:0] ninl;        
+	logic [4:0] nint;      
+	logic [5:0] ninsum;       
              
 	logic [4:0]        ninleft [7:0]           = '{default: '0};
 	logic [4:0]        nintop  [2047:0]        = '{default: '0};    
@@ -190,7 +190,7 @@ module h264topskeleton #
 	(
 		.CLK       ( clk              ),
 		.NEWSLICE  ( NEWSLICE         ),
-		.LASTSLICE (     			  ),
+		.LASTSLICE ( 1'b0    		  ),
 		.SINTRA    ( 1'b1             ),
 		.MINTRA    ( 1'b1             ),
 		.LSTROBE   ( intra4x4_STROBEO ),
@@ -230,7 +230,7 @@ module h264topskeleton #
 	ins_dctransform
 	(
 		.CLK2      ( clk2                 ),
-		.RESET     ( newslice             ),
+		.RESET     ( NEWSLICE             ),
 		.ENABLE    ( intra8x8cc_DCSTROBEO ),
 		.XXIN      ( intra8x8cc_DCDATAO   ),
 		.VALID     ( dctransform_VALID    ),
@@ -257,7 +257,7 @@ module h264topskeleton #
 	h264dctransform ins_invdctransform
 	(
 		.CLK2      ( clk2                  ),
-		.RESET     ( newslice              ),
+		.RESET     ( NEWSLICE              ),
 		.ENABLE    ( invdctransform_ENABLE ),
 		.XXIN      ( invdctransform_ZIN    ),
 		.VALID     ( invdctransform_VALID  ),

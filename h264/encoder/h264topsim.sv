@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 5;
+    localparam MAXFRAMES    = 2;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
@@ -937,5 +937,11 @@ module h264topsim();
 			end
 		end
 	end
+
+    initial 
+    begin
+        $dumpfile("h264topsim.vcd");
+        $dumpvars(0, h264topsim);
+    end
 
 endmodule
