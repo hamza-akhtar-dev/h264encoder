@@ -4,7 +4,7 @@ module h264sim ();
     localparam IMGHEIGHT    = 288;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
-    localparam MAXFRAMES    = 2;
+    localparam MAXFRAMES    = 10;
     localparam INITQP       = 28;
 
     logic clk = 0, clk2;
@@ -28,6 +28,8 @@ module h264sim ();
     logic        tobytes_STROBE;
     logic        tobytes_DONE;
 
+    logic        align_VALID;
+
     h264topskeleton #
     (
         .IMGWIDTH  ( IMGWIDTH  ),
@@ -50,7 +52,8 @@ module h264sim ();
         .intra8x8cc_DATAI   ( intra8x8cc_DATAI   ),
         .tobytes_BYTE       ( tobytes_BYTE       ),
         .tobytes_STROBE     ( tobytes_STROBE     ),
-        .tobytes_DONE       ( tobytes_DONE       )
+        .tobytes_DONE       ( tobytes_DONE       ),
+        .align_VALID        ( align_VALID        )
     );
 
     logic [IMGBITS-1:0] yvideo [0:IMGWIDTH-1  ][0:IMGHEIGHT-1  ];
@@ -255,6 +258,12 @@ module h264sim ();
             begin
 			    @(posedge clk);
             end
+            @(posedge clk);
+            align_VALID = 1;	
+            @(posedge clk);
+            align_VALID = 0;
+            @(posedge clk);
+            $display("Done align at end of NAL");
             if (!tobytes_DONE)
             begin
 			    wait (tobytes_DONE == 1);

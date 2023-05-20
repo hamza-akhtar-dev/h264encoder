@@ -22,7 +22,9 @@ module h264topskeleton #
  
 	output logic [7:0]  tobytes_BYTE,
 	output logic        tobytes_STROBE, 
-	output logic        tobytes_DONE          
+	output logic        tobytes_DONE,
+	
+	input  logic        align_VALID 
 );
 
 	logic [31:0] intra4x4_TOPI;
@@ -117,7 +119,7 @@ module h264topskeleton #
 	logic [4:0]  tobytes_VL;
 	logic        tobytes_VALID;
   
-	logic        align_VALID;
+	//logic        align_VALID;
   
 	logic [7:0] ninx;
 	logic [4:0] ninl;        
