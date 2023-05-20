@@ -13,6 +13,7 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Motion Estimation using Block Matching\relax }}{12}{figure.caption.62}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 265 PE VBS ME Hardware Architecture\relax }}{14}{figure.caption.69}%
+<<<<<<< Updated upstream
 =======
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Reference samples for 4x4 Luma\relax }}{11}{figure.caption.56}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Major Modes for 4x4 Luma Prediction\relax }}{11}{figure.caption.57}%
@@ -20,4 +21,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {A.1}{\ignorespaces The UET Lahore logo.\relax }}{18}{figure.caption.77}%
+>>>>>>> Stashed changes
+=======
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 16 x 16 PE Matrix\relax }}{15}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Working of an Adder Tree\relax }}{15}{figure.caption.71}%
 >>>>>>> Stashed changes

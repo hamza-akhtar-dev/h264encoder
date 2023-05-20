@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  12 MAY 2023 01:47
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  20 MAY 2023 18:43
+>>>>>>> Stashed changes
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  20 MAY 2023 22:05
 >>>>>>> Stashed changes
 entering extended mode
 **./uet_thesis.tex
@@ -682,9 +686,13 @@ Chapter 1.
 
 ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/toplevel.png, id=294, 1011.78pt x 429.605pt>
 =======
 <./Figures/toplevel.png, id=334, 872.25874pt x 413.545pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/toplevel.png, id=298, 1011.78pt x 429.605pt>
 >>>>>>> Stashed changes
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
@@ -692,18 +700,26 @@ Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
 (pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
  [2] [3 <./Figures/toplevel.png>]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/comp1.png, id=312, 322.20375pt x 261.97874pt>
 =======
 <./Figures/comp1.png, id=348, 322.20375pt x 261.97874pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/comp1.png, id=316, 322.20375pt x 261.97874pt>
 >>>>>>> Stashed changes
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/interprediction.png, id=314, 416.55624pt x 212.795pt>
 =======
 <./Figures/interprediction.png, id=350, 416.55624pt x 212.795pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/interprediction.png, id=318, 416.55624pt x 212.795pt>
 >>>>>>> Stashed changes
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
@@ -711,9 +727,13 @@ Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/motionvector.png, id=321, 525.965pt x 316.18124pt>
 =======
 <./Figures/motionvector.png, id=357, 525.965pt x 316.18124pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/motionvector.png, id=325, 525.965pt x 316.18124pt>
 >>>>>>> Stashed changes
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
@@ -721,9 +741,13 @@ Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/motionvector.png>]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/syntax.png, id=332, 553.06625pt x 376.40625pt>
 =======
 <./Figures/syntax.png, id=365, 553.06625pt x 376.40625pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/syntax.png, id=336, 553.06625pt x 376.40625pt>
 >>>>>>> Stashed changes
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
@@ -754,14 +778,19 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 [9
 
 ]
+<<<<<<< Updated upstream
 <./Figures/4x4luma.png, id=358, 241.90375pt x 161.60374pt>
 =======
 <./Figures/4x4luma.png, id=385, 241.90375pt x 161.60374pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/4x4luma.png, id=362, 241.90375pt x 161.60374pt>
 >>>>>>> Stashed changes
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
 Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <./Figures/3modes.png, id=364, 623.32875pt x 165.61874pt>
 =======
@@ -770,16 +799,23 @@ Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
 ]
 <./Figures/3modes.png, id=394, 623.32875pt x 165.61874pt>
 >>>>>>> Stashed changes
+=======
+<./Figures/3modes.png, id=368, 623.32875pt x 165.61874pt>
+>>>>>>> Stashed changes
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
 Package pdftex.def Info: ./Figures/3modes.png  used on input line 49.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
 <<<<<<< Updated upstream
  [10 <./Figures/4x4luma.png> <./Figures/3modes.png>]
+<<<<<<< Updated upstream
 <./Figures/8x8modes.png, id=374, 660.4675pt x 244.915pt>
 =======
  [11 <./Figures/4x4luma.png> <./Figures/3modes.png>]
 <./Figures/8x8modes.png, id=402, 660.4675pt x 244.915pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/8x8modes.png, id=378, 660.4675pt x 244.915pt>
 >>>>>>> Stashed changes
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
@@ -787,7 +823,7 @@ Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 69.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
 <<<<<<< Updated upstream
  [11 <./Figures/8x8modes.png>]
-<./Figures/mv.png, id=383, 744.7825pt x 219.82124pt>
+<./Figures/mv.png, id=387, 744.7825pt x 219.82124pt>
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
 Package pdftex.def Info: ./Figures/mv.png  used on input line 87.
@@ -812,12 +848,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-<./Figures/256pevbsme.png, id=409, 686.565pt x 751.80875pt>
+<./Figures/256pevbsme.png, id=413, 686.565pt x 751.80875pt>
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
-[14 <./Figures/256pevbsme.png>]) [15]
+[14 <./Figures/256pevbsme.png>]
+<./Figures/pematrix.png, id=421, 868.24374pt x 353.32pt>
+File: ./Figures/pematrix.png Graphic file (type png)
+<use ./Figures/pematrix.png>
+Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
+(pdftex.def)             Requested size: 325.215pt x 132.34372pt.
+<./Figures/addertree.png, id=423, 502.87875pt x 302.12875pt>
+File: ./Figures/addertree.png Graphic file (type png)
+<use ./Figures/addertree.png>
+Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
+(pdftex.def)             Requested size: 144.54pt x 86.83598pt.
+) [15 <./Figures/pematrix.png> <./Figures/addertree.png>] [16]
 -------------------------------------------
  References
 -------------------------------------------
@@ -827,18 +874,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
 07 _ 1217 _ 02 / pdf ? origin =
  []
 
-) [16
+) [17
 
 
 ] (uet_thesis.aux)
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9FDDA64AFCEC2C39A0413462C6019D1B;6152.
+(rerunfilecheck)             Checksum: 3642C5A2A5F4221CE01172F74CAF86B6;6152.
  ) 
 Here is how much of TeX's memory you used:
- 14338 strings out of 480236
- 209800 string characters out of 2890348
- 498104 words of memory out of 3000000
- 30552 multiletter control sequences out of 15000+200000
+ 14355 strings out of 480236
+ 210158 string characters out of 2890348
+ 498215 words of memory out of 3000000
+ 30564 multiletter control sequences out of 15000+200000
  545201 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,77p,1037b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -856,8 +903,9 @@ type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (28 pages, 430505 bytes).
+Output written on uet_thesis.pdf (29 pages, 482511 bytes).
 PDF statistics:
+<<<<<<< Updated upstream
  506 PDF objects out of 1000 (max. 8388607)
  108 named destinations out of 1000 (max. 500000)
  336 words of extra memory for PDF output out of 10000 (max. 10000000)
@@ -934,5 +982,10 @@ PDF statistics:
  567 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
  398 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
+=======
+ 522 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 346 words of extra memory for PDF output out of 10000 (max. 10000000)
 >>>>>>> Stashed changes
 

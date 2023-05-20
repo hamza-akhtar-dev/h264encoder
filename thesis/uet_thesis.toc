@@ -35,6 +35,7 @@
 \contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{14}{subsection.68}%
 \vspace {2em}
 \vspace {2em}
+<<<<<<< Updated upstream
 \contentsline {chapter}{References}{16}{dummy.70}%
 =======
 \contentsline {chapter}{\numberline {3}Prediction}{10}{chapter.53}%
@@ -58,4 +59,7 @@
 \contentsline {section}{\numberline {A.2}Sectioning and Subsectioning}{20}{section.80}%
 \vspace {2em}
 \contentsline {chapter}{References}{21}{dummy.81}%
+>>>>>>> Stashed changes
+=======
+\contentsline {chapter}{References}{17}{dummy.72}%
 >>>>>>> Stashed changes

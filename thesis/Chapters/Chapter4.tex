@@ -37,9 +37,29 @@ We designed a parallel \textbf{256 PE VBS FSME Hardware Architecture}. \cite{kal
 	\label{fig:256pevbsme}
 \end{figure}
 
-In this design, a \textbf{2-D systolic PE array} is used. The use of this type of array introduced parallel computing and pipelinability in the structure. There are \textbf{16x16 = 256 PEs} ( 16 rows and 16 columns) interconnected with each other. All of them are  made capable of shifting data down, up and left. It means that a 16x16 current block can move around the 48x48 search window in down, up and right direction. For a \textbf{16x16 MB}, a Motion Vector MV is found in one cycle in a search range of \textbf{[-16, 15]} pixels. Pixels are defined as 8 bit positive integers.
+In this design, a \textbf{2-D systolic PE array} is used. The use of this type of array introduced parallel computing and pipelinability in the structure. There are \textbf{16x16 = 256 PEs} ( 16 rows and 16 columns) interconnected with each other in a form of matrix. All of them are  made capable of shifting data down, up and left. It means that a 16x16 current block can move around the 48x48 search window in down, up and right direction. For a \textbf{16x16 MB}, a Motion Vector MV is found in one cycle in a search range of \textbf{[-16, 15]} pixels. Pixels are defined as 8 bit positive integers.
 
+As soon as the control signals for loading current and search pixels are enabled, both current block and search window pixels starts loading into PEs. In 1 clk cycle, 16 pixels are loaded for both of them. (1st PE is filled in each of 16 columns). Thus, the whole PE matrix is filled in 16 cycles. As depicted in figure \ref{fig:pematrix}, \textbf{pixel$\_$cpr$\_$in} and \textbf{pixel$\_$spr$\_$in} are input array of 16 8-bit pixels from current block and search window of reference block respectively. The \textbf{pe$\_$}matrix module concatenates the output signals of each column of processing elements to form the final output signal \textbf{ad} which is an array of 8*(16**2) bits. 
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 4.5in]{./Figures/pematrix.png}
+	\rule{35em}{0.5pt}
+	\caption{16 x 16 PE Matrix}
+	\label{fig:pematrix}
+\end{figure}
 
+Each PE calculates the absolute difference between current MB pixel and the search window pixel. In this way 16x16 = 256 absolute differences are obtained in one location and they all are calculated simultaneously with the loading of data in PEs as the design is combinational. 
 
+After absolute differences are all calculated, The SAD for that search location is determined by adding the absolute differences calculated by the above PEs as shown in figure. All these absolute differences are added up together using Adder Trees. The working of a simple adder tree is shown in figure \ref{fig:addertree}. It can seen clearly in the figure that there is 2 cycle latency for an adder tree. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 2in]{./Figures/addertree.png}
+	\rule{35em}{0.5pt}
+	\caption{Working of an Adder Tree}
+	\label{fig:addertree}
+\end{figure}
+
+For SAD calculation of a 16x16 current block, we consider \textbf{PI-PPSAD} structure.  
 
