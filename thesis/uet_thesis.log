@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  21 MAY 2023 17:25
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 20:47
+>>>>>>> Stashed changes
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
@@ -641,7 +645,11 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
+<<<<<<< Updated upstream
 <./Figures/uet_logo.pdf, id=187, 150.5625pt x 150.5625pt>
+=======
+<./Figures/uet_logo.pdf, id=195, 150.5625pt x 150.5625pt>
+>>>>>>> Stashed changes
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -748,36 +756,56 @@ Chapter 1.
 
 
 ]
+<<<<<<< Updated upstream
 <./Figures/toplevel.png, id=361, 1011.78pt x 429.605pt>
+=======
+<./Figures/toplevel.png, id=371, 1011.78pt x 429.605pt>
+>>>>>>> Stashed changes
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
 Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
 (pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
  [2] [3 <./Figures/toplevel.png>]
+<<<<<<< Updated upstream
 <./Figures/comp1.png, id=379, 322.20375pt x 261.97874pt>
+=======
+<./Figures/comp1.png, id=389, 322.20375pt x 261.97874pt>
+>>>>>>> Stashed changes
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
+<<<<<<< Updated upstream
 <./Figures/interprediction.png, id=381, 416.55624pt x 212.795pt>
+=======
+<./Figures/interprediction.png, id=391, 416.55624pt x 212.795pt>
+>>>>>>> Stashed changes
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
 Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
+<<<<<<< Updated upstream
 <./Figures/motionvector.png, id=388, 525.965pt x 316.18124pt>
+=======
+<./Figures/motionvector.png, id=399, 525.965pt x 316.18124pt>
+>>>>>>> Stashed changes
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
 Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/motionvector.png>]
+<<<<<<< Updated upstream
 <./Figures/syntax.png, id=399, 553.06625pt x 376.40625pt>
+=======
+<./Figures/syntax.png, id=413, 553.06625pt x 376.40625pt>
+>>>>>>> Stashed changes
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
 Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
 (pdftex.def)             Requested size: 289.07999pt x 196.73747pt.
- [6 <./Figures/syntax.png>])
-(Chapters/Chapter2.tex [7]
+) [6] (Chapters/Chapter2.tex
+[7 <./Figures/syntax.png>]
 Chapter 2.
 -------------------------------------------
  2 Motivations and Problem Statement
@@ -792,24 +820,40 @@ Chapter 3.
 [10
 
 ]
+<<<<<<< Updated upstream
 <./Figures/4x4luma.png, id=428, 241.90375pt x 161.60374pt>
+=======
+<./Figures/4x4luma.png, id=448, 241.90375pt x 161.60374pt>
+>>>>>>> Stashed changes
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
 Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
+<<<<<<< Updated upstream
 <./Figures/3modes.png, id=434, 623.32875pt x 165.61874pt>
+=======
+<./Figures/3modes.png, id=454, 623.32875pt x 165.61874pt>
+>>>>>>> Stashed changes
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
 Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
  [11 <./Figures/4x4luma.png>]
+<<<<<<< Updated upstream
 <./Figures/8x8modes.png, id=444, 660.4675pt x 244.915pt>
+=======
+<./Figures/8x8modes.png, id=464, 660.4675pt x 244.915pt>
+>>>>>>> Stashed changes
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
 Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
  [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
+<<<<<<< Updated upstream
 <./Figures/mv.png, id=454, 744.7825pt x 219.82124pt>
+=======
+<./Figures/mv.png, id=474, 744.7825pt x 219.82124pt>
+>>>>>>> Stashed changes
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
 Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
@@ -819,10 +863,6 @@ Chapter 4.
 -------------------------------------------
  4 Hardware Architecture for Inter-Prediction
 -------------------------------------------
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 9.
-
 [16
 
 ]
@@ -830,28 +870,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
+<<<<<<< Updated upstream
 <./Figures/256pevbsme.png, id=492, 686.565pt x 751.80875pt>
+=======
+<./Figures/256pevbsme.png, id=512, 686.565pt x 751.80875pt>
+>>>>>>> Stashed changes
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
 [17 <./Figures/256pevbsme.png>]
+<<<<<<< Updated upstream
 <./Figures/pematrix.png, id=500, 868.24374pt x 353.32pt>
+=======
+<./Figures/pematrix.png, id=520, 868.24374pt x 353.32pt>
+>>>>>>> Stashed changes
 File: ./Figures/pematrix.png Graphic file (type png)
 <use ./Figures/pematrix.png>
 Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
 (pdftex.def)             Requested size: 325.215pt x 132.34372pt.
+<<<<<<< Updated upstream
 <./Figures/addertree.png, id=502, 502.87875pt x 302.12875pt>
+=======
+<./Figures/addertree.png, id=522, 502.87875pt x 302.12875pt>
+>>>>>>> Stashed changes
 File: ./Figures/addertree.png Graphic file (type png)
 <use ./Figures/addertree.png>
 Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
 (pdftex.def)             Requested size: 144.54pt x 86.83598pt.
+<<<<<<< Updated upstream
 ) (Chapters/Chapter5.tex [18 <./Figures/pematrix.png> <./Figures/addertree.png>
 ] [19]
+=======
+ [18 <./Figures/pematrix.png> <./Figures/addertree.png>]
+<./Figures/PIPPSAD.png, id=531, 1590.94376pt x 1357.07pt>
+File: ./Figures/PIPPSAD.png Graphic file (type png)
+<use ./Figures/PIPPSAD.png>
+Package pdftex.def Info: ./Figures/PIPPSAD.png  used on input line 72.
+(pdftex.def)             Requested size: 397.48499pt x 339.0389pt.
+
+
+Package caption Warning: \label without proper reference on input line 104.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dataflow1' on page 19 undefined on input line 78.
+
+
+
+Package caption Warning: \label without proper reference on input line 168.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dataflow2' on page 19 undefined on input line 78.
+
+
+[19 <./Figures/PIPPSAD.png>]
+<./Figures/zigzag.png, id=542, 323.2075pt x 280.04625pt>
+File: ./Figures/zigzag.png Graphic file (type png)
+<use ./Figures/zigzag.png>
+Package pdftex.def Info: ./Figures/zigzag.png  used on input line 87.
+(pdftex.def)             Requested size: 144.54pt x 125.23764pt.
+
+
+Package caption Warning: \label without proper reference on input line 104.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dataflow1' on page 20 undefined on input line 98.
+
+
+
+Package caption Warning: \label without proper reference on input line 168.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dataflow2' on page 20 undefined on input line 98.
+
+
+[20 <./Figures/zigzag.png>]
+Overfull \hbox (48.65211pt too wide) in paragraph at lines 105--163
+ [][] 
+ []
+
+
+Overfull \hbox (57.86868pt too wide) in paragraph at lines 169--223
+ [][] 
+ []
+
+) [21] (Chapters/Chapter5.tex [22]
+>>>>>>> Stashed changes
 Chapter 5.
 -------------------------------------------
  5 Results and Performance
 -------------------------------------------
+<<<<<<< Updated upstream
 <./Figures/mehardware.png, id=518, 490.08093pt x 485.56406pt>
 File: ./Figures/mehardware.png Graphic file (type png)
 <use ./Figures/mehardware.png>
@@ -866,20 +979,55 @@ File: ./Figures/wave2.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/wave2.png  used on input line 55.
 (pdftex.def)             Requested size: 289.07999pt x 155.17392pt.
 ) [21 <./Figures/mehardware.png>] [22 <./Figures/wave2.png>]
+=======
+) (Chapters/Chapter6.tex [23
+
+]
+Chapter 6.
+-------------------------------------------
+ 6 Conclusions and Future Directions
+-------------------------------------------
+) [24
+
+]
+>>>>>>> Stashed changes
 -------------------------------------------
  References
 -------------------------------------------
 (uet_thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 9--15
-\OT1/cmtt/m/n/10.95 thesis : 395 / datastreams / SAHIN _ ESRA _ thesis _ 050420
-07 _ 1217 _ 02 / pdf ? origin =
+Underfull \hbox (badness 1509) in paragraph at lines 9--15
+\OT1/cmr/m/n/10.95 Is-tan-bul, Turkey, 2006.  URL [][]$\OT1/cmtt/m/n/10.95 http
+s : / / suurcan . sabanciuniv . edu / fedora /
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--15
+\OT1/cmtt/m/n/10.95 objects / thesis : 395 / datastreams / SAHIN _ ESRA _ thesi
+s _ 05042007 _ 1217 _ 02 /
+ []
+
+<<<<<<< Updated upstream
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
  [23
+=======
+[25
 
 
+]) [26] (uet_thesis.aux)
+
+Package rerunfilecheck Warning: File `uet_thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `uet_thesis.out':
+(rerunfilecheck)             Before: 208FE5AE5EF39A36938BF179C1539870;8616
+(rerunfilecheck)             After:  B7D27B83545D98457ECA596809C7F7DA;8629.
+>>>>>>> Stashed changes
+
+LaTeX Warning: There were undefined references.
+
+<<<<<<< Updated upstream
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
  (uet_thesis.aux)
@@ -922,4 +1070,37 @@ PDF statistics:
  626 PDF objects out of 1000 (max. 8388607)
  136 named destinations out of 1000 (max. 500000)
  444 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ ) 
+Here is how much of TeX's memory you used:
+ 14434 strings out of 480236
+ 211561 string characters out of 2890348
+ 536718 words of memory out of 3000000
+ 30602 multiletter control sequences out of 15000+200000
+ 545201 words of font info for 65 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,12n,77p,1517b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section.88} has been referenced but does not exis
+t, replaced by a fixed one
+
+ <C:\Users\Filza Shahid\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on uet_thesis.pdf (38 pages, 666131 bytes).
+PDF statistics:
+ 671 PDF objects out of 1000 (max. 8388607)
+ 144 named destinations out of 1000 (max. 500000)
+ 460 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,6 +32,12 @@ Caglar Kalaycioglu, Onur~Can Ulusel, and Ilker Hamzaoglu.
 \newblock \emph{Low power techniques for motion estimation hardware}.
 \newblock 34956 Tuzla, Istanbul, Turkey, 2011.
 
+\bibitem[Kim et~al.(2005)Kim, Hwang, and Chae]{fast_vlsi_architecture}
+M.~Kim, I.~Hwang, and S.-I. Chae.
+\newblock A fast vlsi architecture for full-search variable block size motion
+  estimation in mpeg-4 avc/h.264.
+\newblock In \emph{ASP DAC}, pages 631--634, January 2005.
+
 \bibitem[Li and Leong(2003)]{li2003serial}
 Brian~MH Li and Philip~HW Leong.
 \newblock Serial and parallel fpga-based variable block size motion estimation
@@ -46,6 +52,12 @@ Chia-Chi Lin, Wei-Cheng Chen, Ming-Hsiang Tsai, and Cheng-Wei Tsai.
 \newblock \emph{IEICE Transactions on Fundamentals of Electronics,
   Communications and Computer Sciences}, E91-A\penalty0 (4):\penalty0 958--966,
   2008.
+
+\bibitem[Name(2003)]{hardware_architecture_design}
+Author's Name.
+\newblock Hardware architecture design for variable block-size motion
+  estimation in mpeg-4 avc/jvt/itu-t h.264.
+\newblock In \emph{IEEE Int. Symp. on Circuits Syst.}, pages 796--799, 2003.
 
 \bibitem[RGB(Accessed on May 12, 2023)]{rgb-h264-profiles}
 RGB.

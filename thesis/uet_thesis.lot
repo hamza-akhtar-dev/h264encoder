@@ -2,6 +2,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< Updated upstream
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Size and quality of encoded video for different QP values.\relax }}{20}{table.caption.84}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Resource utilization of inter-prediction module for Artix-7.\relax }}{21}{table.caption.88}%
+=======
+\contentsline {table}{\numberline {4.1}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (a)\relax }}{21}{table.caption.89}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (b)\relax }}{22}{table.caption.90}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+>>>>>>> Stashed changes

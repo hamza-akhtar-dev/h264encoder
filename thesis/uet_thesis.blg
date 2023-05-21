@@ -7,8 +7,9 @@ Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
 Warning--I didn't find a database entry for "barrass2002scientists"
 Warning--empty publisher in kalaycioglu2011low
-You've used 8 entries,
+You've used 10 entries,
             2773 wiz_defined-function locations,
+<<<<<<< Updated upstream
             651 strings with 6638 characters,
 and the built_in function-call counts, 3538 in all, are:
 = -- 316
@@ -27,25 +28,50 @@ duplicate$ -- 164
 empty$ -- 297
 format.name$ -- 67
 if$ -- 736
+=======
+            660 strings with 6968 characters,
+and the built_in function-call counts, 4669 in all, are:
+= -- 424
+> -- 229
+< -- 8
++ -- 79
+- -- 69
+* -- 356
+:= -- 700
+add.period$ -- 32
+call.type$ -- 10
+change.case$ -- 53
+chr.to.int$ -- 10
+cite$ -- 21
+duplicate$ -- 229
+empty$ -- 404
+format.name$ -- 81
+if$ -- 996
+>>>>>>> Stashed changes
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 8
-newline$ -- 49
-num.names$ -- 32
-pop$ -- 89
+missing$ -- 10
+newline$ -- 59
+num.names$ -- 40
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 43
 quote$ -- 0
-skip$ -- 122
+skip$ -- 175
 stack$ -- 0
-substring$ -- 127
-swap$ -- 15
-text.length$ -- 1
+substring$ -- 195
+swap$ -- 38
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
+type$ -- 100
 warning$ -- 1
-while$ -- 33
+while$ -- 45
 width$ -- 0
+<<<<<<< Updated upstream
 write$ -- 114
 (There were 2 warnings)
+=======
+write$ -- 140
+(There was 1 warning)
+>>>>>>> Stashed changes
