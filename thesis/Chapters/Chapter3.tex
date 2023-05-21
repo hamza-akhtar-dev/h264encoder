@@ -173,10 +173,10 @@ Here, \textbf{X} is the input value to be quantized. \textbf{QP} is the Quantiza
 
 <<<<<<< Updated upstream
 =======
-\subsection{Encoding}
+\section{Encoding}
 Variable Length Encoding is an encoding technique typically used in H.264 main profile, such encoder maps the input data into a series of code words, called variable length codes (VLCs). Each symbol corresponds to a codeword, which can vary in length but always has to have a fixed amount of bits. Short VLCs are used to represent frequently occurring symbols, while lengthy VLCs are used to represent less often occurring symbols. This results in data compression when there are enough encoded symbols in a given amount of data.
 
-\subsubsection{Context Adaptive Variable Length Coding,CAVLC}
+\subsection{Context Adaptive Variable Length Coding,CAVLC}
 Context-Adaptive Variable Length Coding also known as CAVLC is a method coding transformed and quantized coefficients,it is an important component in video compression, particularly in the H.264 video coding standard. This encoding technique uses context adaptation to select various sets of variable-length codes based on the statistics of recently-coded coefficients.\\
 High compression efficiency is attained by CAVLC by utilising the statistical characteristics of video data. It improves compression over fixed-length coding methods by adjusting the coding scheme based on the local context of the coefficients.\\
 CAVLC effectively represents the quantized coefficients using variable length codes, lowering the bitrate of the compressed video stream. As a result, the video data is represented in more concise ways.\\

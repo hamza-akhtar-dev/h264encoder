@@ -1,81 +1,5 @@
 \contentsline {chapter}{Acknowledgments}{iii}{dummy.4}%
 \contentsline {chapter}{Contribution to Sustainable Development Goals}{v}{dummy.5}%
-<<<<<<< Updated upstream
-\contentsline {chapter}{List of Figures}{viii}{dummy.21}%
-\contentsline {chapter}{List of Tables}{ix}{dummy.23}%
-\contentsline {chapter}{Abbreviations}{x}{dummy.25}%
-\contentsline {chapter}{Abstract}{xi}{dummy.28}%
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.29}%
-\contentsline {section}{\numberline {1.1}H264 Profiles}{1}{section.30}%
-\contentsline {subsection}{\numberline {1.1.1}Baseline Profile}{1}{subsection.31}%
-\contentsline {subsection}{\numberline {1.1.2}Main Profile}{2}{subsection.32}%
-\contentsline {subsection}{\numberline {1.1.3}High Profile}{2}{subsection.33}%
-\contentsline {section}{\numberline {1.2}H264 Process}{2}{section.35}%
-\contentsline {subsection}{\numberline {1.2.1}Forward Path}{3}{subsection.36}%
-\contentsline {subsection}{\numberline {1.2.2}Reconstruction Path}{3}{subsection.37}%
-\contentsline {section}{\numberline {1.3}H264 Major Components}{3}{section.38}%
-\contentsline {subsection}{\numberline {1.3.1}Prediction}{3}{subsection.39}%
-\contentsline {subsection}{\numberline {1.3.2}Intra-Prediction}{4}{subsection.40}%
-\contentsline {subsection}{\numberline {1.3.3}Inter-Prediction}{4}{subsection.42}%
-\contentsline {subsubsection}{\numberline {1.3.3.1}Motion Vector Prediction}{4}{subsubsection.44}%
-\contentsline {subsection}{\numberline {1.3.4}Transform}{5}{subsection.46}%
-\contentsline {subsection}{\numberline {1.3.5}Quantization}{5}{subsection.47}%
-\contentsline {subsection}{\numberline {1.3.6}Entropy Encoding}{5}{subsection.48}%
-\contentsline {section}{\numberline {1.4}H264 syntax}{6}{section.49}%
-\contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{8}{chapter.51}%
-\contentsline {section}{\numberline {2.1}Motivations}{8}{section.52}%
-<<<<<<< Updated upstream
-\contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{10}{chapter.53}%
-\contentsline {section}{\numberline {3.1}Predicton}{10}{section.54}%
-\contentsline {subsection}{\numberline {3.1.1}Intra-Prediction}{10}{subsection.55}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}4x4 Luma Prediction}{11}{subsubsection.56}%
-\contentsline {subsubsection}{\numberline {3.1.1.2}8x8 Chroma Prediction}{11}{subsubsection.59}%
-\contentsline {subsection}{\numberline {3.1.2}Inter-Prediction}{12}{subsection.61}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Block Matching Technique}{13}{subsubsection.62}%
-\contentsline {section}{\numberline {3.2}Transform Coding}{13}{section.64}%
-\contentsline {subsection}{\numberline {3.2.1}DC Transform}{13}{subsection.65}%
-\contentsline {subsection}{\numberline {3.2.2}Core Transform}{14}{subsection.69}%
-\contentsline {section}{\numberline {3.3}Quantization}{15}{section.71}%
-\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{16}{chapter.72}%
-\contentsline {subsection}{\numberline {4.0.1}Full Search ME Algorithm}{16}{subsection.73}%
-\contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{17}{subsection.77}%
-\contentsline {chapter}{\numberline {5}Results and Performance}{20}{chapter.81}%
-\contentsline {section}{\numberline {5.1}Performance Evaluation of Baseline Profile}{20}{section.82}%
-\contentsline {subsection}{\numberline {5.1.1}Effect of Different Values for QP}{20}{subsection.83}%
-\contentsline {section}{\numberline {5.2}Performance Evaluation of Inter-Prediction Module}{20}{section.85}%
-\contentsline {subsection}{\numberline {5.2.1}Resource Utilization}{21}{subsection.87}%
-\contentsline {subsection}{\numberline {5.2.2}Simulation Results}{21}{subsection.89}%
-\vspace {2em}
-\vspace {2em}
-\contentsline {chapter}{References}{23}{dummy.91}%
-=======
-\contentsline {section}{\numberline {2.2}Why H264 is more efficient?}{8}{section.53}%
-\contentsline {section}{\numberline {2.3}Project Continuation}{8}{section.54}%
-\contentsline {section}{\numberline {2.4}Need for further Improvements}{9}{section.55}%
-\contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{10}{chapter.56}%
-\contentsline {section}{\numberline {3.1}Prediction}{10}{section.57}%
-\contentsline {subsection}{\numberline {3.1.1}Intra-Prediction}{10}{subsection.58}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}4x4 Luma Prediction}{11}{subsubsection.59}%
-\contentsline {subsubsection}{\numberline {3.1.1.2}8x8 Chroma Prediction}{11}{subsubsection.62}%
-\contentsline {subsection}{\numberline {3.1.2}Inter-Prediction}{12}{subsection.64}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Block Matching Technique}{13}{subsubsection.65}%
-\contentsline {section}{\numberline {3.2}Transform Coding}{13}{section.67}%
-\contentsline {subsection}{\numberline {3.2.1}DC Transform}{13}{subsection.68}%
-\contentsline {subsection}{\numberline {3.2.2}Core Transform}{14}{subsection.72}%
-\contentsline {section}{\numberline {3.3}Quantization}{15}{section.74}%
-\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{16}{chapter.75}%
-\contentsline {section}{\numberline {4.1}Full Search ME Algorithm}{16}{section.76}%
-\contentsline {section}{\numberline {4.2}256 PE VBS FS ME Hardware Architecture}{17}{section.80}%
-\contentsline {subsection}{\numberline {4.2.1}PI-PPSAD Architecture for SAD Calculation}{19}{subsection.84}%
-\contentsline {subsection}{\numberline {4.2.2}Zig-Zag Search Pattern}{20}{subsection.86}%
-\contentsline {subsection}{\numberline {4.2.3}Data Flow in 265 PEs}{20}{subsection.88}%
-\contentsline {chapter}{\numberline {5}Results and Performance}{23}{chapter.91}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{24}{chapter.92}%
-\vspace {2em}
-\vspace {2em}
-\contentsline {chapter}{References}{25}{dummy.93}%
->>>>>>> Stashed changes
-=======
 \contentsline {chapter}{List of Figures}{viii}{dummy.7}%
 \contentsline {chapter}{List of Tables}{ix}{dummy.9}%
 \contentsline {chapter}{Abbreviations}{x}{dummy.11}%
@@ -92,29 +16,43 @@
 \contentsline {subsection}{\numberline {1.3.1}Prediction}{3}{subsection.25}%
 \contentsline {subsection}{\numberline {1.3.2}Intra-Prediction}{4}{subsection.26}%
 \contentsline {subsection}{\numberline {1.3.3}Inter-Prediction}{4}{subsection.28}%
-\contentsline {subsubsection}{\numberline {1.3.3.1}Motion Vector Prediction}{5}{subsubsection.30}%
+\contentsline {subsubsection}{\numberline {1.3.3.1}Motion Vector Prediction}{4}{subsubsection.30}%
 \contentsline {subsection}{\numberline {1.3.4}Transform}{5}{subsection.32}%
 \contentsline {subsection}{\numberline {1.3.5}Quantization}{5}{subsection.33}%
 \contentsline {subsection}{\numberline {1.3.6}Entropy Encoding}{5}{subsection.34}%
 \contentsline {section}{\numberline {1.4}H264 syntax}{6}{section.35}%
 \contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{8}{chapter.37}%
 \contentsline {section}{\numberline {2.1}Motivations}{8}{section.38}%
-\contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{10}{chapter.39}%
-\contentsline {subsection}{\numberline {3.0.1}Intra-Prediction}{10}{subsection.40}%
-\contentsline {subsubsection}{\numberline {3.0.1.1}4x4 Luma Prediction}{10}{subsubsection.41}%
-\contentsline {subsubsection}{\numberline {3.0.1.2}8x8 Chroma Prediction}{12}{subsubsection.44}%
-\contentsline {subsection}{\numberline {3.0.2}Inter-Prediction}{12}{subsection.46}%
-\contentsline {subsubsection}{\numberline {3.0.2.1}Block Matching Technique}{13}{subsubsection.47}%
-\contentsline {subsection}{\numberline {3.0.3}Transform Coding}{13}{subsection.49}%
-\contentsline {subsubsection}{\numberline {3.0.3.1}DC Transform}{13}{subsubsection.50}%
-\contentsline {subsubsection}{\numberline {3.0.3.2}Core Transform}{14}{subsubsection.54}%
-\contentsline {subsection}{\numberline {3.0.4}Quantization}{15}{subsection.56}%
-\contentsline {subsection}{\numberline {3.0.5}Encoding}{16}{subsection.57}%
-\contentsline {subsubsection}{\numberline {3.0.5.1}Context Adaptive Variable Length Coding,CAVLC}{16}{subsubsection.58}%
-\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{18}{chapter.59}%
-\contentsline {subsection}{\numberline {4.0.1}Full Search ME Algorithm}{18}{subsection.60}%
-\contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{19}{subsection.64}%
+\contentsline {section}{\numberline {2.2}Why H264 is more efficient?}{8}{section.39}%
+\contentsline {section}{\numberline {2.3}Project Continuation}{8}{section.40}%
+\contentsline {section}{\numberline {2.4}Need for further Improvements}{9}{section.41}%
+\contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{10}{chapter.42}%
+\contentsline {section}{\numberline {3.1}Predicton}{10}{section.43}%
+\contentsline {section}{\numberline {3.2}Prediction}{10}{section.44}%
+\contentsline {subsection}{\numberline {3.2.1}Intra-Prediction}{10}{subsection.45}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}4x4 Luma Prediction}{11}{subsubsection.46}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}8x8 Chroma Prediction}{11}{subsubsection.49}%
+\contentsline {subsection}{\numberline {3.2.2}Inter-Prediction}{12}{subsection.51}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Block Matching Technique}{13}{subsubsection.52}%
+\contentsline {section}{\numberline {3.3}Transform Coding}{13}{section.54}%
+\contentsline {subsection}{\numberline {3.3.1}DC Transform}{13}{subsection.55}%
+\contentsline {subsection}{\numberline {3.3.2}Core Transform}{14}{subsection.59}%
+\contentsline {section}{\numberline {3.4}Quantization}{15}{section.61}%
+\contentsline {section}{\numberline {3.5}Encoding}{16}{section.62}%
+\contentsline {subsection}{\numberline {3.5.1}Context Adaptive Variable Length Coding,CAVLC}{16}{subsection.63}%
+\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{18}{chapter.64}%
+\contentsline {section}{\numberline {4.1}Full Search ME Algorithm}{18}{section.65}%
+\contentsline {section}{\numberline {4.2}256 PE VBS FS ME Hardware Architecture}{19}{section.69}%
+\contentsline {subsection}{\numberline {4.2.1}PI-PPSAD Architecture for SAD Calculation}{21}{subsection.73}%
+\contentsline {subsection}{\numberline {4.2.2}Zig-Zag Search Pattern}{22}{subsection.75}%
+\contentsline {subsection}{\numberline {4.2.3}Data Flow in 265 PEs}{22}{subsection.77}%
+\contentsline {chapter}{\numberline {5}Results and Performance}{25}{chapter.80}%
+\contentsline {section}{\numberline {5.1}Performance Evaluation of Baseline Profile}{25}{section.81}%
+\contentsline {subsection}{\numberline {5.1.1}Effect of Different Values for QP}{25}{subsection.82}%
+\contentsline {section}{\numberline {5.2}Performance Evaluation of Inter-Prediction Module}{25}{section.84}%
+\contentsline {subsection}{\numberline {5.2.1}Resource Utilization}{26}{subsection.86}%
+\contentsline {subsection}{\numberline {5.2.2}Simulation Results}{26}{subsection.88}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{28}{chapter.90}%
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{References}{21}{dummy.66}%
->>>>>>> Stashed changes
+\contentsline {chapter}{References}{29}{dummy.91}%
