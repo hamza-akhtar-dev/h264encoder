@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  21 MAY 2023 17:25
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 20:47
+>>>>>>> Stashed changes
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 21:09
 >>>>>>> Stashed changes
 entering extended mode
 **./uet_thesis.tex
@@ -646,9 +650,13 @@ LaTeX Info: Redefining \nameref on input line 33.
  Title Page
 -------------------------------------------
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/uet_logo.pdf, id=187, 150.5625pt x 150.5625pt>
 =======
 <./Figures/uet_logo.pdf, id=195, 150.5625pt x 150.5625pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/uet_logo.pdf, id=167, 150.5625pt x 150.5625pt>
 >>>>>>> Stashed changes
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
@@ -736,6 +744,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 -------------------------------------------
  Abbreviations
 -------------------------------------------
+
+Overfull \hbox (10140.86511pt too wide) in alignment at lines 174--174
+ [] [] 
+ []
+
+
+Overfull \hbox (10310.07324pt too wide) in alignment at lines 174--174
+ [] [] 
+ []
+
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 174.
+
+
+Overfull \vbox (3.92676pt too high) has occurred while \output is active []
+
+
 [10
 
 
@@ -757,9 +783,13 @@ Chapter 1.
 
 ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/toplevel.png, id=361, 1011.78pt x 429.605pt>
 =======
 <./Figures/toplevel.png, id=371, 1011.78pt x 429.605pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/toplevel.png, id=310, 1011.78pt x 429.605pt>
 >>>>>>> Stashed changes
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
@@ -767,45 +797,66 @@ Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
 (pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
  [2] [3 <./Figures/toplevel.png>]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/comp1.png, id=379, 322.20375pt x 261.97874pt>
 =======
 <./Figures/comp1.png, id=389, 322.20375pt x 261.97874pt>
 >>>>>>> Stashed changes
+=======
+<./Figures/comp1.png, id=329, 322.20375pt x 261.97874pt>
+>>>>>>> Stashed changes
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
-Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
+Package pdftex.def Info: ./Figures/comp1.png  used on input line 74.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <./Figures/interprediction.png, id=381, 416.55624pt x 212.795pt>
 =======
 <./Figures/interprediction.png, id=391, 416.55624pt x 212.795pt>
 >>>>>>> Stashed changes
+=======
+<./Figures/interprediction.png, id=331, 416.55624pt x 212.795pt>
+>>>>>>> Stashed changes
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
-Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
+Package pdftex.def Info: ./Figures/interprediction.png  used on input line 85.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <./Figures/motionvector.png, id=388, 525.965pt x 316.18124pt>
 =======
 <./Figures/motionvector.png, id=399, 525.965pt x 316.18124pt>
 >>>>>>> Stashed changes
+=======
+<./Figures/motionvector.png, id=338, 525.965pt x 316.18124pt>
+>>>>>>> Stashed changes
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
-Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
+Package pdftex.def Info: ./Figures/motionvector.png  used on input line 96.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/motionvector.png>]
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <./Figures/syntax.png, id=399, 553.06625pt x 376.40625pt>
 =======
 <./Figures/syntax.png, id=413, 553.06625pt x 376.40625pt>
 >>>>>>> Stashed changes
+=======
+<./Figures/syntax.png, id=349, 553.06625pt x 376.40625pt>
+>>>>>>> Stashed changes
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
-Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
+Package pdftex.def Info: ./Figures/syntax.png  used on input line 128.
 (pdftex.def)             Requested size: 289.07999pt x 196.73747pt.
+<<<<<<< Updated upstream
 ) [6] (Chapters/Chapter2.tex
 [7 <./Figures/syntax.png>]
+=======
+) (Chapters/Chapter2.tex
+[6] [7 <./Figures/syntax.png>]
+>>>>>>> Stashed changes
 Chapter 2.
 -------------------------------------------
  2 Motivations and Problem Statement
@@ -817,6 +868,7 @@ Chapter 3.
 -------------------------------------------
  3 Prediction, Transformation, Quantization and Encoding
 -------------------------------------------
+<<<<<<< Updated upstream
 [10
 
 ]
@@ -834,20 +886,45 @@ Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 =======
 <./Figures/3modes.png, id=454, 623.32875pt x 165.61874pt>
 >>>>>>> Stashed changes
+=======
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 15.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 25.
+
+[10
+
+]
+<./Figures/4x4luma.png, id=379, 241.90375pt x 161.60374pt>
+File: ./Figures/4x4luma.png Graphic file (type png)
+<use ./Figures/4x4luma.png>
+Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
+(pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
+<./Figures/3modes.png, id=385, 623.32875pt x 165.61874pt>
+>>>>>>> Stashed changes
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
 Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
+<<<<<<< Updated upstream
  [11 <./Figures/4x4luma.png>]
 <<<<<<< Updated upstream
 <./Figures/8x8modes.png, id=444, 660.4675pt x 244.915pt>
 =======
 <./Figures/8x8modes.png, id=464, 660.4675pt x 244.915pt>
 >>>>>>> Stashed changes
+=======
+ [11 <./Figures/4x4luma.png> <./Figures/3modes.png>]
+<./Figures/8x8modes.png, id=395, 660.4675pt x 244.915pt>
+>>>>>>> Stashed changes
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
 Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
+<<<<<<< Updated upstream
  [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
 <<<<<<< Updated upstream
 <./Figures/mv.png, id=454, 744.7825pt x 219.82124pt>
@@ -859,11 +936,28 @@ File: ./Figures/mv.png Graphic file (type png)
 Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
 (pdftex.def)             Requested size: 289.07999pt x 85.32407pt.
  [13 <./Figures/mv.png>] [14]) (Chapters/Chapter4.tex [15]
+=======
+ [12 <./Figures/8x8modes.png>]
+<./Figures/mv.png, id=404, 744.7825pt x 219.82124pt>
+File: ./Figures/mv.png Graphic file (type png)
+<use ./Figures/mv.png>
+Package pdftex.def Info: ./Figures/mv.png  used on input line 88.
+(pdftex.def)             Requested size: 289.07999pt x 85.32407pt.
+ [13 <./Figures/mv.png>] [14] [15] [16]) (Chapters/Chapter4.tex [17]
+>>>>>>> Stashed changes
 Chapter 4.
 -------------------------------------------
  4 Hardware Architecture for Inter-Prediction
 -------------------------------------------
+<<<<<<< Updated upstream
 [16
+=======
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 9.
+
+[18
+>>>>>>> Stashed changes
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 27--28
@@ -871,14 +965,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
  []
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <./Figures/256pevbsme.png, id=492, 686.565pt x 751.80875pt>
 =======
 <./Figures/256pevbsme.png, id=512, 686.565pt x 751.80875pt>
+>>>>>>> Stashed changes
+=======
+<./Figures/256pevbsme.png, id=450, 686.565pt x 751.80875pt>
 >>>>>>> Stashed changes
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
+<<<<<<< Updated upstream
 [17 <./Figures/256pevbsme.png>]
 <<<<<<< Updated upstream
 <./Figures/pematrix.png, id=500, 868.24374pt x 353.32pt>
@@ -991,6 +1090,9 @@ Chapter 6.
 
 ]
 >>>>>>> Stashed changes
+=======
+[19 <./Figures/256pevbsme.png>]) [20]
+>>>>>>> Stashed changes
 -------------------------------------------
  References
 -------------------------------------------
@@ -1000,6 +1102,7 @@ Underfull \hbox (badness 1509) in paragraph at lines 9--15
 s : / / suurcan . sabanciuniv . edu / fedora /
  []
 
+<<<<<<< Updated upstream
 
 Underfull \hbox (badness 10000) in paragraph at lines 9--15
 \OT1/cmtt/m/n/10.95 objects / thesis : 395 / datastreams / SAHIN _ ESRA _ thesi
@@ -1102,5 +1205,55 @@ PDF statistics:
  671 PDF objects out of 1000 (max. 8388607)
  144 named destinations out of 1000 (max. 500000)
  460 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
+=======
+)
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
+[21
+
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+ (uet_thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: F980D856EEA9F0F1FFF8893EE73086D7;7309.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+ ) 
+Here is how much of TeX's memory you used:
+ 14397 strings out of 480790
+ 211250 string characters out of 2897300
+ 459504 words of memory out of 3000000
+ 30063 multiletter control sequences out of 15000+200000
+ 542451 words of font info for 60 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 47i,12n,49p,1037b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\wasee\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1095.pk><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/wasee/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wasee/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/wasee/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users
+/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsl12.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/wasee/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/wasee/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on uet_thesis.pdf (33 pages, 457014 bytes).
+PDF statistics:
+ 550 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 384 words of extra memory for PDF output out of 10000 (max. 10000000)
 >>>>>>> Stashed changes
 
