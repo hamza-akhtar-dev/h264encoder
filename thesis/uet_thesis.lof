@@ -14,3 +14,6 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 265 PE VBS ME Hardware Architecture\relax }}{17}{figure.caption.78}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces 16 x 16 PE Matrix\relax }}{18}{figure.caption.79}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Working of an Adder Tree\relax }}{18}{figure.caption.80}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic\relax }}{21}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Simulation waveform of inter-prediction module for one search range.\relax }}{22}{figure.caption.90}%

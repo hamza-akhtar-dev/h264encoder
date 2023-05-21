@@ -37,6 +37,12 @@
 \contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{16}{chapter.72}%
 \contentsline {subsection}{\numberline {4.0.1}Full Search ME Algorithm}{16}{subsection.73}%
 \contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{17}{subsection.77}%
+\contentsline {chapter}{\numberline {5}Results and Performance}{20}{chapter.81}%
+\contentsline {section}{\numberline {5.1}Performance Evaluation of Baseline Profile}{20}{section.82}%
+\contentsline {subsection}{\numberline {5.1.1}Effect of Different Values for QP}{20}{subsection.83}%
+\contentsline {section}{\numberline {5.2}Performance Evaluation of Inter-Prediction Module}{20}{section.85}%
+\contentsline {subsection}{\numberline {5.2.1}Resource Utilization}{21}{subsection.87}%
+\contentsline {subsection}{\numberline {5.2.2}Simulation Results}{21}{subsection.89}%
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{References}{20}{dummy.81}%
+\contentsline {chapter}{References}{23}{dummy.91}%

@@ -5,10 +5,11 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
+Warning--I didn't find a database entry for "barrass2002scientists"
 Warning--empty publisher in kalaycioglu2011low
 You've used 8 entries,
             2773 wiz_defined-function locations,
-            650 strings with 6617 characters,
+            651 strings with 6638 characters,
 and the built_in function-call counts, 3538 in all, are:
 = -- 316
 > -- 189
@@ -47,4 +48,4 @@ warning$ -- 1
 while$ -- 33
 width$ -- 0
 write$ -- 114
-(There was 1 warning)
+(There were 2 warnings)

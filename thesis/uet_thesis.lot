@@ -2,3 +2,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Size and quality of encoded video for different QP values.\relax }}{20}{table.caption.84}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Resource utilization of inter-prediction module for Artix-7.\relax }}{21}{table.caption.88}%
