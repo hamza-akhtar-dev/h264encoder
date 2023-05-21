@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  22 MAY 2023 02:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  22 MAY 2023 02:11
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
@@ -645,10 +645,10 @@ l.1 ...\000e\000d\000g\000m\000e\000n\000t\000s}{}
 
  
 Here is how much of TeX's memory you used:
- 14076 strings out of 480790
- 207341 string characters out of 2893515
- 454434 words of memory out of 3000000
- 29919 multiletter control sequences out of 15000+200000
+ 14031 strings out of 480790
+ 206702 string characters out of 2893515
+ 451598 words of memory out of 3000000
+ 29874 multiletter control sequences out of 15000+200000
  532638 words of font info for 25 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,1n,49p,391b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
