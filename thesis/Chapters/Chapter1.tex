@@ -36,7 +36,7 @@ Furthermore, the application of this compression technique facilitates the compr
 
 The overall procedure of H.264 includes various components. The top level block diagram of an H.264 Encoder is shown in Figure \ref{fig:toplevel}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 5in]{./Figures/toplevel.png}
 	\rule{35em}{0.5pt}
@@ -65,7 +65,7 @@ There are basically 2 modes for prediction:
 \subsection{Intra-Prediction}
 Intra prediction is performed without referring to any data outside the current slice i.e prediction from previously coded data in the same slice. It reduces spatial redundancies by exploiting spatial correlation between adjacent blocks in a given picture. There are 3 choices of block size for luma component i.e. 16x16, 8x8 or 4x4. Whereas for chroma component, a single prediction block is generated. Once, the prediction has been made, it is subtracted from current block to make a residual. The overview of the process is shown in figure \ref{fig:intraprediction}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 2.5in]{./Figures/comp1.png}
 	\rule{35em}{0.5pt}
@@ -76,7 +76,7 @@ Intra prediction is performed without referring to any data outside the current 
 \subsection{Inter-Prediction}
 Inter prediction is the process of predicting a block of luma and chroma samples from a picture that has been previously coded and transmitted i.e reference picture. It uses temporal sampling technique. For this, a prediction region is selected, then a prediction block is generated. After that the prediction block is subtracted from original block of samples to form a residual. The overview of the process is shown in figure \ref{fig:interprediction}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 3in]{./Figures/interprediction.png}
 	\rule{35em}{0.5pt}
@@ -87,7 +87,7 @@ Inter prediction is the process of predicting a block of luma and chroma samples
 \subsubsection{Motion Vector Prediction}
 In video coding, motion vectors for neighboring partitions are typically closely related, and so each motion vector can be predicted using previously coded vectors from nearby partitions. A predicted vector is created based on these previous motion vectors, and the difference between the current vector and the predicted vector is encoded and transmitted. The way in which predicted vector is predicted depends on the size of the motion compensation partition and whether there are nearby vectors available for reference. For further details related to its algorithm and hardware development, refer to chapter \ref{Chapter4}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 3in]{./Figures/motionvector.png}
 	\rule{35em}{0.5pt}
@@ -119,7 +119,7 @@ H.264 consists of 2 layers: the \textbf{Network Abstraction Layer (NAL)} and the
 \end{itemize}
 
 The basic H264 syntax can be seen in figure \ref{fig:syntax}
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/syntax.png}
 	\rule{35em}{0.5pt}

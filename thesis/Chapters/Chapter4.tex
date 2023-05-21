@@ -29,7 +29,7 @@ In the above equation (\ref{equ:1}), (\ref{equ:2}) and (\ref{equ:3}) The domain 
 \section{256 PE VBS FS ME Hardware Architecture}
 We designed a parallel \textbf{256 PE VBS FSME Hardware Architecture}. \cite{kalaycioglu2011low} This hardware is implemented in System Verilog. First of all, the pixels in the current MB are stored in a Block Ram \textbf{(c$\_$BRAM)}. The pixels of the search window are also stored in a block RAM \textbf{(s$\_$BRAM)}. The architecture is shown in the figure \ref{fig:256pevbsme}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/256pevbsme.png}
 	\rule{35em}{0.5pt}
@@ -41,7 +41,7 @@ In this design, a \textbf{2-D systolic PE array} is used. The use of this type o
 
 As soon as the control signals for loading current and search pixels are enabled, both current block and search window pixels starts loading into PEs. In 1 clock cycle, 16 pixels are loaded for both of them. (1st PE is filled in each of 16 columns). Thus, the whole PE matrix is filled in 16 cycles. As depicted in figure \ref{fig:pematrix}, \textbf{pixel$\_$cpr$\_$in} and \textbf{pixel$\_$spr$\_$in} are input array of 16 8-bit pixels from current block and search window of reference block respectively. The \textbf{pe$\_$}matrix module concatenates the output signals of each column of processing elements to form the final output signal \textbf{ad} which is an array of 8*(16**2) bits. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4.5in]{./Figures/pematrix.png}
 	\rule{35em}{0.5pt}
@@ -53,7 +53,7 @@ Each PE calculates the absolute difference between current MB pixel and the sear
 
 After absolute differences are all calculated, The SAD for that search location is determined by adding the absolute differences calculated by the above PEs as shown in figure. All these absolute differences are added up together using Adder Trees. The working of a simple adder tree is shown in figure \ref{fig:addertree}. It can seen clearly in the figure that there is 2 cycle latency for an adder tree. 
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 2in]{./Figures/addertree.png}
 	\rule{35em}{0.5pt}
@@ -65,15 +65,17 @@ After absolute differences are all calculated, The SAD for that search location 
 
 For SAD calculation of a 16x16 current block, we consider \textbf{PI-PPSAD} structure. The current pixels adn reference pixels are broadcasted into the respective PE arrays. This is shown by the vertical dash lines in the figure \ref{fig:pippsad}. Each row of PE determines the absolute difference with one row in macro block. One row SAD gets accumulated with partial SAD propagated in, which belongs to the same search position. After that, the result is propagated to the next stage in vertical.
 
-In out Pi-PPSAD architecture, when the output of seventh PE row is obtained, inside one macro-Block, the SADs of the upper half partitions which include S4x4$\_$YX (Y: 0-1 X: 0-3), S8x4$\_$YX (Y: 0-1 X: 0-1), S8x8$\_$0X (X: 0-1), they are depicted through one adder tree. In order to calculate S8x16$\_$0, S8x16$\_$1 and S16x16, the SADs of S8x8$\_$00 and S8x8$\_$01 are continue to be transmitted by making the use of shift registers. At the last stage of pipeline, they are summed with SADs of S8x8$\_$10 and S8x8$\_$11 to compute S8x16$\_$0, S8x16$\_$1 and the final SAD value depicted as S16x16 for that specific position of current and search block. This process is shown in figure \ref{fig:pippsad}.
-
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 5.5in]{./Figures/PIPPSAD.png}
 	\rule{35em}{0.5pt}
 	\caption{PI-PPSAD Architecture}
 	\label{fig:pippsad}
 \end{figure}
+
+In out Pi-PPSAD architecture, when the output of seventh PE row is obtained, inside one macro-Block, the SADs of the upper half partitions which include S4x4$\_$YX (Y: 0-1 X: 0-3), S8x4$\_$YX (Y: 0-1 X: 0-1), S8x8$\_$0X (X: 0-1), they are depicted through one adder tree. In order to calculate S8x16$\_$0, S8x16$\_$1 and S16x16, the SADs of S8x8$\_$00 and S8x8$\_$01 are continue to be transmitted by making the use of shift registers. At the last stage of pipeline, they are summed with SADs of S8x8$\_$10 and S8x8$\_$11 to compute S8x16$\_$0, S8x16$\_$1 and the final SAD value depicted as S16x16 for that specific position of current and search block. This process is shown in figure \ref{fig:pippsad}.
+
+The previous architecture of PI$\_$PPSAD or PPSAD model as described in \cite{huang2003hardware}, it propagates all the 4x4 SAD to the through the pipline. At the last stage of pipline, these partial 4x4 SADs sum up to generate other SADs. If we compare the design in our project with this previous design, it propagates 8x8 partial SADs in last stages of pipeline. In this way, the hardware cost for this data propagation is reduced. Approximately, 560-bit registers can be saved. The maximum path delay is made short as the operand number to the adder tree is reduced. Previously, the critical path lies in the adder tree of last stage. As it had to calculated SAD direct from 4x4 block SADs, so the input number of adder tree was 16. But in the proposed design, we first use 8 4x4 block SADs and the 2 8x8 block SADs as the operands to the ast adder tree, so the operand number is reduced to 10. In this way, minimum delay is reduced and complex circuit of adder tree is simplified. Moreover, the latency for the blocks in upper half of macro blocks is reduced from 16 to 8 cycles. This latency is in such a way that one clock cycle for synchronous reading from BRAM, one clock cycle for horizontal shifting, one clock cycle for SAD computation in a 2D systolic PE array, two clock cycles for the adder tree to generate 4x4 SADs, and three clock cycles for the adder tree to generate 41 MVs for seven different block sizes.
 
 Initially, pipelining causes latency of 16 cycles in the SAD calculation. But, once the pipeline is filled, only one cycle is needed per SAD value. Current block data is loaded only once when the current block is changed while search are pixels are fed in every cycle to the PEs. Their data flow is further explained in table \ref{tab:dataflow1} and \ref{tab:dataflow2}. As, there are 48 columns of reference pixels search range window [-16,15]. Thus, per 16x16 macro block, the approximate number of cycles is 48*32 = 1536 cycles. \cite{lin2008parallel}
 
@@ -82,7 +84,7 @@ Initially, pipelining causes latency of 16 cycles in the SAD calculation. But, o
 The proposed hardware searches the search locations in a 48x48 search window in a zig-zag pattern as shown in figure \ref{fig:zigzag}. Usually most of the proposed ME architectures with 256 PEs make use of vertical search flow i.e start from top left corner and when end of the column is reached, the search location at top of the next column is searched. Thus, 
 we have to either broadcast multiple pixels into the PEs or delay all the PEs until they are filled every time when we reach the end of the column and move to the top of the next \cite{hardware_architecture_design}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 2in]{./Figures/zigzag.png}
 	\rule{35em}{0.5pt}
@@ -99,9 +101,8 @@ Data flow of PEs for fixed location of a current marco block pixels while search
 
 When iterating the search locations in the 1$^{st}$ column of search window, vertical up shift is performed in the PE array in each cycle. All PEs are provided the search window pixels from their neighboring PEs except for those PEs in the last row. These last row PEs read 16 new search window pixels from 16 BRAMs in each cycle. The 17$^{th}$ BRAM help in performing left shift after all search locations in a column has been searched. It is connected to temporary registers. When there is the need for left shift, the pixels need for the right most PEs become ready in those temporary registers. When we are done with the searches in the first 16 columns, a left shift is performed in the PE array and the PEs in the 16$^{th}$ column receive search window pixels from temporary registers. \cite{kalaycioglu2011low}
 
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering
-	\label{tab:dataflow1}
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline
 		
@@ -161,11 +162,13 @@ When iterating the search locations in the 1$^{st}$ column of search window, ver
 		\hline
 	\end{tabular}
 	\caption{ Data Flow of PEs in 256PE VBS ME Hardware (a)}
+	\label{tab:dataflow1}
 \end{table}
 
-\begin{table}[htbp]
+Once left shift is performed, in each cycle, vertical down shift is performed and all the PEs are provided search window pixels from their neighbouring PEs except the PEs in the 1$^{st}$ row.  These 1$^{st}$ row PEs read 16 new search window pixels from 16 BRAMs. This search pattern of data flow is also depicted in figure \ref{fig:zigzag}. There total 17 BRAMs and each BRAM store pixels in every 17$^{th}$ column of the search window. The 1$^{st}$ BRAM stores pixels in 1$^{st}$, 18$^{th}$ and 35$^{th}$ olumns, 2$^{nd}$ BRAM fills in 2$^{nd}$, 19$^{th}$ and 36$^{th}$ columns and so the rest of BRAMs. The search window pixels which are read from the BRAMs have static order. But, the search window pixels that are required by PE array and temporary registers, the order for them varies depending on the columns being processed. Horizontal rotator hardware solve this problem by reordering the 16+1 pixels in a search macro block.
+
+\begin{table}[H]
 	\centering
-	\label{tab:dataflow2}
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline
 		\textbf{Clock} &  &  \multicolumn{4}{c|}{\textbf{16$^{th}$ Column}} &  \multicolumn{4}{c|}{\textbf{Temp Column}}  \\
@@ -221,6 +224,7 @@ When iterating the search locations in the 1$^{st}$ column of search window, ver
 		\hline
 	\end{tabular}
 	\caption{ Data Flow of PEs in 256PE VBS ME Hardware (b)}
+	\label{tab:dataflow2}
 \end{table}
 
-Once left shift is performed, in each cycle, vertical down shift is performed and all the PEs are provided search window pixels from their neighbouring PEs except the PEs in the 1$^{st}$ row.  These 1$^{st}$ row PEs read 16 new search window pixels from 16 BRAMs. This search pattern of data flow is also depicted in figure \ref{fig:zigzag}. There total 17 BRAMs and each BRAM store pixels in every 17$^{th}$ column of the search window. The 1$^{st}$ BRAM stores pixels in 1$^{st}$, 18$^{th}$ and 35$^{th}$ olumns, 2$^{nd}$ BRAM fills in 2$^{nd}$, 19$^{th}$ and 36$^{th}$ columns and so the rest of BRAMs. The search window pixels which are read from the BRAMs have static order. But, the search window pixels that are required by PE array and temporary registers, the order for them varies depending on the columns being processed. Horizontal rotator hardware solve this problem by reordering the 16+1 pixels in a search macro block. Out of all the SADs that are being calculated during this searching, the minimum value and its corresponding motion vectors are depicted as output. This task is performed by comparator which compares the upcoming SAD value with the previously stored minimum value. After comparison, minimum one is depicted as output This type of Architecture requires large area and a lot of hardware implementation but the performance rate is high due to number of parallel computation and use of pipeline structure.
+ Out of all the SADs that are being calculated during this searching, the minimum value and its corresponding motion vectors are depicted as output. This task is performed by comparator which compares the upcoming SAD value with the previously stored minimum value. After comparison, minimum one is depicted as output This type of Architecture requires large area and a lot of hardware implementation but the performance rate is high due to number of parallel computation and use of pipeline structure.

@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,6 +25,13 @@ Anil~Kumar C., Pradeep~Kumar B.P., Venu K.N., and Lavanya~Vaishnavi D.A.
 \newblock Intra prediction algorithm for video frames of h.264.
 \newblock \emph{Nat. Volatiles \& Essent. Oils}, 8\penalty0 (5):\penalty0
   11357--11367, 2021.
+
+\bibitem[Huang et~al.(2003)Huang, Wang, Hsieh, and Chen]{huang2003hardware}
+Y.~W. Huang, T.~Wang, B.~Y. Hsieh, and L.~G. Chen.
+\newblock Hardware architecture design for variable block size motion
+  estimation in {MPEG-4 AVC/JVT/ITU-T H.264}.
+\newblock In \emph{ISCAS'03, Proc. 2003 International Symposium on Circuits and
+  Systems}, pages 796--799, May 2003.
 
 \bibitem[Kalaycioglu et~al.(2011)Kalaycioglu, Ulusel, and
   Hamzaoglu]{kalaycioglu2011low}

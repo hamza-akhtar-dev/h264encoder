@@ -26,7 +26,7 @@ In our model, 4x4 luma prediction and 8x8 chroma prediction is being implemented
 \subsubsection{4x4 Luma Prediction}
 For this type of prediction, each macro block that is of \textbf{16x16} (256 pixels each of which is 8 bit wide) is divided into \textbf{4x4} block (16 pixels) \cite{anilkumar2021intra}. Figure \ref{fig:4x4xluma} shows the reference samples for 4x4 luma prediction. 4 pixels \textbf{A,B,C,D} (adjacent to current block) of block \textbf{a}  on top of current block, pixels \textbf{E,F,G,H} of block \textbf{b} on top right corner, \textbf{I,J,K,L} of block \textbf{c} at adjacent left of current block and 1 pixel \textbf{M} of \textbf{d} block on top left corner are used for prediction of 16 pixels in the current block.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 2.5in]{./Figures/4x4luma.png}
 	\rule{35em}{0.5pt}
@@ -45,7 +45,7 @@ There are total 9 prediction modes that are supported in this prediction. Major 
 	 
 For the details of remaining modes refer to \cite{richardson2010h264}. Figure \ref{fig:3modes} display the above 3 prediction modes. To create a predict sample, every color stands for a particular formula. The encoder determines each prediction direction's cost by finishing processing for all of the prediction directions, then outputs the one with the lowest cost.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/3modes.png}
 	\rule{35em}{0.5pt}
@@ -65,7 +65,7 @@ This type of prediction applies on chrominance components. It is similar to 16x1
 
 The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the figure \ref{fig:8x8modes}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/8x8modes.png}
 	\rule{35em}{0.5pt}
@@ -84,7 +84,7 @@ This method divides the current frame into non-overlapping NxN macro-blocks and 
 
 In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current frame. The search window in the reference frame is in \textbf{[-r,r]} region in both x and y directions. Both current and reference block lies within the range of search window. The SAD value is calculated by accumulating absolute differences of corresponding pixels in both current and reference blocks. A motion vector is the relative motion of current block in reference frame, they are specified in relative coordinates. Thus if \textbf{(x+a,y+b)} is the location of best matching block in reference frame, then \textbf{(a,b)} represents the motion vector. Motion Estimation is performed on luma component and resulting motion vectors are also used for chroma components.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/mv.png}
 	\rule{35em}{0.5pt}
@@ -167,17 +167,20 @@ X_q = \text{round}\left(\frac{X}{{2 \cdot QP}} \cdot \text{scale}\right)
 \]
 Here, \textbf{X} is the input value to be quantized. \textbf{QP} is the Quantization Parameter. The division by (2*QP) scales the input value based on the QP. \textbf{Scale} is the scaling factor and \textbf{round} function is used to round the scaled value to nearest integer, this scaled and rounded value is then multiplied by the scaled factor.
 
-<<<<<<< Updated upstream
-=======
 \section{Encoding}
 Variable Length Encoding is an encoding technique typically used in H.264 main profile, such encoder maps the input data into a series of code words, called variable length codes (VLCs). Each symbol corresponds to a codeword, which can vary in length but always has to have a fixed amount of bits. Short VLCs are used to represent frequently occurring symbols, while lengthy VLCs are used to represent less often occurring symbols. This results in data compression when there are enough encoded symbols in a given amount of data.
 
 \subsection{Context Adaptive Variable Length Coding,CAVLC}
-Context-Adaptive Variable Length Coding also known as CAVLC is a method coding transformed and quantized coefficients,it is an important component in video compression, particularly in the H.264 video coding standard. This encoding technique uses context adaptation to select various sets of variable-length codes based on the statistics of recently-coded coefficients.\\
-High compression efficiency is attained by CAVLC by utilising the statistical characteristics of video data. It improves compression over fixed-length coding methods by adjusting the coding scheme based on the local context of the coefficients.\\
-CAVLC effectively represents the quantized coefficients using variable length codes, lowering the bitrate of the compressed video stream. As a result, the video data is represented in more concise ways.\\
-Compared to other entropy coding methods like CABAC (Context-Adaptive Binary Arithmetic Coding), CAVLC encoding and decoding processes are computationally simpler. As a result, real-time video encoding applications are better suited for it.\\
-After transformation and quantization, blocks usually contain a lot of zeros, CAVLC uses run-level coding to represent this string of zeros compactly. A block of coefficients is converted into a series of variable length codes (VLCs) using zigzag scan (or field scan). The highest non-zero coefficients are often the sequence of +1 or -1 (called high frequency coefficients) and these are signaled by CAVLC as 'Trailing 1s' (T1s) in a compact way.\\
+Context-Adaptive Variable Length Coding also known as CAVLC is a method coding transformed and quantized coefficients,it is an important component in video compression, particularly in the H.264 video coding standard. This encoding technique uses context adaptation to select various sets of variable-length codes based on the statistics of recently-coded coefficients.
+
+High compression efficiency is attained by CAVLC by utilising the statistical characteristics of video data. It improves compression over fixed-length coding methods by adjusting the coding scheme based on the local context of the coefficients.
+
+CAVLC effectively represents the quantized coefficients using variable length codes, lowering the bitrate of the compressed video stream. As a result, the video data is represented in more concise ways.
+
+Compared to other entropy coding methods like CABAC (Context-Adaptive Binary Arithmetic Coding), CAVLC encoding and decoding processes are computationally simpler. As a result, real-time video encoding applications are better suited for it.
+
+After transformation and quantization, blocks usually contain a lot of zeros, CAVLC uses run-level coding to represent this string of zeros compactly. A block of coefficients is converted into a series of variable length codes (VLCs) using zigzag scan (or field scan). The highest non-zero coefficients are often the sequence of +1 or -1 (called high frequency coefficients) and these are signaled by CAVLC as 'Trailing 1s' (T1s) in a compact way.
+
 The number of non-zero coefficients in neighbouring blocks is correlated and this number is encoded with the help of a look up table. CAVLC encoding proceeds as follows:
 \begin{itemize}
 	\item First the lookup table encodes both number of non-zero coefficients and the number of Trailing 1s (T1s).
@@ -187,6 +190,3 @@ The number of non-zero coefficients in neighbouring blocks is correlated and thi
 	\item The number of zeros preceding each non-zero coefficient (run before) is encoded in reverse
 	order.
 \end{itemize}
-
-
->>>>>>> Stashed changes

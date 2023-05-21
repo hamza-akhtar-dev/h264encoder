@@ -1,30 +1,10 @@
-<<<<<<< Updated upstream
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 21:19
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 21:27
->>>>>>> Stashed changes
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 22:35
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
 LaTeX2e <2020-10-01>
 L3 programming layer <2020-09-24> xparse <2020-03-03> (uet_thesis.cls
 Document Class: uet_thesis 2010/22/03 v1.1 LaTeX document class
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
-Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/base\bk11.clo
-File: bk11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-)
-\c@part=\count167
-\c@chapter=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
-=======
 ("C:\Program Files\MiKTeX\tex/latex/base\book.cls"
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 ("C:\Program Files\MiKTeX\tex/latex/base\bk11.clo"
@@ -39,37 +19,21 @@ File: bk11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \c@subparagraph=\count181
 \c@figure=\count182
 \c@table=\count183
->>>>>>> Stashed changes
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/vmargin\vmargin.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/vmargin\vmargin.sty"
->>>>>>> Stashed changes
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-<<<<<<< Updated upstream
-\PaperWidth=\dimen135
-\PaperHeight=\dimen136
-) (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-=======
 \PaperWidth=\dimen139
 \PaperHeight=\dimen140
 ) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
 y"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
->>>>>>> Stashed changes
 \f@nch@headwidth=\skip49
 \f@nch@O@elh=\skip50
 \f@nch@O@erh=\skip51
@@ -79,17 +43,6 @@ s
 \f@nch@O@erf=\skip55
 \f@nch@O@olf=\skip56
 \f@nch@O@orf=\skip57
-<<<<<<< Updated upstream
-) (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip58
-
-For additional information on amsmath, use the `?' option.
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
-=======
 ) ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip58
@@ -99,24 +52,15 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
 
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty"
->>>>>>> Stashed changes
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen141
 ))
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty"
->>>>>>> Stashed changes
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen142
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty"
->>>>>>> Stashed changes
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count184
@@ -157,11 +101,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty"
->>>>>>> Stashed changes
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -169,28 +109,17 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amscd.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 ("C:\Program Files\MiKTeX\tex/latex/amsmath\amscd.sty"
->>>>>>> Stashed changes
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks20
 \minaw@=\dimen150
 \bigaw@=\dimen151
 \minCDarrowwidth=\dimen152
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty"
->>>>>>> Stashed changes
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks21
 \thm@bodyfont=\toks22
@@ -202,25 +131,12 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip63
 \dth@everypar=\toks26
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/tools\xspace.sty"
->>>>>>> Stashed changes
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 \c@example=\count196
 \c@theorem=\count197
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/caption\caption.sty"
 Package: caption 2020/09/12 v3.5b Customizing captions (AR)
 
@@ -228,7 +144,6 @@ Package: caption 2020/09/12 v3.5b Customizing captions (AR)
 Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
 
 ("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
->>>>>>> Stashed changes
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks27
 )
@@ -244,19 +159,6 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count198
 \c@continuedfloat=\count199
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
-=======
 ("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -267,28 +169,18 @@ Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 ("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
->>>>>>> Stashed changes
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-=======
 ("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
 File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
->>>>>>> Stashed changes
 ))
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/subfigure\subfigure.st
 y"
->>>>>>> Stashed changes
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip64
 \subfigcapskip=\skip65
@@ -296,53 +188,15 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigbottomskip=\skip66
 \subfigcapmargin=\dimen163
 \subfiglabelskip=\skip67
-<<<<<<< Updated upstream
-\c@subfigure=\count192
-\c@lofdepth=\count193
-\c@subtable=\count194
-\c@lotdepth=\count195
-=======
 \c@subfigure=\count266
 \c@lofdepth=\count267
 \c@subtable=\count268
 \c@lotdepth=\count269
 
->>>>>>> Stashed changes
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg
-)
-\subfig@top=\skip68
-\subfig@bottom=\skip69
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen160
-\lightrulewidth=\dimen161
-\cmidrulewidth=\dimen162
-\belowrulesep=\dimen163
-\belowbottomsep=\dimen164
-\aboverulesep=\dimen165
-\abovetopsep=\dimen166
-\cmidrulesep=\dimen167
-\cmidrulekern=\dimen168
-\defaultaddspace=\dimen169
-\@cmidla=\count196
-\@cmidlb=\count197
-\@aboverulesep=\dimen170
-\@belowrulesep=\dimen171
-\@thisruleclass=\count198
-\@lastruleclass=\count199
-\@thisrulewidth=\dimen172
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
-Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/subfigure\subfigure.cf
 g")
 \subfig@top=\skip68
@@ -371,7 +225,6 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 
 ("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
->>>>>>> Stashed changes
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count274
@@ -380,23 +233,6 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box49
 \rot@mess@toks=\toks28
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count267
-\lst@gtempboxa=\box48
-\lst@token=\toks29
-\lst@length=\count268
-\lst@currlwidth=\dimen173
-\lst@column=\count269
-\lst@pos=\count270
-\lst@lostspace=\dimen174
-\lst@width=\dimen175
-\lst@newlines=\count271
-\lst@lineno=\count272
-\lst@maxwidth=\dimen176
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/listings\listings.sty"
 \lst@mode=\count275
 \lst@gtempboxa=\box50
@@ -412,34 +248,11 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \lst@maxwidth=\dimen180
 
 ("C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty"
->>>>>>> Stashed changes
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \c@lstnumber=\count281
 \lst@skipnumbers=\count282
 \lst@framebox=\box51
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2020/03/24 1.8d listings configuration
-))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
-.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
-ty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/listings\listings.cfg"
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
@@ -459,43 +272,12 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.
 sty"
->>>>>>> Stashed changes
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
-keys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
-ty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
-.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-)
-\@linkdim=\dimen177
-\Hy@linkcounter=\count275
-\Hy@pagecounter=\count276
- (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.
 sty"
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
@@ -526,23 +308,15 @@ Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 \Hy@linkcounter=\count283
 \Hy@pagecounter=\count284
  ("C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def"
->>>>>>> Stashed changes
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty"
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.st
 y"
->>>>>>> Stashed changes
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count285
@@ -553,11 +327,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4338
 Package hyperref Info: Option `hypertexnames' set `false' on input line 4338.
 Package hyperref Info: Option `colorlinks' set `true' on input line 4338.
 Package hyperref Info: Option `unicode' set `true' on input line 4338.
-<<<<<<< Updated upstream
- (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-=======
  ("C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def"
->>>>>>> Stashed changes
 File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -572,30 +342,18 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
 \c@Hy@tempcnt=\count286
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/url\url.sty"
->>>>>>> Stashed changes
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
 \XeTeXLinkMargin=\dimen182
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
-.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcal
 c.sty"
->>>>>>> Stashed changes
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -611,30 +369,16 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6372.
 Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
-<<<<<<< Updated upstream
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/atbegshi\atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-=======
  ("C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty"
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
->>>>>>> Stashed changes
 )
 \Hy@abspage=\count288
 \c@Item=\count289
 \c@Hfootnote=\count290
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-<<<<<<< Updated upstream
- (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/atveryend\atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-=======
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def"
 File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
@@ -643,26 +387,16 @@ File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
->>>>>>> Stashed changes
 )
 \Fld@listcount=\count291
 \c@bookmark@seq@number=\count292
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
-echeck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
-ounter.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfi
 lecheck.sty"
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\unique
 counter.sty"
->>>>>>> Stashed changes
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -670,14 +404,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip72
 )
-<<<<<<< Updated upstream
-\c@dummy=\count285
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
-=======
 \c@dummy=\count293
  ("C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty"
->>>>>>> Stashed changes
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip73
 \LTright=\skip74
@@ -695,38 +423,23 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count298
 \LT@p@ftn=\toks30
 ))
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty"
->>>>>>> Stashed changes
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip77
 \bibsep=\skip78
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count299
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-=======
 ("C:\Program Files\MiKTeX\tex/latex/tools\verbatim.sty"
->>>>>>> Stashed changes
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks31
 \verbatim@line=\toks32
 \verbatim@in@stream=\read2
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/vector\vector.sty
-Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/vector\vector.sty"
 Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
 
 ("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
->>>>>>> Stashed changes
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count300
 \calc@Bcount=\count301
@@ -741,27 +454,15 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@vec@elem=\count303
 )
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/enumitem\enumitem.sty"
->>>>>>> Stashed changes
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip82
 \enit@outerparindent=\dimen188
 \enit@toks=\toks33
-<<<<<<< Updated upstream
-\enit@inbox=\box54
-\enit@count@id=\count296
-\enitdp@description=\count297
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-=======
 \enit@inbox=\box56
 \enit@count@id=\count304
 \enitdp@description=\count305
 ) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/float\float.sty"
->>>>>>> Stashed changes
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count306
 \float@exts=\toks34
@@ -771,11 +472,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty"
->>>>>>> Stashed changes
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box59
 \beforetitleunit=\skip83
@@ -783,18 +480,6 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@plus=\dimen189
 \ttl@minus=\dimen190
 \ttl@toksa=\toks36
-<<<<<<< Updated upstream
-\titlewidth=\dimen187
-\titlewidthlast=\dimen188
-\titlewidthfirst=\dimen189
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-mode.def
-File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count299
-\l__pdf_internal_box=\box58
-) (uet_thesis.aux)
-=======
 \titlewidth=\dimen191
 \titlewidthlast=\dimen192
 \titlewidthfirst=\dimen193
@@ -804,7 +489,6 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box60
 )
 (uet_thesis.aux)
->>>>>>> Stashed changes
 \openout1 = `uet_thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -831,23 +515,13 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
-=======
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/caption\ltcaption.sty"
->>>>>>> Stashed changes
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<<<<<<< Updated upstream
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-=======
  ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
->>>>>>> Stashed changes
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count308
 \scratchdimen=\dimen194
@@ -860,45 +534,22 @@ ii
 \MPnumerator=\count312
 \makeMPintoPDFobject=\count313
 \everyMPtoPDFconversion=\toks38
-<<<<<<< Updated upstream
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
-=======
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
->>>>>>> Stashed changes
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 \c@lstlisting=\count314
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-=======
 ("C:\Program Files\MiKTeX\tex/latex/graphics\color.sty"
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
 ("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
->>>>>>> Stashed changes
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Link coloring ON on input line 33.
-<<<<<<< Updated upstream
- (C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
-lestring.sty
-=======
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -908,7 +559,6 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
 ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\getti
 tlestring.sty"
->>>>>>> Stashed changes
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count315
@@ -924,11 +574,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
-<<<<<<< Updated upstream
-<./Figures/uet_logo.pdf, id=227, 150.5625pt x 150.5625pt>
-=======
-<./Figures/uet_logo.pdf, id=215, 150.5625pt x 150.5625pt>
->>>>>>> Stashed changes
+<./Figures/uet_logo.pdf, id=223, 150.5625pt x 150.5625pt>
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -937,36 +583,22 @@ Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
 
 
 
-<<<<<<< Updated upstream
-{C:/Users/wasee/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Figures/uet_l
-ogo.pdf>]
-=======
 {C:/Users/Filza Shahid/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Figure
 s/uet_logo.pdf>]
->>>>>>> Stashed changes
 -------------------------------------------
  Certification
 -------------------------------------------
 LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
->>>>>>> Stashed changes
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 
 
-<<<<<<< Updated upstream
-(C:\Users\wasee\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-=======
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
->>>>>>> Stashed changes
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-[1
+) [1
 
 ]
 -------------------------------------------
@@ -1026,20 +658,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 -------------------------------------------
  Abbreviations
 -------------------------------------------
-
-Overfull \hbox (8416.45084pt too wide) in alignment at lines 185--185
- [] [] 
- []
-
-
-Overfull \hbox (8760.3421pt too wide) in alignment at lines 185--185
- [] [] 
- []
-
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 185.
-
 [10
 
 
@@ -1060,55 +678,35 @@ Chapter 1.
 
 
 ]
-<<<<<<< Updated upstream
-<./Figures/toplevel.png, id=405, 1011.78pt x 429.605pt>
-=======
-<./Figures/toplevel.png, id=404, 1011.78pt x 429.605pt>
->>>>>>> Stashed changes
+<./Figures/toplevel.png, id=400, 1011.78pt x 429.605pt>
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
 Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
 (pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
  [2] [3 <./Figures/toplevel.png>]
-<<<<<<< Updated upstream
-<./Figures/comp1.png, id=423, 322.20375pt x 261.97874pt>
-=======
-<./Figures/comp1.png, id=422, 322.20375pt x 261.97874pt>
->>>>>>> Stashed changes
+<./Figures/comp1.png, id=417, 322.20375pt x 261.97874pt>
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
-<<<<<<< Updated upstream
-<./Figures/interprediction.png, id=425, 416.55624pt x 212.795pt>
-=======
-<./Figures/interprediction.png, id=424, 416.55624pt x 212.795pt>
->>>>>>> Stashed changes
+<./Figures/interprediction.png, id=419, 416.55624pt x 212.795pt>
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
 Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
- [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
-<<<<<<< Updated upstream
-<./Figures/motionvector.png, id=433, 525.965pt x 316.18124pt>
-=======
-<./Figures/motionvector.png, id=432, 525.965pt x 316.18124pt>
->>>>>>> Stashed changes
+ [4 <./Figures/comp1.png>]
+<./Figures/motionvector.png, id=427, 525.965pt x 316.18124pt>
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
 Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
- [5 <./Figures/motionvector.png>]
-<<<<<<< Updated upstream
-<./Figures/syntax.png, id=447, 553.06625pt x 376.40625pt>
-=======
+ [5 <./Figures/interprediction.png> <./Figures/motionvector.png>] [6]
 <./Figures/syntax.png, id=446, 553.06625pt x 376.40625pt>
->>>>>>> Stashed changes
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
 Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
 (pdftex.def)             Requested size: 289.07999pt x 196.73747pt.
-) [6] (Chapters/Chapter2.tex
+) (Chapters/Chapter2.tex
 [7 <./Figures/syntax.png>]
 Chapter 2.
 -------------------------------------------
@@ -1124,43 +722,27 @@ Chapter 3.
 [10
 
 ]
-<<<<<<< Updated upstream
-<./Figures/4x4luma.png, id=482, 241.90375pt x 161.60374pt>
-=======
-<./Figures/4x4luma.png, id=481, 241.90375pt x 161.60374pt>
->>>>>>> Stashed changes
+<./Figures/4x4luma.png, id=477, 241.90375pt x 161.60374pt>
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
-Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 35.
+Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
-<<<<<<< Updated upstream
-<./Figures/3modes.png, id=488, 623.32875pt x 165.61874pt>
-=======
-<./Figures/3modes.png, id=487, 623.32875pt x 165.61874pt>
->>>>>>> Stashed changes
+<./Figures/3modes.png, id=483, 623.32875pt x 165.61874pt>
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
-Package pdftex.def Info: ./Figures/3modes.png  used on input line 54.
+Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
  [11 <./Figures/4x4luma.png>]
-<<<<<<< Updated upstream
-<./Figures/8x8modes.png, id=498, 660.4675pt x 244.915pt>
-=======
-<./Figures/8x8modes.png, id=497, 660.4675pt x 244.915pt>
->>>>>>> Stashed changes
+<./Figures/8x8modes.png, id=493, 660.4675pt x 244.915pt>
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
-Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 74.
+Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
  [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
-<<<<<<< Updated upstream
-<./Figures/mv.png, id=508, 744.7825pt x 219.82124pt>
-=======
-<./Figures/mv.png, id=507, 744.7825pt x 219.82124pt>
->>>>>>> Stashed changes
+<./Figures/mv.png, id=502, 744.7825pt x 219.82124pt>
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
-Package pdftex.def Info: ./Figures/mv.png  used on input line 93.
+Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
 (pdftex.def)             Requested size: 289.07999pt x 85.32407pt.
  [13 <./Figures/mv.png>] [14] [15] [16]) (Chapters/Chapter4.tex [17]
 Chapter 4.
@@ -1174,151 +756,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-<<<<<<< Updated upstream
-<./Figures/256pevbsme.png, id=554, 686.565pt x 751.80875pt>
-=======
-<./Figures/256pevbsme.png, id=545, 686.565pt x 751.80875pt>
->>>>>>> Stashed changes
+<./Figures/256pevbsme.png, id=549, 686.565pt x 751.80875pt>
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
-<<<<<<< Updated upstream
 [19 <./Figures/256pevbsme.png>]
-<./Figures/pematrix.png, id=563, 868.24374pt x 353.32pt>
-=======
-[17 <./Figures/256pevbsme.png>]
-<./Figures/pematrix.png, id=553, 868.24374pt x 353.32pt>
->>>>>>> Stashed changes
+<./Figures/pematrix.png, id=558, 868.24374pt x 353.32pt>
 File: ./Figures/pematrix.png Graphic file (type png)
 <use ./Figures/pematrix.png>
 Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
 (pdftex.def)             Requested size: 325.215pt x 132.34372pt.
-<<<<<<< Updated upstream
-<./Figures/addertree.png, id=565, 502.87875pt x 302.12875pt>
-=======
-<./Figures/addertree.png, id=555, 502.87875pt x 302.12875pt>
->>>>>>> Stashed changes
+<./Figures/addertree.png, id=560, 502.87875pt x 302.12875pt>
 File: ./Figures/addertree.png Graphic file (type png)
 <use ./Figures/addertree.png>
 Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
 (pdftex.def)             Requested size: 144.54pt x 86.83598pt.
-<<<<<<< Updated upstream
- [20 <./Figures/pematrix.png> <./Figures/addertree.png>]
-<./Figures/PIPPSAD.png, id=574, 1590.94376pt x 1357.07pt>
-=======
- [18 <./Figures/pematrix.png> <./Figures/addertree.png>]
-<./Figures/PIPPSAD.png, id=564, 1590.94376pt x 1357.07pt>
->>>>>>> Stashed changes
+ [20 <./Figures/pematrix.png>]
+<./Figures/PIPPSAD.png, id=567, 1590.94376pt x 1357.07pt>
 File: ./Figures/PIPPSAD.png Graphic file (type png)
 <use ./Figures/PIPPSAD.png>
-Package pdftex.def Info: ./Figures/PIPPSAD.png  used on input line 72.
+Package pdftex.def Info: ./Figures/PIPPSAD.png  used on input line 70.
 (pdftex.def)             Requested size: 397.48499pt x 339.0389pt.
-
-
-Package caption Warning: \label without proper reference on input line 104.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:dataflow1' on page 21 undefined on input line 78.
-
-
-
-Package caption Warning: \label without proper reference on input line 168.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:dataflow2' on page 21 undefined on input line 78.
-
-
-<<<<<<< Updated upstream
-[21 <./Figures/PIPPSAD.png>]
-<./Figures/zigzag.png, id=584, 323.2075pt x 280.04625pt>
-=======
-[19 <./Figures/PIPPSAD.png>]
-<./Figures/zigzag.png, id=576, 323.2075pt x 280.04625pt>
->>>>>>> Stashed changes
+ [21 <./Figures/addertree.png> <./Figures/PIPPSAD.png>]
+<./Figures/zigzag.png, id=581, 323.2075pt x 280.04625pt>
 File: ./Figures/zigzag.png Graphic file (type png)
 <use ./Figures/zigzag.png>
-Package pdftex.def Info: ./Figures/zigzag.png  used on input line 87.
+Package pdftex.def Info: ./Figures/zigzag.png  used on input line 89.
 (pdftex.def)             Requested size: 144.54pt x 125.23764pt.
-
-
-Package caption Warning: \label without proper reference on input line 104.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:dataflow1' on page 22 undefined on input line 98.
-
-
-
-Package caption Warning: \label without proper reference on input line 168.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab:dataflow2' on page 22 undefined on input line 98.
-
-
-[22 <./Figures/zigzag.png>]
-Overfull \hbox (48.65211pt too wide) in paragraph at lines 105--163
+ [22]
+Overfull \hbox (48.65211pt too wide) in paragraph at lines 106--164
  [][] 
  []
 
-
-Overfull \hbox (57.86868pt too wide) in paragraph at lines 169--223
+[23 <./Figures/zigzag.png>]
+Overfull \hbox (57.86868pt too wide) in paragraph at lines 172--226
  [][] 
  []
 
-<<<<<<< Updated upstream
-) [23] (Chapters/Chapter5.tex [24]
-=======
-) [21] (Chapters/Chapter5.tex [22]
->>>>>>> Stashed changes
+[24]) (Chapters/Chapter5.tex [25]
 Chapter 5.
 -------------------------------------------
  5 Results and Performance
 -------------------------------------------
-<<<<<<< Updated upstream
-<./Figures/mehardware.png, id=608, 490.08093pt x 485.56406pt>
-File: ./Figures/mehardware.png Graphic file (type png)
-<use ./Figures/mehardware.png>
-Package pdftex.def Info: ./Figures/mehardware.png  used on input line 31.
-(pdftex.def)             Requested size: 216.81pt x 214.81207pt.
-[25
-
-]
-<./Figures/wave2.png, id=614, 859.71187pt x 461.47406pt>
-File: ./Figures/wave2.png Graphic file (type png)
-<use ./Figures/wave2.png>
-Package pdftex.def Info: ./Figures/wave2.png  used on input line 56.
-(pdftex.def)             Requested size: 289.07999pt x 155.17392pt.
- [26 <./Figures/mehardware.png>]) (Chapters/Chapter6.tex [27 <./Figures/wave2.p
-=======
-<./Figures/mehardware.png, id=602, 490.08093pt x 485.56406pt>
+<./Figures/mehardware.png, id=613, 490.08093pt x 485.56406pt>
 File: ./Figures/mehardware.png Graphic file (type png)
 <use ./Figures/mehardware.png>
 Package pdftex.def Info: ./Figures/mehardware.png  used on input line 32.
 (pdftex.def)             Requested size: 216.81pt x 214.81207pt.
-[23
+[26
 
 ]
-<./Figures/wave2.png, id=607, 859.71187pt x 461.47406pt>
+<./Figures/wave2.png, id=618, 859.71187pt x 461.47406pt>
 File: ./Figures/wave2.png Graphic file (type png)
 <use ./Figures/wave2.png>
 Package pdftex.def Info: ./Figures/wave2.png  used on input line 57.
 (pdftex.def)             Requested size: 289.07999pt x 155.17392pt.
- [24 <./Figures/mehardware.png>]) (Chapters/Chapter6.tex [25 <./Figures/wave2.p
->>>>>>> Stashed changes
+ [27 <./Figures/mehardware.png>]) (Chapters/Chapter6.tex [28 <./Figures/wave2.p
 ng>]
 Chapter 6.
 -------------------------------------------
  6 Conclusions and Future Directions
 -------------------------------------------
-<<<<<<< Updated upstream
-) [28
-=======
-) [26
->>>>>>> Stashed changes
+) [29
 
 ]
 -------------------------------------------
@@ -1336,78 +836,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
 s _ 05042007 _ 1217 _ 02 /
  []
 
-<<<<<<< Updated upstream
-[29
+[30
 
 
-])
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
-[30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
- (uet_thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
+]) [31] (uet_thesis.aux)
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 72BCECE936DCEFF8D8674A1701BE151D;10480.
-=======
-[27
-
-
-]) [28] (uet_thesis.aux)
-Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FDDEA7533CFC09062FBCEAC2FC1DF9C1;9915.
->>>>>>> Stashed changes
-
-
-LaTeX Warning: There were undefined references.
-
-<<<<<<< Updated upstream
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
+(rerunfilecheck)             Checksum: 7660BFF32B53EABFB81D16B77721CCE7;10357.
  ) 
 Here is how much of TeX's memory you used:
- 14560 strings out of 480790
- 213974 string characters out of 2897300
- 491008 words of memory out of 3000000
- 30174 multiletter control sequences out of 15000+200000
- 542451 words of font info for 60 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 47i,12n,49p,1517b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\wasee\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/wasee/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/wasee/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/wasee/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users
-/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-17.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsl12.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Users/wasee/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/wasee/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/wasee/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (42 pages, 752189 bytes).
-PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
- ) 
-Here is how much of TeX's memory you used:
- 14514 strings out of 480236
- 212801 string characters out of 2890348
- 538694 words of memory out of 3000000
- 30666 multiletter control sequences out of 15000+200000
+ 14508 strings out of 480236
+ 212571 string characters out of 2890348
+ 536740 words of memory out of 3000000
+ 30668 multiletter control sequences out of 15000+200000
  545201 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,1517b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,12n,77p,1508b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Filza Shahid\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
 00\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
@@ -1422,10 +865,9 @@ type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (40 pages, 747074 bytes).
+Output written on uet_thesis.pdf (43 pages, 754605 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 510 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> Stashed changes
+ 735 PDF objects out of 1000 (max. 8388607)
+ 146 named destinations out of 1000 (max. 500000)
+ 526 words of extra memory for PDF output out of 10000 (max. 10000000)
 

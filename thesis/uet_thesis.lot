@@ -2,18 +2,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-<<<<<<< Updated upstream
-\contentsline {table}{\numberline {4.1}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (a)\relax }}{23}{table.caption.78}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (b)\relax }}{24}{table.caption.79}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (a)\relax }}{24}{table.caption.77}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (b)\relax }}{25}{table.caption.78}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Size and quality of encoded video for different QP values.\relax }}{25}{table.caption.83}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Resource utilization of inter-prediction module for Artix-7.\relax }}{26}{table.caption.87}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Size and quality of encoded video for different QP values.\relax }}{26}{table.caption.82}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Resource utilization of inter-prediction module for Artix-7.\relax }}{27}{table.caption.86}%
 \addvspace {10\p@ }
-=======
-\contentsline {table}{\numberline {4.1}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (a)\relax }}{21}{table.caption.89}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Data Flow of PEs in 256PE VBS ME Hardware (b)\relax }}{22}{table.caption.90}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Size and quality of encoded video for different QP values.\relax }}{23}{table.caption.94}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Resource utilization of inter-prediction module for Artix-7.\relax }}{24}{table.caption.98}%
-\addvspace {10\p@ }
->>>>>>> Stashed changes
