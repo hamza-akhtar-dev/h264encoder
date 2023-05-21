@@ -1,37 +1,42 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  21 MAY 2023 00:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  21 MAY 2023 13:44
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
-LaTeX2e <2020-10-01>
-L3 programming layer <2020-09-24> xparse <2020-03-03> (uet_thesis.cls
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-18> (uet_thesis.cls
 Document Class: uet_thesis 2010/22/03 v1.1 LaTeX document class
-("C:\Program Files\MiKTeX\tex/latex/base\book.cls"
-Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
-("C:\Program Files\MiKTeX\tex/latex/base\bk11.clo"
-File: bk11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls"
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/base\bk11.clo"
+File: bk11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@chapter=\count176
-\c@section=\count177
-\c@subsection=\count178
-\c@subsubsection=\count179
-\c@paragraph=\count180
-\c@subparagraph=\count181
-\c@figure=\count182
-\c@table=\count183
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen134
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setsp
+ace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
-) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/vmargin\vmargin.sty"
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/vmargin\vmargi
+n.sty"
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
+
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen139
-\PaperHeight=\dimen140
-) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
-y"
+\PaperWidth=\dimen135
+\PaperHeight=\dimen136
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancy
+hdr.sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip49
@@ -43,65 +48,73 @@ s
 \f@nch@O@erf=\skip55
 \f@nch@O@olf=\skip56
 \f@nch@O@orf=\skip57
-) ("C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty"
-Package: amsmath 2020/09/23 v2.17i AMS math features
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmat
+h.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty"
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstex
+t.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen
+.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
-\ex@=\dimen141
+\ex@=\dimen137
 ))
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy
+.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen142
+\pmbraise@=\dimen138
 )
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn
+.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count184
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count185
-\leftroot@=\count186
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count187
-\DOTSCASE@=\count188
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen143
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count189
-\c@MaxMatrixCols=\count190
+\inf@bad=\count176
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count177
+\leftroot@=\count178
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count179
+\DOTSCASE@=\count180
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count181
+\c@MaxMatrixCols=\count182
 \dotsspace@=\muskip16
-\c@parentequation=\count191
-\dspbrk@lvl=\count192
+\c@parentequation=\count183
+\dspbrk@lvl=\count184
 \tag@help=\toks16
-\row@=\count193
-\column@=\count194
-\maxfields@=\count195
+\row@=\count185
+\column@=\count186
+\maxfields@=\count187
 \andhelp@=\toks17
-\eqnshift@=\dimen144
-\alignsep@=\dimen145
-\tagshift@=\dimen146
-\tagwidth@=\dimen147
-\totwidth@=\dimen148
-\lineht@=\dimen149
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
 \@envbody=\toks18
 \multlinegap=\skip59
 \multlinetaggap=\skip60
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfo
+nts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -109,17 +122,20 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssy
+mb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amscd.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amscd.
+sty"
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks20
-\minaw@=\dimen150
-\bigaw@=\dimen151
-\minCDarrowwidth=\dimen152
+\minaw@=\dimen146
+\bigaw@=\dimen147
+\minCDarrowwidth=\dimen148
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.
+sty"
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks21
 \thm@bodyfont=\toks22
@@ -131,195 +147,221 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip63
 \dth@everypar=\toks26
 )
-("C:\Program Files\MiKTeX\tex/latex/tools\xspace.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.s
+ty"
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@example=\count196
-\c@theorem=\count197
+\c@example=\count188
+\c@theorem=\count189
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/caption\caption.sty"
-Package: caption 2020/09/12 v3.5b Customizing captions (AR)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/caption\captio
+n.sty"
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/caption\caption3.sty"
-Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/caption\captio
+n3.sty"
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyva
+l.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks27
 )
-\captionmargin=\dimen153
-\captionmargin@=\dimen154
-\captionwidth=\dimen155
-\caption@tempdima=\dimen156
-\caption@indent=\dimen157
-\caption@parindent=\dimen158
-\caption@hangindent=\dimen159
+\captionmargin=\dimen149
+\captionmargin@=\dimen150
+\captionwidth=\dimen151
+\caption@tempdima=\dimen152
+\caption@indent=\dimen153
+\caption@parindent=\dimen154
+\caption@hangindent=\dimen155
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count198
-\c@continuedfloat=\count199
+\c@caption@flags=\count190
+\c@continuedfloat=\count191
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+icx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty"
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graph
+ics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.
+sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\g
+raphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
-File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\p
+dftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen160
-\Gin@req@width=\dimen161
+\Gin@req@height=\dimen156
+\Gin@req@width=\dimen157
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/subfigure\subfigure.st
-y"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subf
+igure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip64
 \subfigcapskip=\skip65
-\subfigcaptopadj=\dimen162
+\subfigcaptopadj=\dimen158
 \subfigbottomskip=\skip66
-\subfigcapmargin=\dimen163
+\subfigcapmargin=\dimen159
 \subfiglabelskip=\skip67
-\c@subfigure=\count266
-\c@lofdepth=\count267
-\c@subtable=\count268
-\c@lotdepth=\count269
+\c@subfigure=\count192
+\c@lofdepth=\count193
+\c@subtable=\count194
+\c@lotdepth=\count195
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/subfigure\subfigure.cf
-g")
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subf
+igure.cfg")
 \subfig@top=\skip68
 \subfig@bottom=\skip69
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\bookt
+abs.sty"
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen164
-\lightrulewidth=\dimen165
-\cmidrulewidth=\dimen166
-\belowrulesep=\dimen167
-\belowbottomsep=\dimen168
-\aboverulesep=\dimen169
-\abovetopsep=\dimen170
-\cmidrulesep=\dimen171
-\cmidrulekern=\dimen172
-\defaultaddspace=\dimen173
-\@cmidla=\count270
-\@cmidlb=\count271
-\@aboverulesep=\dimen174
-\@belowrulesep=\dimen175
-\@thisruleclass=\count272
-\@lastruleclass=\count273
-\@thisrulewidth=\dimen176
-) ("C:\Program Files\MiKTeX\tex/latex/graphics\rotating.sty"
+\heavyrulewidth=\dimen160
+\lightrulewidth=\dimen161
+\cmidrulewidth=\dimen162
+\belowrulesep=\dimen163
+\belowbottomsep=\dimen164
+\aboverulesep=\dimen165
+\abovetopsep=\dimen166
+\cmidrulesep=\dimen167
+\cmidrulekern=\dimen168
+\defaultaddspace=\dimen169
+\@cmidla=\count196
+\@cmidlb=\count197
+\@aboverulesep=\dimen170
+\@belowrulesep=\dimen171
+\@thisruleclass=\count198
+\@lastruleclass=\count199
+\@thisrulewidth=\dimen172
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotat
+ing.sty"
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 
-("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.st
+y"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count274
+\c@r@tfl@t=\count266
 \rotFPtop=\skip70
 \rotFPbot=\skip71
-\rot@float@box=\box49
+\rot@float@box=\box47
 \rot@mess@toks=\toks28
 )
-("C:\Program Files\MiKTeX\tex/latex/listings\listings.sty"
-\lst@mode=\count275
-\lst@gtempboxa=\box50
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.sty"
+\lst@mode=\count267
+\lst@gtempboxa=\box48
 \lst@token=\toks29
-\lst@length=\count276
-\lst@currlwidth=\dimen177
-\lst@column=\count277
-\lst@pos=\count278
-\lst@lostspace=\dimen178
-\lst@width=\dimen179
-\lst@newlines=\count279
-\lst@lineno=\count280
-\lst@maxwidth=\dimen180
+\lst@length=\count268
+\lst@currlwidth=\dimen173
+\lst@column=\count269
+\lst@pos=\count270
+\lst@lostspace=\dimen174
+\lst@width=\dimen175
+\lst@newlines=\count271
+\lst@lineno=\count272
+\lst@maxwidth=\dimen176
 
-("C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmi
+sc.sty"
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count281
-\lst@skipnumbers=\count282
-\lst@framebox=\box51
+\c@lstnumber=\count273
+\lst@skipnumbers=\count274
+\lst@framebox=\box49
 )
-("C:\Program Files\MiKTeX\tex/latex/listings\listings.cfg"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/listings\listi
+ngs.cfg"
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-("C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyper
+ref.sty"
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxc
+mds.sty"
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) ("C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty"
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.
+sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-("C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\p
+dftexcmds.sty"
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.
-sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\in
+fwarerr.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.
-sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kv
+setkeys.sty"
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefin
-ekeys.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys
+\kvdefinekeys.sty"
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/pdfescape\pdfescape.
-sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pd
+fescape.sty"
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/hycolor\hycolor.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolo
+r.sty"
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/letltxmacro\letltxmacr
-o.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\le
+tltxmacro.sty"
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/auxhook\auxhook.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhoo
+k.sty"
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.st
-y"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvop
+tions.sty"
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen181
-\Hy@linkcounter=\count283
-\Hy@pagecounter=\count284
- ("C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def"
+\@linkdim=\dimen177
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1en
+c.def"
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intc
+alc.sty"
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.st
-y"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\ete
+xcmds.sty"
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count285
+\Hy@SavedSpaceFactor=\count277
 Package hyperref Info: Option `bookmarks' set `true' on input line 4338.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 4338.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4338
@@ -327,7 +369,9 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4338
 Package hyperref Info: Option `hypertexnames' set `false' on input line 4338.
 Package hyperref Info: Option `colorlinks' set `true' on input line 4338.
 Package hyperref Info: Option `unicode' set `true' on input line 4338.
- ("C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def"
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc
+.def"
 File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -340,26 +384,27 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count286
+\c@Hy@tempcnt=\count278
 
-("C:\Program Files\MiKTeX\tex/latex/url\url.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty"
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen182
+\XeTeXLinkMargin=\dimen178
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitse
+t.sty"
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcal
-c.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\b
+igintcalc.sty"
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count287
-\Field@Width=\dimen183
-\Fld@charsize=\dimen184
+\Fld@menulength=\count279
+\Field@Width=\dimen179
+\Fld@charsize=\dimen180
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -369,34 +414,35 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6372.
 Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
- ("C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty"
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
-ge
-with kernel methods
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/atbegshi\atb
+egshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count288
-\c@Item=\count289
-\c@Hfootnote=\count290
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdft
+ex.def"
 File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-("C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty"
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
-with kernel methods
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/atveryend\atve
+ryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Fld@listcount=\count291
-\c@bookmark@seq@number=\count292
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfi
-lecheck.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck
+\rerunfilecheck.sty"
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\unique
-counter.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounte
+r\uniquecounter.sty"
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -404,84 +450,93 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip72
 )
-\c@dummy=\count293
- ("C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty"
+\c@dummy=\count285
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtabl
+e.sty"
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip73
 \LTright=\skip74
 \LTpre=\skip75
 \LTpost=\skip76
-\LTchunksize=\count294
-\LTcapwidth=\dimen185
-\LT@head=\box52
-\LT@firsthead=\box53
-\LT@foot=\box54
-\LT@lastfoot=\box55
-\LT@cols=\count295
-\LT@rows=\count296
-\c@LT@tables=\count297
-\c@LT@chunks=\count298
+\LTchunksize=\count286
+\LTcapwidth=\dimen181
+\LT@head=\box50
+\LT@firsthead=\box51
+\LT@foot=\box52
+\LT@lastfoot=\box53
+\LT@cols=\count287
+\LT@rows=\count288
+\c@LT@tables=\count289
+\c@LT@chunks=\count290
 \LT@p@ftn=\toks30
 ))
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.
+sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip77
 \bibsep=\skip78
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count299
+\c@NAT@ctr=\count291
 )
-("C:\Program Files\MiKTeX\tex/latex/tools\verbatim.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim
+.sty"
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks31
 \verbatim@line=\toks32
 \verbatim@in@stream=\read2
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/vector\vector.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/vector\vector.
+sty"
 Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
 
-("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count300
-\calc@Bcount=\count301
-\calc@Adimen=\dimen186
-\calc@Bdimen=\dimen187
+\calc@Acount=\count292
+\calc@Bcount=\count293
+\calc@Adimen=\dimen182
+\calc@Bdimen=\dimen183
 \calc@Askip=\skip79
 \calc@Bskip=\skip80
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count302
+\calc@Ccount=\count294
 \calc@Cskip=\skip81
 )
-\c@vec@elem=\count303
+\c@vec@elem=\count295
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/enumitem\enumitem.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumi
+tem.sty"
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip82
-\enit@outerparindent=\dimen188
+\enit@outerparindent=\dimen184
 \enit@toks=\toks33
-\enit@inbox=\box56
-\enit@count@id=\count304
-\enitdp@description=\count305
+\enit@inbox=\box54
+\enit@count@id=\count296
+\enitdp@description=\count297
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
- ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty
-"
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\title
+sec.sty"
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box57
+\ttl@box=\box55
 \beforetitleunit=\skip83
 \aftertitleunit=\skip84
-\ttl@plus=\dimen189
-\ttl@minus=\dimen190
+\ttl@plus=\dimen185
+\ttl@minus=\dimen186
 \ttl@toksa=\toks34
-\titlewidth=\dimen191
-\titlewidthlast=\dimen192
-\titlewidthfirst=\dimen193
-) ("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def"
-File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count306
-\l__pdf_internal_box=\box58
+\titlewidth=\dimen187
+\titlewidthlast=\dimen188
+\titlewidthfirst=\dimen189
 )
-(uet_thesis.aux)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3ba
+ckend-pdfmode.def"
+File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count298
+\l__pdf_internal_box=\box56
+) (uet_thesis.aux)
 \openout1 = `uet_thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -507,53 +562,63 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/caption\ltcaption.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcapt
+ion.sty"
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
- ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\su
+pp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count307
-\scratchdimen=\dimen194
-\scratchbox=\box59
-\nofMPsegments=\count308
-\nofMParguments=\count309
+\scratchcounter=\count299
+\scratchdimen=\dimen190
+\scratchbox=\box57
+\nofMPsegments=\count300
+\nofMParguments=\count301
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count310
-\MPscratchDim=\dimen195
-\MPnumerator=\count311
-\makeMPintoPDFobject=\count312
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen191
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
 \everyMPtoPDFconversion=\toks36
-) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\e
+pstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@lstlisting=\count313
+\c@lstlisting=\count305
+\AtBeginShipoutBox=\box58
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\color.sty"
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color
+.sty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\c
+olor.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Link coloring ON on input line 33.
 
-("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\namer
+ef.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/refcount\refcount.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refco
+unt.sty"
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\getti
-tlestring.sty"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestri
+ng\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count314
+\c@section@level=\count306
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -566,7 +631,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
-<./Figures/uet_logo.pdf, id=159, 150.5625pt x 150.5625pt>
+<./Figures/uet_logo.pdf, id=163, 150.5625pt x 150.5625pt>
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -575,20 +640,23 @@ Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
 
 
 
-{C:/Users/Filza Shahid/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Figure
-s/uet_logo.pdf>]
+{C:/Users/Fariaa Faheem/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Figur
+es/uet_logo.pdf>]
 -------------------------------------------
  Certification
 -------------------------------------------
 LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
 
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
+
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.
+fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 
 
-("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
+("C:\Users\Fariaa Faheem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.
+fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
@@ -670,30 +738,30 @@ Chapter 1.
 
 
 ]
-<./Figures/toplevel.png, id=318, 1011.78pt x 429.605pt>
+<./Figures/toplevel.png, id=323, 1011.78pt x 429.605pt>
 File: ./Figures/toplevel.png Graphic file (type png)
 <use ./Figures/toplevel.png>
 Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
 (pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
  [2] [3 <./Figures/toplevel.png>]
-<./Figures/comp1.png, id=336, 322.20375pt x 261.97874pt>
+<./Figures/comp1.png, id=341, 322.20375pt x 261.97874pt>
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
-<./Figures/interprediction.png, id=338, 416.55624pt x 212.795pt>
+<./Figures/interprediction.png, id=343, 416.55624pt x 212.795pt>
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
 Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
-<./Figures/motionvector.png, id=345, 525.965pt x 316.18124pt>
+<./Figures/motionvector.png, id=350, 525.965pt x 316.18124pt>
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
 Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/motionvector.png>]
-<./Figures/syntax.png, id=356, 553.06625pt x 376.40625pt>
+<./Figures/syntax.png, id=361, 553.06625pt x 376.40625pt>
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
 Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
@@ -711,38 +779,30 @@ Chapter 3.
 -------------------------------------------
  3 Prediction, Transformation, Quantization and Encoding
 -------------------------------------------
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 15.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 25.
-
 [10
 
 ]
-<./Figures/4x4luma.png, id=386, 241.90375pt x 161.60374pt>
+<./Figures/4x4luma.png, id=390, 241.90375pt x 161.60374pt>
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
-Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
+Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
-<./Figures/3modes.png, id=392, 623.32875pt x 165.61874pt>
+<./Figures/3modes.png, id=396, 623.32875pt x 165.61874pt>
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
-Package pdftex.def Info: ./Figures/3modes.png  used on input line 49.
+Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
- [11 <./Figures/4x4luma.png> <./Figures/3modes.png>]
-<./Figures/8x8modes.png, id=402, 660.4675pt x 244.915pt>
+ [11 <./Figures/4x4luma.png>]
+<./Figures/8x8modes.png, id=406, 660.4675pt x 244.915pt>
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
-Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 69.
+Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
- [12 <./Figures/8x8modes.png>]
-<./Figures/mv.png, id=411, 744.7825pt x 219.82124pt>
+ [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
+<./Figures/mv.png, id=416, 744.7825pt x 219.82124pt>
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
-Package pdftex.def Info: ./Figures/mv.png  used on input line 88.
+Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
 (pdftex.def)             Requested size: 289.07999pt x 85.32407pt.
  [13 <./Figures/mv.png>] [14]) (Chapters/Chapter4.tex [15]
 Chapter 4.
@@ -760,18 +820,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-<./Figures/256pevbsme.png, id=449, 686.565pt x 751.80875pt>
+<./Figures/256pevbsme.png, id=454, 686.565pt x 751.80875pt>
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
 [17 <./Figures/256pevbsme.png>]
-<./Figures/pematrix.png, id=457, 868.24374pt x 353.32pt>
+<./Figures/pematrix.png, id=462, 868.24374pt x 353.32pt>
 File: ./Figures/pematrix.png Graphic file (type png)
 <use ./Figures/pematrix.png>
 Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
 (pdftex.def)             Requested size: 325.215pt x 132.34372pt.
-<./Figures/addertree.png, id=459, 502.87875pt x 302.12875pt>
+<./Figures/addertree.png, id=464, 502.87875pt x 302.12875pt>
 File: ./Figures/addertree.png Graphic file (type png)
 <use ./Figures/addertree.png>
 Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
@@ -786,38 +846,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
 07 _ 1217 _ 02 / pdf ? origin =
  []
 
-) [20
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
+ [20
 
 
-] (uet_thesis.aux)
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+ (uet_thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E239FB74F85BB7951C89F1A780D77FF4;6833.
+(rerunfilecheck)             Checksum: 848F04C7DC712E0DA2B35C1991F95E6A;6886.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 245.
  ) 
 Here is how much of TeX's memory you used:
- 14370 strings out of 480236
- 210347 string characters out of 2890348
- 499259 words of memory out of 3000000
- 30568 multiletter control sequences out of 15000+200000
- 545201 words of font info for 65 fonts, out of 3000000 for 9000
+ 14401 strings out of 480790
+ 213134 string characters out of 2893515
+ 458780 words of memory out of 3000000
+ 30051 multiletter control sequences out of 15000+200000
+ 542451 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,1037b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Filza Shahid\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
-00\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (32 pages, 502614 bytes).
+ 47i,12n,49p,1037b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Fariaa Faheem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\tcrm1095.pk><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Fariaa Faheem/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/F
+ariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Fariaa Faheem/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Fariaa Faheem/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
+s/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/Fariaa Faheem/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Fariaa Fahee
+m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Us
+ers/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmti10.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb>
+Output written on uet_thesis.pdf (32 pages, 504295 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 122 named destinations out of 1000 (max. 500000)
- 378 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 566 PDF objects out of 1000 (max. 8388607)
+ 123 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
 

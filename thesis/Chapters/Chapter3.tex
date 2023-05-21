@@ -2,8 +2,9 @@
 
 \chapter{Prediction, Transformation, Quantization and Encoding} % Write in your own chapter title
 \label{Chapter3}
-\lhead{Chapter3. \emph{Prediction}} % Write in your own chapter title to set the page header
+\lhead{Chapter3. \emph{Prediction, Transformation, Quantization and Encoding}} % Write in your own chapter title to set the page header
 
+\section{Predicton}
 Prediction is defined as duplication of the information contained in a macro-block using previously coded data. This duplicated information is subtracted from the macro-block to form a residual. There are 2 types of prediction.
 
 \begin{itemize}
@@ -94,9 +95,9 @@ In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
 
 
-\subsection{Transform Coding}
+\section{Transform Coding}
 
-\subsubsection{DC Transform}
+\subsection{DC Transform}
 The DC transform is a type of discrete cosine transform (DCT) that only operates on the DC component (i.e., the average pixel value) of a 2x2 input block, and it is used to reduce the amount of spatial redundancy in the video data.\\
 This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as Given a 2x2 input block X, compute the sum of all the pixels in the block as: 
 
@@ -116,7 +117,7 @@ then the average value is subtracted from each pixel in the input block to obtai
 \end{equation} 	
 In our code this dc transform is implemented in a pipe-lined manner, i.e. by using 4 stages. In each stage the input block is first divided into two sub-blocks, the transform is applied to each sub-block then these transformed sub-blocks are recombined at the end to form the output block. This pipe-lining is done to ensure the reduced latency and higher throughput of transform. 
 
-\subsubsection{Core Transform}
+\subsection{Core Transform}
 Core transform or Forward Discrete Cosine Transform (\textbf{FDCT}) is a linear transformation that transforms the given input data from spatial domain to frequency domain. This transform is \textbf{computationally less complex} and has \textbf{high energy compaction} as compared to \textbf{DFT}, \textbf{DST}, \textbf{WHT} and \textbf{DWT}. Therefore, it is highly preferred in video compression.
 FDCT uses A i.e. a transform matrix and its transpose to convert the input matrix or a martix of samples X into a result matrix Y i.e. an NxN block of coefficients, as shown in the equation below:
 \begin{equation}
@@ -156,7 +157,7 @@ In our code, we have used 36-bit input, XXIN, which is a 4x9-bit matrix in littl
 The output is only considered valid when the VALID signal is high. This VALID signal is controlled by the ENABLE signal. A READY signal that is used to indicate when the module is ready to accept input.\\
 The output of core tranform is a set of coefficients in frequency domain, these coefficients, concentrate most of the signal energy in a few low frequency components. This property gives us efficient compression as the low magnitude coefficients are further discarded through quantization.
 
-\subsection{Quantization}
+\section{Quantization}
 The process of mapping the input values from a large set(typically a continuous set) into smaller often finite sized set is called Quantization. This helps in representing the data signal with fewer bits than the original one as the range of possible values in the quantized set in smaller.\\
 We have used a \textbf{Scalar Quantizer} in our implementation, here each element on the matrix is quantized independently without considering the correlation between elements. For better understanding it can be considered as a process of rounding a fractional number to the nearest integer.\\
 This process is irreversible and lossy since it is not possible to determine the exact value of the original fractional number from the rounded integer.\\

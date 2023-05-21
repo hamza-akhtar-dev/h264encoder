@@ -6,11 +6,11 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Overall syntax for h264 encoder\relax }}{6}{figure.caption.50}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Reference samples for 4x4 Luma\relax }}{11}{figure.caption.56}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Major Modes for 4x4 Luma Prediction\relax }}{11}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Major Modes for 8x8 Chroma Prediction\relax }}{12}{figure.caption.59}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Motion Estimation using Block Matching\relax }}{13}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Reference samples for 4x4 Luma\relax }}{11}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Major Modes for 4x4 Luma Prediction\relax }}{12}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Major Modes for 8x8 Chroma Prediction\relax }}{12}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Motion Estimation using Block Matching\relax }}{13}{figure.caption.63}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 265 PE VBS ME Hardware Architecture\relax }}{17}{figure.caption.77}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 16 x 16 PE Matrix\relax }}{18}{figure.caption.78}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Working of an Adder Tree\relax }}{18}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 265 PE VBS ME Hardware Architecture\relax }}{17}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 16 x 16 PE Matrix\relax }}{18}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Working of an Adder Tree\relax }}{18}{figure.caption.80}%

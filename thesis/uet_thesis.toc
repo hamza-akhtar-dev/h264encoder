@@ -24,18 +24,19 @@
 \contentsline {chapter}{\numberline {2}Motivations and Problem Statement}{8}{chapter.51}%
 \contentsline {section}{\numberline {2.1}Motivations}{8}{section.52}%
 \contentsline {chapter}{\numberline {3}Prediction, Transformation, Quantization and Encoding}{10}{chapter.53}%
-\contentsline {subsection}{\numberline {3.0.1}Intra-Prediction}{10}{subsection.54}%
-\contentsline {subsubsection}{\numberline {3.0.1.1}4x4 Luma Prediction}{10}{subsubsection.55}%
-\contentsline {subsubsection}{\numberline {3.0.1.2}8x8 Chroma Prediction}{12}{subsubsection.58}%
-\contentsline {subsection}{\numberline {3.0.2}Inter-Prediction}{12}{subsection.60}%
-\contentsline {subsubsection}{\numberline {3.0.2.1}Block Matching Technique}{12}{subsubsection.61}%
-\contentsline {subsection}{\numberline {3.0.3}Transform Coding}{13}{subsection.63}%
-\contentsline {subsubsection}{\numberline {3.0.3.1}DC Transform}{13}{subsubsection.64}%
-\contentsline {subsubsection}{\numberline {3.0.3.2}Core Transform}{14}{subsubsection.68}%
-\contentsline {subsection}{\numberline {3.0.4}Quantization}{15}{subsection.70}%
-\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{16}{chapter.71}%
-\contentsline {subsection}{\numberline {4.0.1}Full Search ME Algorithm}{16}{subsection.72}%
-\contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{17}{subsection.76}%
+\contentsline {section}{\numberline {3.1}Predicton}{10}{section.54}%
+\contentsline {subsection}{\numberline {3.1.1}Intra-Prediction}{10}{subsection.55}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}4x4 Luma Prediction}{11}{subsubsection.56}%
+\contentsline {subsubsection}{\numberline {3.1.1.2}8x8 Chroma Prediction}{11}{subsubsection.59}%
+\contentsline {subsection}{\numberline {3.1.2}Inter-Prediction}{12}{subsection.61}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Block Matching Technique}{13}{subsubsection.62}%
+\contentsline {section}{\numberline {3.2}Transform Coding}{13}{section.64}%
+\contentsline {subsection}{\numberline {3.2.1}DC Transform}{13}{subsection.65}%
+\contentsline {subsection}{\numberline {3.2.2}Core Transform}{14}{subsection.69}%
+\contentsline {section}{\numberline {3.3}Quantization}{15}{section.71}%
+\contentsline {chapter}{\numberline {4}Hardware Architecture for Inter-Prediction}{16}{chapter.72}%
+\contentsline {subsection}{\numberline {4.0.1}Full Search ME Algorithm}{16}{subsection.73}%
+\contentsline {subsection}{\numberline {4.0.2}256 PE VBS FS ME Hardware Architecture}{17}{subsection.77}%
 \vspace {2em}
 \vspace {2em}
-\contentsline {chapter}{References}{20}{dummy.80}%
+\contentsline {chapter}{References}{20}{dummy.81}%
