@@ -22,7 +22,7 @@ The H.264 family of standards includes various capabilities. These profiles are 
 \subsection{Baseline Profile}
 In the realm of video encoding, baseline profiles are commonly employed in applications that require low-power consumption and cost-efficiency. These profiles are capable of achieving an impressive compression ratio of 1000:1, resulting in a streamlet of 1 Gbps being compressed down to approximately 1 Mbps. Baseline profiles utilize a 4:2:0 chrominance sampling method, whereby color information is sampled at half the vertical and horizontal resolution of the black-and-white information. This technique enables the reduction of data without significantly impacting the overall quality of the video.
 
-Furthermore, Universal Variable Length Coding (UVLC) and Context Adaptive Variable Length Coding (CAVLC) are employed as the primary entropy encoding techniques within this profile. Such encoding methods contribute significantly to the efficient compression of video data, while ensuring that the encoded video stream is in compliance with relevant standards. 
+Furthermore, Universal Variable Length Coding and Context Adaptive Variable Length Coding  are employed as the primary entropy encoding techniques within this profile. Such encoding methods contribute significantly to the efficient compression of video data, while ensuring that the encoded video stream is in compliance with relevant standards. 
 
 \subsection{Main Profile}
 Significant enhancements were made to the Baseline Profile through the introduction of advanced frame prediction algorithms, resulting in the development of the Main Profile. This updated profile is primarily utilized for standard-definition digital TV broadcasts in MPEG-4 format.
@@ -30,7 +30,7 @@ Significant enhancements were made to the Baseline Profile through the introduct
 However, it should be noted that the Main Profile is not employed in high-definition broadcasts. Rather, alternate profiles are used in such scenarios to ensure optimal video quality and compatibility with relevant standards.
 
 \subsection{High Profile}
-Introduced in the year 2004, the High Profile is considered to be the most efficient and powerful profile within the H.264 family. It is primarily utilized in high-definition television applications such as Blu-ray Disc storage, Digital Video Broadcasting (DVB) and HDTV broadcast services. This profile is capable of achieving an exceptional compression ratio of 2000:1, which is a significant improvement over previous encoding standards. It utilizes an adaptive transform method that allows for the selection of either 4x4 or 8x8 pixel blocks. This enables preservation of video quality while reducing network bandwidth consumption by up to 50$\%$.
+Introduced in the year 2004, the High Profile is considered to be the most efficient and powerful profile within the H.264 family. It is primarily utilized in high-definition television applications such as Blu-ray Disc storage, Digital Video Broadcasting and HDTV broadcast services. This profile is capable of achieving an exceptional compression ratio of 2000:1, which is a significant improvement over previous encoding standards. It utilizes an adaptive transform method that allows for the selection of either 4x4 or 8x8 pixel blocks. This enables preservation of video quality while reducing network bandwidth consumption by up to 50$\%$.
 
 Furthermore, the application of this compression technique facilitates the compression of a 1 Gbps stream to approximately 512 Kbps, further emphasizing the impressive capabilities of the High Profile.
 
@@ -108,7 +108,7 @@ In H.264 stream or file encoding, the symbols are coded in a series. The quantiz
 
 % include h.264 syntax briefly
 \section{H264 syntax}
-H.264 consists of 2 layers: the \textbf{Network Abstraction Layer (NAL)} and the \textbf{Video Coding Layer (VCL)} \cite{richardson2010h264}. The NAL consists of a series of NAL Units, with \textbf{Sequence Parameter Sets (SPS)} and \textbf{Picture Parameter Sets (PPS)} being the most common units that signal certain control parameters to the decoder. In the VCL, coded video data is communicated in the form of slices.An \textbf{access unit}, which can be a coded frame or field, is made up of one or more slices. Each slice consists of a Slice Header and Slice Data, with the latter being a series of coded \textbf{macro blocks (MB)} and skip macro block indicators signaling that certain macro block positions contain no data.
+H.264 consists of 2 layers: the \textbf{NAL} and the \textbf{VCL} \cite{richardson2010h264}. The NAL consists of a series of NAL Units, with \textbf{SPS} and \textbf{PPS} being the most common units that signal certain control parameters to the decoder. In the VCL, coded video data is communicated in the form of slices.An \textbf{access unit}, which can be a coded frame or field, is made up of one or more slices. Each slice consists of a Slice Header and Slice Data, with the latter being a series of coded \textbf{macro blocks} and skip macro block indicators signaling that certain macro block positions contain no data.
 
 \begin{itemize}
 	\item \textbf{MB type:} I/intra coded, P/inter coded from one reference frame

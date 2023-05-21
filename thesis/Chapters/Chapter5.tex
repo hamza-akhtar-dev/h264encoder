@@ -71,6 +71,7 @@ It can be seen from the results above that the utilization of look up tables and
 
 \subsection{Simulation Results}
 In order to verify the working of inter-prediction module, it is simulated using a MB of size 16x16 from the current frame and a search range of size 48x48 from the reference frame.
+
 The loading of MB takes 16 cycles and after that the pixels of search range are loaded in the RAMs. It takes 16 cycles to calculate the first valid SAD value as the RAMs are getting filled for the first time. Once the first valid SAD value is calculated the next values are calculated with no latency. This is due to the fact that RAMs are filled and only the shifting of pixels need to be done which is done by BRAM 16 as seen in Figure \ref{fig:256pevbsme}. Therefore, this architecture reduces the latency for SAD calculation. This can also be verified by the following simulation waveform.
 \begin{figure}[H]
 	\centering
