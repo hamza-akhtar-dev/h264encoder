@@ -72,12 +72,12 @@ The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction res
 	\label{fig:8x8modes}
 \end{figure}
 
-[Explain the hardware architecture of Intra prediction if possible]
+%[Explain the hardware architecture of Intra prediction if possible]
 
 \subsection{Inter-Prediction}
 The process of predicting a block of luma and chroma samples from a reference picture that has been previously been coded and transmitted i.e. exploits temporal redundancy between successive frames. For this a prediction region is selected, a prediction block is generated and then it is subtracted from original block of samples to form a residual. This is then coded and transmitted. Reference pictures are stored in Decoded Picture Buffer. The offset between position of current block and search region in the reference picture is called motion vector. This prediction is also known as \textbf{Motion Estimation} \cite{kalaycioglu2011low}. It has the capability of extracting true motion information thus enhancing the quality of displayed images in video enhancement systems. The preferred technique for motion estimation is the \textbf{Block Matching (BM)} Technique. 
 
-<<<<<<< Updated upstream
+
 \subsubsection{Block Matching Technique}
 This method divides the current frame into non-overlapping NxN macro-blocks and seeks out the block from the reference frame that most closely resembles the current block within a specified search range. The Sum of Absolute Difference (SAD), which is appropriate for hardware implementations, is the recommended block matching criterion.
 
@@ -93,19 +93,23 @@ In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 
 There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
 
- 
-=======
+
 \subsection{Transform Coding}
 
 \subsubsection{DC Transform}
 The DC transform is a type of discrete cosine transform (DCT) that only operates on the DC component (i.e., the average pixel value) of a 2x2 input block, and it is used to reduce the amount of spatial redundancy in the video data.\\
-This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as Given a 2x2 input block X, compute the sum of all the pixels in the block as: \begin{equation}
+This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as Given a 2x2 input block X, compute the sum of all the pixels in the block as: 
+
+\begin{equation}
 	SUM(X) = X(0,0) + X(0,1) + X(1,0) + X(1,1)
 \end{equation}
+
 The average value of the input block is computed as:
+
 \begin{equation}
  AVG(X) = SUM(X) / 4
 \end{equation}
+
 then the average value is subtracted from each pixel in the input block to obtain the transformed block Y, where:
 \begin{equation}
  	Y(i,j) = X(i,j) - AVG(X) 
@@ -161,4 +165,4 @@ The formula used for quantization in our implementation is:
 X_q = \text{round}\left(\frac{X}{{2 \cdot QP}} \cdot \text{scale}\right)
 \]
 Here, \textbf{X} is the input value to be quantized. \textbf{QP} is the Quantization Parameter. The division by (2*QP) scales the input value based on the QP. \textbf{Scale} is the scaling factor and \textbf{round} function is used to round the scaled value to nearest integer, this scaled and rounded value is then multiplied by the scaled factor.
->>>>>>> Stashed changes
+
