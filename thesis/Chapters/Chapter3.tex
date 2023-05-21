@@ -37,9 +37,9 @@ For this type of prediction, each macro block that is of \textbf{16x16} (256 pix
 There are total 9 prediction modes that are supported in this prediction. Major modes that are implemented in our model are as follows:
 
 \begin{itemize}
-	\item \textbf{Mode 0 (Vertical):} The predicted block is constructed by using upper samples A,B,C,D of block ‘a’ as shown in figure \ref{fig:3modes}. They are extrapolated vertically. It is suitable to predict vertical edges in the block.
-	\item \textbf{Mode 1 (Horizontal):} In this mode, left samples I,J,K,L of block c are used. They are extrapolated horizontally and is suitable for horizontal edges. It can be seen in figure \ref{fig:3modes}.
-	\item \textbf{Mode 2 (DC):} It utilizes average of all adjacent samples (A to D and I to L) to form the prediction of current block. It is suitable for smooth areas. Its process is shown in figure \ref{fig:3modes}.
+	\item \textbf{Mode 0 (Vertical):} The predicted block is constructed by using upper samples A,B,C,D of block ‘a’ as shown in Figure \ref{fig:3modes}. They are extrapolated vertically. It is suitable to predict vertical edges in the block.
+	\item \textbf{Mode 1 (Horizontal):} In this mode, left samples I,J,K,L of block c are used. They are extrapolated horizontally and is suitable for horizontal edges. It can be seen in Figure \ref{fig:3modes}.
+	\item \textbf{Mode 2 (DC):} It utilizes average of all adjacent samples (A to D and I to L) to form the prediction of current block. It is suitable for smooth areas. Its process is shown in Figure \ref{fig:3modes}.
 
 \end{itemize}
 	 
@@ -63,7 +63,7 @@ This type of prediction applies on chrominance components. It is similar to 16x1
 	\item Mode 3: Plane
 \end{itemize}
 
-The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the figure \ref{fig:8x8modes}.
+The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the Figure \ref{fig:8x8modes}.
 
 \begin{figure}[H]
 	\centering
@@ -82,7 +82,7 @@ The process of predicting a block of luma and chroma samples from a reference pi
 \subsubsection{Block Matching Technique}
 This method divides the current frame into non-overlapping NxN macro-blocks and seeks out the block from the reference frame that most closely resembles the current block within a specified search range. The Sum of Absolute Difference (SAD), which is appropriate for hardware implementations, is the recommended block matching criterion.
 
-In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current frame. The search window in the reference frame is in \textbf{[-r,r]} region in both x and y directions. Both current and reference block lies within the range of search window. The SAD value is calculated by accumulating absolute differences of corresponding pixels in both current and reference blocks. A motion vector is the relative motion of current block in reference frame, they are specified in relative coordinates. Thus if \textbf{(x+a,y+b)} is the location of best matching block in reference frame, then \textbf{(a,b)} represents the motion vector. Motion Estimation is performed on luma component and resulting motion vectors are also used for chroma components.
+In Figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current frame. The search window in the reference frame is in \textbf{[-r,r]} region in both x and y directions. Both current and reference block lies within the range of search window. The SAD value is calculated by accumulating absolute differences of corresponding pixels in both current and reference blocks. A motion vector is the relative motion of current block in reference frame, they are specified in relative coordinates. Thus if \textbf{(x+a,y+b)} is the location of best matching block in reference frame, then \textbf{(a,b)} represents the motion vector. Motion Estimation is performed on luma component and resulting motion vectors are also used for chroma components.
 
 \begin{figure}[H]
 	\centering
@@ -92,7 +92,7 @@ In figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 	\label{fig:mv}
 \end{figure}
 
-There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
+There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in Chapter \ref{Chapter4}.
 
 
 \section{Transform Coding}
