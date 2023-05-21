@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  22 MAY 2023 00:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.8)  22 MAY 2023 01:03
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
@@ -641,7 +641,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
-<./Figures/uet_logo.pdf, id=235, 150.5625pt x 150.5625pt>
+<./Figures/uet_logo.pdf, id=239, 150.5625pt x 150.5625pt>
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -748,30 +748,30 @@ Chapter 1.
 
 
 ]
-<./Figures/toplevel.png, id=419, 1011.78pt x 429.605pt>
-File: ./Figures/toplevel.png Graphic file (type png)
-<use ./Figures/toplevel.png>
-Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
-(pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
- [2] [3 <./Figures/toplevel.png>]
-<./Figures/comp1.png, id=436, 322.20375pt x 261.97874pt>
+<./Figures/topbd.png, id=424, 1132.23pt x 482.80376pt>
+File: ./Figures/topbd.png Graphic file (type png)
+<use ./Figures/topbd.png>
+Package pdftex.def Info: ./Figures/topbd.png  used on input line 41.
+(pdftex.def)             Requested size: 361.34999pt x 154.08043pt.
+ [2] [3 <./Figures/topbd.png>]
+<./Figures/comp1.png, id=441, 322.20375pt x 261.97874pt>
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
 Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
-<./Figures/interprediction.png, id=438, 416.55624pt x 212.795pt>
+<./Figures/interprediction.png, id=443, 416.55624pt x 212.795pt>
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
 Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
  [4 <./Figures/comp1.png>]
-<./Figures/motionvector.png, id=446, 525.965pt x 316.18124pt>
+<./Figures/motionvector.png, id=451, 525.965pt x 316.18124pt>
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
 Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
  [5 <./Figures/interprediction.png> <./Figures/motionvector.png>] [6]
-<./Figures/syntax.png, id=465, 553.06625pt x 376.40625pt>
+<./Figures/syntax.png, id=470, 553.06625pt x 376.40625pt>
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
 Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
@@ -792,24 +792,24 @@ Chapter 3.
 [10
 
 ]
-<./Figures/4x4luma.png, id=496, 241.90375pt x 161.60374pt>
+<./Figures/4x4luma.png, id=501, 241.90375pt x 161.60374pt>
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
 Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
-<./Figures/3modes.png, id=502, 623.32875pt x 165.61874pt>
+<./Figures/3modes.png, id=507, 623.32875pt x 165.61874pt>
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
 Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
  [11 <./Figures/4x4luma.png>]
-<./Figures/8x8modes.png, id=512, 660.4675pt x 244.915pt>
+<./Figures/8x8modes.png, id=517, 660.4675pt x 244.915pt>
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
 Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
  [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
-<./Figures/mv.png, id=521, 744.7825pt x 219.82124pt>
+<./Figures/mv.png, id=526, 744.7825pt x 219.82124pt>
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
 Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
@@ -826,30 +826,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-<./Figures/256pevbsme.png, id=568, 686.565pt x 751.80875pt>
+<./Figures/256pevbsme.png, id=573, 686.565pt x 751.80875pt>
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
 [19 <./Figures/256pevbsme.png>]
-<./Figures/pematrix.png, id=577, 868.24374pt x 353.32pt>
+<./Figures/pematrix.png, id=582, 868.24374pt x 353.32pt>
 File: ./Figures/pematrix.png Graphic file (type png)
 <use ./Figures/pematrix.png>
 Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
 (pdftex.def)             Requested size: 325.215pt x 132.34372pt.
-<./Figures/addertree.png, id=579, 502.87875pt x 302.12875pt>
+<./Figures/addertree.png, id=584, 502.87875pt x 302.12875pt>
 File: ./Figures/addertree.png Graphic file (type png)
 <use ./Figures/addertree.png>
 Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
 (pdftex.def)             Requested size: 144.54pt x 86.83598pt.
  [20 <./Figures/pematrix.png>]
-<./Figures/PIPPSAD.png, id=586, 1590.94376pt x 1357.07pt>
+<./Figures/PIPPSAD.png, id=591, 1590.94376pt x 1357.07pt>
 File: ./Figures/PIPPSAD.png Graphic file (type png)
 <use ./Figures/PIPPSAD.png>
 Package pdftex.def Info: ./Figures/PIPPSAD.png  used on input line 70.
 (pdftex.def)             Requested size: 397.48499pt x 339.0389pt.
  [21 <./Figures/addertree.png> <./Figures/PIPPSAD.png>]
-<./Figures/zigzag.png, id=600, 323.2075pt x 280.04625pt>
+<./Figures/zigzag.png, id=605, 323.2075pt x 280.04625pt>
 File: ./Figures/zigzag.png Graphic file (type png)
 <use ./Figures/zigzag.png>
 Package pdftex.def Info: ./Figures/zigzag.png  used on input line 89.
@@ -872,21 +872,21 @@ Chapter 5.
 [26
 
 ]
-<./Figures/mehardware.png, id=637, 490.08093pt x 485.56406pt>
+<./Figures/mehardware.png, id=642, 490.08093pt x 485.56406pt>
 File: ./Figures/mehardware.png Graphic file (type png)
 <use ./Figures/mehardware.png>
-Package pdftex.def Info: ./Figures/mehardware.png  used on input line 50.
+Package pdftex.def Info: ./Figures/mehardware.png  used on input line 51.
 (pdftex.def)             Requested size: 216.81pt x 214.81207pt.
  [27 <./Figures/mehardware.png>]
-<./Figures/wave3.png, id=644, 858.20625pt x 457.71pt>
+<./Figures/wave3.png, id=649, 858.20625pt x 457.71pt>
 File: ./Figures/wave3.png Graphic file (type png)
 <use ./Figures/wave3.png>
-Package pdftex.def Info: ./Figures/wave3.png  used on input line 76.
+Package pdftex.def Info: ./Figures/wave3.png  used on input line 77.
 (pdftex.def)             Requested size: 289.07999pt x 154.17363pt.
-<./Figures/wave2.png, id=645, 859.71187pt x 461.47406pt>
+<./Figures/wave2.png, id=650, 859.71187pt x 461.47406pt>
 File: ./Figures/wave2.png Graphic file (type png)
 <use ./Figures/wave2.png>
-Package pdftex.def Info: ./Figures/wave2.png  used on input line 84.
+Package pdftex.def Info: ./Figures/wave2.png  used on input line 85.
 (pdftex.def)             Requested size: 289.07999pt x 155.17392pt.
  [28 <./Figures/wave3.png>])
 (Chapters/Chapter6.tex [29 <./Figures/wave2.png>]
@@ -894,16 +894,16 @@ Chapter 6.
 -------------------------------------------
  6 Conclusions and Future Directions
 -------------------------------------------
-) (Chapters/AppendixA.tex [30
+[30
 
-]
+]) (Chapters/AppendixA.tex [31]
 Appendix A.
 -------------------------------------------
  A Computation of DCT
 -------------------------------------------
-[31
+[32
 
-]) [32]
+]) [33]
 -------------------------------------------
  References
 -------------------------------------------
@@ -919,28 +919,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
 s _ 05042007 _ 1217 _ 02 /
  []
 
-[33
+[34
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
- [34]
+ [35]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 232.
  (uet_thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 26D9762475F2DB8D35CBBF8F782ED77E;10857.
+(rerunfilecheck)             Checksum: 0F805BD39D6F244CD78AB10050DDCFAF;10985.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
  ) 
 Here is how much of TeX's memory you used:
- 14561 strings out of 480790
- 215984 string characters out of 2893515
+ 14564 strings out of 480790
+ 215995 string characters out of 2893515
  489434 words of memory out of 3000000
- 30162 multiletter control sequences out of 15000+200000
+ 30163 multiletter control sequences out of 15000+200000
  542451 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,49p,1118b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,12n,49p,1458b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Fariaa Faheem\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
 600\tcrm1095.pk><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs
@@ -961,9 +961,9 @@ m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Us
 ers/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Users/Fariaa Faheem/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (46 pages, 811199 bytes).
+Output written on uet_thesis.pdf (47 pages, 800508 bytes).
 PDF statistics:
- 771 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 555 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
+ 563 words of extra memory for PDF output out of 10000 (max. 10000000)
 
