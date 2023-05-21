@@ -75,7 +75,7 @@ In out Pi-PPSAD architecture, when the output of seventh PE row is obtained, ins
 	\label{fig:pippsad}
 \end{figure}
 
-Initially, pipelining causes latency of 16 cycles in the SAD calculation. But, once the pipeline is filled, only one cycle is needed per SAD value. Current block data is loaded only once when the current block is changed while search are pixels are fed in every cycle to the PEs. Their data flow is further explained in table \ref{tab:dataflow1} and \ref{tab:dataflow2}. As, there are 48 columns of reference pixels search range window [-16,15]. Thus, per 16x16 macro block, the approximate number of cycles is 48*32 = 1536 cycles. 
+Initially, pipelining causes latency of 16 cycles in the SAD calculation. But, once the pipeline is filled, only one cycle is needed per SAD value. Current block data is loaded only once when the current block is changed while search are pixels are fed in every cycle to the PEs. Their data flow is further explained in table \ref{tab:dataflow1} and \ref{tab:dataflow2}. As, there are 48 columns of reference pixels search range window [-16,15]. Thus, per 16x16 macro block, the approximate number of cycles is 48*32 = 1536 cycles. \cite{lin2008parallel}
 
 \subsection{Zig-Zag Search Pattern}
 
@@ -90,14 +90,14 @@ we have to either broadcast multiple pixels into the PEs or delay all the PEs un
 	\label{fig:zigzag}
 \end{figure}
 
-The zig-zag architecture used in our implementation can referred from \cite{fast_vlsi_architecture}. But, this structure either use both row and column aligned memories or use data duplication. The implemented architecture overcomes this problem by introducing pipeline of 16 8-bit temporary registers. The search starts from top left corner of the search window and continues downwards until the last search location of this column is searched. After that, current block shifts to one right column in a way that pixel columns are shifted one left. Thus the search proceeds with the last search location of this next column and continues upwards until the first search location is reached. Only 16 new search window pixels are required by the current block PE array in each cycle to calculate the SAD of the next search location not keeping in fact its position in the search window. 
+The zig-zag architecture used in our implementation can referred from \cite{fast_vlsi_architecture}. But, this structure either use both row and column aligned memories or use data duplication. The implemented architecture overcomes this problem by introducing pipeline of 16 8-bit temporary registers. The search starts from top left corner of the search window and continues downwards until the last search location of this column is searched. After that, current block shifts to one right column in a way that pixel columns are shifted one left. Thus the search proceeds with the last search location of this next column and continues upwards until the first search location is reached. Only 16 new search window pixels are required by the current block PE array in each cycle to calculate the SAD of the next search location not keeping in fact its position in the search window. \cite{kalaycioglu2011low} 
 
 
-\subsection{Data Flow in 265 PEs}
+\subsection{Data Flow in 256 PEs}
 
 Data flow of PEs for fixed location of a current marco block pixels while searching all the locations in search window is shown in table \ref{tab:dataflow1} and \ref{tab:dataflow2} where sw(x,y) are the search window pixels.
 
-When iterating the search locations in the 1$^{st}$ column of search window, vertical up shift is performed in the PE array in each cycle. All PEs are provided the search window pixels from their neighboring PEs except for those PEs in the last row. These last row PEs read 16 new search window pixels from 16 BRAMs in each cycle. The 17$^{th}$ BRAM help in performing left shift after all search locations in a column has been searched. It is connected to temporary registers. When there is the need for left shift, the pixels need for the right most PEs become ready in those temporary registers. When we are done with the searches in the first 16 columns, a left shift is performed in the PE array and the PEs in the 16$^{th}$ column receive search window pixels from temporary registers. 
+When iterating the search locations in the 1$^{st}$ column of search window, vertical up shift is performed in the PE array in each cycle. All PEs are provided the search window pixels from their neighboring PEs except for those PEs in the last row. These last row PEs read 16 new search window pixels from 16 BRAMs in each cycle. The 17$^{th}$ BRAM help in performing left shift after all search locations in a column has been searched. It is connected to temporary registers. When there is the need for left shift, the pixels need for the right most PEs become ready in those temporary registers. When we are done with the searches in the first 16 columns, a left shift is performed in the PE array and the PEs in the 16$^{th}$ column receive search window pixels from temporary registers. \cite{kalaycioglu2011low}
 
 \begin{table}[htbp]
 	\centering

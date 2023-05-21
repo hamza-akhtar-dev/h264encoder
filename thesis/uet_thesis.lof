@@ -6,6 +6,7 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Overall syntax for h264 encoder\relax }}{7}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< Updated upstream
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Reference samples for 4x4 Luma\relax }}{11}{figure.caption.47}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Major Modes for 4x4 Luma Prediction\relax }}{12}{figure.caption.48}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Major Modes for 8x8 Chroma Prediction\relax }}{12}{figure.caption.50}%
@@ -20,3 +21,19 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic\relax }}{26}{figure.caption.85}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Simulation waveform of inter-prediction module for one search range.\relax }}{27}{figure.caption.89}%
 \addvspace {10\p@ }
+=======
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Reference samples for 4x4 Luma\relax }}{11}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Major Modes for 4x4 Luma Prediction\relax }}{12}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Major Modes for 8x8 Chroma Prediction\relax }}{12}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Motion Estimation using Block Matching\relax }}{13}{figure.caption.66}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 265 PE VBS ME Hardware Architecture\relax }}{17}{figure.caption.81}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 16 x 16 PE Matrix\relax }}{18}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Working of an Adder Tree\relax }}{18}{figure.caption.83}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces PI-PPSAD Architecture\relax }}{19}{figure.caption.85}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Zig-Zag Search Pattern\relax }}{20}{figure.caption.87}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematic\relax }}{24}{figure.caption.96}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Simulation waveform of inter-prediction module for one search range.\relax }}{25}{figure.caption.100}%
+\addvspace {10\p@ }
+>>>>>>> Stashed changes
