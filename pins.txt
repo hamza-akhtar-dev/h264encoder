@@ -1,0 +1,44 @@
+// LEFT LIGHTS
+
+V11 -> tobytes_BYTE[7]
+V12 -> tobytes_BYTE[6]
+V14 -> tobytes_BYTE[5]
+V15 -> tobytes_BYTE[4]
+T16 -> tobytes_BYTE[3]
+U14 -> tobytes_BYTE[2]
+T15 -> tobytes_BYTE[1]
+V16 -> tobytes_BYTE[0]
+
+// LEFT SWITCHES
+
+V10 -> qp[5]
+U11 -> qp[4]
+U12 -> qp[3]
+H6  -> qp[2]
+T13 -> qp[1]
+R16 -> qp[0]
+
+// CLK
+
+E3  -> clk
+
+// RIGHT LIGHTS
+
+K15 -> intra4x4_READYI
+H17 -> intra8x8cc_READYI
+
+// RIGHT SWITCHES
+
+R17 -> NEWSLICE
+R15 -> NEWLINE
+M13 -> align_VALID
+L16 -> intra4x4_STROBEI
+J15 -> intra8x8cc_STROBEI
+
+// MIDDLE LIGHTS
+
+V17 -> tobytes_STROBE
+R18 -> tobytes_DONE
+N14 -> xbuffer_DONE
+
+
