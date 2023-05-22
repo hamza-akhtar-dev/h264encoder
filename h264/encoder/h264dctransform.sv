@@ -22,10 +22,10 @@ module h264dctransform #
 (
 	input logic CLK2, 				//--fast clock
 	input logic RESET, 				//--reset when 1
-	output logic READYI = '0,	       //--set when ready for ENABLE   
+	output logic READYI = '0,	    //--set when ready for ENABLE   
 	input logic ENABLE,				//--values input only when this is 1
-	input logic [15:0] XXIN,	//--input data values (reverse order)
-	output logic VALID = '0,				//--values output only when this is 1
+	input logic [15:0] XXIN,	    //--input data values (reverse order)
+	output logic VALID = '0,	    //--values output only when this is 1
 	output logic [15:0] YYOUT = '0,	//--output values (reverse order)
 	input logic READYO		//--set when ready for ENABLE
 );
@@ -56,7 +56,8 @@ begin
 	enablei <= ENABLE;
 	xxii <= XXIN;
 
-	if (enablei==1'b1 && RESET==1'b0) begin	    //--input in raster scan order
+	if (enablei==1'b1 && RESET==1'b0) 
+	begin	    //--input in raster scan order
 		if (ixx==2'd0) begin
 			xx00 <= xxii;
 		end
@@ -82,7 +83,8 @@ begin
 		else if (ixx==2'd1) begin
 			YYOUT <= xx01 + xx11;
 		end
-		else if (ixx==2'd2) begin
+		else if (ixx==2'd2) 
+		begin
 			YYOUT <= xx00 - xx10;
 		end
 		else begin
