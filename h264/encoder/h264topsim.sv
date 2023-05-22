@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 5;
+    localparam MAXFRAMES    = 300;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;

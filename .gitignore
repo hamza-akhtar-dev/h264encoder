@@ -7,3 +7,5 @@ sample_int.yuv
 recon_out.yuv
 sample_out.264
 vsim.wlf
+h264sim.vcd
+h264topsim.vcd
