@@ -2,7 +2,7 @@ module h264topsim();
 
     localparam IMGWIDTH     = 352;
     localparam IMGHEIGHT    = 288;
-    localparam MAXFRAMES    = 2;
+    localparam MAXFRAMES    = 10;
     localparam MAXQP        = 28;
     localparam IWBITS       = 9;
     localparam IMGBITS      = 8;
@@ -590,24 +590,26 @@ module h264topsim();
                             begin
                                 intra8x8cc_DATAI = 
                                 {
-                                    uvideo[cx+i*4+3][cy], 
-                                    uvideo[cx+i*4+2][cy], 
-                                    uvideo[cx+i*4+1][cy], 
-                                    uvideo[cx+i*4][cy]
+                                    uvideo[cx+3][cy], 
+                                    uvideo[cx+2][cy], 
+                                    uvideo[cx+1][cy], 
+                                    uvideo[cx+0][cy]
                                 };
                             end
                             else
                             begin
                                 intra8x8cc_DATAI = 
                                 {
-                                    vvideo[cx+i*4+3][cy], 
-                                    vvideo[cx+i*4+2][cy], 
-                                    vvideo[cx+i*4+1][cy], 
-                                    vvideo[cx+i*4][cy]
+                                    vvideo[cx+3][cy], 
+                                    vvideo[cx+2][cy], 
+                                    vvideo[cx+1][cy], 
+                                    vvideo[cx+0][cy]
                                 };
                             end
                             @(posedge clk2);
+                            cx = cx + 4;
                         end
+                        cx = cx - 8;
                         cy = cy + 1;
                     end
                     intra8x8cc_STROBEI = 0;
@@ -615,7 +617,7 @@ module h264topsim();
                     begin
                         if (cuv == 0) 
                         begin
-                            cy = cy-8;
+                            cy = cy - 8;
                             cuv = 1;
                         end
                         else
@@ -938,10 +940,10 @@ module h264topsim();
 		end
 	end
 
-    initial 
-    begin
-        $dumpfile("h264topsim.vcd");
-        $dumpvars(0, h264topsim);
-    end
+    // initial 
+    // begin
+    //     $dumpfile("h264topsim.vcd");
+    //     $dumpvars(0, h264topsim);
+    // end
 
 endmodule
