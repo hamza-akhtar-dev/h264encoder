@@ -45,3 +45,16 @@ Design is simulated with all pixels having value 0x11 in current picture and 0x0
 The eloborated schematic of the design is shown below.
 
 ![schematic_me](https://github.com/hamza-akhtar-dev/h264encoder/blob/media/schematic_me.png?raw=true)
+
+### Synthesis
+
+Synthesis of H.264 top module is maintained in ``` ./synth ``` directory. To create a vivado encoder project run the ``` synth.tcl ``` script by
+
+- ``` vivado -mode tcl ```
+- ``` cd ./synth/encoder ```
+- ``` source synth.tcl ```
+- Run synthesis
+- Run implementation
+- Generate bit stream
+- Upload the bitstream to FPGA
+
