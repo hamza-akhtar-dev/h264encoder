@@ -1,5 +1,4 @@
 work/
-synth/
 tb_pixel_addr.vcd
 tb_me.vcd
 h264sim.vcd
@@ -9,3 +8,5 @@ sample_int.yuv
 recon_out.yuv
 sample_out.264
 vsim.wlf
+vivado.log
+vivado.jou
