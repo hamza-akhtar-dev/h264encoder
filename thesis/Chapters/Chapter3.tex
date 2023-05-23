@@ -37,9 +37,9 @@ For this type of prediction, each macro block that is of \textbf{16x16} (256 pix
 There are total 9 prediction modes that are supported in this prediction. Major modes that are implemented in our model are as follows:
 
 \begin{itemize}
-	\item \textbf{Mode 0 (Vertical):} The predicted block is constructed by using upper samples A,B,C,D of block ‘a’ as shown in Figure \ref{fig:3modes}. They are extrapolated vertically. It is suitable to predict vertical edges in the block.
-	\item \textbf{Mode 1 (Horizontal):} In this mode, left samples I,J,K,L of block c are used. They are extrapolated horizontally and is suitable for horizontal edges. It can be seen in Figure \ref{fig:3modes}.
-	\item \textbf{Mode 2 (DC):} It utilizes average of all adjacent samples (A to D and I to L) to form the prediction of current block. It is suitable for smooth areas. Its process is shown in Figure \ref{fig:3modes}.
+	\item \textbf{Mode 0 (Vertical):} The predicted block is constructed by using upper samples A,B,C,D of block ‘a’ as shown in figure \ref{fig:3modes}. They are extrapolated vertically. It is suitable to predict vertical edges in the block.
+	\item \textbf{Mode 1 (Horizontal):} In this mode, left samples I,J,K,L of block c are used. They are extrapolated horizontally and is suitable for horizontal edges. It can be seen in figure \ref{fig:3modes}.
+	\item \textbf{Mode 2 (DC):} It utilizes average of all adjacent samples (A to D and I to L) to form the prediction of current block. It is suitable for smooth areas. Its process is shown in figure \ref{fig:3modes}.
 
 \end{itemize}
 	 
@@ -63,7 +63,7 @@ This type of prediction applies on chrominance components. It is similar to 16x1
 	\item Mode 3: Plane
 \end{itemize}
 
-The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the Figure \ref{fig:8x8modes}.
+The working of first 3 modes in similar to mode 2,1,0 of 4x4 luma prediction respectively. For details of Plane mode refer to \cite{richardson2010h264}. The Implemented mode in our model is DC. These modes are shown in the figure \ref{fig:8x8modes}.
 
 \begin{figure}[H]
 	\centering
@@ -92,31 +92,10 @@ In Figure \ref{fig:mv}, \textbf{(x,y)} represents the location of the current fr
 	\label{fig:mv}
 \end{figure}
 
-There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in Chapter \ref{Chapter4}.
+There are several algorithms for Block Matching. Among them mostly used is \textbf{Full Search (FS)} algorithm. The SAD values for each search position within a specific search range are calculated by this approach to determine the reference block that most closely resembles the present block. It has the best performance related to other algorithms as it searches all the search locations in a given search range. But its computational complexity is high and its hardware consume a lot of power. For further improvement, instead of \textbf{fixed block size (FBS) FS ME} algorithm, \textbf{variable block size (VBS) FS ME} algorithm is incorporated. For details of FBS ME algorithm, refer to [that ppr]. VBS FS ME algorithm will be further explained in detail in chapter \ref{Chapter4}.
 
 
 \section{Transform Coding}
-
-\subsection{DC Transform}
-The DC transform is a type of discrete cosine transform (DCT) that only operates on the DC component (i.e., the average pixel value) of a 2x2 input block, and it is used to reduce the amount of spatial redundancy in the video data.
-
-This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as Given a 2x2 input block X, compute the sum of all the pixels in the block as: 
-
-\begin{equation}
-	SUM(X) = X(0,0) + X(0,1) + X(1,0) + X(1,1)
-\end{equation}
-
-The average value of the input block is computed as:
-
-\begin{equation}
- AVG(X) = SUM(X) / 4
-\end{equation}
-
-then the average value is subtracted from each pixel in the input block to obtain the transformed block Y, where:
-\begin{equation}
- 	Y(i,j) = X(i,j) - AVG(X) 
-\end{equation} 	
-In our code this dc transform is implemented in a pipe-lined manner, i.e. by using 4 stages. In each stage the input block is first divided into two sub-blocks, the transform is applied to each sub-block then these transformed sub-blocks are recombined at the end to form the output block. This pipe-lining is done to ensure the reduced latency and higher throughput of transform. 
 
 \subsection{Core Transform}
 Core transform or Forward Discrete Cosine Transform (\textbf{FDCT}) is a linear transformation that transforms the given input data from spatial domain to frequency domain. This transform is \textbf{computationally less complex} and has \textbf{high energy compaction} as compared to DFT, DST, WHT and DWT. Therefore, it is highly preferred in video compression.
@@ -161,6 +140,28 @@ The output is only considered valid when the VALID signal is high. This VALID si
 
 The output of core tranform is a set of coefficients in frequency domain, these coefficients, concentrate most of the signal energy in a few low frequency components. This property gives us efficient compression as the low magnitude coefficients are further discarded through quantization.
 
+\subsection{DC Transform}
+The DC transform only operates on the DC component (i.e., the average pixel value) of a 2x2 input block, and it is used to reduce the amount of spatial redundancy in the video data.
+
+This DC transform is a rather simple operation, it calculates the average of all the pixels in the input block, and then subtracts that average value from each pixel. The resulting values are then encoded and transmitted. For a 2x2 input block X, the sum of all the pixels is calculated as given a 2x2 input block X, compute the sum of all the pixels in the block as: 
+
+\begin{equation}
+	SUM(X) = X(0,0) + X(0,1) + X(1,0) + X(1,1)
+\end{equation}
+
+The average value of the input block is computed as:
+
+\begin{equation}
+ AVG(X) = SUM(X) / 4
+\end{equation}
+
+then the average value is subtracted from each pixel in the input block to obtain the transformed block Y, where:
+\begin{equation}
+ 	Y(i,j) = X(i,j) - AVG(X) 
+\end{equation} 	
+In our code this dc transform is implemented in a pipe-lined manner, i.e. by using 4 stages. In each stage the input block is first divided into two sub-blocks, the transform is applied to each sub-block then these transformed sub-blocks are recombined at the end to form the output block. This pipe-lining is done to ensure the reduced latency and higher throughput of transform. 
+
+
 \section{Quantization}
 The process of mapping the input values from a large set(typically a continuous set) into smaller often finite sized set is called Quantization. This helps in representing the data signal with fewer bits than the original one as the range of possible values in the quantized set in smaller.
 
@@ -193,7 +194,7 @@ After transformation and quantization, blocks usually contain a lot of zeros, CA
 The number of non-zero coefficients in neighbouring blocks is correlated and this number is encoded with the help of a look up table. CAVLC encoding proceeds as follows:
 \begin{itemize}
 	\item First the lookup table encodes both number of non-zero coefficients and the number of Trailing 1s (T1s).
-	\item Each T1 is signaled by lookup table, and the sign in encoded by a single bit i.e. 0 for '+' and 1 for '-', this is done in a reverse order starting from highest frequency T1.
+	\item Each T1 is signaled by lookup table, and the sign is encoded by a single bit i.e. 0 for '+' and 1 for '-', this is done in a reverse order starting from highest frequency T1.
 	\item The sign and magnitude remaining non-zero coefficients is encoded in reverse order (from highest frequency back towards DC coefficients).
 	\item Sum of all zeros before highest non-zero coefficient in the reverse ordered array is coded with a VLC.
 	\item The number of zeros preceding each non-zero coefficient (run before) is encoded in reverse

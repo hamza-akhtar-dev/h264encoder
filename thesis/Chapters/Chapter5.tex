@@ -22,7 +22,7 @@ In order to check the effect of quantization parameter on encoded video, the H.2
 	\caption{Size and quality of encoded video for different QP values.}
 	\label{tab:qp}
 \end{table}
-As discussed earlier in Chapter \ref{Chapter3}, the \textbf{Quantization Parameter} in quantization module determines to what extent the video should be compressed. A higher value of QP implies more compression, hence the size of encoded video is reduced but at the cost of poor video quality. The loss of information can be seen by reduced SNR values in the Table \ref{tab:qp}. On the contrary, a lower value of QP enhances the quality of video but at the expense of greater video size. Therefore, a moderate value for QP should be selected between 20-30 so that none of the metrics (size and quality) is compromised. 
+As discussed earlier in chapter \ref{Chapter3}, the \textbf{Quantization Parameter} in quantization module determines to what extent the video should be compressed. A higher value of QP implies more compression, hence the size of encoded video is reduced but at the cost of poor video quality. The loss of information can be seen by reduced SNR values in the table \ref{tab:qp}. On the contrary, a lower value of QP enhances the quality of video but at the expense of greater video size. Therefore, a moderate value for QP should be selected between 20-30 so that none of the metrics (size and quality) is compromised. 
 
 
 \subsection{Resource Utilization}
@@ -45,7 +45,7 @@ The H.264 encoder is synthesized and implemented using Vivado for Xilinx Artix-7
 From the table \ref{tab:resource_ec} it is evident that all the resources comply with the Artix-7 specified limits. 
    
 \section{Performance Evaluation of Inter-Prediction Module}
-As stated in Chapter \ref{Chapter4}, the inter-prediction module developed for this project employs a 256 PE VBS ME hardware architecture. Thie module uses a datapath-controller design which is shown in the Figure \ref{fig:mehardware}. This schematic is generated using Vivado. 
+As stated in chapter \ref{Chapter4}, the inter-prediction module developed for this project employs a 256 PE VBS ME hardware architecture. Thie module uses a datapath-controller design which is shown in the figure \ref{fig:mehardware}. This schematic is generated using Vivado. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 3in]{./Figures/mehardware.png}
@@ -72,7 +72,7 @@ It can be seen from the results above that the utilization of look up tables and
 \subsection{Simulation Results}
 In order to verify the working of inter-prediction module, it is simulated using a MB of size 16x16 from the current frame and a search range of size 48x48 from the reference frame.
 
-The loading of MB takes 16 cycles and after that the pixels of search range are loaded in the RAMs. It takes 16 cycles to calculate the first valid SAD value as the RAMs are getting filled for the first time. Once the first valid SAD value is calculated the next values are calculated with no latency. This is due to the fact that RAMs are filled and only the shifting of pixels need to be done which is done by BRAM 16 as seen in Figure \ref{fig:256pevbsme}. Therefore, this architecture reduces the latency for SAD calculation. This can also be verified by the following simulation waveform.
+The loading of MB takes 16 cycles and after that the pixels of search range are loaded in the RAMs. It takes 16 cycles to calculate the first valid SAD value as the RAMs are getting filled for the first time. Once the first valid SAD value is calculated the next values are calculated with no latency. This is due to the fact that RAMs are filled and only the shifting of pixels need to be done which is done by BRAM 16 as seen in figure \ref{fig:256pevbsme}. Therefore, this architecture reduces the latency for SAD calculation. This can also be verified by the following simulation waveform.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 4in]{./Figures/wave3.png}
