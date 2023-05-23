@@ -40,9 +40,9 @@ There are total 9 prediction modes that are supported in this prediction. Major 
 	\item \textbf{Mode 0 (Vertical):} The predicted block is constructed by using upper samples A,B,C,D of block ‘a’ as shown in figure \ref{fig:3modes}. They are extrapolated vertically. It is suitable to predict vertical edges in the block.
 	\item \textbf{Mode 1 (Horizontal):} In this mode, left samples I,J,K,L of block c are used. They are extrapolated horizontally and is suitable for horizontal edges. It can be seen in figure \ref{fig:3modes}.
 	\item \textbf{Mode 2 (DC):} It utilizes average of all adjacent samples (A to D and I to L) to form the prediction of current block. It is suitable for smooth areas. Its process is shown in figure \ref{fig:3modes}.
-
+	
 \end{itemize}
-	 
+
 For the details of remaining modes refer to \cite{richardson2010h264}. Figure \ref{fig:3modes} display the above 3 prediction modes. To create a predict sample, every color stands for a particular formula. The encoder determines each prediction direction's cost by finishing processing for all of the prediction directions, then outputs the one with the lowest cost.
 
 \begin{figure}[H]
@@ -152,12 +152,12 @@ This DC transform is a rather simple operation, it calculates the average of all
 The average value of the input block is computed as:
 
 \begin{equation}
- AVG(X) = SUM(X) / 4
+	AVG(X) = SUM(X) / 4
 \end{equation}
 
 then the average value is subtracted from each pixel in the input block to obtain the transformed block Y, where:
 \begin{equation}
- 	Y(i,j) = X(i,j) - AVG(X) 
+	Y(i,j) = X(i,j) - AVG(X) 
 \end{equation} 	
 In our code this dc transform is implemented in a pipe-lined manner, i.e. by using 4 stages. In each stage the input block is first divided into two sub-blocks, the transform is applied to each sub-block then these transformed sub-blocks are recombined at the end to form the output block. This pipe-lining is done to ensure the reduced latency and higher throughput of transform. 
 

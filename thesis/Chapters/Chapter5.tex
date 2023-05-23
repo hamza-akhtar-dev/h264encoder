@@ -2,6 +2,7 @@
 
 \chapter{Results and Performance} % Write in your own chapter title
 \label{Chapter5}
+
 \lhead{Chapter 5. \emph{Results and Performance}} % Write in your own chapter title to set the page header
 
 
@@ -14,7 +15,7 @@ In order to check the effect of quantization parameter on encoded video, the H.2
 	\begin{tabular}{|c|c|c|c|c|} \hline
 		\textbf{QP}  & \textbf{Encoded Video Size (MB)} & \multicolumn{3}{|c|}{\textbf{SNR (dB)}}  \\
 		\cline{3-5}
-		    &                    &  \textbf{Y} & \textbf{U} & \textbf{V}\\ \hline
+		&                    &  \textbf{Y} & \textbf{U} & \textbf{V}\\ \hline
 		20  &    6.79            & 42.26   & 46.04  & 46.15  \\ \hline
 		28  &    3.46            & 36.24   & 41.50  & 41.83  \\ \hline
 		35  &    1.93            & 31.47   & 37.25  & 37.00  \\ \hline
@@ -43,7 +44,7 @@ The H.264 encoder is synthesized and implemented using Vivado for Xilinx Artix-7
 	\label{tab:resource_ec}
 \end{table}
 From the table \ref{tab:resource_ec} it is evident that all the resources comply with the Artix-7 specified limits. 
-   
+
 \section{Performance Evaluation of Inter-Prediction Module}
 As stated in chapter \ref{Chapter4}, the inter-prediction module developed for this project employs a 256 PE VBS ME hardware architecture. Thie module uses a datapath-controller design which is shown in the figure \ref{fig:mehardware}. This schematic is generated using Vivado. 
 \begin{figure}[H]
