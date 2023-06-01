@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  12 MAY 2023 01:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.11)  23 MAY 2023 14:44
 entering extended mode
 **./uet_thesis.tex
 (uet_thesis.tex
@@ -462,24 +462,31 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box56
 \enit@count@id=\count304
 \enitdp@description=\count305
+) ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count306
+\float@exts=\toks34
+\float@box=\box57
+\@float@everytoks=\toks35
+\@floatcapt=\box58
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
- ("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty
-"
+
+("C:\Users\Filza Shahid\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty"
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box57
+\ttl@box=\box59
 \beforetitleunit=\skip83
 \aftertitleunit=\skip84
 \ttl@plus=\dimen189
 \ttl@minus=\dimen190
-\ttl@toksa=\toks34
+\ttl@toksa=\toks36
 \titlewidth=\dimen191
 \titlewidthlast=\dimen192
 \titlewidthfirst=\dimen193
 ) ("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def"
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count306
-\l__pdf_internal_box=\box58
+\l__kernel_color_stack_int=\count307
+\l__pdf_internal_box=\box60
 )
 (uet_thesis.aux)
 \openout1 = `uet_thesis.aux'.
@@ -503,6 +510,7 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -515,23 +523,23 @@ Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count307
+\scratchcounter=\count308
 \scratchdimen=\dimen194
-\scratchbox=\box59
-\nofMPsegments=\count308
-\nofMParguments=\count309
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count310
+\scratchbox=\box61
+\nofMPsegments=\count309
+\nofMParguments=\count310
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count311
 \MPscratchDim=\dimen195
-\MPnumerator=\count311
-\makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks36
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
+\everyMPtoPDFconversion=\toks38
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@lstlisting=\count313
+\c@lstlisting=\count314
 
 ("C:\Program Files\MiKTeX\tex/latex/graphics\color.sty"
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
@@ -553,7 +561,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count314
+\c@section@level=\count315
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -566,7 +574,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 -------------------------------------------
  Title Page
 -------------------------------------------
-<./Figures/uet_logo.pdf, id=143, 150.5625pt x 150.5625pt>
+<./Figures/uet_logo.pdf, id=239, 150.5625pt x 150.5625pt>
 File: ./Figures/uet_logo.pdf Graphic file (type pdf)
 <use ./Figures/uet_logo.pdf>
 Package pdftex.def Info: ./Figures/uet_logo.pdf  used on input line 52.
@@ -670,126 +678,188 @@ Chapter 1.
 
 
 ]
-<./Figures/toplevel.png, id=294, 1011.78pt x 429.605pt>
-File: ./Figures/toplevel.png Graphic file (type png)
-<use ./Figures/toplevel.png>
-Package pdftex.def Info: ./Figures/toplevel.png  used on input line 41.
-(pdftex.def)             Requested size: 361.34999pt x 153.43184pt.
- [2] [3 <./Figures/toplevel.png>]
-<./Figures/comp1.png, id=312, 322.20375pt x 261.97874pt>
+<./Figures/topbd.png, id=424, 1132.23pt x 482.80376pt>
+File: ./Figures/topbd.png Graphic file (type png)
+<use ./Figures/topbd.png>
+Package pdftex.def Info: ./Figures/topbd.png  used on input line 41.
+(pdftex.def)             Requested size: 361.34999pt x 154.08043pt.
+ [2] [3 <./Figures/topbd.png>]
+<./Figures/comp1.png, id=441, 322.20375pt x 261.97874pt>
 File: ./Figures/comp1.png Graphic file (type png)
 <use ./Figures/comp1.png>
-Package pdftex.def Info: ./Figures/comp1.png  used on input line 70.
+Package pdftex.def Info: ./Figures/comp1.png  used on input line 69.
 (pdftex.def)             Requested size: 180.67499pt x 146.91096pt.
-<./Figures/interprediction.png, id=314, 416.55624pt x 212.795pt>
+<./Figures/interprediction.png, id=443, 416.55624pt x 212.795pt>
 File: ./Figures/interprediction.png Graphic file (type png)
 <use ./Figures/interprediction.png>
-Package pdftex.def Info: ./Figures/interprediction.png  used on input line 81.
+Package pdftex.def Info: ./Figures/interprediction.png  used on input line 80.
 (pdftex.def)             Requested size: 216.81pt x 110.75792pt.
- [4 <./Figures/comp1.png> <./Figures/interprediction.png>]
-<./Figures/motionvector.png, id=321, 525.965pt x 316.18124pt>
+ [4 <./Figures/comp1.png>]
+<./Figures/motionvector.png, id=451, 525.965pt x 316.18124pt>
 File: ./Figures/motionvector.png Graphic file (type png)
 <use ./Figures/motionvector.png>
-Package pdftex.def Info: ./Figures/motionvector.png  used on input line 92.
+Package pdftex.def Info: ./Figures/motionvector.png  used on input line 91.
 (pdftex.def)             Requested size: 216.81pt x 130.3347pt.
- [5 <./Figures/motionvector.png>]
-<./Figures/syntax.png, id=332, 553.06625pt x 376.40625pt>
+ [5 <./Figures/interprediction.png> <./Figures/motionvector.png>]
+<./Figures/syntax.png, id=466, 553.06625pt x 376.40625pt>
 File: ./Figures/syntax.png Graphic file (type png)
 <use ./Figures/syntax.png>
-Package pdftex.def Info: ./Figures/syntax.png  used on input line 124.
+Package pdftex.def Info: ./Figures/syntax.png  used on input line 123.
 (pdftex.def)             Requested size: 289.07999pt x 196.73747pt.
- [6 <./Figures/syntax.png>])
-(Chapters/Chapter2.tex [7]
+ [6]) (Chapters/Chapter2.tex
+[7 <./Figures/syntax.png>]
 Chapter 2.
 -------------------------------------------
  2 Motivations and Problem Statement
 -------------------------------------------
-) (Chapters/Chapter3.tex [8
+[8
 
-]
+]) (Chapters/Chapter3.tex [9]
 Chapter 3.
 -------------------------------------------
  3 Prediction, Transformation, Quantization and Encoding
 -------------------------------------------
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 15.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 25.
-
-[9
+[10
 
 ]
-<./Figures/4x4luma.png, id=358, 241.90375pt x 161.60374pt>
+<./Figures/4x4luma.png, id=501, 241.90375pt x 161.60374pt>
 File: ./Figures/4x4luma.png Graphic file (type png)
 <use ./Figures/4x4luma.png>
-Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 30.
+Package pdftex.def Info: ./Figures/4x4luma.png  used on input line 31.
 (pdftex.def)             Requested size: 180.67499pt x 120.70439pt.
-<./Figures/3modes.png, id=364, 623.32875pt x 165.61874pt>
+<./Figures/3modes.png, id=507, 623.32875pt x 165.61874pt>
 File: ./Figures/3modes.png Graphic file (type png)
 <use ./Figures/3modes.png>
-Package pdftex.def Info: ./Figures/3modes.png  used on input line 49.
+Package pdftex.def Info: ./Figures/3modes.png  used on input line 50.
 (pdftex.def)             Requested size: 289.07999pt x 76.80974pt.
- [10 <./Figures/4x4luma.png> <./Figures/3modes.png>]
-<./Figures/8x8modes.png, id=374, 660.4675pt x 244.915pt>
+ [11 <./Figures/4x4luma.png>]
+<./Figures/8x8modes.png, id=517, 660.4675pt x 244.915pt>
 File: ./Figures/8x8modes.png Graphic file (type png)
 <use ./Figures/8x8modes.png>
-Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 69.
+Package pdftex.def Info: ./Figures/8x8modes.png  used on input line 70.
 (pdftex.def)             Requested size: 289.07999pt x 107.19862pt.
- [11 <./Figures/8x8modes.png>]
-<./Figures/mv.png, id=383, 744.7825pt x 219.82124pt>
+ [12 <./Figures/3modes.png> <./Figures/8x8modes.png>]
+<./Figures/mv.png, id=526, 744.7825pt x 219.82124pt>
 File: ./Figures/mv.png Graphic file (type png)
 <use ./Figures/mv.png>
-Package pdftex.def Info: ./Figures/mv.png  used on input line 87.
+Package pdftex.def Info: ./Figures/mv.png  used on input line 89.
 (pdftex.def)             Requested size: 289.07999pt x 85.32407pt.
-) (Chapters/Chapter4.tex [12 <./Figures/mv.png>]
+ [13 <./Figures/mv.png>] [14] [15] [16]) (Chapters/Chapter4.tex [17]
 Chapter 4.
 -------------------------------------------
  4 Hardware Architecture for Inter-Prediction
 -------------------------------------------
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 9.
-
-[13
+[18
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-<./Figures/256pevbsme.png, id=409, 686.565pt x 751.80875pt>
+<./Figures/256pevbsme.png, id=573, 686.565pt x 751.80875pt>
 File: ./Figures/256pevbsme.png Graphic file (type png)
 <use ./Figures/256pevbsme.png>
 Package pdftex.def Info: ./Figures/256pevbsme.png  used on input line 34.
 (pdftex.def)             Requested size: 289.07999pt x 316.54906pt.
-[14 <./Figures/256pevbsme.png>]) [15]
+ [19 <./Figures/256pevbsme.png>]
+<./Figures/pematrix.png, id=582, 868.24374pt x 353.32pt>
+File: ./Figures/pematrix.png Graphic file (type png)
+<use ./Figures/pematrix.png>
+Package pdftex.def Info: ./Figures/pematrix.png  used on input line 46.
+(pdftex.def)             Requested size: 325.215pt x 132.34372pt.
+<./Figures/addertree.png, id=584, 502.87875pt x 302.12875pt>
+File: ./Figures/addertree.png Graphic file (type png)
+<use ./Figures/addertree.png>
+Package pdftex.def Info: ./Figures/addertree.png  used on input line 58.
+(pdftex.def)             Requested size: 144.54pt x 86.83598pt.
+ [20 <./Figures/pematrix.png>]
+<./Figures/PIPPSAD.png, id=591, 1590.94376pt x 1357.07pt>
+File: ./Figures/PIPPSAD.png Graphic file (type png)
+<use ./Figures/PIPPSAD.png>
+Package pdftex.def Info: ./Figures/PIPPSAD.png  used on input line 70.
+(pdftex.def)             Requested size: 397.48499pt x 339.0389pt.
+ [21 <./Figures/addertree.png> <./Figures/PIPPSAD.png>]
+<./Figures/zigzag.png, id=605, 323.2075pt x 280.04625pt>
+File: ./Figures/zigzag.png Graphic file (type png)
+<use ./Figures/zigzag.png>
+Package pdftex.def Info: ./Figures/zigzag.png  used on input line 89.
+(pdftex.def)             Requested size: 144.54pt x 125.23764pt.
+ [22]
+Overfull \hbox (48.65211pt too wide) in paragraph at lines 106--164
+ [][] 
+ []
+
+[23 <./Figures/zigzag.png>]
+Overfull \hbox (57.86868pt too wide) in paragraph at lines 172--226
+ [][] 
+ []
+
+[24]) (Chapters/Chapter5.tex [25]
+Chapter 5.
+-------------------------------------------
+ 5 Results and Performance
+-------------------------------------------
+[26
+
+]
+<./Figures/mehardware.png, id=642, 490.08093pt x 485.56406pt>
+File: ./Figures/mehardware.png Graphic file (type png)
+<use ./Figures/mehardware.png>
+Package pdftex.def Info: ./Figures/mehardware.png  used on input line 52.
+(pdftex.def)             Requested size: 216.81pt x 214.81207pt.
+ [27 <./Figures/mehardware.png>]
+<./Figures/wave3.png, id=649, 858.20625pt x 457.71pt>
+File: ./Figures/wave3.png Graphic file (type png)
+<use ./Figures/wave3.png>
+Package pdftex.def Info: ./Figures/wave3.png  used on input line 79.
+(pdftex.def)             Requested size: 289.07999pt x 154.17363pt.
+<./Figures/wave2.png, id=650, 859.71187pt x 461.47406pt>
+File: ./Figures/wave2.png Graphic file (type png)
+<use ./Figures/wave2.png>
+Package pdftex.def Info: ./Figures/wave2.png  used on input line 87.
+(pdftex.def)             Requested size: 289.07999pt x 155.17392pt.
+ [28 <./Figures/wave3.png>])
+(Chapters/Chapter6.tex [29 <./Figures/wave2.png>]
+Chapter 6.
+-------------------------------------------
+ 6 Conclusions and Future Directions
+-------------------------------------------
+[30
+
+]) (Chapters/AppendixA.tex [31]
+Appendix A.
+-------------------------------------------
+ A Computation of DCT
+-------------------------------------------
+[32
+
+]) [33]
 -------------------------------------------
  References
 -------------------------------------------
 (uet_thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 9--15
-\OT1/cmtt/m/n/10.95 thesis : 395 / datastreams / SAHIN _ ESRA _ thesis _ 050420
-07 _ 1217 _ 02 / pdf ? origin =
+Underfull \hbox (badness 1509) in paragraph at lines 9--15
+\OT1/cmr/m/n/10.95 Is-tan-bul, Turkey, 2006.  URL [][]$\OT1/cmtt/m/n/10.95 http
+s : / / suurcan . sabanciuniv . edu / fedora /
  []
 
-) [16
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--15
+\OT1/cmtt/m/n/10.95 objects / thesis : 395 / datastreams / SAHIN _ ESRA _ thesi
+s _ 05042007 _ 1217 _ 02 /
+ []
+
+[34
 
 
-] (uet_thesis.aux)
+]) [35] (uet_thesis.aux)
 Package rerunfilecheck Info: File `uet_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9FDDA64AFCEC2C39A0413462C6019D1B;6152.
+(rerunfilecheck)             Checksum: 0379A65A628FF54DE09F42EA41F7D757;10990.
  ) 
 Here is how much of TeX's memory you used:
- 14338 strings out of 480236
- 209800 string characters out of 2890348
- 498104 words of memory out of 3000000
- 30552 multiletter control sequences out of 15000+200000
+ 14534 strings out of 480236
+ 213000 string characters out of 2890348
+ 536996 words of memory out of 3000000
+ 30680 multiletter control sequences out of 15000+200000
  545201 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,1037b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,12n,77p,1458b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Filza Shahid\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
 00\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
@@ -804,9 +874,9 @@ type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uet_thesis.pdf (28 pages, 430505 bytes).
+Output written on uet_thesis.pdf (47 pages, 801015 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 108 named destinations out of 1000 (max. 500000)
- 336 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 780 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
+ 563 words of extra memory for PDF output out of 10000 (max. 10000000)
 

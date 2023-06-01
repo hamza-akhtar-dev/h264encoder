@@ -14,7 +14,7 @@
 \usepackage{url}
 \usepackage{natbib}
 \usepackage{enumitem}
-
+\usepackage{float}
 
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
@@ -34,7 +34,7 @@
 \frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Efficient H.264 Encoder with High Profile for High Frame Rate Video Streams}
+\title  {Efficient H.264 Encoder with Main Profile for High Frame Rate Video Streams}
 %\session {2019 -- 2023}
 \advisor {Dr. Muhammad Tahir}
 \authors {
@@ -90,7 +90,7 @@ Date:~~~~ \rule[0em]{10em}{1.0pt}  % This prints a line to write the date
 \acknowledgements{
 %\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+We would like to express our sincere gratitude to our supervisor Dr. Muhammad Tahir and co-supervisor Sir Umer Shahid, for their unwavering support and guidance throughout this project. We would like to thank Ms. Shehzeen Malik for her advice, constructive criticism and assistance in keeping our progress on schedule. We would like to acknowledge the contribution of our friends and families for their support during the development of project.
 
 }
 \clearpage  % End of the Acknowledgements
@@ -100,7 +100,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 % Begin the Dedication page
 \setstretch{1.3}  % Return the line spacing back to 1.3
 \pagestyle{empty}  % Page style needs to be empty for this page
-\dedicatory{For/Dedicated to/To my\ldots}
+\dedicatory{Dedicated to our families.}
 
 \clearpage 	% End of the Dedication
 %% ----------------------------------------------------------------
@@ -117,24 +117,11 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \end{center}
 
 \vspace{0.5in}
-Write a short description of how the work carried out in this thesis has contributed to some of the sustainable development goals listed below.
+Our project is a part of a long term project of \textbf{Open Eyes},the idea is to develop a main RISC-V based processor, a video processor, ISP and integrate them on ChipYard to fabricate an IC.This project goes beyond sustainability by tackling the issue of data storage and security in the camera industry. Security camera manufacturers often retain the data collected by their cameras on the servers and then analyze it. This practice, however is alarming as it raises concerns about the data privacy, potential misuse of data and breach susceptibility.
 
-\begin{enumerate}[itemsep=0em]
-	\item No poverty
-	\item Zero hunger
-	\item Good health and well-being
-	\item Quality education
-	\item Clean water and sanitation
-	\item Affordable and clean energy
-	\item Decent work and economic growth
-	\item Industry, innovation and infrastructure
-	\item Sustainable cities and communities
-	\item Responsible consumption and production
-	\item Climate action
-	\item Life below water
-	\item Life on land
-	\item Peace, justice and strong institutions
-\end{enumerate}
+Every thing related to camera is being developed from scratch under this project, this eliminates the risk of data misuse by any third part data storage and substantially enhances data security. Our strategy will ensure that the data stays in the hands of the camera owners. This will empower the camera industry and the audience of it by putting privacy, security, and data sovereignty as top priorities that contribute to sustainable practices.
+
+Our project will also empower the organizations and individuals to maintain a high level of trust in the camera technology they use and to  make informed decisions about their data. 
 
 \clearpage	% End of the Sustainable Development Goals
 %% ----------------------------------------------------------------
@@ -170,14 +157,20 @@ Write a short description of how the work carried out in this thesis has contrib
 \textbf{DCT} & \textbf{D}iscrete \textbf{C}osine \textbf{T}ransform \\
 \textbf{QP} & \textbf{Q}uantization \textbf{P}arameter  \\
 \textbf{FS} & \textbf{F}ull \textbf{S}earch  \\
-\textbf{CAVLC} & \textbf{C}ontext \textbf{A}daptive \textbf{V}ariable \textbf{Length} \textbf{Coding} \\
+\textbf{CAVLC} & \textbf{C}ontext \textbf{A}daptive \textbf{V}ariable \textbf{L}ength \textbf{C}oding \\
 \textbf{RAM} & \textbf{R}ead \textbf{O}nly \textbf{M}emory \\
 \textbf{NAL} & \textbf{N}etwork \textbf{A}bstraction \textbf{L}ayer \\
 \textbf{VCL} & \textbf{V}ideo \textbf{C}oding \textbf{L}ayer \\
-\textbf{SPS} & \textbf{S}equence \textbf{P}arameter \textbf{S}ets \\
-\textbf{PPS} & \textbf{P}icture \textbf{P}arameter \textbf{S}ets \\
+%\textbf{SPS} & \textbf{S}equence \textbf{P}arameter \textbf{S}ets \\
+%\textbf{PPS} & \textbf{P}icture \textbf{P}arameter \textbf{S}ets \\
 \textbf{CBP} & \textbf{C}oded \textbf{B}lock \textbf{P}attern \\
 \textbf{FPGA} & \textbf{F}ield \textbf{P}rogrammable \textbf{G}ate \textbf{A}rray \\
+%\textbf{FDCT} & \textbf{F}orward \textbf{D}iscrete \textbf{C}osine \textbf{T}ransform \\
+\textbf{DFT} & \textbf{D}iscrete \textbf{F}ourier \textbf{T}ransform \\
+\textbf{DST} & \textbf{D}iscrete \textbf{S}ine \textbf{T}ransform \\
+%\textbf{DWT} & \textbf{D}iscrete \textbf{W}avelet \textbf{T}ransform \\
+%\textbf{WHT} & \textbf{W}alsh \textbf{H}adamard \textbf{T}ransform \\
+\textbf{QP} & \textbf{Q}uantization \textbf{P}arameter \\
 }
 
 %% ----------------------------------------------------------------
@@ -185,7 +178,7 @@ Write a short description of how the work carried out in this thesis has contrib
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 \abstract{
 %\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+H.264/AVC is an approved digital video encoding standard that provides significantly higher efficiency and is capable of reducing bit rate requirements by up to 50$\%$ while maintaining the same level of video quality. Our project introduces a baseline profile for H.264 encoder with an advance and efficient inter prediction module that uses 256 PE VBS ME technique. This advanced video encoding provides improved compression and quality for real-time encoding. The baseline profile has been successfully implemented on a FPGA board, this provides us with the necessary hardware acceleration and parallel processing capabilities. The VBS ME algorithm enables the encoder to accurately predict and encode spatial redundancies within video frames, resulting in enhanced compression of the video. This enhanced video quality and reduced storage is ideal for real-time video encoding or bandwidth constrained environments. This work holds great promise to video streaming services and surveillance systems ensuring efficient encoding and secure transmission.
 
 }
 \clearpage  % Abstract ended, start a new page
@@ -205,9 +198,9 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 \input{./Chapters/Chapter4} % Experiment 1
 
-%\input{./Chapters/Chapter5} % Experiment 2
+\input{./Chapters/Chapter5} % Experiment 2
 
-%\input{./Chapters/Chapter6} % Results and Discussion
+\input{./Chapters/Chapter6} % Results and Discussion
 
 %\input{./Chapters/Chapter7} % Conclusion
 
@@ -218,7 +211,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-%\input{./Chapters/AppendixA}	% Appendix Title
+\input{./Chapters/AppendixA}	% Appendix Title
 
 %\input{./Chapters/AppendixB} % Appendix Title
 
