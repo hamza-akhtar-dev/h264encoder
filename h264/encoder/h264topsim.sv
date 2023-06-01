@@ -33,6 +33,10 @@ module h264topsim();
     logic [IMGBITS-1:0] uvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
     logic [IMGBITS-1:0] vvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
 
+    logic [IMGBITS-1:0] yrvideo [0:IMGWIDTH-1  ][0:IMGHEIGHT-1  ];
+    logic [IMGBITS-1:0] urvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
+    logic [IMGBITS-1:0] vrvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
+
     // Intra4x4 Wires
     logic top_NEWSLICE = 1'b1;			      
 	logic top_NEWLINE = 1'b0;			        
@@ -162,6 +166,11 @@ module h264topsim();
     logic nop2; //No operation
     logic nop3; //No operation
     logic nop4; //No operation
+
+    // Mode Decision
+    integer frame_distance = 3;
+    logic pred_type; // 0->I, 1->P
+    assign pred_type = ((framenum % (frame_distance + 1)) == 0) ? 0 : 1;
 
     h264intra4x4 intra4x4
     (
@@ -397,6 +406,49 @@ module h264topsim();
         .DONE(tobytes_DONE)
     );
 
+    // Inter-Prediction
+    localparam MACRO_DIM  = 16;
+    localparam SEARCH_DIM = 48;
+    localparam PORT_WIDTH = MACRO_DIM + 1;
+
+    logic        rst_n;
+    //logic        clk;
+    logic        start;
+    logic        en_ram;
+    logic        done;
+    logic [5:0]  addr;
+    logic [5:0]  amt;
+    logic [5:0]  mv_y;
+    logic [5:0]  mv_x;
+    logic [7:0]  pixel_spr_in [0:MACRO_DIM];
+    logic [7:0]  pixel_cpr_in [0:MACRO_DIM-1];
+    logic [15:0] min_sad;
+
+    logic [15:0] trans_addr [MACRO_DIM:0];
+
+    me # 
+    (
+        .MACRO_DIM  ( MACRO_DIM  ),
+        .SEARCH_DIM ( SEARCH_DIM )
+    )
+    ins_me
+    (
+        .rst_n              ( rst_n              ),
+        .clk                ( clk2               ),
+        .start              ( start              ),
+        .pixel_spr_in       ( pixel_spr_in       ),
+        .pixel_cpr_in       ( pixel_cpr_in       ),
+        .ready              ( ready              ),
+        .valid              ( valid              ),
+        .en_ram             ( en_ram             ),
+        .done               ( done               ),
+        .addr               ( addr               ),
+        .amt                ( amt                ),
+        .mv_x               ( mv_x               ),
+        .mv_y               ( mv_y               ),
+        .min_sad            ( min_sad            )
+    );
+
    	assign tobytes_VE = header_VALID ? {5'b00000, header_VE} : cavlc_VALID ? cavlc_VE : {1'b0, 24'h030080};
 	assign tobytes_VL = header_VALID ? header_VL : cavlc_VALID ? cavlc_VL : 5'b01000;
 	assign tobytes_VALID = header_VALID | align_VALID | cavlc_VALID;
@@ -579,7 +631,7 @@ module h264topsim();
                     end
                 end
 
-                if (intra8x8cc_READYI == 1 && cy < IMGHEIGHT/2)
+                if ((intra8x8cc_READYI == 1) && (cy < IMGHEIGHT/2))
                 begin
                     @(posedge clk2);
                     intra8x8cc_STROBEI = 1;
@@ -633,7 +685,41 @@ module h264topsim();
                     end
                 end
                 @(posedge clk2);
+            end  
+            // Inter-Prediction
+            if (ready == 1)
+            begin
+                //start = 0;
+                integer l, f;
+                for(l = 0; l < MACRO_DIM; l++)
+                begin
+                    if (en_ram)
+                    begin
+                        pixel_cpr_in[l] = yvideo[l][addr];
+                    end
+                end
+                for(l = 0; l < PORT_WIDTH; l++)
+                begin
+                    if (en_ram)   
+                    begin         
+                        pixel_spr_in[l] = yrvideo[(l+amt)%PORT_WIDTH][trans_addr[(l+amt)%PORT_WIDTH]]; 
+                    end
+                end
+                for (f = 0; f < PORT_WIDTH; f++) 
+                begin
+                    if (f < amt) 
+                    begin
+                        trans_addr[f] = addr + SEARCH_DIM;
+                    end
+                    else
+                    begin
+                        trans_addr[f] = addr;
+                    end
+                end
+                @(posedge clk2);
+                start = 1;
             end
+
             $display("Done push of data into intra4x4 and intra8x8cc");
             if (!xbuffer_DONE)
             begin
@@ -706,9 +792,7 @@ module h264topsim();
 		assert (!($isunknown(cavlc_VIN)));
 	end
 
-    logic [IMGBITS-1:0] yrvideo [0:IMGWIDTH-1  ][0:IMGHEIGHT-1  ];
-    logic [IMGBITS-1:0] urvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
-    logic [IMGBITS-1:0] vrvideo [0:IMGWIDTH/2-1][0:IMGHEIGHT/2-1];
+
 
 	integer xr     = 0; 
 	integer yr     = 0;
