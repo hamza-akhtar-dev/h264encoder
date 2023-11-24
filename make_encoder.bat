@@ -1,2 +1,2 @@
 vlog ./h264/encoder/*.sv
-vsim -voptargs=+acc h264topsim
+vsim -c -voptargs=+acc h264topsim -do "run -all"
