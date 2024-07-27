@@ -9,3 +9,4 @@ sample_out.264
 vsim.wlf
 h264sim.vcd
 h264topsim.vcd
+h264/encoder/updates/h264coretransform_test

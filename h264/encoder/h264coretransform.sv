@@ -40,7 +40,7 @@ module h264coretransform
 );
 
 
-    
+
 logic [1:0] yny, ynx;
 logic [8:0]  xx0, xx1, xx2, xx3;
 
@@ -105,8 +105,8 @@ localparam COL3 = 2'b11;
 
 assign yny = ynyx[3:2];
 assign ynx = ynyx [1:0];
-	
-always_comb 
+
+always_comb
 begin
     case(iyn)
         4'd15 : ynyx = {ROW0, COL0};
@@ -128,50 +128,50 @@ begin
     endcase
 
     case(ynx)
-        2'd0: 
-        begin 
+        2'd0:
+        begin
             ff0pu = ff00;
             ff1pu = ff10;
             ff2pu = ff20;
             ff3pu = ffx0;
         end
 
-        2'd1: 
-        begin 
+        2'd1:
+        begin
             ff0pu = ff01;
             ff1pu = ff11;
             ff2pu = ff21;
             ff3pu = ffx1;
         end
 
-        2'd2: 
-        begin 
+        2'd2:
+        begin
             ff0pu = ff02;
             ff1pu = ff12;
             ff2pu = ff22;
             ff3pu = ffx2;
         end
 
-        default: 
-        begin 
+        default:
+        begin
             ff0pu = ff03;
             ff1pu = ff13;
             ff2pu = ff23;
             ff3pu = ffx3;
-        end 
+        end
     endcase
 end
-	
-	
+
+
 always_ff @(posedge CLK)
 begin
 
-    if (ENABLE || (ixx != 0)) 
+    if (ENABLE || (ixx != 0))
     begin
         ixx <= ixx + 1;
     end 
 
-    if (ixx < 3 && (iyn >= 14 || iyn==0)) 
+    if (ixx < 3 && (iyn >= 14 || iyn==0))
     begin
         READY <= 1;
     end
@@ -186,23 +186,23 @@ begin
 		// --       1 -1 -1  2
 		// --       1 -2  1 -1
 
-    if (ENABLE) 
+    if (ENABLE)
     begin
         // --initial helpers (TT+1) (10bit from 9bit)
         xt0 <= {xx0[8], xx0} + {xx3[8], xx3};			//--xx0 + xx3
         xt1 <= {xx1[8], xx1} + {xx2[8], xx2};			//--xx1 + xx2
         xt2 <= {xx1[8], xx1} - {xx2[8], xx2};			//--xx1 - xx2
         xt3 <= {xx0[8], xx0} - {xx3[8], xx3};			//--xx0 - xx3
-    end 
+    end
 
-    if ((ixx>=1) && (ixx<=4)) 
+    if ((ixx>=1) && (ixx<=4))
     begin
         // --now compute row of FF matrix at TT+2 (12bit from 10bit)
         ffx0 <= {xt0[9], xt0[9], xt0} + {xt1[9], xt1[9], xt1};	    //--xt0 + xt1
         ffx1 <= {xt2[9], xt2[9], xt2} + {xt3[9], xt3, 1'b0};	 	//--xt2 + 2*xt3
         ffx2 <= {xt0[9], xt0[9], xt0} - {xt1[9], xt1[9], xt1};	    //--xt0 - xt1
         ffx3 <= {xt3[9], xt3[9], xt3} - {xt2[9], xt2, 1'b0};		//--xt3 - 2*xt2
-    end 
+    end
 
     //--place rows 0,1,2 into slots at TT+3,4,5
     if (ixx==2) 
