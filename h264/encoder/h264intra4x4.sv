@@ -100,6 +100,13 @@ logic [9:0] suml = '0;
 logic [10:0] sumtl = '0;
 
 integer xi, yi;
+//int fi;
+////int fo;
+//initial
+//begin
+//	fi = $fopen ("input_file.log", "w");
+////	fo = $fopen ("output_file.log", "w");
+//end
 
 always_comb 
 begin
@@ -124,6 +131,13 @@ end
 
 always_ff @( posedge CLK ) 
 begin
+//	counter <= counter + 1;
+//	if( counter >= 32'd34225 )
+//	begin
+//	$fdisplay(fi,"NEWSLICE <= %h; NEWLINE <= %h; STROBEI <= %h; DATAI <= 32'h%h;  TOPI <= 32'h%h; TOPMI <= 4'h%h; FEEDBI <= 8'h%h; FBSTROBE <= %h; READYO <= %h;   
+//@(posedge CLK);", NEWSLICE,NEWLINE, STROBEI, DATAI,TOPI, TOPMI,FEEDBI, FBSTROBE, READYO );
+//	end
+//	else begin end 
 	if (STROBEI) 
 	begin
 		pix[statei] <= DATAI;
@@ -372,7 +386,8 @@ begin
 			if ((submb == 14 || submb == 15) && (!NEWLINE))
          		lvalid <= 1;
 		end   
-
+//	$fdisplay(fo,"READYI <= %h; XXO <= 2'h%h; XXINC <= %h; STROBEO <= %h; DATAO <= 36'h%h; BASEO <= 32'h%h; MSTROBEO <= %h; MODEO <= 4'h%h; PMODEO <= %h; RMODEO <= 3'h%h; CHREADY <= %h; 
+//@(posedge CLK);",READYI, XXO , XXINC , STROBEO , DATAO , BASEO , MSTROBEO , MODEO , PMODEO, RMODEO ,CHREADY);
 end
     
 endmodule  

@@ -9,3 +9,13 @@ sample_out.264
 vsim.wlf
 h264sim.vcd
 h264topsim.vcd
+*update_encoder_test/
+*new/
+
+*work/
+*.cr.mti
+*.mpf
+*.bak
+transcript
+*.wlf
+*.log
